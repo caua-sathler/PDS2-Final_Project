@@ -1,4 +1,6 @@
 #include "Game.hpp"
+#include <iostream>
+
 void Game::create_game_board() {
     this->game_board = new int*[num_rows];
     for(int i = 0; i < num_rows; i++){
@@ -16,4 +18,14 @@ Game::~Game() {
         delete[] game_board[i];
     }
     delete[] game_board;
+}
+
+void Game::print_game_board() {
+    for(int i = 0; i < num_rows; i++) {
+     std::cout << "|" << std::ends;   
+        for(int j = 0; j < num_columns; j++) {
+            std::cout << this->game_board[i][j] << "|" << std::ends;
+        }
+        std::cout << std::endl;
+    }
 }
