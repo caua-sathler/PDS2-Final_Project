@@ -9,6 +9,8 @@ class Game{
     public:
         Game(int num_rows, int num_columns);
         void create_game_board();
+
+        ~Game();
 };
 
 #endif
