@@ -11,8 +11,8 @@ void Game::create_game_board() {
     }
 }
 
-Game::Game(int num_rows_received, int num_columns_received) : 
-num_columns(num_columns_received), num_rows(num_rows_received) {
+Game::Game(int num_rows_received, int num_columns_received) : num_rows(num_rows_received),
+num_columns(num_columns_received) {
     create_game_board();
 }
 
