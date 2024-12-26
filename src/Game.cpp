@@ -2,9 +2,12 @@
 #include <iostream>
 
 void Game::create_game_board() {
-    this->game_board = new int*[num_rows];
+    this->game_board = new char*[num_rows];
     for(int i = 0; i < num_rows; i++){
-        this->game_board[i] = new int[num_columns];
+        this->game_board[i] = new char[num_columns];
+        for(int j = 0; j < num_columns; j++){
+            this->game_board[i][j] = ' ';
+        }
     }
 }
 
