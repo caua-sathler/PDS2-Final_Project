@@ -18,7 +18,6 @@ void tic_tac_toe::make_move(int x, int y) {
 
 
 }
-
 void tic_tac_toe::check_win() {
 
 }
