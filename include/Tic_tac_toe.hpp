@@ -10,8 +10,8 @@ class tic_tac_toe : public Game {
 
     public:
         tic_tac_toe(int num_rows_received, int num_columns_received);
-        void verify_valid_move() override;
-        void make_move() override;
+        bool verify_valid_move(int x, int y) override;
+        void make_move(int x, int y);
         void check_win() override;
         ~tic_tac_toe();
 };

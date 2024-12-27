@@ -23,7 +23,7 @@ Game::~Game() {
     delete[] game_board;
 }
 
-void Game::print_game_board() {
+void Game::print_game_board() const {
     for(int i = 0; i < num_rows; i++) {
      std::cout << "|" << std::ends;   
         for(int j = 0; j < num_columns; j++) {
