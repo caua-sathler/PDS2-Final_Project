@@ -11,7 +11,7 @@ class Game {
         Game(int num_rows_received, int num_columns_received);
         void create_game_board();
         void print_game_board() const;
-        virtual bool verify_valid_move() const = 0;
+        virtual bool verify_valid_move(int x, int y) const = 0;
         virtual void make_move() = 0;
         virtual void check_win() const = 0;
         ~Game();
