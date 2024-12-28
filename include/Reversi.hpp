@@ -8,6 +8,8 @@ class Reversi : public Game{
     public:
         Reversi();
         bool is_valid_move() const override;
-        bool is_valid_move(int x, int y, char player_piece_type) const;  
+        bool is_valid_move(int x, int y, char player_piece_type) const; 
+        virtual void make_move() override;
+        virtual void check_win() const override; 
 };
 #endif
