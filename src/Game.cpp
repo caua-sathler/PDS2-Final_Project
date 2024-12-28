@@ -23,7 +23,15 @@ Game::~Game() {
     delete[] game_board;
 }
 
-void Game::print_game_board() {
+bool Game::is_move_inside_board(int x, int y) const {
+    if ((this->game_board[x - 1][y - 1] != ' ') || (x < 0 || x > this->num_rows)
+     || (y < 0 || y > this->num_columns))
+        {
+                return false;
+        }
+}
+
+void Game::print_game_board() const {
     for(int i = 0; i < num_rows; i++) {
      std::cout << "|" << std::ends;   
         for(int j = 0; j < num_columns; j++) {
