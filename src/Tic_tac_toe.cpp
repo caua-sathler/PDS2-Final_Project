@@ -1,25 +1,36 @@
 #include "Tic_tac_toe.hpp"
 #include <iostream>
 
-tic_tac_toe::tic_tac_toe(int num_rows_received, int num_columns_received) : Game(num_rows_received, num_columns_received) {
+tic_tac_toe::tic_tac_toe() : Game(3,3), current_player('X') {
 }
 
-bool tic_tac_toe::verify_valid_move(int x, int y) {
-    if (x >= 0 && x < num_rows && y >= 0 && y < num_columns && get_game_board()[x][y] == ' ') {
+bool tic_tac_toe::verify_valid_move(int x, int y) const {
+    if (x >= 0 && x < num_rows && y >= 0 && y < num_columns && game_board[x][y] == ' ') {
         return true; 
     }
-    return false; 
 
+    else {
+        std::cout << "INVALIDO\n";
+        return false; 
+    }
 }
 
 void tic_tac_toe::make_move(int x, int y) {
-    x -=1;
-    y -=1;
+    x -= 1;
+    y -= 1;
 
-
+    if (verify_valid_move(x, y)) {
+        game_board[x][y] = current_player; 
+}
 }
 
-void tic_tac_toe::check_win() {
+void tic_tac_toe::switch_players() {
+
+
+    
+}
+
+void tic_tac_toe::check_win() const {
 
 }
 

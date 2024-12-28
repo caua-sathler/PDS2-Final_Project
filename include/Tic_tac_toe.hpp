@@ -5,14 +5,14 @@
 
 class tic_tac_toe : public Game {
     private:
-        int num_rows;
-        int num_columns;
+        char current_player;
 
     public:
-        tic_tac_toe(int num_rows_received, int num_columns_received);
-        bool verify_valid_move(int x, int y) override;
+        tic_tac_toe();
+        bool verify_valid_move(int x, int y) const override;
         void make_move(int x, int y);
-        void check_win() override;
+        void check_win() const override;
+        void switch_players();
         ~tic_tac_toe();
 };
 
