@@ -21,13 +21,16 @@ void tic_tac_toe::make_move(int x, int y) {
 
     if (verify_valid_move(x, y)) {
         game_board[x][y] = current_player; 
+        switch_players();
 }
 }
 
 void tic_tac_toe::switch_players() {
+    if(current_player == 'X')
+        current_player = 'O';
 
-
-    
+    else 
+        current_player = 'X';
 }
 
 void tic_tac_toe::check_win() const {
