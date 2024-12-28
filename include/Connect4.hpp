@@ -1,19 +1,21 @@
-#ifndef CONNECT4_HPP
-#define CONNECT4_HPP
+#ifndef CONNECT4_H
+#define CONNECT4_H
 
 #include "Game.hpp"
 #include <iostream>
-#include <string>
 
 class Connect4 : public Game {
     private:
-        std::string current_player;
-    public:
-        Connect4(int num_rows, int num_columns);
+        char current_player;
 
-        bool verify_valid_move(int column) override;
-        bool make_move(int column) override;
-        void check_win() override;
+    public:
+        Connect4();
+        bool is_valid_move(int column) const;
+        bool is_move_inside_board(int column) const;
+        void make_move(int column);
+        void check_win() const;
+        void switch_players();
+        ~Connect4();
 };
 
 #endif
