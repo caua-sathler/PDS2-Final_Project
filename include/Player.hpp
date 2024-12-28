@@ -8,10 +8,11 @@ class Player {
     private:
         std::string name;
         std::string username;
-        std::map<std::string, int> num_win;
-        std::map<std::string, int> num_loss;
+        std::map<char, int> num_win;
+        std::map<char, int> num_loss;
 
     public:
+        Player(std::string name_received, std::string username_received, std::map<char, int> num_win_received, std::map<char, int> num_loss_received);
         void register_player(std::string name_received, std::string username_received);
         void remove_player();
         void print_player();
