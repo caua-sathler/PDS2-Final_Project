@@ -44,7 +44,8 @@ void Connect4::switch_players(){
 }
 
 void Connect4::check_win() const {
-    
+    // If 'X' wins then player 1 wins, otherwise if 'O' wins then player 2 wins
+
     // horizontal verification 
 
     for (int row = 0; row < 6; ++row) {
