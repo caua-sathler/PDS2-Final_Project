@@ -10,16 +10,23 @@ bool Reversi::is_valid_move() const
 }
 
 bool is_there_player_piece_at_the_direction(){
+}
 
+bool Reversi::is_space_free(int x, int y) const {
+    if((this->game_board[x - 1][y - 1] != ' ') ){
+        return false;
+    }
+    return true;
 }
 
 bool Reversi::is_valid_move(int x, int y, char player_piece_type) const
 {
     char other_player_piece_type;
-    if (this->is_move_inside_board(x, y) == false)
-    {
+    if(this->is_move_inside_board(x, y) == false)
         return false;
-    }
+
+    if(this->is_space_free(x, y) == false) 
+        return false;
 
     if (player_piece_type == 'X'){
         other_player_piece_type = 'O';
@@ -33,7 +40,7 @@ bool Reversi::is_valid_move(int x, int y, char player_piece_type) const
 
     for (int i = 1; i > -2; i--){
         for (int j = 1; j > -2 ; j--){
-            if(j!=0||i!=0){
+            if(j != 0 || i != 0) {
                 adjacent_square_x = x + i;
                 adjacent_square_y = y + j;
                 if(this->is_move_inside_board(adjacent_square_x, adjacent_square_y)){
