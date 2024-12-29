@@ -26,10 +26,8 @@ Game::~Game() {
 bool Game::is_move_inside_board(int x, int y) const {
      if ((x <= 0 || x > this->num_rows)
      || (y <= 0 || y > this->num_columns))
-        {
-            std::cout << "Invalid move! Out of the board!" << std::endl;
             return false;
-        }
+            
     return true;
 
 }
