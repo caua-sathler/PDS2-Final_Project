@@ -26,12 +26,8 @@ Game::~Game() {
 bool Game::is_move_inside_board(int x, int y) const {
      if ((x <= 0 || x > this->num_rows)
      || (y <= 0 || y > this->num_columns))
-        {
             return false;
-        }
-    if((this->game_board[x - 1][y - 1] != ' ') ){
-        return false;
-    }
+            
     return true;
 
 }
