@@ -1,31 +1,27 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Debugar Projeto (g++)",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/bin/main",
-        "args": [],
-        "stopAtEntry": true,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "gdb",
-        "setupCommands": [
-          {
-            "description": "Habilitar impressão de valores para gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
-          },
-          {
-            "description": "Definir desmontagem para Intel",
-            "text": "-gdb-set disassembly-flavor intel",
-            "ignoreFailures": true
-          }
-        ],
-        "preLaunchTask": "Compilar Projeto",
-        "miDebuggerPath": "/usr/bin/gdb"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug PDS2 Project",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "home/julialuna/PDS2-Final_Project/bin/main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "home/julialuna/PDS2-Final_Project/bin/main",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Ativar impressão de valores em gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "Build",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}
