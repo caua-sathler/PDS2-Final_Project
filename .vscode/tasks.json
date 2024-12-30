@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compilar Projeto",
+        "type": "shell",
+        "command": "make",
+        "args": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Tarefa para compilar o projeto usando o Makefile"
+      }
+    ]
+  }
