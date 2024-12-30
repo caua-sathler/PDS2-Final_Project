@@ -37,6 +37,22 @@ int main() {
         i = 0;
         }
     }
-    
+
     file_in.close();
+
+    std::string command;
+    std::string name_in, username_in;
+    while(std::cin >> command){
+        if (command == "LJ"){
+            std::list<Player>::iterator it;
+            for (it = player_list.begin(); it != player_list.end(); it++){
+                it->print_player();
+            }
+            continue;
+        }
+        else if (command == "FS"){
+            break;
+        }
+    }
+
 }
