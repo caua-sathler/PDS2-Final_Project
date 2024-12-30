@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include <iostream>
 #include <fstream>
+#include <bits/stdc++.h>
 #include <map>
 #include <list>
 
@@ -24,13 +25,13 @@ int main() {
         player_in.set_name(file_line[0]);
         player_in.set_username(file_line[1]);
 
-        player_in.set_num_win(file_line[2][0], file_line[2][2] - '0');
-        player_in.set_num_win(file_line[3][0], file_line[3][2] - '0');
-        player_in.set_num_win(file_line[4][0], file_line[4][2] - '0');
-        
-        player_in.set_num_loss(file_line[2][0], file_line[2][4] - '0');
-        player_in.set_num_loss(file_line[3][0], file_line[3][4] - '0');
-        player_in.set_num_loss(file_line[4][0], file_line[4][4] - '0');
+        std::string key_in, num_win_in, num_loss_in;
+        for (int j = 2; j < 5; j++){
+            std::stringstream ss(file_line[j]);
+            ss >> key_in >> num_win_in >> num_loss_in;
+            player_in.set_num_win(key_in, stoi(num_win_in));
+            player_in.set_num_loss(key_in, stoi(num_loss_in));
+        }
         
         player_list.push_back(player_in);
         i = 0;
