@@ -10,8 +10,10 @@ class Reversi : public Game{
         bool is_valid_move() const override;
         bool is_valid_move(int x, int y, char player_piece_type) const;
         bool is_space_free(int x, int y) const;
-        bool is_there_player_piece_at_the_direction(char player_piece, const int direction[2], const int adjacent_square[2]) const;
-        virtual void make_move() override;
+        bool is_there_player_piece_at_the_direction(char player_piece, const int direction[2], 
+             const int adjacent_square[2]) const;
+        void make_move() override;
+        void make_move(int x, int y, char player_piece); 
         virtual void check_win() const override; 
 };
 #endif
