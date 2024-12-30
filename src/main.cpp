@@ -12,7 +12,7 @@ int main() {
     reversi1.game_board[2][3]='O';
     reversi1.game_board[3][4]='O';
     reversi1.game_board[4][3]='O';
-     reversi1.game_board[5][4]='O';
+    reversi1.game_board[5][4]='O';
     reversi1.print_game_board();
 
     cout<<reversi1.is_valid_move(3,2,'O')<<endl;
