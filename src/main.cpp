@@ -41,7 +41,7 @@ int main() {
     file_in.close();
 
     std::string command;
-    std::string name_in, username_in;
+    std::string name_in, username_in, buffer;
     while(std::cin >> command){
         if (command == "LJ"){
             std::list<Player>::iterator it;
@@ -50,12 +50,18 @@ int main() {
             }
             continue;
         } else if (command == "CJ"){
-            std::cin >> username_in >> name_in;
+            std::cin >> username_in;
+            std::getline(std::cin, buffer, ' ');
+            std::getline(std::cin, name_in);
             player_in.register_player(name_in, username_in);
             player_list.push_back(player_in);
             std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
+            continue;
         } else if (command == "FS"){
             break;
+        } else {
+            std::cout << "Erro: comando inexistente" << std::endl;
+            continue;
         }
     }
 
