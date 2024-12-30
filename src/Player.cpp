@@ -2,7 +2,7 @@
 #include <iostream>
 #include <map>
 
-Player::Player(): Player("", "", {} , {}) {};
+Player::Player(): Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
 
 Player::Player(std::string name_received, std::string username_received, std::map<std::string, int> num_win_received, std::map<std::string, int> num_loss_received):
    name(name_received), username(username_received), num_win(num_win_received), num_loss(num_loss_received) {};
@@ -24,7 +24,10 @@ void Player::set_num_loss(std::string key, int value){
 }
 
 void Player::register_player(std::string name_received, std::string username_received){
-
+    this->name = name_received;
+    this->username = username_received;
+    this->num_win = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
+    this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
 }
 
 void Player::remove_player(){
