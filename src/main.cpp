@@ -49,8 +49,12 @@ int main() {
                 it->print_player();
             }
             continue;
-        }
-        else if (command == "FS"){
+        } else if (command == "CJ"){
+            std::cin >> username_in >> name_in;
+            player_in.register_player(name_in, username_in);
+            player_list.push_back(player_in);
+            std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
+        } else if (command == "FS"){
             break;
         }
     }
