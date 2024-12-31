@@ -4,14 +4,18 @@
 #include "Game.hpp"
 
 class tic_tac_toe : public Game {
-    private:
+    protected:
         char current_player;
 
     public:
         tic_tac_toe();
-        bool verify_valid_move(int x, int y) const override;
+        bool is_move_inside_board(int x, int y) const override;
+        void make_move() override;
         void make_move(int x, int y);
+        bool is_valid_move() const override;
+        bool is_valid_move(bool& win);
         void check_win() const override;
+        void check_win(bool& win);
         void switch_players();
         ~tic_tac_toe();
 };
