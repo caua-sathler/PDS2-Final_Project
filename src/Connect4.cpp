@@ -4,7 +4,7 @@
 Connect4::Connect4() : Game(6, 7), current_player('X'){
 }
 
-bool Connect4::is_move_inside_board(int column) const {
+bool Connect4::is_move_inside_board(int a, int column) const {
     if (column < 1 || column > 7) { 
         std::cout << "jogada inválida\n";
         return false;
@@ -21,6 +21,7 @@ bool Connect4::is_valid_move(int column) const {
     }
     return true;
 }
+
 
 void Connect4::make_move(int column) {
     if(is_valid_move(column)) {
