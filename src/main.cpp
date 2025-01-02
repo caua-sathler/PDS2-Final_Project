@@ -69,7 +69,18 @@ int main() {
                 std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
                 continue;
             }
-        } else if (command == "FS"){
+        } else if (command == "RJ"){
+            std::cin >> username_in;
+            std::list<Player>::iterator it;
+            for (it = player_list.begin(); it != player_list.end(); it++){
+                if (it->get_username() == username_in){
+                    it = player_list.erase(it);
+                    std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
+                }
+            }
+            continue;
+        }
+        else if (command == "FS"){
             break;
         } else {
             if (error == false){
