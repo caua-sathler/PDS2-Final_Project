@@ -70,17 +70,21 @@ int main() {
                 continue;
             }
         } else if (command == "RJ"){
+            error = true;
             std::cin >> username_in;
             std::list<Player>::iterator it;
             for (it = player_list.begin(); it != player_list.end(); it++){
                 if (it->get_username() == username_in){
                     it = player_list.erase(it);
                     std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
+                    error = false;
                 }
             }
+            if (error == true){
+                std::cout << "ERRO: jogador inexistente" << std::endl;
+            }
             continue;
-        }
-        else if (command == "FS"){
+        } else if (command == "FS"){
             break;
         } else {
             if (error == false){
