@@ -30,6 +30,10 @@ void Player::register_player(std::string name_received, std::string username_rec
     this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
 }
 
+std::string Player::get_username(){
+    return this->username;
+}
+
 void Player::remove_player(){
 
 }
