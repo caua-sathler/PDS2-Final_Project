@@ -41,7 +41,9 @@ int main() {
     file_in.close();
 
     std::string command;
-    std::string name_in, username_in, buffer;
+    std::string name_in, username_in;
+    char extra_space;
+    bool error = false;
     while(std::cin >> command){
         if (command == "LJ"){
             std::list<Player>::iterator it;
@@ -50,18 +52,31 @@ int main() {
             }
             continue;
         } else if (command == "CJ"){
+            error = false;
             std::cin >> username_in;
-            std::getline(std::cin, buffer, ' ');
+            extra_space = std::getchar();
             std::getline(std::cin, name_in);
-            player_in.register_player(name_in, username_in);
-            player_list.push_back(player_in);
-            std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
-            continue;
+            std::list<Player>::iterator it;
+            for (it = player_list.begin(); it != player_list.end(); it++){
+                if (it->get_username() == username_in){
+                    std::cout << "ERRO: jogador repetido" << std::endl;
+                    error = true;
+                }
+            }
+            if (error == false){
+                player_in.register_player(name_in, username_in);
+                player_list.push_back(player_in);
+                std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
+                continue;
+            }
         } else if (command == "FS"){
             break;
         } else {
-            std::cout << "Erro: comando inexistente" << std::endl;
-            continue;
+            if (error == false){
+                std::cout << "ERRO: comando inexistente" << std::endl;
+                error = true;
+                continue;
+            }
         }
     }
 
