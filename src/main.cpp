@@ -22,8 +22,8 @@ int main() {
     while (getline(file_in,file_line[i]) ) {
         i++;
         if (i == 5) { 
-        player_in.set_name(file_line[0]);
-        player_in.set_username(file_line[1]);
+        player_in.set_username(file_line[0]);
+        player_in.set_name(file_line[1]);
 
         std::string key_in, num_win_in, num_loss_in;
         for (int j = 2; j < 5; j++){
@@ -51,6 +51,7 @@ int main() {
                 it->print_player();
             }
             continue;
+
         } else if (command == "CJ"){
             error = false;
             std::cin >> username_in;
@@ -69,6 +70,7 @@ int main() {
                 std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
                 continue;
             }
+
         } else if (command == "RJ"){
             error = true;
             std::cin >> username_in;
@@ -84,8 +86,10 @@ int main() {
                 std::cout << "ERRO: jogador inexistente" << std::endl;
             }
             continue;
+
         } else if (command == "FS"){
             break;
+            
         } else {
             if (error == false){
                 std::cout << "ERRO: comando inexistente" << std::endl;
@@ -95,4 +99,21 @@ int main() {
         }
     }
 
+    std::ofstream file_out;
+    file_out.open("teste");
+    if (!file_out.is_open()){
+        std::cout << "Erro ao abrir o arquivo" << std::endl;
+        return 1;
+    }
+
+    std::list<Player>::iterator it;
+    for (it = player_list.begin(); it != player_list.end(); it++){
+        file_out << it->get_username() << std::endl;
+        file_out << it->get_name() << std::endl;
+        file_out << "Reversi" << " " << it->get_num_win().find("Reversi")->second << " " << it->get_num_loss().find("Reversi")->second << std::endl;
+        file_out << "Lig4" << " " << it->get_num_win().find("Lig4")->second << " " << it->get_num_loss().find("Lig4")->second << std::endl;
+        file_out << "Velha" << " " << it->get_num_win().find("Velha")->second << " " << it->get_num_loss().find("Velha")->second << std::endl;
+    }
+
+    file_out.close();
 }
