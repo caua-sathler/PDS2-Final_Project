@@ -58,7 +58,7 @@ void Reversi::find_directions_that_make_moves_against_opponent(const std::array<
                 adjacent_square[0] = move_coordinates[0] + i;
                 adjacent_square[1] = move_coordinates[1] + j;
 
-                if (this->is_move_inside_board(adjacent_square[0] + 1, adjacent_square[1] + 1) && 
+                if (this->is_move_inside_board(adjacent_square[0], adjacent_square[1]) && 
                     this->game_board[adjacent_square[0]][adjacent_square[1]] == other_player_piece_type)
                 {
                     std::array<int, 2> direction = {adjacent_square[0] - move_coordinates[0], adjacent_square[1] - move_coordinates[1]};
@@ -74,14 +74,13 @@ void Reversi::find_directions_that_make_moves_against_opponent(const std::array<
 
  bool Reversi::is_valid_move(std::array<int, 2>& move_coordinates, char player_piece_type, std::list<std::array<int, 2>>& directions_to_capture_opponents)
 {
+
     if (!this->is_move_inside_board(move_coordinates[0], move_coordinates[1]))
         return false;
 
     if (!this->is_space_free(move_coordinates[0], move_coordinates[1]))
         return false;
 
-    move_coordinates[0]=move_coordinates[0]-1;
-    move_coordinates[1]=move_coordinates[1]-1;
 
     this->find_directions_that_make_moves_against_opponent(move_coordinates, player_piece_type, directions_to_capture_opponents);
     if (directions_to_capture_opponents.empty()) {
@@ -91,7 +90,10 @@ void Reversi::find_directions_that_make_moves_against_opponent(const std::array<
     return true;
 }
 
-void Reversi::process_move( std::array<int, 2> move_coordinates, char player_piece) {
+void Reversi::process_move(std::array<int, 2> move_coordinates, char player_piece) {
+    move_coordinates[0] = move_coordinates[0] - 1;
+    move_coordinates[1] = move_coordinates[1] - 1;
+    
     std::list<std::array<int, 2>> directions_to_capture_opponents;
     if(this->is_valid_move(move_coordinates, player_piece, directions_to_capture_opponents)){
         
@@ -104,14 +106,9 @@ void Reversi::make_move()
     return;
 }
 
-// void Reversi::make_move(int x, int y, char player_piece) {
-//     if(!is_valid_move(x, y, player_piece)) 
-//         return;
-    
-//     x--;
-//     y--;
+void Reversi::make_move(std::array<int, 2> move_coordinates, char player_piece) {
 
-// }
+}
 
 void Reversi::check_win() const
 {

@@ -17,7 +17,7 @@ class Reversi : public Game {
         bool is_there_player_piece_at_the_direction(const char player_piece, const std::array<int, 2>& direction, 
              std::array<int, 2> adjacent_square) const;
         void make_move() override;
-        void make_move(int x, int y, char player_piece); 
+        void make_move(std::array<int, 2> move_coordinates, char player_piece); 
         virtual void check_win() const override; 
         void find_directions_that_make_moves_against_opponent(const std::array<int, 2>& move_coordinates, char player_piece_type, std::list<std::array<int, 2>>& squares_to_make_move);
         void process_move(std::array<int, 2> move_coordinates, char player_piece_type);
