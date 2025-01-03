@@ -20,6 +20,9 @@ class Player {
         void set_num_win(std::string key, int value);
         void set_num_loss(std::string key, int value);
         std::string get_username();
+        std::string get_name();
+        std::map<std::string, int> get_num_win();
+        std::map<std::string, int> get_num_loss();
         
         void register_player(std::string name_received, std::string username_received);
         void remove_player();

@@ -23,6 +23,23 @@ void Player::set_num_loss(std::string key, int value){
     this->num_loss.insert_or_assign(key,value);
 }
 
+std::string Player::get_username(){
+    return this->username;
+}
+
+std::string Player::get_name(){
+    return this->name;
+}
+
+std::map<std::string, int> Player::get_num_win(){
+    return this->num_win;
+}
+
+std::map<std::string, int> Player::get_num_loss(){
+    return this->num_loss;
+}
+
+
 void Player::register_player(std::string name_received, std::string username_received){
     this->name = name_received;
     this->username = username_received;
@@ -30,9 +47,7 @@ void Player::register_player(std::string name_received, std::string username_rec
     this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
 }
 
-std::string Player::get_username(){
-    return this->username;
-}
+
 
 void Player::remove_player(){
 
