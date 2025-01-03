@@ -14,7 +14,7 @@ bool Reversi::is_valid_move() const
 
 bool Reversi::is_space_free(int x, int y) const
 {
-    if ((this->game_board[x - 1][y - 1] != ' '))
+    if ((this->game_board[x][y] != ' '))
         return false;
 
     return true;
@@ -64,7 +64,7 @@ void Reversi::find_directions_that_make_moves_against_opponent(const std::array<
                     std::array<int, 2> direction = {adjacent_square[0] - move_coordinates[0], adjacent_square[1] - move_coordinates[1]};
 
                     if (is_there_player_piece_at_the_direction(player_piece_type, direction, adjacent_square)) {
-                        directions_to_capture_opponents.push_back(adjacent_square);
+                        directions_to_capture_opponents.push_back(direction);
                     } 
                 }
             }
