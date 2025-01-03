@@ -13,6 +13,7 @@ class Reversi : public Game {
         bool is_valid_move() const override;
         bool is_valid_move(std::array<int, 2>& move_coordinates, char player_piece_type, std::list<std::array<int, 2>>& squares_to_make_move);
         bool is_space_free(int x, int y) const;
+        bool is_move_inside_board(int x, int y) const override;
         bool is_there_player_piece_at_the_direction(const char player_piece, const std::array<int, 2>& direction, 
              std::array<int, 2> adjacent_square) const;
         void make_move() override;

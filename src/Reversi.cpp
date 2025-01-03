@@ -20,6 +20,13 @@ bool Reversi::is_space_free(int x, int y) const
     return true;
 }
 
+bool Reversi::is_move_inside_board(int x, int y) const
+{
+    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1))
+        return false;
+            
+    return true;
+}
 
 bool Reversi::is_there_player_piece_at_the_direction(const char player_piece, const std::array<int, 2>& direction, 
     std::array<int, 2> adjacent_square) const 
@@ -97,14 +104,14 @@ void Reversi::make_move()
     return;
 }
 
-void Reversi::make_move(int x, int y, char player_piece) {
-    if(!is_valid_move(x, y, player_piece)) 
-        return;
+// void Reversi::make_move(int x, int y, char player_piece) {
+//     if(!is_valid_move(x, y, player_piece)) 
+//         return;
     
-    x--;
-    y--;
+//     x--;
+//     y--;
 
-}
+// }
 
 void Reversi::check_win() const
 {
