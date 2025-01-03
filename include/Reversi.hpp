@@ -20,7 +20,7 @@ class Reversi : public Game {
         void flip_pieces(std::array<int, 2> directions, std::array<int, 2> move_coordinates, char player_piece);
         void make_move() override;
         void make_move(std::array<int, 2> move_coordinates, char player_piece, std::list<std::array<int, 2>>& directions_to_capture_opponents); 
-        virtual void check_win() const override; 
+        void check_win() const override; 
         void find_directions_that_make_moves_against_opponent(const std::array<int, 2>& move_coordinates, char player_piece_type, std::list<std::array<int, 2>>& squares_to_make_move);
         bool process_move(std::array<int, 2> move_coordinates, char player_piece_type);
 };

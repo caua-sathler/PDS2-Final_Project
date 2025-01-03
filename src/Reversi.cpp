@@ -151,9 +151,14 @@ void Reversi::make_move(std::array<int, 2> move_coordinates, char player_piece, 
         this->flip_pieces(direction, move_coordinates, player_piece);    
 }
 
-
-void Reversi::check_win() const
+// resolver esse BO
+char Reversi::check_win() const
 {
-    
+    if(num_pieces_player_O + num_pieces_player_X == 64) {
+        if(num_pieces_player_O > num_pieces_player_X) 
+            return 'O';
+        else 
+            return 'X';
+    }
 }
 
