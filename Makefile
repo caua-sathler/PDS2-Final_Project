@@ -5,7 +5,6 @@ BUILD_DIR = obj
 INCLUDE_DIR = include
 BIN_DIR = bin
 
-# Regra para criar diretórios
 $(shell mkdir -p $(BUILD_DIR) $(BIN_DIR))
 
 all: ${BIN_DIR}/main
