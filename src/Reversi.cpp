@@ -116,7 +116,8 @@ bool Reversi::process_move(std::array<int, 2> move_coordinates, char player_piec
 
 }
 
-void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move_coordinates, char player_piece) {
+void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move_coordinates, char player_piece) 
+{
     char opponent_piece = (player_piece == 'X') ? 'O' : 'X';
     int num_pieces_flipped = 0;
 
@@ -128,8 +129,12 @@ void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move
         current_square[1] += directions[1];
         num_pieces_flipped++;
     }
+    this->control_num_pieces_players(num_pieces_flipped, player_piece);
+}
 
-    if(player_piece == 'X') {
+void Reversi::control_num_pieces_players(int num_pieces_flipped, char player_piece) 
+{
+    if (player_piece == 'X') {
         this->num_pieces_player_X += num_pieces_flipped;
         this->num_pieces_player_O -= num_pieces_flipped;
     } else {
@@ -137,6 +142,7 @@ void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move
         this->num_pieces_player_O += num_pieces_flipped;
     }
 }
+
 
 void Reversi::make_move()
 {
