@@ -25,6 +25,7 @@ class Reversi : public Game {
         void make_move(std::array<int, 2> move_coordinates, char player_piece, std::list<std::array<int, 2>>& directions_to_capture_opponents); 
         bool is_there_any_valid_move_for_player(char player_piece);
         bool process_move(std::array<int, 2> move_coordinates, char player_piece_type);
+        char switch_players(char player_piece);
         void check_win() override;
         bool check_win(bool is_there_move_for_player, char opponent_piece);
 };
