@@ -194,13 +194,16 @@ bool Reversi::is_there_any_valid_move_for_player(char player_piece) {
     return false;
 }
 
-void Reversi::check_win() const
-{
-        if(num_pieces_player_O + num_pieces_player_X == 64) {
-        if(num_pieces_player_O > num_pieces_player_X) 
-            return 'O';
-        else 
-            return 'X';
-    }
+void Reversi::check_win() {
+    return;
 }
 
+
+bool Reversi::check_win(bool is_there_move_for_player, char opponent_piece) {
+    if(!is_there_move_for_player && !this->is_there_any_valid_move_for_player(opponent_piece))
+        return true;
+    else if(this->num_pieces_player_O + this->num_pieces_player_X == 64) 
+        return true;
+    else
+        return false;
+}

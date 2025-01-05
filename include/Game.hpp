@@ -14,7 +14,7 @@ class Game {
         virtual bool is_valid_move() const = 0;
         virtual bool is_move_inside_board(int x, int y) const;
         virtual void make_move() = 0;
-        virtual void check_win() const = 0;
+        virtual void check_win() = 0;
         ~Game();
 };
 
