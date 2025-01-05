@@ -15,12 +15,12 @@ int main() {
     reversi1.game_board[5][4]='O';
     reversi1.print_game_board();
 
-    reversi1.process_move({3,5},'X');
-    reversi1.process_move({3,2},'O');
-    reversi1.process_move({4,3},'O');
-    reversi1.process_move({5,6},'O');
-    reversi1.process_move({6,7},'O');
+    int x = 0, y = 0;
+    char peca= ' ';
 
-    reversi1.process_move({3,3},'O');
-    reversi1.process_move({4,6},'O');
+    while(x != -1 && y != -1) {
+        cin >> x >> y >> peca;
+        reversi1.process_move({x,y},peca);
+    }
+    
 }
