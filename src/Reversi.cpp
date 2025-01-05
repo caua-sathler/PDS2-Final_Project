@@ -181,16 +181,26 @@ void Reversi::make_move()
     return;
 }
 
-
+bool Reversi::is_there_any_valid_move_for_player(char player_piece) {
+    for(int i = 0; i < num_columns_and_rows_reversi; i++) {
+        for(int j = 0; j < num_columns_and_rows_reversi; j++) {
+            if(this->game_board[i][j] == ' ') {
+                std::array<int, 2> coordinates = {i, j};
+                if(this->is_valid_move(coordinates, player_piece))
+                    return true;
+            }
+        }
+    }
+    return false;
+}
 
 void Reversi::check_win() const
 {
-    std::cout<<"ola"<<std::endl;
-    // if(num_pieces_player_O + num_pieces_player_X == 64) {
-    //     if(num_pieces_player_O > num_pieces_player_X) 
-    //         return 'O';
-    //     else 
-    //         return 'X';
-    // }
+        if(num_pieces_player_O + num_pieces_player_X == 64) {
+        if(num_pieces_player_O > num_pieces_player_X) 
+            return 'O';
+        else 
+            return 'X';
+    }
 }
 
