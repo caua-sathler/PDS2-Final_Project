@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include <iostream>
+#include <string.h>
 #include <map>
 
 Player::Player(): Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
@@ -47,8 +48,6 @@ void Player::register_player(std::string name_received, std::string username_rec
     this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
 }
 
-
-
 void Player::remove_player(){
 
 }
@@ -58,4 +57,24 @@ void Player::print_player(){
     std::cout << "REVERSI" << "\t" << "- V: " << this->num_win.find("Reversi")->second << " D: " << this->num_loss.find("Reversi")->second << std::endl;
     std::cout << "LIG4" << "\t" << "- V: " << this->num_win.find("Lig4")->second << " D: " << this->num_loss.find("Lig4")->second << std::endl;
     std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
+}
+
+bool Player::compare_username(Player &player1,Player &player2){
+    for (unsigned int i = 0; (i < player1.get_username().size()) && (i < player2.get_username().size()); i++){
+        if (tolower(player1.get_username()[i]) < tolower(player2.get_username()[i]))
+            return true;
+        else if (tolower(player1.get_username()[i]) > tolower(player2.get_username()[i]))
+            return false;
+    }
+    return player1.get_username().size() < player2.get_username().size();
+}
+
+bool Player::compare_name(Player &player1,Player &player2){
+    for (unsigned int i = 0; (i < player1.get_name().size()) && (i < player2.get_name().size()); i++){
+        if (tolower(player1.get_name()[i]) < tolower(player2.get_name()[i]))
+            return true;
+        else if (tolower(player1.get_name()[i]) > tolower(player2.get_name()[i]))
+            return false;
+    }
+    return player1.get_name().size() < player2.get_name().size();
 }

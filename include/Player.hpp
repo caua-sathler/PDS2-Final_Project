@@ -27,6 +27,9 @@ class Player {
         void register_player(std::string name_received, std::string username_received);
         void remove_player();
         void print_player();
+
+        static bool compare_username(Player &player1, Player &player2);
+        static bool compare_name (Player &player1, Player &player2);
 };
 
 #endif
