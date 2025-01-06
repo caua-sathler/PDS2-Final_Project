@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include <bits/stdc++.h>
 #include <map>
 #include <list>
@@ -42,10 +43,19 @@ int main() {
 
     std::string command;
     std::string name_in, username_in;
-    char extra_space;
+    char extra_space, sort_command;
     bool error = false;
     while(std::cin >> command){
         if (command == "LJ"){
+            std::cin >> sort_command;
+            if (sort_command == 'A'){
+                player_list.sort(Player::compare_username);
+            } else if (sort_command == 'N'){
+                player_list.sort(Player::compare_name);
+            } else {
+                std::cout << "Erro: comando inexistente" << std::endl;
+                continue;
+            }
             std::list<Player>::iterator it;
             for (it = player_list.begin(); it != player_list.end(); it++){
                 it->print_player();
