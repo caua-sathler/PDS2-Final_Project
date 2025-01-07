@@ -28,8 +28,8 @@ int main() {
 
         std::string key_in, num_win_in, num_loss_in;
         for (int j = 2; j < 5; j++){
-            std::stringstream ss(file_line[j]);
-            ss >> key_in >> num_win_in >> num_loss_in;
+            std::stringstream file_stream(file_line[j]);
+            file_stream >> key_in >> num_win_in >> num_loss_in;
             player_in.set_num_win(key_in, stoi(num_win_in));
             player_in.set_num_loss(key_in, stoi(num_loss_in));
         }
@@ -42,9 +42,10 @@ int main() {
     file_in.close();
 
     std::string command;
-    std::string name_in, username_in;
+    std::string name_in, username_in, line_in;
     char extra_space, sort_command;
     bool error = false;
+
     while(std::cin >> command){
         if (command == "LJ"){
             std::cin >> sort_command;
@@ -64,14 +65,21 @@ int main() {
 
         } else if (command == "CJ"){
             error = false;
-            std::cin >> username_in;
-            extra_space = std::getchar();
-            std::getline(std::cin, name_in);
+            std::getline(std::cin, line_in);
+            std::stringstream stream_in(line_in);
+            stream_in >> username_in;
+            extra_space = stream_in.get();
+            std::getline(stream_in, name_in);
+            if (name_in == ""){
+                std::cout << "ERRO: dados incorretos" << std::endl;
+                continue;
+            }
             std::list<Player>::iterator it;
             for (it = player_list.begin(); it != player_list.end(); it++){
                 if (it->get_username() == username_in){
                     std::cout << "ERRO: jogador repetido" << std::endl;
                     error = true;
+                    continue;
                 }
             }
             if (error == false){
