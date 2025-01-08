@@ -80,9 +80,8 @@ int main() {
                 }
             }
             if (error == false){
-                player_in.register_player(name_in, username_in);
-                player_list.push_back(player_in);
-                std::cout << "Jogador " << username_in << " cadastrado com sucesso" << std::endl;
+                Player new_player(name_in, username_in);
+                new_player.register_player(player_list);
                 continue;
             }
 

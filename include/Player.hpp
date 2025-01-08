@@ -14,6 +14,7 @@ class Player {
 
     public:
         Player();
+        Player(std::string name_received, std::string username_received);
         Player(std::string name_received, std::string username_received, std::map<std::string, int> num_win_received, std::map<std::string, int> num_loss_received);
 
         void set_name(std::string name_received);
@@ -25,10 +26,9 @@ class Player {
         std::map<std::string, int> get_num_win();
         std::map<std::string, int> get_num_loss();
         
-        void register_player(std::string name_received, std::string username_received);
-        static void remove_player(std::string username_received, std::list<Player> &player_list);
+        void register_player(std::list<Player> &player_list);
         void print_player();
-
+        static void remove_player(std::string username_received, std::list<Player> &player_list);
         static bool compare_username(Player &player1, Player &player2);
         static bool compare_name (Player &player1, Player &player2);
 };

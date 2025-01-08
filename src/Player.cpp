@@ -1,7 +1,11 @@
 #include "Player.hpp"
 #include <string.h>
 
-Player::Player(): Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
+Player::Player(): 
+    Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
+
+Player::Player(std::string name_received, std::string username_received): 
+    Player(name_received, username_received, {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
 
 Player::Player(std::string name_received, std::string username_received, std::map<std::string, int> num_win_received, std::map<std::string, int> num_loss_received):
    name(name_received), username(username_received), num_win(num_win_received), num_loss(num_loss_received) {};
@@ -39,11 +43,10 @@ std::map<std::string, int> Player::get_num_loss(){
 }
 
 
-void Player::register_player(std::string name_received, std::string username_received){
-    this->name = name_received;
-    this->username = username_received;
-    this->num_win = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
-    this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
+void Player::register_player(std::list<Player> &player_list){
+    player_list.push_back(*this);
+    std::cout << "Jogador " << this->username << " cadastrado com sucesso" << std::endl;
+    return;
 }
 
 void Player::remove_player(std::string username_received, std::list<Player> &player_list){
