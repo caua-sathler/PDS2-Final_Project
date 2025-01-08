@@ -49,17 +49,15 @@ void Player::register_player(std::list<Player> &player_list){
     return;
 }
 
-void Player::remove_player(std::string username_received, std::list<Player> &player_list){
+bool Player::remove_player(std::string username_received, std::list<Player> &player_list){
     std::list<Player>::iterator it;
     for (it = player_list.begin(); it != player_list.end(); it++){
         if (it->get_username() == username_received){
             it = player_list.erase(it);
-            std::cout << "Jogador " << username_received << " removido com sucesso" << std::endl;
-            return;
+            return true;
         }
     }
-    std::cout << "ERRO: jogador inexistente" << std::endl;
-    return;
+    return false;
 }
 
 void Player::print_player(){

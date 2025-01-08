@@ -87,8 +87,10 @@ int main() {
 
         } else if (command == "RJ"){
             std::cin >> username_in;
-            std::list<Player>::iterator it;
-            Player::remove_player(username_in, player_list);
+            if (Player::remove_player(username_in, player_list) == true)
+                std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
+            else 
+                std::cout << "ERRO: jogador inexistente" << std::endl;
             continue;
         } else if (command == "FS"){
             break;
