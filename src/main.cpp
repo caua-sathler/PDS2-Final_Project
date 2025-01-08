@@ -1,11 +1,8 @@
 #include "Game.hpp"
 #include "Player.hpp"
-#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <bits/stdc++.h>
-#include <map>
-#include <list>
 
 int main() {
     std::ifstream file_in;
@@ -90,21 +87,10 @@ int main() {
             }
 
         } else if (command == "RJ"){
-            error = true;
             std::cin >> username_in;
             std::list<Player>::iterator it;
-            for (it = player_list.begin(); it != player_list.end(); it++){
-                if (it->get_username() == username_in){
-                    it = player_list.erase(it);
-                    std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
-                    error = false;
-                }
-            }
-            if (error == true){
-                std::cout << "ERRO: jogador inexistente" << std::endl;
-            }
+            Player::remove_player(username_in, player_list);
             continue;
-
         } else if (command == "FS"){
             break;
             

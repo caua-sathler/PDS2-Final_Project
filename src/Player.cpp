@@ -1,7 +1,5 @@
 #include "Player.hpp"
-#include <iostream>
 #include <string.h>
-#include <map>
 
 Player::Player(): Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
 
@@ -48,8 +46,17 @@ void Player::register_player(std::string name_received, std::string username_rec
     this->num_loss = {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}};
 }
 
-void Player::remove_player(){
-
+void Player::remove_player(std::string username_received, std::list<Player> &player_list){
+    std::list<Player>::iterator it;
+    for (it = player_list.begin(); it != player_list.end(); it++){
+        if (it->get_username() == username_received){
+            it = player_list.erase(it);
+            std::cout << "Jogador " << username_received << " removido com sucesso" << std::endl;
+            return;
+        }
+    }
+    std::cout << "ERRO: jogador inexistente" << std::endl;
+    return;
 }
 
 void Player::print_player(){

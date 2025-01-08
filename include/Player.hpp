@@ -3,6 +3,7 @@
 
 #include <iostream> 
 #include <map>
+#include <list>
 
 class Player {
     private:
@@ -25,7 +26,7 @@ class Player {
         std::map<std::string, int> get_num_loss();
         
         void register_player(std::string name_received, std::string username_received);
-        void remove_player();
+        static void remove_player(std::string username_received, std::list<Player> &player_list);
         void print_player();
 
         static bool compare_username(Player &player1, Player &player2);
