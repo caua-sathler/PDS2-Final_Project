@@ -42,6 +42,22 @@ std::map<std::string, int> Player::get_num_loss(){
     return this->num_loss;
 }
 
+void Player::add_win(std::string key){
+    std::map<std::string, int>::iterator it = this->num_win.find(key);
+    this->num_win.insert_or_assign(key, it->second + 1);
+}
+
+void Player::add_loss(std::string key){
+    std::map<std::string, int>::iterator it = this->num_loss.find(key);
+    this->num_loss.insert_or_assign(key, it->second + 1);
+}
+
+void Player::print_player(){
+    std::cout << this->username << " " << this->name << std::endl;
+    std::cout << "REVERSI" << "\t" << "- V: " << this->num_win.find("Reversi")->second << " D: " << this->num_loss.find("Reversi")->second << std::endl;
+    std::cout << "LIG4" << "\t" << "- V: " << this->num_win.find("Lig4")->second << " D: " << this->num_loss.find("Lig4")->second << std::endl;
+    std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
+}
 
 void Player::register_player(std::list<Player> &player_list){
     player_list.push_back(*this);
@@ -58,13 +74,6 @@ bool Player::remove_player(std::string username_received, std::list<Player> &pla
         }
     }
     return false;
-}
-
-void Player::print_player(){
-    std::cout << this->username << " " << this->name << std::endl;
-    std::cout << "REVERSI" << "\t" << "- V: " << this->num_win.find("Reversi")->second << " D: " << this->num_loss.find("Reversi")->second << std::endl;
-    std::cout << "LIG4" << "\t" << "- V: " << this->num_win.find("Lig4")->second << " D: " << this->num_loss.find("Lig4")->second << std::endl;
-    std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
 }
 
 bool Player::compare_username(Player &player1,Player &player2){
