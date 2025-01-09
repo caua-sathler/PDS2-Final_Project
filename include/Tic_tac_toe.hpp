@@ -13,10 +13,11 @@ class tic_tac_toe : public Game {
         void make_move() override;
         void make_move(int x, int y);
         bool is_valid_move() const override;
-        bool is_valid_move(bool& win);
+        bool is_valid_move(int& x, int& y);
         void check_win() const override;
-        void check_win(bool& win);
+        char check_win(bool& win);
         void switch_players();
+        bool is_space_free(int& x, int& y) const;
         ~tic_tac_toe();
 };
 
