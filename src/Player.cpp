@@ -19,11 +19,19 @@ void Player::set_username(std::string username_received){
 }
 
 void Player::set_num_win(std::string key, int value){
-    this->num_win.insert_or_assign(key, value);
+    std::map<std::string, int>::iterator it = this->num_win.find(key);
+    if (it == this->num_win.end())
+        this->num_win.insert({key, value});
+    else
+        it->second = value;
 }
 
 void Player::set_num_loss(std::string key, int value){
-    this->num_loss.insert_or_assign(key,value);
+    std::map<std::string, int>::iterator it = this->num_loss.find(key);
+    if (it == this->num_loss.end())
+        this->num_loss.insert({key, value});
+    else
+        it->second = value;
 }
 
 std::string Player::get_username(){
@@ -44,12 +52,14 @@ std::map<std::string, int> Player::get_num_loss(){
 
 void Player::add_win(std::string key){
     std::map<std::string, int>::iterator it = this->num_win.find(key);
-    this->num_win.insert_or_assign(key, it->second + 1);
+    if (it != this->num_win.end())
+        it->second++;
 }
 
 void Player::add_loss(std::string key){
     std::map<std::string, int>::iterator it = this->num_loss.find(key);
-    this->num_loss.insert_or_assign(key, it->second + 1);
+    if (it != this->num_loss.end())
+        it->second++;
 }
 
 void Player::print_player(){
