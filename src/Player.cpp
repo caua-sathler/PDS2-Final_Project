@@ -59,10 +59,15 @@ void Player::print_player(){
     std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
 }
 
-void Player::register_player(std::list<Player> &player_list){
-    player_list.push_back(*this);
-    std::cout << "Jogador " << this->username << " cadastrado com sucesso" << std::endl;
-    return;
+bool Player::register_player(Player player_received,std::list<Player> &player_list){
+    std::list<Player>::iterator it;
+    for (it = player_list.begin(); it != player_list.end(); it++){
+        if (it->get_username() == player_received.get_username()){
+            return false;
+        }
+    }
+    player_list.push_back(player_received);
+    return true;
 }
 
 bool Player::remove_player(std::string username_received, std::list<Player> &player_list){

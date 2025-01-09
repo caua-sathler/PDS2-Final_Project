@@ -46,11 +46,11 @@ int main() {
     while(std::cin >> command){
         if (command == "LJ"){
             std::cin >> sort_command;
-            if (sort_command == 'A'){
+            if (sort_command == 'A')
                 player_list.sort(Player::compare_username);
-            } else if (sort_command == 'N'){
+            else if (sort_command == 'N')
                 player_list.sort(Player::compare_name);
-            } else {
+            else {
                 std::cout << "Erro: comando inexistente" << std::endl;
                 continue;
             }
@@ -61,7 +61,6 @@ int main() {
             continue;
 
         } else if (command == "CJ"){
-            error = false;
             std::getline(std::cin, line_in);
             std::stringstream stream_in(line_in);
             stream_in >> username_in;
@@ -71,20 +70,13 @@ int main() {
                 std::cout << "ERRO: dados incorretos" << std::endl;
                 continue;
             }
-            std::list<Player>::iterator it;
-            for (it = player_list.begin(); it != player_list.end(); it++){
-                if (it->get_username() == username_in){
-                    std::cout << "ERRO: jogador repetido" << std::endl;
-                    error = true;
-                    continue;
-                }
-            }
-            if (error == false){
-                Player new_player(name_in, username_in);
-                new_player.register_player(player_list);
-                continue;
-            }
-
+            Player new_player(name_in, username_in);
+            if (Player::register_player(new_player, player_list) == true)
+                std::cout << "Jogador " << new_player.get_username() << " cadastrado com sucesso" << std::endl;
+            else   
+                std::cout << "ERRO: jogador repetido" << std::endl;
+            continue;
+            
         } else if (command == "RJ"){
             std::cin >> username_in;
             if (Player::remove_player(username_in, player_list) == true)
@@ -92,9 +84,10 @@ int main() {
             else 
                 std::cout << "ERRO: jogador inexistente" << std::endl;
             continue;
+
         } else if (command == "FS"){
             break;
-            
+
         } else {
             if (error == false){
                 std::cout << "ERRO: comando inexistente" << std::endl;

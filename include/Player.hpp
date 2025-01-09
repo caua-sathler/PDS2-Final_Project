@@ -26,10 +26,10 @@ class Player {
         std::map<std::string, int> get_num_win();
         std::map<std::string, int> get_num_loss();
         
-        void register_player(std::list<Player> &player_list);
         void print_player();
         void add_win(std::string key);
         void add_loss(std::string key);
+        static bool register_player(Player player_received, std::list<Player> &player_list);
         static bool remove_player(std::string username_received, std::list<Player> &player_list);
         static bool compare_username(Player &player1, Player &player2);
         static bool compare_name (Player &player1, Player &player2);
