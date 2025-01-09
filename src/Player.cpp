@@ -1,5 +1,7 @@
 #include "Player.hpp"
 #include <string.h>
+#include <bits/stdc++.h>
+
 
 Player::Player(): 
     Player("", "", {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}} , {{"Reversi", 0}, {"Lig4", 0}, {"Velha", 0}}) {};
@@ -109,4 +111,28 @@ bool Player::compare_name(Player &player1,Player &player2){
             return false;
     }
     return player1.get_name().size() < player2.get_name().size();
+}
+
+void read_register_file(std::list<Player> &player_list, std::ifstream &file_in) {
+    std::string file_line[5];
+    Player player_in;
+    int i = 0;
+    while (getline(file_in,file_line[i])) {
+        i++;
+        if (i == 5) { 
+        player_in.set_username(file_line[0]);
+        player_in.set_name(file_line[1]);
+
+        std::string key_in, num_win_in, num_loss_in;
+        for (int j = 2; j < 5; j++){
+            std::stringstream file_stream(file_line[j]);
+            file_stream >> key_in >> num_win_in >> num_loss_in;
+            player_in.set_num_win(key_in, stoi(num_win_in));
+            player_in.set_num_loss(key_in, stoi(num_loss_in));
+        }
+        
+        player_list.push_back(player_in);
+        i = 0;
+        }
+    }
 }

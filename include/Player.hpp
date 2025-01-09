@@ -35,4 +35,6 @@ class Player {
         static bool compare_name (Player &player1, Player &player2);
 };
 
+void read_register_file(std::list<Player> &player_list, std::ifstream &file_in);
+
 #endif

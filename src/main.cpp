@@ -12,29 +12,8 @@ int main() {
         return 1;
     }
 
-    std::string file_line[5];
     std::list<Player> player_list;
-    Player player_in;
-    
-    int i = 0;
-    while (getline(file_in,file_line[i]) ) {
-        i++;
-        if (i == 5) { 
-        player_in.set_username(file_line[0]);
-        player_in.set_name(file_line[1]);
-
-        std::string key_in, num_win_in, num_loss_in;
-        for (int j = 2; j < 5; j++){
-            std::stringstream file_stream(file_line[j]);
-            file_stream >> key_in >> num_win_in >> num_loss_in;
-            player_in.set_num_win(key_in, stoi(num_win_in));
-            player_in.set_num_loss(key_in, stoi(num_loss_in));
-        }
-        
-        player_list.push_back(player_in);
-        i = 0;
-        }
-    }
+    read_register_file(player_list, file_in);
 
     file_in.close();
 
