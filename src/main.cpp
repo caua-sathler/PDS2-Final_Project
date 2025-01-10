@@ -83,14 +83,7 @@ int main() {
         return 1;
     }
 
-    std::list<Player>::iterator it;
-    for (it = player_list.begin(); it != player_list.end(); it++){
-        file_out << it->get_username() << std::endl;
-        file_out << it->get_name() << std::endl;
-        file_out << "Reversi" << " " << it->get_num_win().find("Reversi")->second << " " << it->get_num_loss().find("Reversi")->second << std::endl;
-        file_out << "Lig4" << " " << it->get_num_win().find("Lig4")->second << " " << it->get_num_loss().find("Lig4")->second << std::endl;
-        file_out << "Velha" << " " << it->get_num_win().find("Velha")->second << " " << it->get_num_loss().find("Velha")->second << std::endl;
-    }
+    write_register_file(player_list, file_out);
 
     file_out.close();
 }

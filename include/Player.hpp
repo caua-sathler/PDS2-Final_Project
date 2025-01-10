@@ -36,5 +36,6 @@ class Player {
 };
 
 void read_register_file(std::list<Player> &player_list, std::ifstream &file_in);
+void write_register_file(std::list<Player> &player_list, std::ofstream &file_out);
 
 #endif
