@@ -18,19 +18,19 @@ int main() {
     file_in.close();
 
     std::string command;
-    std::string name_in, username_in, line_in;
-    char extra_space, sort_command;
+    std::string name_in, username_in;
     bool error = false;
 
     while(std::cin >> command){
         if (command == "LJ"){
+            char sort_command;
             std::cin >> sort_command;
             if (sort_command == 'A')
                 player_list.sort(Player::compare_username);
             else if (sort_command == 'N')
                 player_list.sort(Player::compare_name);
             else {
-                std::cout << "Erro: comando inexistente" << std::endl;
+                std::cout << "ERRO: comando inexistente" << std::endl;
                 continue;
             }
             std::list<Player>::iterator it;
@@ -40,10 +40,11 @@ int main() {
             continue;
 
         } else if (command == "CJ"){
+            std::string line_in;
             std::getline(std::cin, line_in);
             std::stringstream stream_in(line_in);
             stream_in >> username_in;
-            extra_space = stream_in.get();
+            stream_in.ignore();
             std::getline(stream_in, name_in);
             if (name_in == ""){
                 std::cout << "ERRO: dados incorretos" << std::endl;

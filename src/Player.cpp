@@ -71,7 +71,7 @@ void Player::print_player(){
     std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
 }
 
-bool Player::register_player(Player player_received,std::list<Player> &player_list){
+bool Player::register_player(Player player_received, std::list<Player> &player_list){
     std::list<Player>::iterator it;
     for (it = player_list.begin(); it != player_list.end(); it++){
         if (it->get_username() == player_received.get_username()){
@@ -93,7 +93,7 @@ bool Player::remove_player(std::string username_received, std::list<Player> &pla
     return false;
 }
 
-bool Player::compare_username(Player &player1,Player &player2){
+bool Player::compare_username(Player &player1, Player &player2){
     for (unsigned int i = 0; (i < player1.get_username().size()) && (i < player2.get_username().size()); i++){
         if (tolower(player1.get_username()[i]) < tolower(player2.get_username()[i]))
             return true;
@@ -103,7 +103,7 @@ bool Player::compare_username(Player &player1,Player &player2){
     return player1.get_username().size() < player2.get_username().size();
 }
 
-bool Player::compare_name(Player &player1,Player &player2){
+bool Player::compare_name(Player &player1, Player &player2){
     for (unsigned int i = 0; (i < player1.get_name().size()) && (i < player2.get_name().size()); i++){
         if (tolower(player1.get_name()[i]) < tolower(player2.get_name()[i]))
             return true;
@@ -117,12 +117,11 @@ void read_register_file(std::list<Player> &player_list, std::ifstream &file_in) 
     std::string file_line[5];
     Player player_in;
     int i = 0;
-    while (getline(file_in,file_line[i])) {
+    while (getline(file_in, file_line[i])) {
         i++;
         if (i == 5) { 
         player_in.set_username(file_line[0]);
         player_in.set_name(file_line[1]);
-
         std::string key_in, num_win_in, num_loss_in;
         for (int j = 2; j < 5; j++){
             std::stringstream file_stream(file_line[j]);
@@ -130,7 +129,6 @@ void read_register_file(std::list<Player> &player_list, std::ifstream &file_in) 
             player_in.set_num_win(key_in, stoi(num_win_in));
             player_in.set_num_loss(key_in, stoi(num_loss_in));
         }
-        
         player_list.push_back(player_in);
         i = 0;
         }
