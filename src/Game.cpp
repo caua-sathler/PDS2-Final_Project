@@ -24,7 +24,8 @@ Game::~Game() {
 }
 
 bool Game::is_move_inside_board(int x, int y) const {
-     if ((x <= 0 || x > this->num_rows) || (y <= 0 || y > this->num_columns))
+     if ((x <= 0 || x > this->num_rows)
+     || (y <= 0 || y > this->num_columns))
             return false;
             
     return true;
@@ -39,4 +40,12 @@ void Game::print_game_board() const {
         }
         std::cout << std::endl;
     }
+}
+
+char Game::switch_players(char current_player) {
+    if(current_player == 'X')
+        current_player = 'O';
+    else 
+        current_player = 'X';
+return current_player;
 }
