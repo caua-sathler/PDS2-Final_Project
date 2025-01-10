@@ -237,13 +237,6 @@ bool Reversi::is_there_valid_move_for_player(char player_piece)
 }
 
 
-char Reversi::switch_players(char player_piece) 
-{
-    char opponent_piece = (player_piece == 'X') ? 'O' : 'X';
-    return opponent_piece;
-}
-
-
 void Reversi::check_win() 
 {
     return;
