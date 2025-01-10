@@ -43,9 +43,6 @@ void Game::print_game_board() const {
 }
 
 char Game::switch_players(char current_player) {
-    if(current_player == 'X')
-        current_player = 'O';
-    else 
-        current_player = 'X';
-return current_player;
+    char opponent_player = (current_player == 'X') ? 'O' : 'X';
+return opponent_player;
 }
