@@ -6,6 +6,7 @@
 class tic_tac_toe : public Game {
     protected:
         char current_player;
+        char winner;
 
     public:
         tic_tac_toe();

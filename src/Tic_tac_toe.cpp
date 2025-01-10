@@ -10,16 +10,13 @@ tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), curr
 bool tic_tac_toe::is_space_free(int& x, int& y) const {
 
     if (!is_move_inside_board(x, y)) {
-        std::cout << "Jogada fora do tabuleiro\n";
         return false;
     }
 
     if (game_board[x][y] == ' ') {
-        std::cout << "Espaço livre\n";
         return true;
     }
 
-    std::cout << "Espaço ocupado\n";
     return false;
 }
 
@@ -29,33 +26,35 @@ bool tic_tac_toe::is_valid_move(int& x, int& y) {
 
 bool tic_tac_toe::is_move_inside_board(int x, int y) const {
     if (x >= 0 && x < num_rows && y >= 0 && y < num_columns && game_board[x][y] == ' ') {
-        std::cout << "Jogada dentro do tabuleiro" << std::endl;
         return true; 
     }
-    std::cout << "Jogada fora do tabuleiro\n";
+
     return false; 
 }
 
 void tic_tac_toe::make_move(int x, int y) {
-    x -= 1;
-    y -= 1;
-
-    bool win = false;
-    if (check_win(win) != 'F') {
-        std::cout<< "Fim do jogo\n";
+  
+    static bool win = false;
+    if (win) {
         return;
     }
+
+    x -= 1;
+    y -= 1;
 
 
     if (is_valid_move(x, y)) {
         game_board[x][y] = current_player; 
         Game::print_game_board();
-        switch_players();
-    }
-
-    else
-        std::cout << "Jogada invalida, tente novamente\n";
-    }
+    
+     if (check_win(win) != 'F') {
+            winner = current_player;
+        } 
+        
+        else 
+            switch_players();
+}
+}
 
 
 void tic_tac_toe::switch_players() {
