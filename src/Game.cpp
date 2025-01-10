@@ -41,3 +41,11 @@ void Game::print_game_board() const {
         std::cout << std::endl;
     }
 }
+
+char Game::switch_players(char current_player) {
+    if(current_player == 'X')
+        current_player = 'O';
+    else 
+        current_player = 'X';
+return current_player;
+}
