@@ -18,6 +18,7 @@ class tic_tac_toe : public Game {
         char check_win(bool& win);
         void switch_players();
         bool is_space_free(int& x, int& y) const;
+        char get_current_player() const;
         ~tic_tac_toe();
 };
 

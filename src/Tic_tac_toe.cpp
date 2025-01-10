@@ -7,31 +7,24 @@ const int num_columns_received = 3;
 tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X') {
 }
 
-bool tic_tac_toe::is_space_free(int& x, int& y) const{
-    if (game_board[x][y] == ' ') {
-        std::cout << "Espaço livre" << std::endl;
-        return true;
-    }
+bool tic_tac_toe::is_space_free(int& x, int& y) const {
 
-    else if(game_board[x][y] != current_player && game_board[x][y] != ' ') {
-        std::cout << "Espaço ocupado" << std::endl;
+    if (!is_move_inside_board(x, y)) {
+        std::cout << "Jogada fora do tabuleiro\n";
         return false;
     }
 
-return false;
+    if (game_board[x][y] == ' ') {
+        std::cout << "Espaço livre\n";
+        return true;
+    }
+
+    std::cout << "Espaço ocupado\n";
+    return false;
 }
 
 bool tic_tac_toe::is_valid_move(int& x, int& y) {
-
-    bool valid_move = true;
-
-    if(is_space_free(x, y) && is_move_inside_board(x, y)) {
-        std::cout << "Jogada valida" << std::endl;
-        return valid_move;
-    }
-    
-std::cout << "Jogada invalida!" << std::endl;
-return !valid_move;
+    return is_move_inside_board(x, y) && is_space_free(x, y);
 }
 
 bool tic_tac_toe::is_move_inside_board(int x, int y) const {
@@ -39,26 +32,29 @@ bool tic_tac_toe::is_move_inside_board(int x, int y) const {
         std::cout << "Jogada dentro do tabuleiro" << std::endl;
         return true; 
     }
-
-    else {
-        std::cout << "Jogada fora do tabuleiro\n";
-        return false; 
-    }
+    std::cout << "Jogada fora do tabuleiro\n";
+    return false; 
 }
 
 void tic_tac_toe::make_move(int x, int y) {
     x -= 1;
     y -= 1;
 
+    bool win = false;
+    if (check_win(win) != 'F') {
+        std::cout<< "Fim do jogo\n";
+        return;
+    }
+
+
     if (is_valid_move(x, y)) {
         game_board[x][y] = current_player; 
         Game::print_game_board();
+        switch_players();
     }
 
     else
-        return;
-    
-        switch_players();
+        std::cout << "Jogada invalida, tente novamente\n";
     }
 
 
@@ -71,24 +67,27 @@ void tic_tac_toe::switch_players() {
 }
 
 char tic_tac_toe::check_win(bool& win) {
-    for (int i = 0; i < 3; ++i) { 
-        if ((game_board[i][0] == current_player && game_board[i][1] == current_player && game_board[i][2] == current_player) || 
+    for (int i = 0; i < 3; ++i) {
+        if ((game_board[i][0] == current_player && game_board[i][1] == current_player && game_board[i][2] == current_player) ||
             (game_board[0][i] == current_player && game_board[1][i] == current_player && game_board[2][i] == current_player)) {
-            std::cout << "Jogador " << current_player << " venceu!\n";
             win = true;
             return current_player;
         }
     }
 
-     if ((game_board[0][0] == current_player && game_board[1][1] == current_player && game_board[2][2] == current_player) || 
+    if ((game_board[0][0] == current_player && game_board[1][1] == current_player && game_board[2][2] == current_player) ||
         (game_board[0][2] == current_player && game_board[1][1] == current_player && game_board[2][0] == current_player)) {
-        std::cout << "Jogador " << current_player << " venceu!\n";
         win = true;
         return current_player;
     }
 
-return 'F';
+    return 'F'; 
 }
+
+char tic_tac_toe::get_current_player() const {
+    return current_player;
+}
+
 
 bool tic_tac_toe::is_valid_move() const {
     return true;
