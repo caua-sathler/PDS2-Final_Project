@@ -4,60 +4,48 @@
 #include "array"
 const int num_columns_and_rows_reversi = 8;
 
-void Reversi::start_reversi_board() 
+void Reversi::start_reversi_board()
 {
-    this->game_board[3][3] = 'X';
-    this->game_board[4][4] = 'X';
-    this->game_board[3][4] = 'O';
-    this->game_board[4][3] = 'O';
+    this->game_board.modify_space(3, 3) = 'X';
+    this->game_board.modify_space(4, 4) = 'X';
+    this->game_board.modify_space(3, 4) = 'O';
+    this->game_board.modify_space(4, 3) = 'O';
 }
 
 
-Reversi::Reversi() : Game(num_columns_and_rows_reversi, num_columns_and_rows_reversi) 
+void Reversi::print_reversi_board() const 
+{
+    game_board.print_game_board();
+}
+
+
+Reversi::Reversi() : Game(num_columns_and_rows_reversi, num_columns_and_rows_reversi)
 {
     this->start_reversi_board();
     this->num_pieces_player_X = 2;
     this->num_pieces_player_O = 2;
 };
 
-
-bool Reversi::is_valid_move() const
+bool Reversi::is_space_free_reversi(int x, int y) const
 {
-    return true;
-}
-
-
-bool Reversi::is_space_free(int x, int y) const
-{
-    if ((this->game_board[x][y] == ' ' || this->game_board[x][y] == '*'))
+    if (this->game_board.is_space_free(x, y) || this->game_board.access_space(x, y) == '*')
         return true;
-
     return false;
 }
 
-
-bool Reversi::is_move_inside_board(int x, int y) const
+bool Reversi::is_there_player_piece_at_the_direction(const char player_piece,
+    const std::array<int, 2>& direction, std::array<int, 2> adjacent_square) const
 {
-    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1))
-        return false;
-            
-    return true;
-}
+    std::array<int, 2> current_square = { adjacent_square[0] + direction[0],
+    adjacent_square[1] + direction[1] };
 
-
-bool Reversi::is_there_player_piece_at_the_direction(const char player_piece, 
-    const std::array<int, 2>& direction, std::array<int, 2> adjacent_square) const 
-{
-    std::array<int, 2> current_square = {adjacent_square[0] + direction[0], 
-    adjacent_square[1] + direction[1]};
-
-    while (this->is_move_inside_board(current_square[0], current_square[1])) 
+    while (game_board.is_move_inside_board(current_square[0], current_square[1]))
     {
-        if (this->game_board[current_square[0]][current_square[1]] == player_piece) 
+        if (this->game_board.access_space(current_square[0], current_square[1]) == player_piece)
             return true;
-        else if (this->game_board[current_square[0]][current_square[1]] == ' ' || this->game_board[current_square[0]][current_square[1]] == '*')
+        else if (this->game_board.access_space(current_square[0], current_square[1]) == ' ' || this->game_board.access_space(current_square[0], current_square[1]) == '*')
             return false;
-            
+
         current_square[0] += direction[0];
         current_square[1] += direction[1];
     }
@@ -65,29 +53,28 @@ bool Reversi::is_there_player_piece_at_the_direction(const char player_piece,
 }
 
 
-bool Reversi::is_there_direction_that_captures_opponent(const std::array<int, 2> 
-    &move_coordinates, char player_piece_type) 
+bool Reversi::is_there_direction_that_captures_opponent(const std::array<int, 2>
+    & move_coordinates, char player_piece_type)
 {
-    char other_player_piece_type = (player_piece_type == 'X') ? 'O' : 'X';
+    char opponent_player = switch_players(player_piece_type);
 
-    std::array<int, 2> adjacent_square = {0, 0};
+    std::array<int, 2> adjacent_square = { 0, 0 };
 
-    for (int i = 1; i > -2; i--){
-        for (int j = 1; j > -2; j--){
+    for (int i = 1; i > -2; i--) {
+        for (int j = 1; j > -2; j--) {
             if (j != 0 || i != 0) {
                 adjacent_square[0] = move_coordinates[0] + i;
                 adjacent_square[1] = move_coordinates[1] + j;
 
-                if (this->is_move_inside_board(adjacent_square[0], adjacent_square[1]) && 
-                    this->game_board[adjacent_square[0]]
-                    [adjacent_square[1]] == other_player_piece_type) {
+                if (this->game_board.is_move_inside_board(adjacent_square[0], adjacent_square[1]) &&
+                    this->game_board.access_space(adjacent_square[0], adjacent_square[1]) == opponent_player) {
 
-                    std::array<int, 2> direction = {i , j};
+                    std::array<int, 2> direction = { i , j };
 
-                    if (is_there_player_piece_at_the_direction(player_piece_type, 
-                    direction, adjacent_square)) {
+                    if (is_there_player_piece_at_the_direction(player_piece_type,
+                        direction, adjacent_square)) {
                         return true;
-                    } 
+                    }
                 }
             }
         }
@@ -96,65 +83,70 @@ bool Reversi::is_there_direction_that_captures_opponent(const std::array<int, 2>
 }
 
 
+bool Reversi::is_valid_move() const 
+{
+    return false;
+}
+
+
 bool Reversi::is_valid_move(std::array<int, 2>& move_coordinates, char player_piece_type)
 {
 
-    if (!this->is_move_inside_board(move_coordinates[0], move_coordinates[1]))
+    if (!this->game_board.is_move_inside_board(move_coordinates[0], move_coordinates[1]))
         return false;
 
-    if (!this->is_space_free(move_coordinates[0], move_coordinates[1]))
+    if (!this->is_space_free_reversi(move_coordinates[0], move_coordinates[1]))
         return false;
 
     if (!this->is_there_direction_that_captures_opponent(move_coordinates, player_piece_type)) {
         return false;
     }
-    
+
     return true;
 
 }
 
 
-void Reversi::find_all_directions_to_make_move(std::array<int, 2>& move_coordinates, 
-char player_piece, std::list<std::array<int, 2>>&directions_to_capture_opponents) 
- {
-    char opponent_player_piece = (player_piece == 'X') ? 'O' : 'X';
+void Reversi::find_all_directions_to_make_move(std::array<int, 2>& move_coordinates,
+    char player_piece, std::list<std::array<int, 2>>& directions_to_capture_opponents)
+{
+    char opponent_player_piece = switch_players(player_piece);
 
-    std::array<int, 2> adjacent_square = {0, 0};
+    std::array<int, 2> adjacent_square = { 0, 0 };
 
-    for (int i = 1; i > -2; i--){
-        for (int j = 1; j > -2; j--){
+    for (int i = 1; i > -2; i--) {
+        for (int j = 1; j > -2; j--) {
             if (j != 0 || i != 0) {
                 adjacent_square[0] = move_coordinates[0] + i;
                 adjacent_square[1] = move_coordinates[1] + j;
 
-                if (this->is_move_inside_board(adjacent_square[0], adjacent_square[1]) && 
-                    this->game_board[adjacent_square[0]]
-                    [adjacent_square[1]] == opponent_player_piece){
+                if (this->game_board.is_move_inside_board(adjacent_square[0], adjacent_square[1]) &&
+                    this->game_board.access_space(adjacent_square[0], adjacent_square[1]) == opponent_player_piece) {
 
-                    std::array<int, 2> direction = {i , j};
+                    std::array<int, 2> direction = { i , j };
 
-                    if (is_there_player_piece_at_the_direction(player_piece, direction, 
-                    adjacent_square)) {
+                    if (is_there_player_piece_at_the_direction(player_piece, direction,
+                        adjacent_square)) {
                         directions_to_capture_opponents.push_back(direction);
-                    } 
+                    }
                 }
             }
         }
     }
- }
+}
 
 
-void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move_coordinates, 
-    char player_piece) 
+void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move_coordinates,
+    char player_piece)
 {
-    char opponent_piece = (player_piece == 'X') ? 'O' : 'X';
+    char opponent_piece = switch_players(player_piece);
     int num_pieces_flipped = 0;
 
-    std::array<int, 2> current_square = {directions[0] + move_coordinates[0], 
-    directions[1] + move_coordinates[1]};
-    
-    while(this->game_board[current_square[0]][current_square[1]] == opponent_piece) {
-        this->game_board[current_square[0]][current_square[1]] = player_piece;
+    std::array<int, 2> current_square = { directions[0] + move_coordinates[0],
+    directions[1] + move_coordinates[1] };
+
+    while (this->game_board.access_space(current_square[0], current_square[1]) == opponent_piece) {
+        this->game_board.modify_space(current_square[0], current_square[1]) = player_piece;
         current_square[0] += directions[0];
         current_square[1] += directions[1];
         num_pieces_flipped++;
@@ -163,50 +155,51 @@ void Reversi::flip_pieces(std::array<int, 2> directions, std::array<int, 2> move
 }
 
 
-void Reversi::control_num_pieces_players(int num_pieces_flipped, char player_piece) 
+void Reversi::control_num_pieces_players(int num_pieces_flipped, char player_piece)
 {
     if (player_piece == 'X') {
         this->num_pieces_player_X += num_pieces_flipped;
         this->num_pieces_player_O -= num_pieces_flipped;
-    } else {
+    }
+    else {
         this->num_pieces_player_X -= num_pieces_flipped;
         this->num_pieces_player_O += num_pieces_flipped;
     }
 }
 
 
-void Reversi::make_move()
+void Reversi::make_move() 
 {
     return;
 }
 
 
-void Reversi::make_move(std::array<int, 2> move_coordinates, char player_piece, 
-    std::list<std::array<int, 2>>& directions_to_capture_opponents) 
+void Reversi::make_move(std::array<int, 2> move_coordinates, char player_piece, std::list<std::array<int, 2>>& directions_to_capture_opponents)
 {
-    this->game_board[move_coordinates[0]][move_coordinates[1]] = player_piece;
-    
-    if (player_piece == 'X') 
+
+    this->game_board.modify_space(move_coordinates[0], move_coordinates[1]) = player_piece;
+
+    if (player_piece == 'X')
         this->num_pieces_player_X++;
-     else 
+    else
         this->num_pieces_player_O++;
-    
-    
-    for(auto direction : directions_to_capture_opponents) 
-        this->flip_pieces(direction, move_coordinates, player_piece);    
+
+
+    for (auto direction : directions_to_capture_opponents)
+        this->flip_pieces(direction, move_coordinates, player_piece);
 }
 
 
-bool Reversi::process_move(std::array<int, 2> move_coordinates, char player_piece) 
+bool Reversi::process_move(std::array<int, 2> move_coordinates, char player_piece)
 {
     move_coordinates[0] = move_coordinates[0] - 1;
     move_coordinates[1] = move_coordinates[1] - 1;
 
     std::list<std::array<int, 2>> directions_to_capture_opponents;
 
-    if(this->is_valid_move(move_coordinates, player_piece)) {
-        find_all_directions_to_make_move(move_coordinates, player_piece, 
-        directions_to_capture_opponents);
+    if (this->is_valid_move(move_coordinates, player_piece)) {
+        find_all_directions_to_make_move(move_coordinates, player_piece,
+            directions_to_capture_opponents);
         this->make_move(move_coordinates, player_piece, directions_to_capture_opponents);
         return true;
     }
@@ -214,22 +207,23 @@ bool Reversi::process_move(std::array<int, 2> move_coordinates, char player_piec
 }
 
 
-bool Reversi::is_there_valid_move_for_player(char player_piece) 
+bool Reversi::is_there_valid_move_for_player(char player_piece)
 {
     bool found_valid_move = false;
-    for(int i = 0; i < num_columns_and_rows_reversi; i++) {
-        for(int j = 0; j < num_columns_and_rows_reversi; j++) {
-            if(this->game_board[i][j] == ' ' || this->game_board[i][j] == '*') {
-                std::array<int, 2> coordinates = {i, j};
-                if(this->is_valid_move(coordinates, player_piece)){
-                    this->game_board[i][j] = '*';
+    for (int i = 0; i < num_columns_and_rows_reversi; i++) {
+        for (int j = 0; j < num_columns_and_rows_reversi; j++) {
+            if (this->game_board.access_space(i, j) == ' ' || this->game_board.access_space(i, j) == '*') {
+                std::array<int, 2> coordinates = { i, j };
+                if (this->is_valid_move(coordinates, player_piece)) {
+                    this->game_board.modify_space(i, j) = '*';
                     found_valid_move = true;
-                }else {
-                    if(this->game_board[i][j] == '*'){
-                        this->game_board[i][j] = ' ';
+                }
+                else {
+                    if (this->game_board.access_space(i, j) == '*') {
+                        this->game_board.modify_space(i, j) = ' ';
                     }
                 }
-                
+
             }
         }
     }
@@ -237,15 +231,16 @@ bool Reversi::is_there_valid_move_for_player(char player_piece)
 }
 
 
-void Reversi::check_win() 
-{
-    return;
+bool Reversi::check_win() {
+    return false;
 }
 
 
-bool Reversi::check_win(bool is_there_move_for_player, char opponent_piece) 
+bool Reversi::check_win(bool is_there_move_for_player, char opponent_piece)
 {
-    if(!is_there_move_for_player && !this->is_there_valid_move_for_player(opponent_piece))
+    if (!is_there_move_for_player && !this->is_there_valid_move_for_player(opponent_piece))
         return true;
     return false;
 }
+
+Reversi::~Reversi() {};

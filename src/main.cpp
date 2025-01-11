@@ -19,7 +19,7 @@ int main()
         bool is_there_movement_for_player = reversi1.is_there_valid_move_for_player(player_piece);
         bool someone_won = reversi1.check_win
         (is_there_movement_for_player, player_piece);
-        reversi1.print_game_board();
+        reversi1.print_reversi_board();
 
         if (someone_won)
         {
