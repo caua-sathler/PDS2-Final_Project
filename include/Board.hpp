@@ -1,0 +1,21 @@
+#ifndef BOARD_H
+#define BOARD_H
+#include <memory>
+
+class Board {
+    private:
+        int num_rows;
+        int num_columns;
+        std::unique_ptr<std::unique_ptr<char[]>[]> game_board = nullptr;
+
+    public:
+        char& modify_space(int row, int column);
+        char access_space(int row, int column) const;
+        Board(int num_rows_received, int num_columns_received);
+        void print_game_board() const;
+        bool is_move_inside_board(int x, int y) const;
+        bool is_space_free(int x, int y) const;
+};
+
+
+#endif
