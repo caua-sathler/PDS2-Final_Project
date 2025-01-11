@@ -8,7 +8,6 @@ class Reversi : public Game {
     private:
         int num_pieces_player_X;
         int num_pieces_player_O;
-
     public:
         Reversi();
         void start_reversi_board();

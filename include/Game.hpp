@@ -6,7 +6,6 @@
 class Game {
     protected:
         Board game_board;
-
     public:
         Game(int num_rows_received, int num_columns_received);
         virtual bool is_valid_move() const = 0;

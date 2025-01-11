@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -g -std=c++14 -Wall 
+CFLAGS = -g -std=c++11 -Wall 
 SRC_DIR = src
 BUILD_DIR = obj
 INCLUDE_DIR = include
