@@ -7,16 +7,19 @@
 class Connect4 : public Game {
     private:
         char current_player;
+        char winner;
 
     public:
         Connect4();
+        bool is_move_inside_board(int = 0, int) const override;
         bool is_valid_move() const override;
         bool is_valid_move(int column) const; //Sobrecarga
-        bool is_move_inside_board(int = 0, int) const override;
         void make_move() override;
         void make_move(int column); //Sobrecarga
-        void check_win() const override;
         void switch_players();
+        bool check_win();
+        char get_current_player() const;
+        bool is_board_full() const;
         ~Connect4();
 };
 

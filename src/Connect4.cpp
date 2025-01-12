@@ -6,7 +6,7 @@ Connect4::Connect4() : Game(6, 7), current_player('X'){
 
 bool Connect4::is_move_inside_board(int a, int column) const {
     if (column < 1 || column > 7) { 
-        std::cout << "jogada inválida\n";
+        //Exceptions and error handling, fix
         return false;
     }
     return true;
@@ -16,7 +16,7 @@ bool Connect4::is_move_inside_board(int a, int column) const {
 bool Connect4::is_valid_move(int column) const {
     column--; 
     if (game_board[0][column] != ' ' || !is_move_inside_board(column)) {
-        std::cout << "jogada inválida\n";
+        //Exceptions and error handling, fix 
         return false;
     }
     return true;
@@ -29,7 +29,6 @@ void Connect4::make_move(int column) {
         for(int i = 5; i >= 0; i--) {
             if(game_board[i][column] == ' ') {
                 game_board[i][column] = current_player;
-                switch_players();
                 return;
             }
         }
@@ -44,21 +43,18 @@ void Connect4::switch_players(){
     }
 }
 
-void Connect4::check_win() const {
-    // If 'X' wins then player 1 wins, otherwise if 'O' wins then player 2 wins
+bool Connect4::check_win(){
+    // If the current player wins, return true, otherwise return false
 
     // horizontal verification 
 
     for (int row = 0; row < 6; ++row) {
         for (int col = 0; col <= 3; ++col) {
-            if (game_board[row][col] == 'X' && game_board[row][col + 1] == 'X' &&
-                 game_board[row][col + 2] == 'X' && game_board[row][col + 3] == 'X') {
-                    std::cout << "Jogador 1 venceu!\n";
-                    return;
-                } else if (game_board[row][col] == 'O' && game_board[row][col + 1] == 'O' &&
-                 game_board[row][col + 2] == 'O' && game_board[row][col + 3] == 'O') {
-                    std::cout << "Jogador 2 venceu!\n";
-                    return;
+            if (game_board[row][col] == current_player && 
+                game_board[row][col + 1] == current_player &&
+                game_board[row][col + 2] == current_player && 
+                game_board[row][col + 3] == current_player) {
+                    return true;
             }
         }
     }
@@ -67,14 +63,11 @@ void Connect4::check_win() const {
 
     for (int row = 0; row <= 2; ++row) {
         for (int col = 0; col < 7; ++col) {
-            if (game_board[row][col] == 'X' && game_board[row+1][col] == 'X' &&
-                 game_board[row + 2][col] == 'X' && game_board[row + 3][col] == 'X') {
-                    std::cout << "Jogador 1 venceu!\n";
-                    return;
-                } else if (game_board[row][col] == 'O' && game_board[row + 1][col] == 'O' &&
-                 game_board[row + 2][col] == 'O' && game_board[row + 3][col] == 'O') {
-                    std::cout << "Jogador 2 venceu!\n";
-                    return;
+            if (game_board[row][col] == current_player && 
+                game_board[row+1][col] == current_player &&
+                game_board[row + 2][col] == current_player && 
+                game_board[row + 3][col] == current_player) {
+                    return true;
             }
         }
     }
@@ -83,14 +76,11 @@ void Connect4::check_win() const {
 
     for (int row = 0; row <= 2; ++row) {
         for (int col = 0; col <= 3; ++col) {
-            if (game_board[row][col] == 'X' && game_board[row+1][col+1] == 'X' &&
-                 game_board[row + 2][col+2] == 'X' && game_board[row + 3][col+3] == 'X') {
-                    std::cout << "Jogador 1 venceu!\n";
-                    return;
-                } else if (game_board[row][col] == 'O' && game_board[row + 1][col+1] == 'O' &&
-                 game_board[row + 2][col+2] == 'O' && game_board[row + 3][col+3] == 'O') {
-                    std::cout << "Jogador 2 venceu!\n";
-                    return;
+            if (game_board[row][col] == current_player && 
+                game_board[row+1][col+1] == current_player &&
+                game_board[row + 2][col+2] == current_player && 
+                game_board[row + 3][col+3] == current_player) {
+                    return true;
             }
         }
     }
@@ -99,19 +89,29 @@ void Connect4::check_win() const {
 
     for (int row = 0; row <= 2; ++row) {
         for (int col = 0; col <= 3; ++col) {
-            if (game_board[row][col] == 'X' && game_board[row-1][col-1] == 'X' &&
-                 game_board[row - 2][col - 2] == 'X' && game_board[row - 3][col - 3] == 'X') {
-                    std::cout << "Jogador 1 venceu!\n";
-                    return;
-                } else if (game_board[row][col] == 'O' && game_board[row - 1][col - 1] == 'O' &&
-                 game_board[row - 2][col - 2] == 'O' && game_board[row - 3][col - 3] == 'O') {
-                    std::cout << "Jogador 2 venceu!\n";
-                    return;
+            if (game_board[row][col] == current_player && 
+                game_board[row-1][col-1] == current_player &&
+                game_board[row - 2][col - 2] == current_player && 
+                game_board[row - 3][col - 3] == current_player) {
+                    return true;
             }
         }
     }
+    return false;
 }
 
+char Connect4::get_current_player() const {
+    return current_player;
+}
+
+bool Connect4::is_board_full() const{
+    for(int col = 0; col < num_columns; ++col) {
+        if(game_board[0][col] == ' ') {
+            return false;
+        }
+    }
+    return true;
+}
 
 Connect4::~Connect4() {
 }
