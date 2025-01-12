@@ -2,6 +2,7 @@
 #include <iostream>
 #include "list"
 #include "array"
+#include "Player.hpp"
 const int num_columns_and_rows_reversi = 8;
 
 void Reversi::start_reversi_board()
@@ -12,6 +13,12 @@ void Reversi::start_reversi_board()
     this->game_board.set_space(4, 3, 'O');
 }
 
+int Reversi::get_num_pieces_player_X(){
+    return this->num_pieces_player_X;
+}
+int Reversi::get_num_pieces_player_O(){
+    return this->num_pieces_player_O;
+}
 
 void Reversi::print_reversi_board() const 
 {
@@ -242,4 +249,14 @@ bool Reversi::check_win(bool is_there_move_for_player, char opponent_piece)
     return false;
 }
 
+
+void Reversi::register_win_and_loss(Player *player1, Player *player2){
+    if(this->num_pieces_player_X > this->num_pieces_player_O){
+        player1->add_win("Reversi");
+        player2->add_loss("Reversi");
+    }else if(this->num_pieces_player_X < this->num_pieces_player_O){
+        player2->add_win("Reversi");
+        player1->add_loss("Reversi");
+    }
+}
 Reversi::~Reversi() {};
