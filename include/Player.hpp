@@ -5,6 +5,7 @@
 #include <map>
 #include <list>
 
+
 class Player {
     private:
         std::string name;
