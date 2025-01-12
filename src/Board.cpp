@@ -16,26 +16,12 @@ num_columns(num_columns_received)
 {   
     game_board = std::unique_ptr<std::unique_ptr<char[]>[]>(new std::unique_ptr<char[]>[num_rows]);
 
-    // Inicializar cada linha com um array de inteiros
     for (int i = 0; i < num_rows; ++i) {
         game_board[i] = std::unique_ptr<char[]>(new char[num_columns]);
         for (int j=0; j < num_columns; j++){
             game_board[i][j] = ' ';
         }
     }
-
-    /*std::unique_ptr<std::unique_ptr<int[]>[]> arr(new std::unique_ptr<int[]>[100]);
-    for (int i = 0; i < 100; i++)
-    {
-    arr[i] = std::unique_ptr<int[]>(new int[100]);
-    } 
-    for(int i = 0; i < num_rows; ++i) 
-        game_board[i] = std::make_unique<char[]>(num_columns);
-        
-    for(int i = 0; i < num_rows; i++) {
-        for(int j = 0; j < num_columns; j++)
-            this->game_board[i][j] = ' ';
-    }*/
 }
 
 

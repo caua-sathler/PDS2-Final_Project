@@ -17,5 +17,4 @@ class Board {
         bool is_space_free(int x, int y) const;
 };
 
-
 #endif

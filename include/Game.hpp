@@ -3,6 +3,7 @@
 #include "Board.hpp"
 #include <array>
 
+
 class Game {
     protected:
         Board game_board;
