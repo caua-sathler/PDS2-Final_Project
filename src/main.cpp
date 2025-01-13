@@ -1,22 +1,19 @@
-#include "Tic_tac_toe.hpp"
-#include <iostream>
+#include "Player.hpp"
+#include "Reversi.hpp"
+#include <limits>
+#include <fstream>
+#include <algorithm>
+#include <bits/stdc++.h>
+
+//lidar com exceção
+Player* find_player_in_list(std::list<Player>& player_list, const std::string& user_name) {
+    for (auto& player : player_list) {
+        if (player.get_username() == user_name) {
+            return &player;
+        }
+    }
+    return nullptr;
+}
 
 int main() {
-    tic_tac_toe jogo;
-    int x, y;
-    bool win = false;
-
-    while (!win) {
-
-        if(jogo.check_win(win) != 'F') {
-            break;
-            std::cout << "Fim" << std::endl;
-        }
-
-        std::cin >> x >> y;
-        jogo.make_move(x, y);
-
-    } 
-
-    return 0;
 }

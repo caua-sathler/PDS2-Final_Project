@@ -5,7 +5,9 @@
 
 class Game {
     protected:
-        Board game_board;
+        int num_rows;
+        int num_columns;
+        char** game_board = nullptr;
 
     public:
         Game(int num_rows_received, int num_columns_received);
