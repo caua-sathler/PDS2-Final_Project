@@ -17,6 +17,7 @@ class tic_tac_toe : public Game {
         bool check_win() override;
         char check_win(bool& win);
         char get_current_player() const;
+        bool check_tie() const;
         ~tic_tac_toe();
 };
 
