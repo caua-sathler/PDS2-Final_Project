@@ -18,6 +18,8 @@ class tic_tac_toe : public Game {
         char check_win(bool& win);
         char get_current_player() const;
         bool check_tie() const;
+        void reset_game();
+        void print_tic_tac_toe_board() const;
         ~tic_tac_toe();
 };
 

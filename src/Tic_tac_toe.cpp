@@ -12,6 +12,9 @@ bool tic_tac_toe::is_valid_move(int& x, int& y) const {
     return game_board.is_move_inside_board(x, y) && game_board.is_space_free(x, y);
 }
 
+void tic_tac_toe::print_tic_tac_toe_board() const {
+    game_board.print_game_board();
+}
 
 void tic_tac_toe::make_move(int x, int y) {
   
@@ -30,7 +33,6 @@ void tic_tac_toe::make_move(int x, int y) {
 
     if (is_valid_move(x, y)) {
         game_board.set_space(x, y, current_player);
-        game_board.print_game_board();
     
      if (check_win(win) != 'F') {
             winner = current_player;
@@ -40,7 +42,7 @@ void tic_tac_toe::make_move(int x, int y) {
             std::cout << "Empate" << std::endl;
             return;
         }
-        
+
         else 
             current_player = switch_players(current_player);
 }
@@ -93,6 +95,15 @@ bool tic_tac_toe::check_tie() const {
     }
 
 return true;
+}
+
+void tic_tac_toe::reset_game() {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            game_board.set_space(i, j, ' ');
+        }
+    }
+    current_player = 'X'; 
 }
 
 
