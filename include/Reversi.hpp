@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Player.hpp"
 #ifndef REVERSI_H
 #define REVERSI_H
 #include <array>
@@ -10,6 +11,8 @@ class Reversi : public Game {
         int num_pieces_player_O;
     public:
         Reversi();
+        int get_num_pieces_player_X();
+        int get_num_pieces_player_O();
         void start_reversi_board();
         void print_reversi_board() const;
         bool is_there_player_piece_at_the_direction(const char player_piece, const std::array<int, 2>& direction, 
@@ -28,6 +31,7 @@ class Reversi : public Game {
         bool process_move(std::array<int, 2> move_coordinates, char player_piece_type);
         bool check_win() override;
         bool check_win(bool is_there_move_for_player, char opponent_piece);
+        void register_win_and_loss(Player *player1, Player *player2);
         ~Reversi();
 };
 
