@@ -4,6 +4,14 @@
 Connect4::Connect4() : Game(6, 7), current_player('X'){
 }
 
+bool Connect4::is_valid_move() const {
+    return false;
+}
+
+void Connect4::make_move(){
+
+}
+
 // If the move is valid return true, otherwise return false
 bool Connect4::is_valid_move(int column) const {
     column--; 

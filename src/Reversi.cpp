@@ -1,4 +1,5 @@
 #include "Reversi.hpp"
+#include "Board.hpp"
 #include <iostream>
 #include "list"
 #include "array"
