@@ -141,7 +141,7 @@ int main() {
                     }
                 }
 
-            } else if (game == 'L') {  // Aqui o "else if" estava erradamente em outro bloco
+            } else if (game == 'L') { 
                 Connect4 connect4_game;
                 bool game_over = false;
 
