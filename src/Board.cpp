@@ -24,7 +24,7 @@ num_columns(num_columns_received)
         }
     }
 
-    /*std::unique_ptr<std::unique_ptr<int[]>[]> arr(new std::unique_ptr<int[]>[100]);
+    std::unique_ptr<std::unique_ptr<int[]>[]> arr(new std::unique_ptr<int[]>[100]);
     for (int i = 0; i < 100; i++)
     {
     arr[i] = std::unique_ptr<int[]>(new int[100]);
@@ -35,7 +35,7 @@ num_columns(num_columns_received)
     for(int i = 0; i < num_rows; i++) {
         for(int j = 0; j < num_columns; j++)
             this->game_board[i][j] = ' ';
-    }*/
+    }
 }
 
 
@@ -55,14 +55,17 @@ bool Board::is_move_inside_board(int x, int y) const
 {
     if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1))
         return false;
-            
+    
+    std::cout << "Chamando função is_valid_move(Dentro)\n";
     return true;
 }
 
 bool Board::is_space_free(int x, int y) const
 {
-    if ((this->game_board[x][y] == ' '))
+    if ((this->game_board[x][y] == ' ')) {
+        std::cout << "Função is_space_free\n";
         return true;
+    }
 
     return false;
 }

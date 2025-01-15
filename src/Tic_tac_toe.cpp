@@ -6,9 +6,11 @@ const int num_rows_received = 3;
 const int num_columns_received = 3;
 
 tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X') {
+    reset_game();
 }
 
 bool tic_tac_toe::is_valid_move(int& x, int& y) const {
+    std::cout << "Chamada da função is_valid_move\n";
     return game_board.is_move_inside_board(x, y) && game_board.is_space_free(x, y);
 }
 
@@ -17,9 +19,12 @@ void tic_tac_toe::print_tic_tac_toe_board() const {
 }
 
 void tic_tac_toe::make_move(int x, int y) {
+
+    std::cout << "Chamada make_move\n";
   
     static bool win = false;
     if (win) {
+        std::cout << "Teste\n";
         return;
     }
 
@@ -103,9 +108,11 @@ void tic_tac_toe::reset_game() {
             game_board.set_space(i, j, ' ');
         }
     }
-    current_player = 'X'; 
-}
 
+    std::cout << "Chamda reset_game\n";
+    current_player = 'X'; 
+    winner = 'F';           
+}
 
 char tic_tac_toe::get_current_player() const {
     return current_player;
@@ -124,4 +131,6 @@ bool tic_tac_toe::check_win() {
 }
 
 tic_tac_toe::~tic_tac_toe() {
+    std::cout << "Chamada destrutor\n";
+    reset_game();
 }
