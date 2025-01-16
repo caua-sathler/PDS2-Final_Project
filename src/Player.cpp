@@ -101,6 +101,7 @@ Player* Player::find_player_in_list(std::list<Player>& player_list, const std::s
             return &player;
         }
     }
+    throw std::invalid_argument("ERRO: Jogador inexistente");
     return nullptr;
 }
 
