@@ -12,9 +12,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
     for (auto &player : player_list)
     {
         if (player.get_username() == user_name)
-        {
             return &player;
-        }
     }
     return nullptr;
 }
@@ -55,9 +53,8 @@ int main()
             }
             std::list<Player>::iterator it;
             for (it = player_list.begin(); it != player_list.end(); it++)
-            {
                 it->print_player();
-            }
+            
             continue;
         }
         else if (command == "CJ")
@@ -107,13 +104,11 @@ int main()
                 Player *player2 = find_player_in_list(player_list, username_player2);
 
                 if (player1 == nullptr)
-                {
                     throw std::invalid_argument("ERRO: jogador " + username_player1 + " inexistente");
-                }
+
                 else if (player2 == nullptr)
-                {
                     throw std::invalid_argument("ERRO: jogador " + username_player2 + " inexistente");
-                }
+                
 
                 if (game == 'R')
                 {
@@ -127,36 +122,32 @@ int main()
                         bool is_there_movement_for_player = reversi_game.is_there_valid_move_for_player(player_piece);
                         bool someone_won = reversi_game.check_win(is_there_movement_for_player, player_piece);
                         reversi_game.print_reversi_board();
-                        std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: " << reversi_game.get_num_pieces_player_O() << std::endl;
+                        std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: " 
+                        << reversi_game.get_num_pieces_player_O() << std::endl;
 
                         if (someone_won)
                         {
                             reversi_game.register_win_and_loss(player1, player2);
 
                             if (reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O())
-                            {
                                 std::cout << username_player1 << " ganhou!" << std::endl;
-                            }
+                            
                             else if (reversi_game.get_num_pieces_player_X() < reversi_game.get_num_pieces_player_O())
-                            {
                                 std::cout << username_player2 << " ganhou!" << std::endl;
-                            }
+                            
                             else
-                            {
                                 std::cout << "Houve empate!" << std::endl;
-                            }
+                            
                             break;
                         }
                         else if (is_there_movement_for_player && !someone_won)
                         {
                             if (player_piece == 'X')
-                            {
                                 std::cout << username_player1 << " " << "[X]" << ": " << std::ends;
-                            }
+                            
                             else
-                            {
                                 std::cout << username_player2 << " " << "[O]" << ": " << std::ends;
-                            }
+                            
 
                             if (!(std::cin >> x >> y))
                             {
@@ -204,28 +195,26 @@ int main()
                                 {
                                     player1->add_win("Lig4");
                                     player2->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player1 << "! Você venceu!\n";
+                                    std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
                                 }
                                 else
                                 {
                                     player2->add_win("Lig4");
                                     player1->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player2 << "! Você venceu!\n";
+                                    std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
                                 }
                                 game_over = true;
                             }
                             else if (connect4_game.is_board_full())
                             {
-                                std::cout << "O jogo terminou em empate!\n";
+                                std::cout << "O jogo terminou em empate!" << std::endl;
                                 game_over = true;
                             }
 
                             connect4_game.switch_players(current_player);
                         }
                         else
-                        {
-                            std::cout << "Movimento inválido. Tente novamente.\n";
-                        }
+                            std::cout << "Movimento inválido. Tente novamente." << std::endl;                        
                     }
                 }
                 else if (game == 'V')
@@ -272,9 +261,8 @@ int main()
             }
         }
         else if (command == "FS")
-        {
             break;
-        }
+        
         else
         {
             if (error == false)
