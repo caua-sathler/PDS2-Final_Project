@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include "Reversi.hpp"
+#include "Tic_tac_toe.hpp"
 #include "Connect4.hpp"
 #include <limits>
 #include <fstream>
@@ -21,7 +22,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/julialuna/PDS2-Final_Project/teste");
+    file_in.open("/home/cauafsathler/GitHub/PROJETOS/FACULDADE/PDS2-UFMG/PDS2-Trabalho_final/teste");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -90,7 +91,6 @@ int main()
         }
         else if (command == "EP")
         {
-
             char game;
             std::string username_player1, username_player2;
 
@@ -103,29 +103,27 @@ int main()
                 }
 
                 std::cin >> username_player1 >> username_player2;
-                // Dentro do seu bloco try, antes de usar player1 e player2:
                 Player *player1 = find_player_in_list(player_list, username_player1);
                 Player *player2 = find_player_in_list(player_list, username_player2);
 
-                if (player1 == nullptr){
+                if (player1 == nullptr)
+                {
                     throw std::invalid_argument("ERRO: jogador " + username_player1 + " inexistente");
                 }
-                else if (player2 == nullptr){
+                else if (player2 == nullptr)
+                {
                     throw std::invalid_argument("ERRO: jogador " + username_player2 + " inexistente");
                 }
-
 
                 if (game == 'R')
                 {
                     Reversi reversi_game;
-
                     char player_piece = 'X';
                     char opponent_piece = 'O';
 
                     while (true)
                     {
                         int x, y;
-
                         bool is_there_movement_for_player = reversi_game.is_there_valid_move_for_player(player_piece);
                         bool someone_won = reversi_game.check_win(is_there_movement_for_player, player_piece);
                         reversi_game.print_reversi_board();
@@ -133,7 +131,6 @@ int main()
 
                         if (someone_won)
                         {
-
                             reversi_game.register_win_and_loss(player1, player2);
 
                             if (reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O())
@@ -152,7 +149,6 @@ int main()
                         }
                         else if (is_there_movement_for_player && !someone_won)
                         {
-
                             if (player_piece == 'X')
                             {
                                 std::cout << username_player1 << " " << "[X]" << ": " << std::ends;
@@ -188,9 +184,6 @@ int main()
                 {
                     Connect4 connect4_game;
                     bool game_over = false;
-
-                    Player *player1 = find_player_in_list(player_list, username_player1);
-                    Player *player2 = find_player_in_list(player_list, username_player2);
 
                     while (!game_over)
                     {
@@ -235,12 +228,48 @@ int main()
                         }
                     }
                 }
+                else if (game == 'V')
+                {
+                    Tic_tac_toe tic_tac_toe_game;
+                    int x, y;
+
+                    std::cout << username_player1 << " is X and " << username_player2 << " is O" << std::endl;
+
+                    while (true)
+                    {
+                        if (tic_tac_toe_game.check_tic_tac_toe_win() != 'F')
+                        {
+                            std::cout << username_player1 << " won!" << std::endl;
+                            player1->add_win("Velha");
+                            player2->add_loss("Velha");
+                            break;
+                        }
+
+                        if (tic_tac_toe_game.check_tie())
+                        {
+                            std::cout << "Draw! The board is full" << std::endl;
+                            break;
+                        }
+
+                        std::cout << "Player " << tic_tac_toe_game.get_current_player() << " turn:" << std::endl;
+                        tic_tac_toe_game.print_tic_tac_toe_board();
+
+                        if (!(std::cin >> x >> y))
+                        {
+                            std::cout << "Invalid input. Please enter two integers for your move" << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            continue;
+                        }
+
+                        tic_tac_toe_game.make_move(x, y);
+                    }
+                }
             }
             catch (std::invalid_argument &e)
             {
                 std::cout << e.what() << std::endl;
             }
-            // verificar se os dois jogadores existem
         }
         else if (command == "FS")
         {
@@ -268,4 +297,6 @@ int main()
     write_register_file(player_list, file_out);
 
     file_out.close();
+
+    return 0;
 }
