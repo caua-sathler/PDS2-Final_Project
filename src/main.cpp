@@ -22,7 +22,6 @@ int main() {
 
     std::string command;
     std::string name_in, username_in;
-    bool error = false;
 
     while(std::cin >> command){
         if (command == "LJ"){
@@ -54,19 +53,26 @@ int main() {
                 continue;
             }
             Player new_player(name_in, username_in);
-            if (Player::register_player(new_player, player_list) == true)
+            try {
+                Player::register_player(new_player, player_list);
                 std::cout << "Jogador " << new_player.get_username() << " cadastrado com sucesso" << std::endl;
-            else   
-                std::cout << "ERRO: jogador repetido" << std::endl;
+            }
+            catch(std::invalid_argument &e){
+                std::cout << e.what() << std::endl;
+                continue;
+            }
             continue;
             
         } else if (command == "RJ"){
             std::cin >> username_in;
-            if (Player::remove_player(username_in, player_list) == true)
+            try {
+                Player::remove_player(username_in, player_list);
                 std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
-            else 
-                std::cout << "ERRO: jogador inexistente" << std::endl;
-            continue;
+            }
+            catch(std::invalid_argument &e){
+                std::cout << e.what() << std::endl;
+                continue;
+            }
 
         }else if(command == "EP"){
             char game;
@@ -142,11 +148,9 @@ int main() {
             break;
 
         } else {
-            if (error == false){
-                std::cout << "ERRO: comando inexistente" << std::endl;
-                error = true;
-                continue;
-            }
+            std::cout << "ERRO: comando inexistente" << std::endl;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
     }
 

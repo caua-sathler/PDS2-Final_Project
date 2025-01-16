@@ -30,8 +30,8 @@ class Player {
         void print_player();
         void add_win(std::string key);
         void add_loss(std::string key);
-        static bool register_player(Player player_received, std::list<Player> &player_list);
-        static bool remove_player(std::string username_received, std::list<Player> &player_list);
+        static void register_player(Player player_received, std::list<Player> &player_list);
+        static void remove_player(std::string username_received, std::list<Player> &player_list);
         static Player* find_player_in_list(std::list<Player>& player_list, const std::string& user_name);
         
         static bool compare_username(Player &player1, Player &player2);
