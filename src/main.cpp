@@ -153,33 +153,33 @@ int main() {
                 jogo.reset_game();
                 int x, y;
 
+                Player *player1, *player2;
+                player1 = find_player_in_list(player_list, username_player1);
+                player2 = find_player_in_list(player_list, username_player2);
+
+                std::cout << username_player1 << " is X and " << username_player2 << " is O" << std::endl;
+
                 while (true) { 
                     
-                    bool win = false;
-                    char winner = jogo.check_win(win);
-                    if (winner != 'F') {
+                    if (jogo.check_tic_tac_toe_win() != 'F') {
 
-                        Player *player1, *player2;
-
-                        player1 = find_player_in_list(player_list, username_player1);
-                        player2 = find_player_in_list(player_list, username_player2);
-
-                        std::cout<<username_player1<< " ganhou!"<<std::endl;
+                        std::cout << username_player1 << " won!"<< std::endl;
                         player1->add_win("Velha");
                         player2->add_loss("Velha");
                         break;
                     }
 
                     if (jogo.check_tie()) {
-                        std::cout << "Empate! O tabuleiro está cheio.\n";
+                        std::cout << "Draw! The board is full" << std::endl;
                         break;
                     }
-
+                    
+                    std::cout << "Player " << jogo.get_current_player() << " turn:" << std::endl;
                     jogo.print_tic_tac_toe_board();
 
                 if (!(std::cin >> x >> y))
                         {
-                            std::cout << "Invalid input. Please enter two integers for your move.\n";
+                            std::cout << "Invalid input. Please enter two integers for your move" << std::endl;
                             std::cin.clear();                
                             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             continue; 

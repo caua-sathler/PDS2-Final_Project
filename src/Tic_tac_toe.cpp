@@ -5,12 +5,11 @@
 const int num_rows_received = 3;
 const int num_columns_received = 3;
 
-tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X') {
+tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X'), winner('F') {
     reset_game();
 }
 
 bool tic_tac_toe::is_valid_move(int& x, int& y) const {
-    std::cout << "Chamada da função is_valid_move\n";
     return game_board.is_move_inside_board(x, y) && game_board.is_space_free(x, y);
 }
 
@@ -20,53 +19,33 @@ void tic_tac_toe::print_tic_tac_toe_board() const {
 
 void tic_tac_toe::make_move(int x, int y) {
 
-    std::cout << "Chamada make_move\n";
-  
-    static bool win = false;
-    if (win) {
-        std::cout << "Teste\n";
-        return;
-    }
-
-    if(check_tie()) {
-        std::cout << "Empate" << std::endl;
-        return;
-    }
-
     x -= 1;
     y -= 1;
 
     if (is_valid_move(x, y)) {
         game_board.set_space(x, y, current_player);
     
-     if (check_win(win) != 'F') {
+     if (check_tic_tac_toe_win() != 'F') {
             winner = current_player;
         } 
-
-        else if (check_tie()) {
-            std::cout << "Empate" << std::endl;
-            return;
-        }
 
         else 
             current_player = switch_players(current_player);
 }
 }
 
-char tic_tac_toe::check_win(bool& win) {
+char tic_tac_toe::check_tic_tac_toe_win() const {
 
     for (int i = 0; i < 3; ++i) {
         if (game_board.get_space(i, 0) == current_player && 
             game_board.get_space(i, 1) == current_player && 
             game_board.get_space(i, 2) == current_player) {
-            win = true;
             return current_player;
         }
 
         if (game_board.get_space(0, i) == current_player && 
             game_board.get_space(1, i) == current_player && 
             game_board.get_space(2, i) == current_player) {
-            win = true;
             return current_player;
         }
     }
@@ -74,18 +53,15 @@ char tic_tac_toe::check_win(bool& win) {
     if (game_board.get_space(0, 0) == current_player && 
         game_board.get_space(1, 1) == current_player && 
         game_board.get_space(2, 2) == current_player) {
-        win = true;
         return current_player; 
     }
 
     if (game_board.get_space(0, 2) == current_player && 
         game_board.get_space(1, 1) == current_player && 
         game_board.get_space(2, 0) == current_player) {
-        win = true;
         return current_player; 
     }
 
-    win = false;
     return 'F'; 
 }
 
@@ -109,7 +85,6 @@ void tic_tac_toe::reset_game() {
         }
     }
 
-    std::cout << "Chamda reset_game\n";
     current_player = 'X'; 
     winner = 'F';           
 }
@@ -131,6 +106,5 @@ bool tic_tac_toe::check_win() {
 }
 
 tic_tac_toe::~tic_tac_toe() {
-    std::cout << "Chamada destrutor\n";
     reset_game();
 }
