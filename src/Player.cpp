@@ -93,6 +93,15 @@ bool Player::remove_player(std::string username_received, std::list<Player> &pla
     return false;
 }
 
+Player* Player::find_player_in_list(std::list<Player>& player_list, const std::string& username) {
+    for (auto& player : player_list) {
+        if (player.get_username() == username) {
+            return &player;
+        }
+    }
+    return nullptr;
+}
+
 bool Player::compare_username(Player &player1, Player &player2){
     for (unsigned int i = 0; (i < player1.get_username().size()) && (i < player2.get_username().size()); i++){
         if (tolower(player1.get_username()[i]) < tolower(player2.get_username()[i]))

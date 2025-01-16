@@ -6,18 +6,10 @@
 #include <bits/stdc++.h>
 
 //lidar com exceção
-Player* find_player_in_list(std::list<Player>& player_list, const std::string& user_name) {
-    for (auto& player : player_list) {
-        if (player.get_username() == user_name) {
-            return &player;
-        }
-    }
-    return nullptr;
-}
-
+ 
 int main() {
     std::ifstream file_in;
-    file_in.open("/home/julialuna/PDS2-Final_Project/teste");
+    file_in.open("teste");
     if (!file_in.is_open()){
         std::cout << "Erro ao abrir o arquivo" << std::endl;
         return 1;
@@ -102,8 +94,8 @@ int main() {
                     {
                         Player *player1, *player2;
 
-                        player1 = find_player_in_list(player_list, username_player1);
-                        player2 = find_player_in_list(player_list, username_player2);
+                        player1 = Player::find_player_in_list(player_list, username_player1);
+                        player2 = Player::find_player_in_list(player_list, username_player2);
                         reversi_game.register_win_and_loss(player1, player2);
 
                         if(reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O()){
