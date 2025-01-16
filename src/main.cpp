@@ -7,10 +7,13 @@
  
 int main() {
     std::ifstream file_in;
+    try {
     file_in.open("teste");
-    if (!file_in.is_open()){
-        std::cout << "Erro ao abrir o arquivo" << std::endl;
-        return 1;
+    if (!file_in.is_open())
+        throw std::runtime_error("Erro ao abrir o arquivo");
+    
+    } catch (std::runtime_error &e){
+        std::cout << e.what() << std::endl;
     }
 
     std::list<Player> player_list;
@@ -178,12 +181,14 @@ int main() {
     }
 
     std::ofstream file_out;
+    try {
     file_out.open("teste");
-    if (!file_out.is_open()){
-        std::cout << "Erro ao abrir o arquivo" << std::endl;
-        return 1;
+    if (!file_out.is_open())
+        throw std::runtime_error("Erro ao abrir o arquivo");
+    
+    } catch (std::runtime_error &e){
+        std::cout << e.what() << std::endl;
     }
-
     write_register_file(player_list, file_out);
 
     file_out.close();
