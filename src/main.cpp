@@ -4,8 +4,6 @@
 #include <fstream>
 #include <algorithm>
 #include <bits/stdc++.h>
-
-//lidar com exceção
  
 int main() {
     std::ifstream file_in;
@@ -76,9 +74,14 @@ int main() {
 
         }else if(command == "EP"){
             char game;
-            std::string username_player1, username_player2;
-            std::cin >> game>> username_player1 >> username_player2;
-            //verificar se os dois jogadores existem
+            std::string username_player1, username_player2, line_in;
+            std::getline(std::cin, line_in);
+            std::stringstream stream_in(line_in);
+            stream_in >> game >> username_player1 >> username_player2;
+            if (username_player1 == "" || username_player2 == ""){
+                std::cout << "ERRO: dados incorretos" << std::endl;
+                continue;
+            }
 
             if(game == 'R'){
                 Reversi reversi_game;
@@ -143,6 +146,9 @@ int main() {
                         std::cout<<"Não há jogadas válida, vez passada para o oponent"<<std::endl;
                     }
                 }
+            } else {
+                std::cout << "ERRO: dados incorretos" << std::endl;
+                continue;
             }
         } else if (command == "FS"){
             break;
