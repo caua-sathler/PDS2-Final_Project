@@ -20,7 +20,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/cauafsathler/GitHub/PROJETOS/FACULDADE/PDS2-UFMG/PDS2-Trabalho_final/teste");
+    file_in.open("/mnt/c/Users/55319/Desktop/Visual Studio Code/PDSII-Trabalho/PDS2-Final_Project/PDS2-Final_Project/teste.txt");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -228,6 +228,7 @@ int main()
                     {
                         if (tic_tac_toe_game.check_tic_tac_toe_win() != 'F')
                         {
+                            tic_tac_toe_game.print_tic_tac_toe_board();
                             std::cout << username_player1 << " won!" << std::endl;
                             player1->add_win("Velha");
                             player2->add_loss("Velha");
