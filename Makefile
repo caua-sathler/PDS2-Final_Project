@@ -1,6 +1,6 @@
 
 CC = g++
-CFLAGS = -g -std=c++11 -Wall 
+CFLAGS = -g -std=c++11 -Wall
 SRC_DIR = src
 BUILD_DIR = obj
 INCLUDE_DIR = include
@@ -30,13 +30,17 @@ ${BUILD_DIR}/Connect4.o: ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Connect4.hpp ${I
 ${BUILD_DIR}/Player.o: ${INCLUDE_DIR}/Player.hpp ${SRC_DIR}/Player.cpp
 	$(CC) $(CFLAGS) -c ${SRC_DIR}/Player.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/Player.o
 
-${BUILD_DIR}/main.o: ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Reversi.hpp ${INCLUDE_DIR}/Connect4.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Player.hpp ${SRC_DIR}/main.cpp
+${BUILD_DIR}/Connect4.o: ${INCLUDE_DIR}/Connect4.hpp ${SRC_DIR}/Connect4.cpp
+	@mkdir -p ${BUILD_DIR}
+	$(CC) $(CFLAGS) -c ${SRC_DIR}/Connect4.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/Connect4.o
+
+${BUILD_DIR}/main.o: ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Reversi.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Player.hpp ${INCLUDE_DIR}/Connect4.hpp ${SRC_DIR}/main.cpp
+	@mkdir -p ${BUILD_DIR}
 	$(CC) $(CFLAGS) -c ${SRC_DIR}/main.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/main.o
 
-
-${BIN_DIR}/main: ${BUILD_DIR}/main.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Tic_tac_toe.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
-	$(CC) $(CFLAGS) ${BUILD_DIR}/*.o -o ${BIN_DIR}/main
-
+${BIN_DIR}/main: ${BUILD_DIR}/main.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o ${BUILD_DIR}/Connect4.o
+	@mkdir -p ${BIN_DIR}
+	$(CC) $(CFLAGS) ${BUILD_DIR}/main.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o ${BUILD_DIR}/Connect4.o -o ${BIN_DIR}/main
 
 clean:
 	@rm -f ${BUILD_DIR}/*.o

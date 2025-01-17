@@ -5,9 +5,7 @@
 const int num_rows_received = 3;
 const int num_columns_received = 3;
 
-tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X'), winner('F') {
-    reset_game();
-}
+tic_tac_toe::tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X'), winner('F') {}
 
 bool tic_tac_toe::is_valid_move(int& x, int& y) const {
     return game_board.is_move_inside_board(x, y) && game_board.is_space_free(x, y);
@@ -78,17 +76,6 @@ bool tic_tac_toe::check_tie() const {
 return true;
 }
 
-void tic_tac_toe::reset_game() {
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            game_board.set_space(i, j, ' ');
-        }
-    }
-
-    current_player = 'X'; 
-    winner = 'F';           
-}
-
 char tic_tac_toe::get_current_player() const {
     return current_player;
 }
@@ -105,6 +92,4 @@ bool tic_tac_toe::check_win() {
     return false;
 }
 
-tic_tac_toe::~tic_tac_toe() {
-    reset_game();
-}
+tic_tac_toe::~tic_tac_toe() {}
