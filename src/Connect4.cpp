@@ -5,7 +5,6 @@ Connect4::Connect4() : Game(6, 7), current_player('X'){
 }
 
 bool Connect4::is_valid_move() const {
-    std::cout << "Eu sou o errado" << std::endl;
     return true;
 }
 
@@ -24,10 +23,13 @@ bool Connect4::is_valid_move(int column) {
 }
 
 
-void Connect4::make_move(int column) {
+void Connect4::make_move(int column) 
+{
         column--;
-        for(int i = 5; i >= 0; i--) {
-            if(game_board.get_space(i, column) == ' ') {
+        for(int i = 5; i >= 0; i--) 
+        {
+            if(game_board.get_space(i, column) == ' ') 
+            {
                 game_board.set_space(i, column, current_player);
                 return;
             }
@@ -91,12 +93,15 @@ bool Connect4::check_win(){
     return false;
 }
 
-char Connect4::get_current_player() {
+char Connect4::get_current_player()
+{
     return current_player;
 }
 
-bool Connect4::is_board_full() const{
-    for(int col = 0; col < 7; ++col) {
+bool Connect4::is_board_full() const 
+{
+    for(int col = 0; col < 7; ++col) 
+    {
         if(game_board.get_space(0, col) == ' ') {
             return false;
         }
@@ -104,11 +109,13 @@ bool Connect4::is_board_full() const{
     return true;
 }
 
-void Connect4::print_game_board() const{
+void Connect4::print_game_board() const
+{
     game_board.print_game_board();
 }
 
-void Connect4::set_current_player(char player) {
+void Connect4::set_current_player(char player) 
+{
     current_player = player;
 }
 
