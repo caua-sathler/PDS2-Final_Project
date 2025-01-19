@@ -148,10 +148,15 @@ int main() {
                 Player* player1 = find_player_in_list(player_list, username_player1);
                 Player* player2 = find_player_in_list(player_list, username_player2);
 
+                if (player1 == nullptr || player2 == nullptr) { 
+                    std::cout << "Erro: jogador não encontrado na lista." << std::endl; return 1;
+                    }
+
+                char current_player = 'X';
+
                 while (!game_over) {
                     int column;
                     connect4_game.print_game_board();
-                    char current_player = 'X';
 
                     std::cout << "Turno de jogador <" << connect4_game.get_current_player() << ">:" << std::endl;
                     std::cin >> column;
@@ -175,7 +180,8 @@ int main() {
                             game_over = true;
                         }
 
-                        connect4_game.switch_players(current_player);
+                        current_player = connect4_game.switch_players(current_player);
+                        connect4_game.set_current_player(current_player);
                     } else {
                         std::cout << "Movimento inválido. Tente novamente.\n";
                     }

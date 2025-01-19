@@ -15,11 +15,12 @@ class Connect4 : public Game {
         void make_move() override;
         bool check_win() override;
     
-        bool is_valid_move(int column) const; //Sobrecarga
+        bool is_valid_move(int column); //Sobrecarga
         void make_move(int column); //Sobrecarga
-        char get_current_player() const;
+        char get_current_player();
         bool is_board_full() const;
         void print_game_board() const;
+        void set_current_player(char player);
         ~Connect4();
 };
 
