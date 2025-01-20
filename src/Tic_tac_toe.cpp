@@ -9,8 +9,11 @@ Tic_tac_toe::Tic_tac_toe() : Game(num_rows_received, num_columns_received), curr
 
 bool Tic_tac_toe::is_valid_move(int& x, int& y) const 
 {
-    return game_board.is_move_inside_board(x, y) && game_board.is_space_free(x, y);
+    game_board.is_move_inside_board(x, y); 
+    game_board.is_space_free(x, y); 
+    return true; 
 }
+ 
 
 void Tic_tac_toe::print_tic_tac_toe_board() const 
 {
@@ -23,16 +26,30 @@ void Tic_tac_toe::make_move(int x, int y)
     x -= 1;
     y -= 1;
 
-    if (is_valid_move(x, y)) 
+    try 
     {
-        game_board.set_space(x, y, current_player);
+        if (is_valid_move(x, y)) 
+        {
+            game_board.set_space(x, y, current_player);
     
-        if (check_tic_tac_toe_win() != 'F') 
-            winner = current_player;
+            if (check_tic_tac_toe_win() != 'F') 
+                winner = current_player;
 
-        else 
-            current_player = switch_players(current_player);
+            else 
+                current_player = switch_players(current_player);
+        }
+    }   
+    
+    catch (const std::out_of_range& e) 
+    {
+        std::cout << "Error: " << e.what() << std::endl;
     }
+
+    catch(const std::runtime_error& e)
+    {
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+
 }
 
 char Tic_tac_toe::check_tic_tac_toe_win() const 

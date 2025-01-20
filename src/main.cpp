@@ -20,7 +20,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/leonardo/PDS2-Final_Project/teste");
+    file_in.open("/mnt/c/Users/55319/Desktop/Visual Studio Code/PDSII-Trabalho/PDS2-Final_Project/PDS2-Final_Project/teste.txt");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -176,53 +176,46 @@ int main()
                     Connect4 connect4_game;
                     bool game_over = false;
 
-                Player* player1 = find_player_in_list(player_list, username_player1);
-                Player* player2 = find_player_in_list(player_list, username_player2);
-
-                if (player1 == nullptr || player2 == nullptr) { 
-                    std::cout << "Erro: jogador não encontrado na lista." << std::endl; return 1;
-                    }
-
-                char current_player = 'X';
-
-                while (!game_over) {
-                    int column;
-                    connect4_game.print_game_board();
-
-                    std::cout << "Turno de jogador <" << connect4_game.get_current_player() << ">:" << std::endl;
-                    std::cin >> column;
-
-                    if (connect4_game.is_valid_move(column))
+                    while (!game_over)
                     {
-                        connect4_game.make_move(column);
-                        if (connect4_game.check_win())
+                        int column;
+                        connect4_game.print_game_board();
+                        char current_player = 'X';
+
+                        std::cout << "Turno de jogador <" << connect4_game.get_current_player() << ">:" << std::endl;
+                        std::cin >> column;
+
+                        if (connect4_game.is_valid_move(column))
                         {
-                            connect4_game.print_game_board();
-                            if (connect4_game.get_current_player() == 'X')
+                            connect4_game.make_move(column);
+                            if (connect4_game.check_win())
                             {
-                                player1->add_win("Lig4");
-                                player2->add_loss("Lig4");
-                                std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
+                                connect4_game.print_game_board();
+                                if (connect4_game.get_current_player() == 'X')
+                                {
+                                    player1->add_win("Lig4");
+                                    player2->add_loss("Lig4");
+                                    std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
+                                }
+                                else
+                                {
+                                    player2->add_win("Lig4");
+                                    player1->add_loss("Lig4");
+                                    std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
+                                }
+                                game_over = true;
                             }
-                            else
+                            else if (connect4_game.is_board_full())
                             {
-                                player2->add_win("Lig4");
-                                player1->add_loss("Lig4");
-                                std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
+                                std::cout << "O jogo terminou em empate!" << std::endl;
+                                game_over = true;
                             }
-                            game_over = true;
+
+                            connect4_game.switch_players(current_player);
                         }
-                        else if (connect4_game.is_board_full())
-                        {
-                            std::cout << "O jogo terminou em empate!" << std::endl;
-                            game_over = true;
-                        }
-                        current_player = connect4_game.switch_players(current_player);
-                        connect4_game.set_current_player(current_player);
+                        else
+                            std::cout << "Movimento inválido. Tente novamente." << std::endl;                        
                     }
-                    else
-                        std::cout << "Movimento inválido. Tente novamente." << std::endl;                        
-                }
                 }
                 else if (game == 'V')
                 {
@@ -251,9 +244,15 @@ int main()
                         std::cout << "Player " << tic_tac_toe_game.get_current_player() << " turn:" << std::endl;
                         tic_tac_toe_game.print_tic_tac_toe_board();
 
-                        if (!(std::cin >> x >> y))
+                        try 
                         {
-                            std::cout << "Invalid input. Please enter two integers for your move" << std::endl;
+                            if (!(std::cin >> x >> y))
+                                throw std::invalid_argument("Invalid input. Please enter two integers for your move");
+                        } 
+
+                        catch (const std::invalid_argument& e)
+                        {
+                            std::cerr << "Error: " << e.what() << std::endl;
                             std::cin.clear();
                             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             continue;
