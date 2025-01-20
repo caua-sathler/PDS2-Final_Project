@@ -53,9 +53,9 @@ void Board::print_game_board() const
 
 bool Board::is_move_inside_board(int x, int y) const
 {
-    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1))
-        return false;
-            
+    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1)) 
+        throw std::out_of_range("Coordinates out of board!");
+    
     return true;
 }
 
@@ -64,5 +64,5 @@ bool Board::is_space_free(int x, int y) const
     if ((this->game_board[x][y] == ' '))
         return true;
 
-    return false;
+    throw std::runtime_error("Position ocuppied!");
 }
