@@ -4,7 +4,8 @@
 #include "Game.hpp"
 #include <iostream>
 
-class Connect4 : public Game {
+class Connect4 : public Game 
+{
     private:
         char current_player;
 

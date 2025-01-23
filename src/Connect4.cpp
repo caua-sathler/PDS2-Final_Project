@@ -1,24 +1,21 @@
 #include "Connect4.hpp"
 #include <iostream>
 
-Connect4::Connect4() : Game(6, 7), current_player('X'){
-}
+Connect4::Connect4() : Game(6, 7), current_player('X') {}
 
-bool Connect4::is_valid_move() const {
+bool Connect4::is_valid_move() const 
+{
     return true;
 }
 
-void Connect4::make_move(){
-
-}
+void Connect4::make_move(){}
 
 // If the move is valid return true, otherwise return false
-bool Connect4::is_valid_move(int column) {
+bool Connect4::is_valid_move(int column)
+{
     column--; 
-    int rows = 6;
-    if (game_board.get_space(0, column) != ' ' || game_board.is_move_inside_board(rows, column)) {
-        return false;
-    }
+    if (game_board.get_space(0, column) != ' ') return false;
+    if (column < 0 || column >= 7) return false;
     return true;
 }
 
@@ -36,13 +33,16 @@ void Connect4::make_move(int column)
         }
 }
 
-bool Connect4::check_win(){
+bool Connect4::check_win()
+{
     // If the current player wins, return true, otherwise return false
 
     // horizontal verification 
 
-    for (int row = 0; row < 6; ++row) {
-        for (int col = 0; col <= 3; ++col) {
+    for (int row = 0; row < 6; ++row) 
+    {
+        for (int col = 0; col <= 3; ++col) 
+        {
             if (game_board.get_space(row, col) == current_player && 
                 game_board.get_space(row, col + 1) == current_player &&
                 game_board.get_space(row, col + 2) == current_player && 
@@ -54,8 +54,10 @@ bool Connect4::check_win(){
 
     // vertical verification 
 
-    for (int row = 0; row <= 2; ++row) {
-        for (int col = 0; col < 7; ++col) {
+    for (int row = 0; row <= 2; ++row) 
+    {
+        for (int col = 0; col < 7; ++col) 
+        {
             if (game_board.get_space(row, col) == current_player && 
                 game_board.get_space(row + 1, col) == current_player &&
                 game_board.get_space(row + 2, col) == current_player && 
@@ -67,8 +69,10 @@ bool Connect4::check_win(){
 
     // right diagonal check
 
-    for (int row = 0; row <= 2; ++row) {
-        for (int col = 0; col <= 3; ++col) {
+    for (int row = 0; row <= 2; ++row) 
+    {
+        for (int col = 0; col <= 3; ++col) 
+        {
             if (game_board.get_space(row, col) == current_player && 
                 game_board.get_space(row + 1, col + 1) == current_player &&
                 game_board.get_space(row + 2, col + 2) == current_player && 
@@ -80,8 +84,10 @@ bool Connect4::check_win(){
 
     // left diagonal check
 
-    for (int row = 3; row < 6; ++row) {
-        for (int col = 0; col <= 3; ++col) {
+    for (int row = 3; row < 6; ++row) 
+    {
+        for (int col = 0; col <= 3; ++col) 
+        {
             if (game_board.get_space(row, col) == current_player && 
                 game_board.get_space(row - 1, col + 1) == current_player &&
                 game_board.get_space(row - 2, col + 2) == current_player && 
@@ -102,7 +108,8 @@ bool Connect4::is_board_full() const
 {
     for(int col = 0; col < 7; ++col) 
     {
-        if(game_board.get_space(0, col) == ' ') {
+        if(game_board.get_space(0, col) == ' ') 
+        {
             return false;
         }
     }
@@ -119,5 +126,4 @@ void Connect4::set_current_player(char player)
     current_player = player;
 }
 
-Connect4::~Connect4() {
-}
+Connect4::~Connect4() {}

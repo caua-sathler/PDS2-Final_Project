@@ -20,7 +20,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/julialuna/PDS2-Final_Project/teste");
+    file_in.open("/home/leonardo/PDS2-Final_Project/teste");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -182,7 +182,7 @@ int main()
                         }
                     }
                 }
-                else if (game == 'L')
+                else if (game == 'L')  
                 {
                     Connect4 connect4_game;
                     bool game_over = false;
@@ -191,41 +191,62 @@ int main()
                     {
                         int column;
                         connect4_game.print_game_board();
-                        char current_player = 'X';
+                        char current_player = connect4_game.get_current_player();
 
-                        std::cout << "Turno de jogador <" << connect4_game.get_current_player() << ">:" << std::endl;
-                        std::cin >> column;
+                        std::cout << "Turno de jogador <" << current_player << ">:" << std::endl;
+        
+                        try {
+                            if (!(std::cin >> column)) 
+                            {
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                throw std::invalid_argument("Entrada inválida. Por favor, insira um número inteiro.");
+                            }
 
-                        if (connect4_game.is_valid_move(column))
-                        {
+                            if (!connect4_game.is_valid_move(column)) 
+                            {
+                                throw std::out_of_range("Movimento inválido!");
+                            }
+                            
                             connect4_game.make_move(column);
-                            if (connect4_game.check_win())
+                                
+                            if (connect4_game.check_win()) 
                             {
                                 connect4_game.print_game_board();
-                                if (connect4_game.get_current_player() == 'X')
+                                if (current_player == 'X') 
                                 {
                                     player1->add_win("Lig4");
                                     player2->add_loss("Lig4");
                                     std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
-                                }
-                                else
+                                } 
+                                else 
                                 {
                                     player2->add_win("Lig4");
                                     player1->add_loss("Lig4");
                                     std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
                                 }
-                                game_over = true;
-                            }
-                            else if (connect4_game.is_board_full())
+                                game_over = true; 
+                            } 
+                            else if (connect4_game.is_board_full()) 
                             {
                                 std::cout << "O jogo terminou em empate!" << std::endl;
                                 game_over = true;
                             }
-
-                            connect4_game.switch_players(current_player);
+                        } 
+                        catch (const std::out_of_range& e) 
+                        {
+                            std::cout << "Erro: " << e.what() << std::endl;
+                        } 
+                        catch (const std::runtime_error& e) 
+                        {
+                            std::cout << "Erro: " << e.what() << std::endl;
+                        } 
+                        catch (const std::invalid_argument& e) 
+                        {
+                            std::cout << "Erro: " << e.what() << std::endl;
                         }
-                        else
-                            std::cout << "Movimento inválido. Tente novamente." << std::endl;
+                        connect4_game.set_current_player((current_player == 'X') ? 'O' : 'X');
+
                     }
                 }
                 else if (game == 'V')
