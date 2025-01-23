@@ -1,0 +1,80 @@
+\doxysection{Referência do Arquivo include/\+Player.hpp}
+\hypertarget{Player_8hpp}{}\label{Player_8hpp}\index{include/Player.hpp@{include/Player.hpp}}
+
+
+Gerencia informações e ações relacionadas a jogadores.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+Gráfico de dependência de inclusões para Player.\+hpp\+:
+% FIG 0
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo\+:
+% FIG 1
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPlayer}{Player}}
+\begin{DoxyCompactList}\small\item\em Representa um jogador com informações pessoais e estatísticas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Player_8hpp_a681d145d2dd1aff047b89c6c215a58d6}{read\+\_\+register\+\_\+file}} (std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list, std\+::ifstream \&file\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Lê os dados de registro de jogadores a partir de um arquivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Player_8hpp_a2c332d86a06a95e92f9ca05f88077198}{write\+\_\+register\+\_\+file}} (std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list, std\+::ofstream \&file\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Escreve os dados de registro de jogadores em um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Gerencia informações e ações relacionadas a jogadores. 
+
+Define a estrutura de dados e métodos para representar jogadores, incluindo estatísticas, registros e funcionalidades associadas. 
+
+Definição no arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+
+\doxysubsection{Funções}
+\Hypertarget{Player_8hpp_a681d145d2dd1aff047b89c6c215a58d6}\label{Player_8hpp_a681d145d2dd1aff047b89c6c215a58d6} 
+\index{Player.hpp@{Player.hpp}!read\_register\_file@{read\_register\_file}}
+\index{read\_register\_file@{read\_register\_file}!Player.hpp@{Player.hpp}}
+\doxysubsubsection{\texorpdfstring{read\_register\_file()}{read\_register\_file()}}
+{\footnotesize\ttfamily void read\+\_\+register\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list,  }\item[{std\+::ifstream \&}]{file\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Lê os dados de registro de jogadores a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+\_\+list} & Lista de jogadores a ser preenchida. \\
+\hline
+{\em file\+\_\+in} & Arquivo de entrada contendo os registros. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00091}{91}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{Player_8hpp_a2c332d86a06a95e92f9ca05f88077198}\label{Player_8hpp_a2c332d86a06a95e92f9ca05f88077198} 
+\index{Player.hpp@{Player.hpp}!write\_register\_file@{write\_register\_file}}
+\index{write\_register\_file@{write\_register\_file}!Player.hpp@{Player.hpp}}
+\doxysubsubsection{\texorpdfstring{write\_register\_file()}{write\_register\_file()}}
+{\footnotesize\ttfamily void write\+\_\+register\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list,  }\item[{std\+::ofstream \&}]{file\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Escreve os dados de registro de jogadores em um arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+\_\+list} & Lista de jogadores a ser registrada. \\
+\hline
+{\em file\+\_\+out} & Arquivo de saída para armazenar os registros. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00115}{115}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+

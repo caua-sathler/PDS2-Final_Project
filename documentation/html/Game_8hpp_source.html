@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PDS II Final Project: Código-Fonte de include/Game.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">PDS II Final Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Game.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Game_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GAME_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Board_8hpp.html">Board.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classGame.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classGame.html">Game</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classGame.html#adff7857a63e229e965d59ad55bcad92e">   22</a></span>        <a class="code hl_class" href="classBoard.html">Board</a> <a class="code hl_variable" href="classGame.html#adff7857a63e229e965d59ad55bcad92e">game_board</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="classGame.html">Game</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="Tic__tac__toe_8cpp.html#acfdb99af3afce9e6da945c95be765ebb">num_rows_received</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="Tic__tac__toe_8cpp.html#affc09760547c96857e4684381e1f6224">num_columns_received</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classGame.html#ad3d75d8a335496c94eb0b8a4bb6d9d3a">   39</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classGame.html#ad3d75d8a335496c94eb0b8a4bb6d9d3a">is_valid_move</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classGame.html#a7c8ebe7e6bb5d55430e66f47da751d23">   47</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classGame.html#a7c8ebe7e6bb5d55430e66f47da751d23">make_move</a>() = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classGame.html#a4632d0ae33d289bd6c4af2bc339ace18">   56</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classGame.html#a4632d0ae33d289bd6c4af2bc339ace18">check_win</a>() = 0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(<span class="keywordtype">char</span> current_player);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530">   72</a></span>        <a class="code hl_function" href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>() {}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aBoard_8hpp_html"><div class="ttname"><a href="Board_8hpp.html">Board.hpp</a></div><div class="ttdoc">Representa o tabuleiro de um jogo genérico.</div></div>
+<div class="ttc" id="aTic__tac__toe_8cpp_html_acfdb99af3afce9e6da945c95be765ebb"><div class="ttname"><a href="Tic__tac__toe_8cpp.html#acfdb99af3afce9e6da945c95be765ebb">num_rows_received</a></div><div class="ttdeci">const int num_rows_received</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00005">Tic_tac_toe.cpp:5</a></div></div>
+<div class="ttc" id="aTic__tac__toe_8cpp_html_affc09760547c96857e4684381e1f6224"><div class="ttname"><a href="Tic__tac__toe_8cpp.html#affc09760547c96857e4684381e1f6224">num_columns_received</a></div><div class="ttdeci">const int num_columns_received</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00006">Tic_tac_toe.cpp:6</a></div></div>
+<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Gerencia o tabuleiro do jogo.</div><div class="ttdef"><b>Definição</b> <a href="Board_8hpp_source.html#l00020">Board.hpp:20</a></div></div>
+<div class="ttc" id="aclassGame_html"><div class="ttname"><a href="classGame.html">Game</a></div><div class="ttdoc">Classe base para jogos com tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Game_8hpp_source.html#l00020">Game.hpp:20</a></div></div>
+<div class="ttc" id="aclassGame_html_a00fe5a25022c7ee8cccb86ffae287054"><div class="ttname"><a href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">Game::switch_players</a></div><div class="ttdeci">char switch_players(char current_player)</div><div class="ttdoc">Alterna entre os jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Game_8cpp_source.html#l00011">Game.cpp:11</a></div></div>
+<div class="ttc" id="aclassGame_html_a4632d0ae33d289bd6c4af2bc339ace18"><div class="ttname"><a href="classGame.html#a4632d0ae33d289bd6c4af2bc339ace18">Game::check_win</a></div><div class="ttdeci">virtual bool check_win()=0</div><div class="ttdoc">Verifica se há um vencedor no jogo.</div></div>
+<div class="ttc" id="aclassGame_html_a7c8ebe7e6bb5d55430e66f47da751d23"><div class="ttname"><a href="classGame.html#a7c8ebe7e6bb5d55430e66f47da751d23">Game::make_move</a></div><div class="ttdeci">virtual void make_move()=0</div><div class="ttdoc">Realiza uma jogada.</div></div>
+<div class="ttc" id="aclassGame_html_ad3d75d8a335496c94eb0b8a4bb6d9d3a"><div class="ttname"><a href="classGame.html#ad3d75d8a335496c94eb0b8a4bb6d9d3a">Game::is_valid_move</a></div><div class="ttdeci">virtual bool is_valid_move() const =0</div><div class="ttdoc">Verifica se uma jogada é válida.</div></div>
+<div class="ttc" id="aclassGame_html_adff7857a63e229e965d59ad55bcad92e"><div class="ttname"><a href="classGame.html#adff7857a63e229e965d59ad55bcad92e">Game::game_board</a></div><div class="ttdeci">Board game_board</div><div class="ttdef"><b>Definição</b> <a href="Game_8hpp_source.html#l00022">Game.hpp:22</a></div></div>
+<div class="ttc" id="aclassGame_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="classGame.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdoc">Destrutor da classe base Game.</div><div class="ttdef"><b>Definição</b> <a href="Game_8hpp_source.html#l00072">Game.hpp:72</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

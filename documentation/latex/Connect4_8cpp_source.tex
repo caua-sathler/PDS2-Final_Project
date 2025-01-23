@@ -1,0 +1,128 @@
+\doxysection{Connect4.\+cpp}
+\hypertarget{Connect4_8cpp_source}{}\label{Connect4_8cpp_source}\index{src/Connect4.cpp@{src/Connect4.cpp}}
+\mbox{\hyperlink{Connect4_8cpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Connect4_8hpp}{Connect4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00005}\mbox{\hyperlink{classConnect4_abd0e31f406a3eb8e5b538668dfd920f9}{00005}}\ \mbox{\hyperlink{classConnect4_abd0e31f406a3eb8e5b538668dfd920f9}{Connect4::Connect4}}()\ :\ \mbox{\hyperlink{classGame}{Game}}(6,\ 7),\ current\_player(\textcolor{stringliteral}{'X'})\ \{\}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00008}\mbox{\hyperlink{classConnect4_adbf8b0bea155f8d9e75c32d1f900ec4d}{00008}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{Connect4::is\_valid\_move}}(\textcolor{keywordtype}{int}\ column)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00009}00009\ \ \ \ \ column-\/-\/;\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ coluna\ está\ cheia\ ou\ fora\ dos\ limites\ do\ tabuleiro}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ column)\ !=\ \textcolor{charliteral}{'\ '}\ ||\ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(rows,\ column))\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00019}\mbox{\hyperlink{classConnect4_aa2f1e0cb5f1a8632f90ace073f00df9d}{00019}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{Connect4::make\_move}}(\textcolor{keywordtype}{int}\ column)\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00021}00021\ \ \ \ \ column-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Encontra\ a\ linha\ mais\ baixa\ disponível\ na\ coluna\ e\ coloca\ a\ peça\ do\ jogador\ atual}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ >=\ 0;\ i-\/-\/)\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ column)\ ==\ \textcolor{charliteral}{'\ '})\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(i,\ column,\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}});}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00034}\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{00034}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{Connect4::check\_win}}()\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Verificação\ de\ vitória\ horizontal}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 6;\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <=\ 3;\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col\ +\ 1)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col\ +\ 2)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col\ +\ 3)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}})\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Verificação\ de\ vitória\ vertical}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <=\ 2;\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 7;\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 1,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 2,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 3,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}})\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Verificação\ de\ vitória\ diagonal\ para\ a\ direita}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <=\ 2;\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <=\ 3;\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 1,\ col\ +\ 1)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 2,\ col\ +\ 2)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ +\ 3,\ col\ +\ 3)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}})\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ Verificação\ de\ vitória\ diagonal\ para\ a\ esquerda}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 3;\ row\ <\ 6;\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <=\ 3;\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row,\ col)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ -\/\ 1,\ col\ +\ 1)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ -\/\ 2,\ col\ +\ 2)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(row\ -\/\ 3,\ col\ +\ 3)\ ==\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}})\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00087}\mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{00087}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{Connect4::get\_current\_player}}()}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00088}00088\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00093}\mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{00093}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{Connect4::is\_board\_full}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00094}00094\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 7;\ ++col)\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ col)\ ==\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00105}\mbox{\hyperlink{classConnect4_a9abdbbbd70f28127eba647a090cf8763}{00105}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConnect4_a9abdbbbd70f28127eba647a090cf8763}{Connect4::print\_game\_board}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00106}00106\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00111}\mbox{\hyperlink{classConnect4_a7900bc45a9822ec810af13a1ab649414}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConnect4_a7900bc45a9822ec810af13a1ab649414}{Connect4::set\_current\_player}}(\textcolor{keywordtype}{char}\ player)\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00112}00112\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{classConnect4_a8d9912462f3d633c5479dceeb315a49a}{current\_player}}\ =\ player;}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00117}\mbox{\hyperlink{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9}{00117}}\ \mbox{\hyperlink{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9}{Connect4::\string~Connect4}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00119}00119\ \textcolor{comment}{//\ Funções\ declaradas\ somente\ para\ fins\ de\ sobrecarga}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00120}\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{00120}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{Connect4::is\_valid\_move}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{Connect4_8cpp_source_l00122}\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{00122}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{Connect4::make\_move}}()\ \{\}}
+
+\end{DoxyCode}

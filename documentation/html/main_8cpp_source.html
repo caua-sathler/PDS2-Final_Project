@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PDS II Final Project: Código-Fonte de src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">PDS II Final Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Player_8hpp.html">Player.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Reversi_8hpp.html">Reversi.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Tic__tac__toe_8hpp.html">Tic_tac_toe.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Connect4_8hpp.html">Connect4.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;bits/stdc++.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="main_8cpp.html#a82603708bf24de9e03f01ad1b673431e">   17</a></span><a class="code hl_class" href="classPlayer.html">Player</a> *<a class="code hl_function" href="main_8cpp.html#a82603708bf24de9e03f01ad1b673431e">find_player_in_list</a>(std::list&lt;Player&gt; &amp;player_list, <span class="keyword">const</span> std::string &amp;user_name)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;player : player_list)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span> (player.get_username() == user_name)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">return</span> &amp;player;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   33</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::ifstream file_in;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    file_in.open(<span class="stringliteral">&quot;/home/julialuna/PDS2-Final_Project/teste&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!file_in.is_open())</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Erro ao abrir o arquivo&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::list&lt;Player&gt; player_list;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="Player_8cpp.html#a681d145d2dd1aff047b89c6c215a58d6">read_register_file</a>(player_list, file_in);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    file_in.close();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string command;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::string name_in, username_in;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> error = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// Loop principal que processa os comandos do usuário</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">while</span> (std::cin &gt;&gt; command)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (command == <span class="stringliteral">&quot;LJ&quot;</span>)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// Listar jogadores ordenados por nome ou username</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordtype">char</span> sort_command;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            std::cin &gt;&gt; sort_command;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (sort_command == <span class="charliteral">&#39;A&#39;</span>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                player_list.sort(<a class="code hl_function" href="classPlayer.html#a4a3240351b19e8c63e6af419a7c8b358">Player::compare_username</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sort_command == <span class="charliteral">&#39;N&#39;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                player_list.sort(<a class="code hl_function" href="classPlayer.html#ad0bb3dc74029343b9c6eaec7f220f2cf">Player::compare_name</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;ERRO: comando inexistente&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            std::list&lt;Player&gt;::iterator it;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">for</span> (it = player_list.begin(); it != player_list.end(); it++)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                it-&gt;print_player();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (command == <span class="stringliteral">&quot;CJ&quot;</span>)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="comment">// Cadastrar um novo jogador</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            std::string line_in;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            std::getline(std::cin, line_in);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            std::stringstream stream_in(line_in);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            stream_in &gt;&gt; username_in;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            stream_in.ignore();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            std::getline(stream_in, name_in);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> (name_in == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;ERRO: dados incorretos&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_class" href="classPlayer.html">Player</a> new_player(name_in, username_in);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classPlayer.html#ac386ebe9f18601c9596f6b810d62ae3d">Player::register_player</a>(new_player, player_list) == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Jogador &quot;</span> &lt;&lt; new_player.<a class="code hl_function" href="classPlayer.html#a64a6c94b00bc67363f8309957a2705ac">get_username</a>() &lt;&lt; <span class="stringliteral">&quot; cadastrado com sucesso&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;ERRO: jogador repetido&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (command == <span class="stringliteral">&quot;RJ&quot;</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="comment">// Remover um jogador existente</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            std::cin &gt;&gt; username_in;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classPlayer.html#a83b4fdf5bb2a5dece50f487385ebf4b5">Player::remove_player</a>(username_in, player_list) == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Jogador &quot;</span> &lt;&lt; username_in &lt;&lt; <span class="stringliteral">&quot; removido com sucesso&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;ERRO: jogador inexistente&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (command == <span class="stringliteral">&quot;EP&quot;</span>)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {   </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="comment">// Iniciar um jogo entre dois jogadores</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordtype">char</span> game;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            std::string username_player1, username_player2;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                std::cin &gt;&gt; game;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <span class="keywordflow">if</span> (game != <span class="charliteral">&#39;R&#39;</span> &amp;&amp; game != <span class="charliteral">&#39;V&#39;</span> &amp;&amp; game != <span class="charliteral">&#39;L&#39;</span>)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Entrada inválida, jogos disponíveis: R, V e L&quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                std::cin &gt;&gt; username_player1 &gt;&gt; username_player2;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <a class="code hl_class" href="classPlayer.html">Player</a> *player1 = <a class="code hl_function" href="main_8cpp.html#a82603708bf24de9e03f01ad1b673431e">find_player_in_list</a>(player_list, username_player1);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <a class="code hl_class" href="classPlayer.html">Player</a> *player2 = <a class="code hl_function" href="main_8cpp.html#a82603708bf24de9e03f01ad1b673431e">find_player_in_list</a>(player_list, username_player2);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                <span class="keywordflow">if</span> (player1 == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;ERRO: jogador &quot;</span> + username_player1 + <span class="stringliteral">&quot; inexistente&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (player2 == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;ERRO: jogador &quot;</span> + username_player2 + <span class="stringliteral">&quot; inexistente&quot;</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <span class="comment">// Inicialização do jogo com base no tipo selecionado</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                <span class="keywordflow">if</span> (game == <span class="charliteral">&#39;R&#39;</span>)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    <a class="code hl_class" href="classReversi.html">Reversi</a> reversi_game;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                    <span class="keywordtype">char</span> player_piece = <span class="charliteral">&#39;X&#39;</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                    <span class="keywordtype">char</span> opponent_piece = <span class="charliteral">&#39;O&#39;</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        <span class="keywordtype">int</span> x, y;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                        <span class="keywordtype">bool</span> is_there_movement_for_player = reversi_game.<a class="code hl_function" href="classReversi.html#a49be6ec4f973ea46f84594cf15033cdc">is_there_valid_move_for_player</a>(player_piece);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        <span class="keywordtype">bool</span> someone_won = reversi_game.<a class="code hl_function" href="classReversi.html#aa5e2fd3bb4579d881057646d17e296a8">check_win</a>(is_there_movement_for_player, player_piece);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                        reversi_game.<a class="code hl_function" href="classReversi.html#af30ad7ad93e9db13382280f064f538a5">print_reversi_board</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;X: &quot;</span> &lt;&lt; reversi_game.<a class="code hl_function" href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">get_num_pieces_player_X</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;O: &quot;</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                  &lt;&lt; reversi_game.<a class="code hl_function" href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">get_num_pieces_player_O</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                        <span class="keywordflow">if</span> (someone_won)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                        {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                            reversi_game.<a class="code hl_function" href="classReversi.html#ab4ea15cb7f793737d4e1458721c767ec">register_win_and_loss</a>(player1, player2);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                            <span class="keywordflow">if</span> (reversi_game.<a class="code hl_function" href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">get_num_pieces_player_X</a>() &gt; reversi_game.<a class="code hl_function" href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">get_num_pieces_player_O</a>())</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                                std::cout &lt;&lt; username_player1 &lt;&lt; <span class="stringliteral">&quot; ganhou!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (reversi_game.<a class="code hl_function" href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">get_num_pieces_player_X</a>() &lt; reversi_game.<a class="code hl_function" href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">get_num_pieces_player_O</a>())</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                                std::cout &lt;&lt; username_player2 &lt;&lt; <span class="stringliteral">&quot; ganhou!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                                std::cout &lt;&lt; <span class="stringliteral">&quot;Houve empate!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_there_movement_for_player &amp;&amp; !someone_won)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                        {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                            <span class="keywordflow">if</span> (player_piece == <span class="charliteral">&#39;X&#39;</span>)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                                std::cout &lt;&lt; username_player1 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;[X]&quot;</span> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; std::ends;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                                std::cout &lt;&lt; username_player2 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;[O]&quot;</span> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; std::ends;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                               </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                                <span class="keywordflow">if</span> (!(std::cin &gt;&gt; x )) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                                    std::cin.clear();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                                    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Entrada inválida. Por favor forneça dois números inteiros.&quot;</span>);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                                }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                                <span class="keywordflow">if</span>(!(std::cin &gt;&gt; y)){</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                                    std::cin.clear();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                                    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Entrada inválida, vez passada para o oponente&quot;</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                <span class="keywordflow">if</span> (!reversi_game.<a class="code hl_function" href="classReversi.html#a1e85bfa378f2f97e4dead2da81aa7584">process_move</a>({x, y}, player_piece)) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Jogada inválida, vez passada para o oponente.&quot;</span>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                            } </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument &amp;e) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                            </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                                std::cout &lt;&lt; <span class="stringliteral">&quot;Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                            }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                            player_piece = reversi_game.<a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(player_piece);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                            opponent_piece = reversi_game.<a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(opponent_piece);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                        }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!is_there_movement_for_player &amp;&amp; !someone_won)</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                        {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                            player_piece = reversi_game.<a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(player_piece);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                            opponent_piece = reversi_game.<a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(opponent_piece);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                            std::cout &lt;&lt; <span class="stringliteral">&quot;Não há jogadas válidas, vez passada para o oponente&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game == <span class="charliteral">&#39;L&#39;</span>)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    <a class="code hl_class" href="classConnect4.html">Connect4</a> connect4_game;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    <span class="keywordtype">bool</span> game_over = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                    <span class="keywordflow">while</span> (!game_over)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                        <span class="keywordtype">int</span> column;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                        connect4_game.<a class="code hl_function" href="classConnect4.html#a9abdbbbd70f28127eba647a090cf8763">print_game_board</a>();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                        <span class="keywordtype">char</span> current_player = <span class="charliteral">&#39;X&#39;</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;Turno de jogador &lt;&quot;</span> &lt;&lt; connect4_game.<a class="code hl_function" href="classConnect4.html#af6a1ee6390778f03c47f5e96295318af">get_current_player</a>() &lt;&lt; <span class="stringliteral">&quot;&gt;:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                        std::cin &gt;&gt; column;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                        <span class="keywordflow">if</span> (connect4_game.<a class="code hl_function" href="classConnect4.html#a887c8048d47327cb3455015e15c39f62">is_valid_move</a>(column))</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                        {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                            connect4_game.<a class="code hl_function" href="classConnect4.html#a273fd400836fffb0c7f5ac6b48471db3">make_move</a>(column);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                            <span class="keywordflow">if</span> (connect4_game.<a class="code hl_function" href="classConnect4.html#adcf36224a7f7ffd24fcbffe430a6a2fe">check_win</a>())</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                            {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                                connect4_game.<a class="code hl_function" href="classConnect4.html#a9abdbbbd70f28127eba647a090cf8763">print_game_board</a>();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                                <span class="keywordflow">if</span> (connect4_game.<a class="code hl_function" href="classConnect4.html#af6a1ee6390778f03c47f5e96295318af">get_current_player</a>() == <span class="charliteral">&#39;X&#39;</span>)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                                {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                                    player1-&gt;<a class="code hl_function" href="classPlayer.html#ab30603cbe748d9cff259a83841461b16">add_win</a>(<span class="stringliteral">&quot;Lig4&quot;</span>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                                    player2-&gt;<a class="code hl_function" href="classPlayer.html#ad94f66bc9ff376f44d30b78b5c1e3965">add_loss</a>(<span class="stringliteral">&quot;Lig4&quot;</span>);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                                    std::cout &lt;&lt; <span class="stringliteral">&quot;Parabéns, &quot;</span> &lt;&lt; username_player1 &lt;&lt; <span class="stringliteral">&quot;! Você venceu!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                                }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                                {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                                    player2-&gt;<a class="code hl_function" href="classPlayer.html#ab30603cbe748d9cff259a83841461b16">add_win</a>(<span class="stringliteral">&quot;Lig4&quot;</span>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                                    player1-&gt;<a class="code hl_function" href="classPlayer.html#ad94f66bc9ff376f44d30b78b5c1e3965">add_loss</a>(<span class="stringliteral">&quot;Lig4&quot;</span>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                                    std::cout &lt;&lt; <span class="stringliteral">&quot;Parabéns, &quot;</span> &lt;&lt; username_player2 &lt;&lt; <span class="stringliteral">&quot;! Você venceu!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                                }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                game_over = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                            }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (connect4_game.<a class="code hl_function" href="classConnect4.html#aebe9a9afdf21fcedf9c1e430ef9eceed">is_board_full</a>())</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                            {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                                std::cout &lt;&lt; <span class="stringliteral">&quot;O jogo terminou em empate!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                                game_over = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                            }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                            connect4_game.<a class="code hl_function" href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">switch_players</a>(current_player);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                        }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                            std::cout &lt;&lt; <span class="stringliteral">&quot;Movimento inválido. Tente novamente.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (game == <span class="charliteral">&#39;V&#39;</span>)</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    <a class="code hl_class" href="classTic__tac__toe.html">Tic_tac_toe</a> tic_tac_toe_game;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    <span class="keywordtype">int</span> x, y;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    std::cout &lt;&lt; username_player1 &lt;&lt; <span class="stringliteral">&quot; is X and &quot;</span> &lt;&lt; username_player2 &lt;&lt; <span class="stringliteral">&quot; is O&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                        <span class="keywordflow">if</span> (tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#a4b3655eea3b4c80c59d975814738647e">check_tic_tac_toe_win</a>() != <span class="charliteral">&#39;F&#39;</span>)</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                        {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                            tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#aed1c8977b5cf8f35a464fab86c6d44b2">print_tic_tac_toe_board</a>();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                            std::cout &lt;&lt; username_player1 &lt;&lt; <span class="stringliteral">&quot; won!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                            player1-&gt;<a class="code hl_function" href="classPlayer.html#ab30603cbe748d9cff259a83841461b16">add_win</a>(<span class="stringliteral">&quot;Velha&quot;</span>);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                            player2-&gt;<a class="code hl_function" href="classPlayer.html#ad94f66bc9ff376f44d30b78b5c1e3965">add_loss</a>(<span class="stringliteral">&quot;Velha&quot;</span>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                        }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                        <span class="keywordflow">if</span> (tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#a868dac0f7827c9171fd7f83656f813ee">check_tie</a>())</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                        {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                            std::cout &lt;&lt; <span class="stringliteral">&quot;Draw! The board is full&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                        }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;Player &quot;</span> &lt;&lt; tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#a4a7e94369fe17c8307feb0f56d16ba23">get_current_player</a>() &lt;&lt; <span class="stringliteral">&quot; turn:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                        tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#aed1c8977b5cf8f35a464fab86c6d44b2">print_tic_tac_toe_board</a>();</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                        <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                        {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                            <span class="keywordflow">if</span> (!(std::cin &gt;&gt; x &gt;&gt; y))</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid input. Please enter two integers for your move&quot;</span>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                        }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument &amp;e)</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                        {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                            std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                            std::cin.clear();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                            std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                        }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                        tic_tac_toe_game.<a class="code hl_function" href="classTic__tac__toe.html#a031548e8d6fa56b4e51b028078775ac7">make_move</a>(x, y);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    }</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            <span class="keywordflow">catch</span> (std::invalid_argument &amp;e)</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                std::cout &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (command == <span class="stringliteral">&quot;FS&quot;</span>)</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <span class="keywordflow">if</span> (error == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;ERRO: comando inexistente&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                error = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="comment">// Escrita do arquivo de registro atualizado</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    std::ofstream file_out;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    file_out.open(<span class="stringliteral">&quot;teste&quot;</span>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <span class="keywordflow">if</span> (!file_out.is_open())</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Erro ao abrir o arquivo&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <a class="code hl_function" href="Player_8cpp.html#a2c332d86a06a95e92f9ca05f88077198">write_register_file</a>(player_list, file_out);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    file_out.close();</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}</div>
+</div>
+<div class="ttc" id="aConnect4_8hpp_html"><div class="ttname"><a href="Connect4_8hpp.html">Connect4.hpp</a></div><div class="ttdoc">Implementa o jogo Connect4 (Lig4), baseado na classe genérica Game.</div></div>
+<div class="ttc" id="aPlayer_8cpp_html_a2c332d86a06a95e92f9ca05f88077198"><div class="ttname"><a href="Player_8cpp.html#a2c332d86a06a95e92f9ca05f88077198">write_register_file</a></div><div class="ttdeci">void write_register_file(std::list&lt; Player &gt; &amp;player_list, std::ofstream &amp;file_out)</div><div class="ttdoc">Escreve os dados de registro de jogadores em um arquivo.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00115">Player.cpp:115</a></div></div>
+<div class="ttc" id="aPlayer_8cpp_html_a681d145d2dd1aff047b89c6c215a58d6"><div class="ttname"><a href="Player_8cpp.html#a681d145d2dd1aff047b89c6c215a58d6">read_register_file</a></div><div class="ttdeci">void read_register_file(std::list&lt; Player &gt; &amp;player_list, std::ifstream &amp;file_in)</div><div class="ttdoc">Lê os dados de registro de jogadores a partir de um arquivo.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00091">Player.cpp:91</a></div></div>
+<div class="ttc" id="aPlayer_8hpp_html"><div class="ttname"><a href="Player_8hpp.html">Player.hpp</a></div><div class="ttdoc">Gerencia informações e ações relacionadas a jogadores.</div></div>
+<div class="ttc" id="aReversi_8hpp_html"><div class="ttname"><a href="Reversi_8hpp.html">Reversi.hpp</a></div><div class="ttdoc">Implementa o jogo Reversi, baseado na classe genérica Game.</div></div>
+<div class="ttc" id="aTic__tac__toe_8hpp_html"><div class="ttname"><a href="Tic__tac__toe_8hpp.html">Tic_tac_toe.hpp</a></div><div class="ttdoc">Implementa o Jogo da Velha (Tic Tac Toe), baseado na classe genérica Game.</div></div>
+<div class="ttc" id="aclassConnect4_html"><div class="ttname"><a href="classConnect4.html">Connect4</a></div><div class="ttdoc">Gerencia as regras e funcionalidades do jogo Connect4.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8hpp_source.html#l00022">Connect4.hpp:22</a></div></div>
+<div class="ttc" id="aclassConnect4_html_a273fd400836fffb0c7f5ac6b48471db3"><div class="ttname"><a href="classConnect4.html#a273fd400836fffb0c7f5ac6b48471db3">Connect4::make_move</a></div><div class="ttdeci">void make_move() override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00122">Connect4.cpp:122</a></div></div>
+<div class="ttc" id="aclassConnect4_html_a887c8048d47327cb3455015e15c39f62"><div class="ttname"><a href="classConnect4.html#a887c8048d47327cb3455015e15c39f62">Connect4::is_valid_move</a></div><div class="ttdeci">bool is_valid_move() const override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00120">Connect4.cpp:120</a></div></div>
+<div class="ttc" id="aclassConnect4_html_a9abdbbbd70f28127eba647a090cf8763"><div class="ttname"><a href="classConnect4.html#a9abdbbbd70f28127eba647a090cf8763">Connect4::print_game_board</a></div><div class="ttdeci">void print_game_board() const</div><div class="ttdoc">Imprime o estado atual do tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00105">Connect4.cpp:105</a></div></div>
+<div class="ttc" id="aclassConnect4_html_adcf36224a7f7ffd24fcbffe430a6a2fe"><div class="ttname"><a href="classConnect4.html#adcf36224a7f7ffd24fcbffe430a6a2fe">Connect4::check_win</a></div><div class="ttdeci">bool check_win() override</div><div class="ttdoc">Verifica em todas direções válidas se o jogador atual venceu o jogo.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00034">Connect4.cpp:34</a></div></div>
+<div class="ttc" id="aclassConnect4_html_aebe9a9afdf21fcedf9c1e430ef9eceed"><div class="ttname"><a href="classConnect4.html#aebe9a9afdf21fcedf9c1e430ef9eceed">Connect4::is_board_full</a></div><div class="ttdeci">bool is_board_full() const</div><div class="ttdoc">Verifica se o tabuleiro está completamente cheio.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00093">Connect4.cpp:93</a></div></div>
+<div class="ttc" id="aclassConnect4_html_af6a1ee6390778f03c47f5e96295318af"><div class="ttname"><a href="classConnect4.html#af6a1ee6390778f03c47f5e96295318af">Connect4::get_current_player</a></div><div class="ttdeci">char get_current_player()</div><div class="ttdoc">Retorna o jogador atual.</div><div class="ttdef"><b>Definição</b> <a href="Connect4_8cpp_source.html#l00087">Connect4.cpp:87</a></div></div>
+<div class="ttc" id="aclassGame_html_a00fe5a25022c7ee8cccb86ffae287054"><div class="ttname"><a href="classGame.html#a00fe5a25022c7ee8cccb86ffae287054">Game::switch_players</a></div><div class="ttdeci">char switch_players(char current_player)</div><div class="ttdoc">Alterna entre os jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Game_8cpp_source.html#l00011">Game.cpp:11</a></div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Representa um jogador com informações pessoais e estatísticas.</div><div class="ttdef"><b>Definição</b> <a href="Player_8hpp_source.html#l00023">Player.hpp:23</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a4a3240351b19e8c63e6af419a7c8b358"><div class="ttname"><a href="classPlayer.html#a4a3240351b19e8c63e6af419a7c8b358">Player::compare_username</a></div><div class="ttdeci">static bool compare_username(Player &amp;player1, Player &amp;player2)</div><div class="ttdoc">Compara o username de dois jogadores.</div></div>
+<div class="ttc" id="aclassPlayer_html_a64a6c94b00bc67363f8309957a2705ac"><div class="ttname"><a href="classPlayer.html#a64a6c94b00bc67363f8309957a2705ac">Player::get_username</a></div><div class="ttdeci">std::string get_username()</div><div class="ttdoc">Retorna o nome de usuário.</div></div>
+<div class="ttc" id="aclassPlayer_html_a83b4fdf5bb2a5dece50f487385ebf4b5"><div class="ttname"><a href="classPlayer.html#a83b4fdf5bb2a5dece50f487385ebf4b5">Player::remove_player</a></div><div class="ttdeci">static bool remove_player(std::string username_received, std::list&lt; Player &gt; &amp;player_list)</div><div class="ttdoc">Remove um jogador da lista de jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00076">Player.cpp:76</a></div></div>
+<div class="ttc" id="aclassPlayer_html_ab30603cbe748d9cff259a83841461b16"><div class="ttname"><a href="classPlayer.html#ab30603cbe748d9cff259a83841461b16">Player::add_win</a></div><div class="ttdeci">void add_win(std::string key)</div><div class="ttdoc">Adiciona uma vitória ao jogador em um jogo específico.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00038">Player.cpp:38</a></div></div>
+<div class="ttc" id="aclassPlayer_html_ac386ebe9f18601c9596f6b810d62ae3d"><div class="ttname"><a href="classPlayer.html#ac386ebe9f18601c9596f6b810d62ae3d">Player::register_player</a></div><div class="ttdeci">static bool register_player(Player player_received, std::list&lt; Player &gt; &amp;player_list)</div><div class="ttdoc">Registra um jogador em uma lista de jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00063">Player.cpp:63</a></div></div>
+<div class="ttc" id="aclassPlayer_html_ad0bb3dc74029343b9c6eaec7f220f2cf"><div class="ttname"><a href="classPlayer.html#ad0bb3dc74029343b9c6eaec7f220f2cf">Player::compare_name</a></div><div class="ttdeci">static bool compare_name(Player &amp;player1, Player &amp;player2)</div><div class="ttdoc">Compara o nome de dois jogadores.</div></div>
+<div class="ttc" id="aclassPlayer_html_ad94f66bc9ff376f44d30b78b5c1e3965"><div class="ttname"><a href="classPlayer.html#ad94f66bc9ff376f44d30b78b5c1e3965">Player::add_loss</a></div><div class="ttdeci">void add_loss(std::string key)</div><div class="ttdoc">Adiciona uma derrota ao jogador em um jogo específico.</div><div class="ttdef"><b>Definição</b> <a href="Player_8cpp_source.html#l00046">Player.cpp:46</a></div></div>
+<div class="ttc" id="aclassReversi_html"><div class="ttname"><a href="classReversi.html">Reversi</a></div><div class="ttdoc">Gerencia as regras e funcionalidades do jogo Reversi.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8hpp_source.html#l00023">Reversi.hpp:23</a></div></div>
+<div class="ttc" id="aclassReversi_html_a1e85bfa378f2f97e4dead2da81aa7584"><div class="ttname"><a href="classReversi.html#a1e85bfa378f2f97e4dead2da81aa7584">Reversi::process_move</a></div><div class="ttdeci">bool process_move(std::array&lt; int, 2 &gt; move_coordinates, char player_piece_type)</div><div class="ttdoc">Processa uma jogada e verifica sua validade.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00208">Reversi.cpp:208</a></div></div>
+<div class="ttc" id="aclassReversi_html_a49be6ec4f973ea46f84594cf15033cdc"><div class="ttname"><a href="classReversi.html#a49be6ec4f973ea46f84594cf15033cdc">Reversi::is_there_valid_move_for_player</a></div><div class="ttdeci">bool is_there_valid_move_for_player(char player_piece)</div><div class="ttdoc">Verifica se há uma jogada válida para o jogador.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00224">Reversi.cpp:224</a></div></div>
+<div class="ttc" id="aclassReversi_html_a98215aaaace6102df09ad9862f2ef4ab"><div class="ttname"><a href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">Reversi::get_num_pieces_player_X</a></div><div class="ttdeci">int get_num_pieces_player_X()</div><div class="ttdoc">Retorna o número de peças do jogador X.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00017">Reversi.cpp:17</a></div></div>
+<div class="ttc" id="aclassReversi_html_aa5e2fd3bb4579d881057646d17e296a8"><div class="ttname"><a href="classReversi.html#aa5e2fd3bb4579d881057646d17e296a8">Reversi::check_win</a></div><div class="ttdeci">bool check_win() override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00281">Reversi.cpp:281</a></div></div>
+<div class="ttc" id="aclassReversi_html_ab4ea15cb7f793737d4e1458721c767ec"><div class="ttname"><a href="classReversi.html#ab4ea15cb7f793737d4e1458721c767ec">Reversi::register_win_and_loss</a></div><div class="ttdeci">void register_win_and_loss(Player *player1, Player *player2)</div><div class="ttdoc">Registra vitória e derrota dos jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00260">Reversi.cpp:260</a></div></div>
+<div class="ttc" id="aclassReversi_html_af30ad7ad93e9db13382280f064f538a5"><div class="ttname"><a href="classReversi.html#af30ad7ad93e9db13382280f064f538a5">Reversi::print_reversi_board</a></div><div class="ttdeci">void print_reversi_board() const</div><div class="ttdoc">Imprime o estado atual do tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00029">Reversi.cpp:29</a></div></div>
+<div class="ttc" id="aclassReversi_html_affed5bf4df7eebde380115b2a0128b28"><div class="ttname"><a href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">Reversi::get_num_pieces_player_O</a></div><div class="ttdeci">int get_num_pieces_player_O()</div><div class="ttdoc">Retorna o número de peças do jogador O.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00023">Reversi.cpp:23</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html"><div class="ttname"><a href="classTic__tac__toe.html">Tic_tac_toe</a></div><div class="ttdoc">Gerencia as regras e funcionalidades do Jogo da Velha.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8hpp_source.html#l00020">Tic_tac_toe.hpp:20</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html_a031548e8d6fa56b4e51b028078775ac7"><div class="ttname"><a href="classTic__tac__toe.html#a031548e8d6fa56b4e51b028078775ac7">Tic_tac_toe::make_move</a></div><div class="ttdeci">void make_move() override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00115">Tic_tac_toe.cpp:115</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html_a4a7e94369fe17c8307feb0f56d16ba23"><div class="ttname"><a href="classTic__tac__toe.html#a4a7e94369fe17c8307feb0f56d16ba23">Tic_tac_toe::get_current_player</a></div><div class="ttdeci">char get_current_player() const</div><div class="ttdoc">Retorna o jogador atual.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00104">Tic_tac_toe.cpp:104</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html_a4b3655eea3b4c80c59d975814738647e"><div class="ttname"><a href="classTic__tac__toe.html#a4b3655eea3b4c80c59d975814738647e">Tic_tac_toe::check_tic_tac_toe_win</a></div><div class="ttdeci">char check_tic_tac_toe_win() const</div><div class="ttdoc">Verifica se há um vencedor no jogo.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00056">Tic_tac_toe.cpp:56</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html_a868dac0f7827c9171fd7f83656f813ee"><div class="ttname"><a href="classTic__tac__toe.html#a868dac0f7827c9171fd7f83656f813ee">Tic_tac_toe::check_tie</a></div><div class="ttdeci">bool check_tie() const</div><div class="ttdoc">Verifica se o jogo terminou em empate.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00089">Tic_tac_toe.cpp:89</a></div></div>
+<div class="ttc" id="aclassTic__tac__toe_html_aed1c8977b5cf8f35a464fab86c6d44b2"><div class="ttname"><a href="classTic__tac__toe.html#aed1c8977b5cf8f35a464fab86c6d44b2">Tic_tac_toe::print_tic_tac_toe_board</a></div><div class="ttdeci">void print_tic_tac_toe_board() const</div><div class="ttdoc">Imprime o estado atual do tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Tic__tac__toe_8cpp_source.html#l00019">Tic_tac_toe.cpp:19</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a82603708bf24de9e03f01ad1b673431e"><div class="ttname"><a href="main_8cpp.html#a82603708bf24de9e03f01ad1b673431e">find_player_in_list</a></div><div class="ttdeci">Player * find_player_in_list(std::list&lt; Player &gt; &amp;player_list, const std::string &amp;user_name)</div><div class="ttdoc">Procura se há um jogador específico existe na lista.</div><div class="ttdef"><b>Definição</b> <a href="main_8cpp_source.html#l00017">main.cpp:17</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Função principal que gerencia os comandos do sistema de jogadores e execução de jogos.</div><div class="ttdef"><b>Definição</b> <a href="main_8cpp_source.html#l00033">main.cpp:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
