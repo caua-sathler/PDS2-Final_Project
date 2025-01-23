@@ -13,15 +13,18 @@ void Reversi::start_reversi_board()
     this->game_board.set_space(4, 3, 'O');
 }
 
+
 int Reversi::get_num_pieces_player_X()
 {
     return this->num_pieces_player_X;
 }
 
+
 int Reversi::get_num_pieces_player_O()
 {
     return this->num_pieces_player_O;
 }
+
 
 void Reversi::print_reversi_board() const 
 {
@@ -36,12 +39,14 @@ Reversi::Reversi() : Game(num_columns_and_rows_reversi, num_columns_and_rows_rev
     this->num_pieces_player_O = 2;
 };
 
+
 bool Reversi::is_space_free_reversi(int x, int y) const
 {
     if (this->game_board.is_space_free(x, y) || this->game_board.get_space(x, y) == '*')
         return true;
     return false;
 }
+
 
 bool Reversi::is_there_player_piece_at_the_direction(const char player_piece,
     const std::array<int, 2>& direction, std::array<int, 2> adjacent_square) const
@@ -95,10 +100,7 @@ bool Reversi::is_there_direction_that_captures_opponent(const std::array<int, 2>
 }
 
 
-bool Reversi::is_valid_move() const 
-{
-    return false;
-}
+
 
 
 bool Reversi::is_valid_move(std::array<int, 2>& move_coordinates, char player_piece_type)
@@ -183,10 +185,7 @@ void Reversi::control_num_pieces_players(int num_pieces_flipped, char player_pie
 }
 
 
-void Reversi::make_move() 
-{
-    return;
-}
+
 
 
 void Reversi::make_move(std::array<int, 2> move_coordinates, char player_piece, 
@@ -250,12 +249,6 @@ bool Reversi::is_there_valid_move_for_player(char player_piece)
 }
 
 
-bool Reversi::check_win() 
-{
-    return false;
-}
-
-
 bool Reversi::check_win(bool is_there_move_for_player, char opponent_piece)
 {
     if (!is_there_move_for_player && !this->is_there_valid_move_for_player(opponent_piece))
@@ -278,3 +271,12 @@ void Reversi::register_win_and_loss(Player *player1, Player *player2)
     }
 }
 Reversi::~Reversi() {};
+
+
+// Funções declaradas somente para fins de sobregarga
+bool Reversi::is_valid_move() const { return false; }
+
+void Reversi::make_move() {}
+
+bool Reversi::check_win() { return false; }
+

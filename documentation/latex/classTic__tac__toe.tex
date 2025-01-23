@@ -1,0 +1,302 @@
+\doxysection{Referência da Classe Tic\+\_\+tac\+\_\+toe}
+\hypertarget{classTic__tac__toe}{}\label{classTic__tac__toe}\index{Tic\_tac\_toe@{Tic\_tac\_toe}}
+
+
+Gerencia as regras e funcionalidades do Jogo da Velha.  
+
+
+
+
+{\ttfamily \#include $<$Tic\+\_\+tac\+\_\+toe.\+hpp$>$}
+
+
+
+Diagrama de hierarquia da classe Tic\+\_\+tac\+\_\+toe\+:
+% FIG 0
+
+
+Diagrama de colaboração para Tic\+\_\+tac\+\_\+toe\+:
+% FIG 1
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTic__tac__toe_a6e9f6759b5abffaaf059de910d141dc3}{Tic\+\_\+tac\+\_\+toe}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão do jogo da velha. Inicializa o tabuleiro como 3x3, define o jogador atual como \textquotesingle{}X\textquotesingle{} e o vencedor como \textquotesingle{}F\textquotesingle{} (nenhum). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7}{make\+\_\+move}} () override
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79}{make\+\_\+move}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Realiza uma jogada em uma posição específica. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{is\+\_\+valid\+\_\+move}} () const override
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTic__tac__toe_a18884393e630baa8c59414c966c4690e}{is\+\_\+valid\+\_\+move}} (int \&x, int \&y) const
+\begin{DoxyCompactList}\small\item\em Verifica se uma jogada específica é válida. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTic__tac__toe_a2199b9937c8591e22ce2906e12ef8953}{check\+\_\+win}} () override
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}{check\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+win}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se há um vencedor no jogo. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}{get\+\_\+current\+\_\+player}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o jogador atual. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}{check\+\_\+tie}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se o jogo terminou em empate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}{print\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+board}} () const
+\begin{DoxyCompactList}\small\item\em Imprime o estado atual do tabuleiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTic__tac__toe_a4991caf1bd116a60d83177ea9002d9c3}{\texorpdfstring{$\sim$}{\string~}\+Tic\+\_\+tac\+\_\+toe}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor do Jogo da Velha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos herdados de \mbox{\hyperlink{classGame}{Game}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame_a0f99f20ddc850ba3a6db29228c81837a}{Game}} (int \mbox{\hyperlink{Tic__tac__toe_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\+\_\+rows\+\_\+received}}, int \mbox{\hyperlink{Tic__tac__toe_8cpp_affc09760547c96857e4684381e1f6224}{num\+\_\+columns\+\_\+received}})
+\begin{DoxyCompactList}\small\item\em Constrói um jogo com um tabuleiro de tamanho especificado. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\+\_\+players}} (char current\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Alterna entre os jogadores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{\texorpdfstring{$\sim$}{\string~}\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe base \doxylink{classGame}{Game}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\+\_\+player}}
+\item 
+char \mbox{\hyperlink{classTic__tac__toe_adb061fd30b913cb7d9e4b4635a4d01a0}{winner}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Outros membros herdados}
+\doxysubsection*{Atributos Protegidos herdados de \mbox{\hyperlink{classGame}{Game}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard}{Board}} \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\+\_\+board}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Gerencia as regras e funcionalidades do Jogo da Velha. 
+
+Herda de \doxylink{classGame}{Game} e adiciona métodos específicos para o funcionamento do Jogo da Velha, como validação de jogadas, verificação de vitória e empate. 
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8hpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8hpp_source}{Tic\+\_\+tac\+\_\+toe.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classTic__tac__toe_a6e9f6759b5abffaaf059de910d141dc3}\label{classTic__tac__toe_a6e9f6759b5abffaaf059de910d141dc3} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{Tic\_tac\_toe()}{Tic\_tac\_toe()}}
+{\footnotesize\ttfamily Tic\+\_\+tac\+\_\+toe\+::\+Tic\+\_\+tac\+\_\+toe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão do jogo da velha. Inicializa o tabuleiro como 3x3, define o jogador atual como \textquotesingle{}X\textquotesingle{} e o vencedor como \textquotesingle{}F\textquotesingle{} (nenhum). 
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00008}{8}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a4991caf1bd116a60d83177ea9002d9c3}\label{classTic__tac__toe_a4991caf1bd116a60d83177ea9002d9c3} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!````~Tic\_tac\_toe@{\texorpdfstring{$\sim$}{\string~}Tic\_tac\_toe}}
+\index{````~Tic\_tac\_toe@{\texorpdfstring{$\sim$}{\string~}Tic\_tac\_toe}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Tic\_tac\_toe()}{\string~Tic\_tac\_toe()}}
+{\footnotesize\ttfamily Tic\+\_\+tac\+\_\+toe\+::\texorpdfstring{$\sim$}{\string~}\+Tic\+\_\+tac\+\_\+toe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor do Jogo da Velha. 
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00109}{109}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}\label{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!check\_tic\_tac\_toe\_win@{check\_tic\_tac\_toe\_win}}
+\index{check\_tic\_tac\_toe\_win@{check\_tic\_tac\_toe\_win}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{check\_tic\_tac\_toe\_win()}{check\_tic\_tac\_toe\_win()}}
+{\footnotesize\ttfamily char Tic\+\_\+tac\+\_\+toe\+::check\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se há um vencedor no jogo. 
+
+Confere todas as linhas, colunas e diagonais para ver se há três peças consecutivas do mesmo jogador. \begin{DoxyReturn}{Retorna}
+Caractere do jogador vencedor (\textquotesingle{}X\textquotesingle{} ou \textquotesingle{}O\textquotesingle{}) ou \textquotesingle{}F\textquotesingle{} se não houver vencedor. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00056}{56}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}\label{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!check\_tie@{check\_tie}}
+\index{check\_tie@{check\_tie}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{check\_tie()}{check\_tie()}}
+{\footnotesize\ttfamily bool Tic\+\_\+tac\+\_\+toe\+::check\+\_\+tie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se o jogo terminou em empate. 
+
+Confere se todas as posições do tabuleiro estão ocupadas sem haver vitória. \begin{DoxyReturn}{Retorna}
+{\ttfamily true} se houver empate, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00089}{89}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a2199b9937c8591e22ce2906e12ef8953}\label{classTic__tac__toe_a2199b9937c8591e22ce2906e12ef8953} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!check\_win@{check\_win}}
+\index{check\_win@{check\_win}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{check\_win()}{check\_win()}}
+{\footnotesize\ttfamily bool Tic\+\_\+tac\+\_\+toe\+::check\+\_\+win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Função declarada somente para fins de sobregarga. 
+
+
+
+Implementa \mbox{\hyperlink{classGame_a4632d0ae33d289bd6c4af2bc339ace18}{Game}}.
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00117}{117}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}\label{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!get\_current\_player@{get\_current\_player}}
+\index{get\_current\_player@{get\_current\_player}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{get\_current\_player()}{get\_current\_player()}}
+{\footnotesize\ttfamily char Tic\+\_\+tac\+\_\+toe\+::get\+\_\+current\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o jogador atual. 
+
+\begin{DoxyReturn}{Retorna}
+Caractere representando o jogador atual (\textquotesingle{}X\textquotesingle{} ou \textquotesingle{}O\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00104}{104}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}\label{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!is\_valid\_move@{is\_valid\_move}}
+\index{is\_valid\_move@{is\_valid\_move}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_move()}{is\_valid\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Tic\+\_\+tac\+\_\+toe\+::is\+\_\+valid\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Função declarada somente para fins de sobregarga. 
+
+
+
+Implementa \mbox{\hyperlink{classGame_ad3d75d8a335496c94eb0b8a4bb6d9d3a}{Game}}.
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00113}{113}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a18884393e630baa8c59414c966c4690e}\label{classTic__tac__toe_a18884393e630baa8c59414c966c4690e} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!is\_valid\_move@{is\_valid\_move}}
+\index{is\_valid\_move@{is\_valid\_move}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_move()}{is\_valid\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Tic\+\_\+tac\+\_\+toe\+::is\+\_\+valid\+\_\+move (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se uma jogada específica é válida. 
+
+Valida se as coordenadas fornecidas estão dentro do tabuleiro e a posição está livre através das funções da classe \doxylink{classBoard}{Board}. 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Coordenada da linha da jogada. \\
+\hline
+{\em y} & Coordenada da coluna da jogada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se a jogada for válida, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00011}{11}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7}\label{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Tic\+\_\+tac\+\_\+toe\+::make\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Função declarada somente para fins de sobregarga. 
+
+
+
+Implementa \mbox{\hyperlink{classGame_a7c8ebe7e6bb5d55430e66f47da751d23}{Game}}.
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00115}{115}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79}\label{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Tic\+\_\+tac\+\_\+toe\+::make\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Realiza uma jogada em uma posição específica. 
+
+Verifica se a jogada é válida, atualiza o tabuleiro e alterna o jogador através de funções da classe \doxylink{classTic__tac__toe}{Tic\+\_\+tac\+\_\+toe} e da classe \doxylink{classBoard}{Board}. 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Coordenada da linha. \\
+\hline
+{\em y} & Coordenada da coluna. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00025}{25}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}\label{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!print\_tic\_tac\_toe\_board@{print\_tic\_tac\_toe\_board}}
+\index{print\_tic\_tac\_toe\_board@{print\_tic\_tac\_toe\_board}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{print\_tic\_tac\_toe\_board()}{print\_tic\_tac\_toe\_board()}}
+{\footnotesize\ttfamily void Tic\+\_\+tac\+\_\+toe\+::print\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime o estado atual do tabuleiro. 
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+
+
+\doxysubsection{Atributos}
+\Hypertarget{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}\label{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!current\_player@{current\_player}}
+\index{current\_player@{current\_player}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{current\_player}{current\_player}}
+{\footnotesize\ttfamily char Tic\+\_\+tac\+\_\+toe\+::current\+\_\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+Jogador atual (\textquotesingle{}X\textquotesingle{} ou \textquotesingle{}O\textquotesingle{}). 
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8hpp_source_l00022}{22}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8hpp_source}{Tic\+\_\+tac\+\_\+toe.\+hpp}}.
+
+\Hypertarget{classTic__tac__toe_adb061fd30b913cb7d9e4b4635a4d01a0}\label{classTic__tac__toe_adb061fd30b913cb7d9e4b4635a4d01a0} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!winner@{winner}}
+\index{winner@{winner}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{winner}{winner}}
+{\footnotesize\ttfamily char Tic\+\_\+tac\+\_\+toe\+::winner\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena o vencedor do jogo, se houver. 
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8hpp_source_l00023}{23}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8hpp_source}{Tic\+\_\+tac\+\_\+toe.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Tic__tac__toe_8hpp}{Tic\+\_\+tac\+\_\+toe.\+hpp}}\item 
+src/\mbox{\hyperlink{Tic__tac__toe_8cpp}{Tic\+\_\+tac\+\_\+toe.\+cpp}}\end{DoxyCompactItemize}

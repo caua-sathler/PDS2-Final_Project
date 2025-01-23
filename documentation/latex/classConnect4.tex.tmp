@@ -1,0 +1,268 @@
+\doxysection{Connect4 Class Reference}
+\hypertarget{classConnect4}{}\label{classConnect4}\index{Connect4@{Connect4}}
+
+
+Classe que implementa o jogo \doxylink{classConnect4}{Connect4}.  
+
+
+
+
+Inheritance diagram for Connect4\+:
+% FIG 0
+
+
+Collaboration diagram for Connect4\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConnect4_abd0e31f406a3eb8e5b538668dfd920f9}{Connect4}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{classConnect4}{Connect4}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\+\_\+valid\+\_\+move}} () const override
+\begin{DoxyCompactList}\small\item\em Placeholder para verificar se um movimento é válido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\+\_\+move}} () override
+\begin{DoxyCompactList}\small\item\em Placeholder para realizar um movimento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\+\_\+win}} () override
+\begin{DoxyCompactList}\small\item\em Verifica se o jogador atual venceu o jogo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConnect4_adbf8b0bea155f8d9e75c32d1f900ec4d}{is\+\_\+valid\+\_\+move}} (int column)
+\begin{DoxyCompactList}\small\item\em Verifica se a coluna escolhida é válida para um movimento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnect4_aa2f1e0cb5f1a8632f90ace073f00df9d}{make\+\_\+move}} (int column)
+\begin{DoxyCompactList}\small\item\em Realiza o movimento colocando a peça na posição mais baixa da coluna. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{get\+\_\+current\+\_\+player}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o jogador atual. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{is\+\_\+board\+\_\+full}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se o tabuleiro está completamente cheio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnect4_a9abdbbbd70f28127eba647a090cf8763}{print\+\_\+game\+\_\+board}} () const
+\begin{DoxyCompactList}\small\item\em Imprime o estado atual do tabuleiro no console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnect4_a7900bc45a9822ec810af13a1ab649414}{set\+\_\+current\+\_\+player}} (char player)
+\begin{DoxyCompactList}\small\item\em Define o jogador atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9}{\texorpdfstring{$\sim$}{\string~}\+Connect4}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \doxylink{classConnect4}{Connect4}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGame}{Game}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame_a0f99f20ddc850ba3a6db29228c81837a}{Game}} (int num\+\_\+rows\+\_\+received, int num\+\_\+columns\+\_\+received)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{classGame}{Game}. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\+\_\+players}} (char current\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Alterna entre os jogadores X e O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGame}{Game}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard}{Board}} \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\+\_\+board}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que implementa o jogo \doxylink{classConnect4}{Connect4}. 
+
+Definition at line \mbox{\hyperlink{Connect4_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{Connect4_8hpp_source}{Connect4.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classConnect4_abd0e31f406a3eb8e5b538668dfd920f9}\label{classConnect4_abd0e31f406a3eb8e5b538668dfd920f9} 
+\index{Connect4@{Connect4}!Connect4@{Connect4}}
+\index{Connect4@{Connect4}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{Connect4()}{Connect4()}}
+{\footnotesize\ttfamily Connect4\+::\+Connect4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \doxylink{classConnect4}{Connect4}. 
+
+Inicializa o tabuleiro com 6 linhas e 7 colunas, e define o jogador atual como \textquotesingle{}X\textquotesingle{}. 
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9}\label{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9} 
+\index{Connect4@{Connect4}!````~Connect4@{\texorpdfstring{$\sim$}{\string~}Connect4}}
+\index{````~Connect4@{\texorpdfstring{$\sim$}{\string~}Connect4}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Connect4()}{\string~Connect4()}}
+{\footnotesize\ttfamily Connect4\+::\texorpdfstring{$\sim$}{\string~}\+Connect4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor da classe \doxylink{classConnect4}{Connect4}. 
+
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}\label{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe} 
+\index{Connect4@{Connect4}!check\_win@{check\_win}}
+\index{check\_win@{check\_win}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{check\_win()}{check\_win()}}
+{\footnotesize\ttfamily bool Connect4\+::check\+\_\+win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Verifica se o jogador atual venceu o jogo. 
+
+\begin{DoxyReturn}{Returns}
+True se o jogador atual venceu, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGame}{Game}}.
+
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_af6a1ee6390778f03c47f5e96295318af}\label{classConnect4_af6a1ee6390778f03c47f5e96295318af} 
+\index{Connect4@{Connect4}!get\_current\_player@{get\_current\_player}}
+\index{get\_current\_player@{get\_current\_player}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{get\_current\_player()}{get\_current\_player()}}
+{\footnotesize\ttfamily char Connect4\+::get\+\_\+current\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o jogador atual. 
+
+\begin{DoxyReturn}{Returns}
+O caractere representando o jogador atual (\textquotesingle{}X\textquotesingle{} ou \textquotesingle{}O\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}\label{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed} 
+\index{Connect4@{Connect4}!is\_board\_full@{is\_board\_full}}
+\index{is\_board\_full@{is\_board\_full}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{is\_board\_full()}{is\_board\_full()}}
+{\footnotesize\ttfamily bool Connect4\+::is\+\_\+board\+\_\+full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se o tabuleiro está completamente cheio. 
+
+\begin{DoxyReturn}{Returns}
+True se o tabuleiro estiver cheio, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a887c8048d47327cb3455015e15c39f62}\label{classConnect4_a887c8048d47327cb3455015e15c39f62} 
+\index{Connect4@{Connect4}!is\_valid\_move@{is\_valid\_move}}
+\index{is\_valid\_move@{is\_valid\_move}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_move()}{is\_valid\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Connect4\+::is\+\_\+valid\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Placeholder para verificar se um movimento é válido. 
+
+\begin{DoxyReturn}{Returns}
+Sempre retorna true (deve ser implementado corretamente). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGame}{Game}}.
+
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_adbf8b0bea155f8d9e75c32d1f900ec4d}\label{classConnect4_adbf8b0bea155f8d9e75c32d1f900ec4d} 
+\index{Connect4@{Connect4}!is\_valid\_move@{is\_valid\_move}}
+\index{is\_valid\_move@{is\_valid\_move}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_move()}{is\_valid\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Connect4\+::is\+\_\+valid\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Verifica se a coluna escolhida é válida para um movimento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & Coluna escolhida pelo jogador (1-\/7). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se a coluna for válida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}\label{classConnect4_a273fd400836fffb0c7f5ac6b48471db3} 
+\index{Connect4@{Connect4}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Connect4\+::make\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Placeholder para realizar um movimento. 
+
+Esta função deve ser implementada corretamente. 
+
+Implements \mbox{\hyperlink{classGame}{Game}}.
+
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_aa2f1e0cb5f1a8632f90ace073f00df9d}\label{classConnect4_aa2f1e0cb5f1a8632f90ace073f00df9d} 
+\index{Connect4@{Connect4}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Connect4\+::make\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Realiza o movimento colocando a peça na posição mais baixa da coluna. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & Coluna escolhida pelo jogador (1-\/7). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a9abdbbbd70f28127eba647a090cf8763}\label{classConnect4_a9abdbbbd70f28127eba647a090cf8763} 
+\index{Connect4@{Connect4}!print\_game\_board@{print\_game\_board}}
+\index{print\_game\_board@{print\_game\_board}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{print\_game\_board()}{print\_game\_board()}}
+{\footnotesize\ttfamily void Connect4\+::print\+\_\+game\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime o estado atual do tabuleiro no console. 
+
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a7900bc45a9822ec810af13a1ab649414}\label{classConnect4_a7900bc45a9822ec810af13a1ab649414} 
+\index{Connect4@{Connect4}!set\_current\_player@{set\_current\_player}}
+\index{set\_current\_player@{set\_current\_player}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{set\_current\_player()}{set\_current\_player()}}
+{\footnotesize\ttfamily void Connect4\+::set\+\_\+current\+\_\+player (\begin{DoxyParamCaption}\item[{char}]{player }\end{DoxyParamCaption})}
+
+
+
+Define o jogador atual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & O caractere representando o jogador (\textquotesingle{}X\textquotesingle{} ou \textquotesingle{}O\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connect4_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Connect4.\+hpp\item 
+src/Connect4.\+cpp\end{DoxyCompactItemize}

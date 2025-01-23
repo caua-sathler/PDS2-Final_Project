@@ -7,6 +7,7 @@ const int num_columns_received = 3;
 
 Tic_tac_toe::Tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X'), winner('F') {}
 
+
 bool Tic_tac_toe::is_valid_move(int& x, int& y) const 
 {
     game_board.is_move_inside_board(x, y); 
@@ -20,9 +21,9 @@ void Tic_tac_toe::print_tic_tac_toe_board() const
     game_board.print_game_board();
 }
 
+
 void Tic_tac_toe::make_move(int x, int y) 
 {
-
     x -= 1;
     y -= 1;
 
@@ -54,7 +55,7 @@ void Tic_tac_toe::make_move(int x, int y)
 
 char Tic_tac_toe::check_tic_tac_toe_win() const 
 {
-
+    // Verifica se há vitória nas linhas ou colunas
     for (int i = 0; i < 3; ++i) {
         if (game_board.get_space(i, 0) == current_player && 
             game_board.get_space(i, 1) == current_player && 
@@ -69,6 +70,7 @@ char Tic_tac_toe::check_tic_tac_toe_win() const
         
     }
 
+    // Verifica se há vitória nas diagonais
     if (game_board.get_space(0, 0) == current_player && 
         game_board.get_space(1, 1) == current_player && 
         game_board.get_space(2, 2) == current_player) 
@@ -83,11 +85,12 @@ char Tic_tac_toe::check_tic_tac_toe_win() const
     return 'F'; 
 }
 
+
 bool Tic_tac_toe::check_tie() const 
 {
     for (int i = 0; i < 3; i++) 
     {
-        for (int j =0; j < 3; j++) 
+        for (int j = 0; j < 3; j++) 
         {
             if (game_board.get_space(i, j) == ' ') 
                 return false;
@@ -98,21 +101,18 @@ return true;
 }
 
 
-char Tic_tac_toe::get_current_player() const {
+char Tic_tac_toe::get_current_player() const 
+{
     return current_player;
 }
 
+Tic_tac_toe::~Tic_tac_toe() {}
 
-bool Tic_tac_toe::is_valid_move() const {
-    return true;
-}
 
+// Funções declaradas somente para fins de sobregarga.
+bool Tic_tac_toe::is_valid_move() const { return true; }
 
 void Tic_tac_toe::make_move() {}
 
+bool Tic_tac_toe::check_win() { return false; }
 
-bool Tic_tac_toe::check_win() {
-    return false;
-}
-
-Tic_tac_toe::~Tic_tac_toe() {}

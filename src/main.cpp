@@ -7,6 +7,13 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 
+/**
+* @brief Procura se há um jogador específico existe na lista.
+* @param player_list Lista que registra todos os jogadores.
+* @param user_name Nome do jogador a ser procurado.
+* @return O endereço de memória do jogador caso seja encontrado, 
+* 'nullptr' caso contrário.
+*/
 Player *find_player_in_list(std::list<Player> &player_list, const std::string &user_name)
 {
     for (auto &player : player_list)
@@ -17,6 +24,12 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
     return nullptr;
 }
 
+
+/**
+ * @brief Função principal que gerencia os comandos do sistema de jogadores e execução de jogos.
+ * 
+ * Realiza operações como listar, cadastrar e remover jogadores, além de permitir a execução dos jogos Reversi, Lig4 (Connect4) e Velha (Tic Tac Toe).
+ */
 int main()
 {
     std::ifstream file_in;
@@ -36,10 +49,12 @@ int main()
     std::string name_in, username_in;
     bool error = false;
 
+    // Loop principal que processa os comandos do usuário
     while (std::cin >> command)
     {
         if (command == "LJ")
         {
+            // Listar jogadores ordenados por nome ou username
             char sort_command;
             std::cin >> sort_command;
             if (sort_command == 'A')
@@ -59,6 +74,7 @@ int main()
         }
         else if (command == "CJ")
         {
+            // Cadastrar um novo jogador
             std::string line_in;
             std::getline(std::cin, line_in);
             std::stringstream stream_in(line_in);
@@ -79,6 +95,7 @@ int main()
         }
         else if (command == "RJ")
         {
+            // Remover um jogador existente
             std::cin >> username_in;
             if (Player::remove_player(username_in, player_list) == true)
                 std::cout << "Jogador " << username_in << " removido com sucesso" << std::endl;
@@ -87,7 +104,8 @@ int main()
             continue;
         }
         else if (command == "EP")
-        {
+        {   
+            // Iniciar um jogo entre dois jogadores
             char game;
             std::string username_player1, username_player2;
 
@@ -108,7 +126,8 @@ int main()
 
                 else if (player2 == nullptr)
                     throw std::invalid_argument("ERRO: jogador " + username_player2 + " inexistente");
-
+                
+                // Inicialização do jogo com base no tipo selecionado
                 if (game == 'R')
                 {
                     Reversi reversi_game;
@@ -312,7 +331,8 @@ int main()
             }
         }
     }
-
+    
+    // Escrita do arquivo de registro atualizado
     std::ofstream file_out;
     file_out.open("teste");
     if (!file_out.is_open())

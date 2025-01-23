@@ -1,0 +1,211 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}Game}
+    \subitem {Game}, \hyperpage{11}
+  \item {\texorpdfstring{$\sim$}{\string~}Reversi}
+    \subitem {Reversi}, \hyperpage{20}
+  \item {\texorpdfstring{$\sim$}{\string~}Tic\_tac\_toe}
+    \subitem {Tic\_tac\_toe}, \hyperpage{26}
+
+  \indexspace
+
+  \item {add\_loss}
+    \subitem {Player}, \hyperpage{14}
+  \item {add\_win}
+    \subitem {Player}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Board}, \hyperpage{7}
+    \subitem {Board}, \hyperpage{7}
+    \subitem {get\_space}, \hyperpage{8}
+    \subitem {is\_move\_inside\_board}, \hyperpage{8}
+    \subitem {is\_space\_free}, \hyperpage{9}
+    \subitem {print\_game\_board}, \hyperpage{9}
+    \subitem {set\_space}, \hyperpage{9}
+
+  \indexspace
+
+  \item {check\_tic\_tac\_toe\_win}
+    \subitem {Tic\_tac\_toe}, \hyperpage{26}
+  \item {check\_tie}
+    \subitem {Tic\_tac\_toe}, \hyperpage{26}
+  \item {check\_win}
+    \subitem {Game}, \hyperpage{11}
+    \subitem {Reversi}, \hyperpage{20}
+    \subitem {Tic\_tac\_toe}, \hyperpage{27}
+  \item {compare\_name}
+    \subitem {Player}, \hyperpage{14}
+  \item {compare\_username}
+    \subitem {Player}, \hyperpage{15}
+  \item {Connect4}, \hyperpage{10}
+  \item {control\_num\_pieces\_players}
+    \subitem {Reversi}, \hyperpage{20}
+
+  \indexspace
+
+  \item {find\_all\_directions\_to\_make\_move}
+    \subitem {Reversi}, \hyperpage{20}
+  \item {flip\_pieces}
+    \subitem {Reversi}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Game}, \hyperpage{10}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Game}, \hyperpage{11}
+    \subitem {check\_win}, \hyperpage{11}
+    \subitem {Game}, \hyperpage{10}
+    \subitem {game\_board}, \hyperpage{12}
+    \subitem {is\_valid\_move}, \hyperpage{11}
+    \subitem {make\_move}, \hyperpage{11}
+    \subitem {switch\_players}, \hyperpage{11}
+  \item {game\_board}
+    \subitem {Game}, \hyperpage{12}
+  \item {get\_current\_player}
+    \subitem {Tic\_tac\_toe}, \hyperpage{27}
+  \item {get\_name}
+    \subitem {Player}, \hyperpage{15}
+  \item {get\_num\_loss}
+    \subitem {Player}, \hyperpage{15}
+  \item {get\_num\_pieces\_player\_O}
+    \subitem {Reversi}, \hyperpage{21}
+  \item {get\_num\_pieces\_player\_X}
+    \subitem {Reversi}, \hyperpage{21}
+  \item {get\_num\_win}
+    \subitem {Player}, \hyperpage{15}
+  \item {get\_space}
+    \subitem {Board}, \hyperpage{8}
+  \item {get\_username}
+    \subitem {Player}, \hyperpage{16}
+
+  \indexspace
+
+  \item {include/Board.hpp}, \hyperpage{29}
+  \item {include/Connect4.hpp}, \hyperpage{29}
+  \item {include/Game.hpp}, \hyperpage{30}
+  \item {include/Player.hpp}, \hyperpage{30}
+  \item {include/Reversi.hpp}, \hyperpage{30}
+  \item {include/Tic\_tac\_toe.hpp}, \hyperpage{31}
+  \item {is\_move\_inside\_board}
+    \subitem {Board}, \hyperpage{8}
+  \item {is\_space\_free}
+    \subitem {Board}, \hyperpage{9}
+  \item {is\_space\_free\_reversi}
+    \subitem {Reversi}, \hyperpage{22}
+  \item {is\_there\_direction\_that\_captures\_opponent}
+    \subitem {Reversi}, \hyperpage{22}
+  \item {is\_there\_player\_piece\_at\_the\_direction}
+    \subitem {Reversi}, \hyperpage{22}
+  \item {is\_there\_valid\_move\_for\_player}
+    \subitem {Reversi}, \hyperpage{23}
+  \item {is\_valid\_move}
+    \subitem {Game}, \hyperpage{11}
+    \subitem {Reversi}, \hyperpage{23}
+    \subitem {Tic\_tac\_toe}, \hyperpage{27}
+
+  \indexspace
+
+  \item {make\_move}
+    \subitem {Game}, \hyperpage{11}
+    \subitem {Reversi}, \hyperpage{24}
+    \subitem {Tic\_tac\_toe}, \hyperpage{28}
+
+  \indexspace
+
+  \item {Player}, \hyperpage{12}
+    \subitem {add\_loss}, \hyperpage{14}
+    \subitem {add\_win}, \hyperpage{14}
+    \subitem {compare\_name}, \hyperpage{14}
+    \subitem {compare\_username}, \hyperpage{15}
+    \subitem {get\_name}, \hyperpage{15}
+    \subitem {get\_num\_loss}, \hyperpage{15}
+    \subitem {get\_num\_win}, \hyperpage{15}
+    \subitem {get\_username}, \hyperpage{16}
+    \subitem {Player}, \hyperpage{13}
+    \subitem {print\_player}, \hyperpage{16}
+    \subitem {register\_player}, \hyperpage{16}
+    \subitem {remove\_player}, \hyperpage{17}
+    \subitem {set\_name}, \hyperpage{17}
+    \subitem {set\_num\_loss}, \hyperpage{17}
+    \subitem {set\_num\_win}, \hyperpage{17}
+    \subitem {set\_username}, \hyperpage{18}
+  \item {print\_game\_board}
+    \subitem {Board}, \hyperpage{9}
+  \item {print\_player}
+    \subitem {Player}, \hyperpage{16}
+  \item {print\_reversi\_board}
+    \subitem {Reversi}, \hyperpage{24}
+  \item {print\_tic\_tac\_toe\_board}
+    \subitem {Tic\_tac\_toe}, \hyperpage{28}
+  \item {process\_move}
+    \subitem {Reversi}, \hyperpage{24}
+
+  \indexspace
+
+  \item {register\_player}
+    \subitem {Player}, \hyperpage{16}
+  \item {register\_win\_and\_loss}
+    \subitem {Reversi}, \hyperpage{24}
+  \item {remove\_player}
+    \subitem {Player}, \hyperpage{17}
+  \item {Reversi}, \hyperpage{18}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Reversi}, \hyperpage{20}
+    \subitem {check\_win}, \hyperpage{20}
+    \subitem {control\_num\_pieces\_players}, \hyperpage{20}
+    \subitem {find\_all\_directions\_to\_make\_move}, \hyperpage{20}
+    \subitem {flip\_pieces}, \hyperpage{21}
+    \subitem {get\_num\_pieces\_player\_O}, \hyperpage{21}
+    \subitem {get\_num\_pieces\_player\_X}, \hyperpage{21}
+    \subitem {is\_space\_free\_reversi}, \hyperpage{22}
+    \subitem {is\_there\_direction\_that\_captures\_opponent}, 
+		\hyperpage{22}
+    \subitem {is\_there\_player\_piece\_at\_the\_direction}, 
+		\hyperpage{22}
+    \subitem {is\_there\_valid\_move\_for\_player}, \hyperpage{23}
+    \subitem {is\_valid\_move}, \hyperpage{23}
+    \subitem {make\_move}, \hyperpage{24}
+    \subitem {print\_reversi\_board}, \hyperpage{24}
+    \subitem {process\_move}, \hyperpage{24}
+    \subitem {register\_win\_and\_loss}, \hyperpage{24}
+    \subitem {Reversi}, \hyperpage{20}
+    \subitem {start\_reversi\_board}, \hyperpage{25}
+
+  \indexspace
+
+  \item {set\_name}
+    \subitem {Player}, \hyperpage{17}
+  \item {set\_num\_loss}
+    \subitem {Player}, \hyperpage{17}
+  \item {set\_num\_win}
+    \subitem {Player}, \hyperpage{17}
+  \item {set\_space}
+    \subitem {Board}, \hyperpage{9}
+  \item {set\_username}
+    \subitem {Player}, \hyperpage{18}
+  \item {src/Board.cpp}, \hyperpage{31}
+  \item {src/Connect4.cpp}, \hyperpage{32}
+  \item {src/Game.cpp}, \hyperpage{33}
+  \item {src/main.cpp}, \hyperpage{34}
+  \item {src/Player.cpp}, \hyperpage{36}
+  \item {src/Reversi.cpp}, \hyperpage{38}
+  \item {src/Tic\_tac\_toe.cpp}, \hyperpage{41}
+  \item {start\_reversi\_board}
+    \subitem {Reversi}, \hyperpage{25}
+  \item {switch\_players}
+    \subitem {Game}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Tic\_tac\_toe}, \hyperpage{25}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Tic\_tac\_toe}, 
+		\hyperpage{26}
+    \subitem {check\_tic\_tac\_toe\_win}, \hyperpage{26}
+    \subitem {check\_tie}, \hyperpage{26}
+    \subitem {check\_win}, \hyperpage{27}
+    \subitem {get\_current\_player}, \hyperpage{27}
+    \subitem {is\_valid\_move}, \hyperpage{27}
+    \subitem {make\_move}, \hyperpage{28}
+    \subitem {print\_tic\_tac\_toe\_board}, \hyperpage{28}
+    \subitem {Tic\_tac\_toe}, \hyperpage{26}
+
+\end{theindex}
