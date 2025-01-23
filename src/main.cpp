@@ -40,7 +40,7 @@ int main()
 {
     // Abre o arquivo de entrada contendo os dados dos jogadores
     std::ifstream file_in;
-    file_in.open("/mnt/c/Users/55319/Desktop/Visual Studio Code/PDSII-Trabalho/PDS2-Final_Project/PDS2-Final_Project/teste.txt");
+    file_in.open("/home/julialuna/PDS2-Final_Project/teste");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -72,9 +72,10 @@ int main()
                 std::cout << "ERRO: comando inexistente" << std::endl;
                 continue;
             }
+            std::list<Player>::iterator it;
+            for (it = player_list.begin(); it != player_list.end(); it++)
+                it->print_player();
 
-            for (auto &player : player_list)
-                player.print_player();
             continue;
         }
         else if (command == "CJ")
@@ -137,24 +138,58 @@ int main()
                     while (true)
                     {
                         reversi_game.print_reversi_board();
-                        std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " "
-                                  << "O: " << reversi_game.get_num_pieces_player_O() << std::endl;
+                        std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: "
+                                  << reversi_game.get_num_pieces_player_O() << std::endl;
 
                         if (reversi_game.check_win(reversi_game.is_there_valid_move_for_player(player_piece), player_piece))
                         {
                             reversi_game.register_win_and_loss(player1, player2);
-                            std::cout << (reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O() ? username_player1 : username_player2) << " ganhou!" << std::endl;
+
+                            if (reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O())
+                                std::cout << username_player1 << " ganhou!" << std::endl;
+
+                            else if (reversi_game.get_num_pieces_player_X() < reversi_game.get_num_pieces_player_O())
+                                std::cout << username_player2 << " ganhou!" << std::endl;
+
+                            else
+                                std::cout << "Houve empate!" << std::endl;
+
                             break;
                         }
-
-                        std::cout << username_player1 << " [X]: " << std::endl;
-                        int x, y;
-                        std::cin >> x >> y;
-
-                        if (!reversi_game.process_move({x, y}, player_piece))
+                        else if (is_there_movement_for_player && !someone_won)
                         {
-                            std::cout << "Jogada inválida!" << std::endl;
-                            continue;
+                            if (player_piece == 'X')
+                                std::cout << username_player1 << " " << "[X]" << ": " << std::ends;
+                            else
+                                std::cout << username_player2 << " " << "[O]" << ": " << std::ends;
+
+                            try {
+                               
+                                if (!(std::cin >> x )) {
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                    throw std::invalid_argument("Entrada inválida. Por favor forneça dois números inteiros.");
+                                }
+
+                                if(!(std::cin >> y)){
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                    throw std::invalid_argument("Entrada inválida, vez passada para o oponente");
+                                }
+                                
+                                if (!reversi_game.process_move({x, y}, player_piece)) {
+                                    throw std::invalid_argument("Jogada inválida, vez passada para o oponente.");
+                                }
+
+                            } 
+                            catch (const std::invalid_argument &e) {
+                            
+                                std::cout << "Error: " << e.what() << std::endl;
+                            }
+
+                            player_piece = reversi_game.switch_players(player_piece);
+                            opponent_piece = reversi_game.switch_players(opponent_piece);
+
                         }
 
                         player_piece = reversi_game.switch_players(player_piece);
@@ -189,7 +224,7 @@ int main()
                             connect4_game.set_current_player(connect4_game.get_current_player() == 'X' ? 'O' : 'X');
                         }
                         else
-                            std::cout << "Movimento inválido." << std::endl;
+                            std::cout << "Movimento inválido. Tente novamente." << std::endl;
                     }
                 }
                 else if (game == 'V')
@@ -214,16 +249,36 @@ int main()
                             std::cout << "Empate!" << std::endl;
                             break;
                         }
+
+                        std::cout << "Player " << tic_tac_toe_game.get_current_player() << " turn:" << std::endl;
+                        tic_tac_toe_game.print_tic_tac_toe_board();
+
+                        try
+                        {
+                            if (!(std::cin >> x >> y))
+                                throw std::invalid_argument("Invalid input. Please enter two integers for your move");
+                        }
+
+                        catch (const std::invalid_argument &e)
+                        {
+                            std::cerr << "Error: " << e.what() << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            continue;
+                        }
+
+                        tic_tac_toe_game.make_move(x, y);
                     }
                 }
             }
-            catch (const std::invalid_argument &e)
+            catch (std::invalid_argument &e)
             {
                 std::cout << e.what() << std::endl;
             }
         }
         else if (command == "FS")
             break;
+
         else
         {
             if (!error)
