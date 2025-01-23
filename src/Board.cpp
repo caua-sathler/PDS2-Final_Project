@@ -66,3 +66,11 @@ bool Board::is_space_free(int x, int y) const
 
     return false;
 }
+
+void Board::set_game_board(char **board){
+    for (int i=0;i<this->num_rows;i++){
+        for (int j=0;j<this->num_rows;j++){
+            this->game_board[i][j]= board[i][j];
+    }
+    }
+}
