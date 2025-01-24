@@ -43,3 +43,9 @@ Como uma melhoria adicional, implementamos uma funcionalidade no jogo **Reversi*
 - O tabuleiro exibe, além das peças em jogo, **asteriscos (`*`) indicando todas as jogadas possíveis** para o jogador da vez.
 - Essa funcionalidade torna a partida mais dinâmica e facilita as decisões dos jogadores, especialmente à medida que o jogo avança e o número de jogadas válidas aumenta.
 
+## **Executando o projeto**
+- O sistema conta com um *Makefile* que automatiza sua compilação e execução através do comando `make`.
+- O programa foi desenvolvido utilizando **WSL**, **g++**, **C++11** e **Valgrind**. Caso vise fazer a execução sem o *Makefile*, atente-se a essas características. 
+- O comando `valgrind make` faz uma checagem quanto ao gerenciamento de memória do programa.
+- O comando `make clean` deleta todos os arquivos binários gerados.
+- O *Makefile* também automatiza a criação dos diretórios `bin/` e `obj/` caso eles não existam.
