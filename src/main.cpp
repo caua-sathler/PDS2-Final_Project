@@ -33,7 +33,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/leonardo/PDS2-Final_Project/teste");
+    file_in.open("/mnt/c/Users/55319/Desktop/Visual Studio Code/PDSII-Trabalho/PDS2-Final_Project/PDS2-Final_Project/teste.txt");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -236,19 +236,19 @@ int main()
                                 {
                                     player1->add_win("Lig4");
                                     player2->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
+                                    std::cout << username_player1 << " ganhou!" << std::endl;
                                 } 
                                 else 
                                 {
                                     player2->add_win("Lig4");
                                     player1->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
+                                    std::cout << username_player2 << " ganhou!" << std::endl;
                                 }
                                 game_over = true; 
                             } 
                             else if (connect4_game.is_board_full()) 
                             {
-                                std::cout << "O jogo terminou em empate!" << std::endl;
+                                std::cout << "Houve empate!" << std::endl;
                                 game_over = true;
                             }
                         } 
@@ -273,37 +273,47 @@ int main()
                     Tic_tac_toe tic_tac_toe_game;
                     int x, y;
 
-                    std::cout << username_player1 << " is X and " << username_player2 << " is O" << std::endl;
+                    std::cout << username_player1 << " eh X e " << username_player2 << " eh O" << std::endl;
 
                     while (true)
                     {
                         if (tic_tac_toe_game.check_tic_tac_toe_win() != 'F')
                         {
+                            if (tic_tac_toe_game.get_current_player() == 'X')
+                            {
                             tic_tac_toe_game.print_tic_tac_toe_board();
-                            std::cout << username_player1 << " won!" << std::endl;
+                            std::cout << username_player1 << " ganhou!" << std::endl;
                             player1->add_win("Velha");
                             player2->add_loss("Velha");
                             break;
+                            }
+
+                            tic_tac_toe_game.print_tic_tac_toe_board();
+                            std::cout << username_player2 << " ganhou!" << std::endl;
+                            player2->add_win("Velha");
+                            player1->add_loss("Velha");
+                            break;
+
                         }
 
                         if (tic_tac_toe_game.check_tie())
                         {
-                            std::cout << "Draw! The board is full" << std::endl;
+                            std::cout << "Houve empate!" << std::endl;
                             break;
                         }
 
-                        std::cout << "Player " << tic_tac_toe_game.get_current_player() << " turn:" << std::endl;
+                        std::cout << "Turno de jogador " << tic_tac_toe_game.get_current_player() << std::endl;
                         tic_tac_toe_game.print_tic_tac_toe_board();
 
                         try
                         {
                             if (!(std::cin >> x >> y))
-                                throw std::invalid_argument("Invalid input. Please enter two integers for your move");
+                                throw std::invalid_argument("Entrada inválida. Por favor forneça dois números inteiros.");
                         }
 
                         catch (const std::invalid_argument &e)
                         {
-                            std::cerr << "Error: " << e.what() << std::endl;
+                            std::cerr << "Erro: " << e.what() << std::endl;
                             std::cin.clear();
                             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             continue;
