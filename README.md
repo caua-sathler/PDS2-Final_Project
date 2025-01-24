@@ -12,7 +12,7 @@ Para atender aos requisitos do problema, o sistema foi projetado com uma arquite
 2. **Classe `Board`**: Responsável por gerenciar o tabuleiro dos jogos, incluindo o armazenamento das posições e a manipulação do estado do tabuleiro.
 3. **Classes específicas dos jogos**:
    - **`Reversi`**: Implementa as regras, jogadas e validações do jogo Reversi.
-   - **`Tic Tac Toe`**: Representa o jogo da velha, com métodos específicos para este jogo.
+   - **`Tic Tac Toe (Jogo da Velha)`**: Representa o jogo da velha, com métodos específicos para este jogo.
    - **`Connect4 (Lig4)`**: Gerencia o funcionamento do jogo de conectar 4 peças.
 4. **Classe `Player`**: Controla as informações dos jogadores, como nome, username, estatísticas de vitórias e derrotas, além de manipular as interações entre eles.
 
