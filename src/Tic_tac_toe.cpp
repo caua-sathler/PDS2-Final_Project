@@ -8,10 +8,11 @@ const int num_columns_received = 3;
 Tic_tac_toe::Tic_tac_toe() : Game(num_rows_received, num_columns_received), current_player('X'), winner('F') {}
 
 
-bool Tic_tac_toe::is_valid_move(int& x, int& y) const 
-{
-    game_board.is_move_inside_board(x, y); 
-    game_board.is_space_free(x, y); 
+bool Tic_tac_toe::is_valid_move(int& x, int& y) const {
+
+    if (!game_board.is_move_inside_board(x, y) || !game_board.is_space_free(x, y)) 
+        throw std::runtime_error("Coordenada invalida, vez passada para o oponente");
+    
     return true; 
 }
  
@@ -28,8 +29,7 @@ void Tic_tac_toe::make_move(int x, int y)
     y -= 1;
 
     try 
-    {
-        if (is_valid_move(x, y)) 
+    {   if (is_valid_move(x, y)) 
         {
             game_board.set_space(x, y, current_player);
     
@@ -39,16 +39,12 @@ void Tic_tac_toe::make_move(int x, int y)
             else 
                 current_player = switch_players(current_player);
         }
-    }   
-    
-    catch (const std::out_of_range& e) 
-    {
-        std::cout << "Error: " << e.what() << std::endl;
     }
 
-    catch(const std::runtime_error& e)
+    catch (const std::runtime_error& e) 
     {
-        std::cout << "Error: " << e.what() << std::endl;
+        std::cout << "Erro: " << e.what() << std::endl;
+        current_player = switch_players(current_player);
     }
 
 }
