@@ -101,13 +101,12 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Componentes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html">Player</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um jogador com informações pessoais e estatísticas.  <a href="classPlayer.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
 <tr class="memitem:a681d145d2dd1aff047b89c6c215a58d6" id="r_a681d145d2dd1aff047b89c6c215a58d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Player_8hpp.html#a681d145d2dd1aff047b89c6c215a58d6">read_register_file</a> (std::list&lt; <a class="el" href="classPlayer.html">Player</a> &gt; &amp;player_list, std::ifstream &amp;file_in)</td></tr>
-<tr class="memdesc:a681d145d2dd1aff047b89c6c215a58d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os dados de registro de jogadores a partir de um arquivo.  <br /></td></tr>
+<tr class="memdesc:a681d145d2dd1aff047b89c6c215a58d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os dados de registro de jogadores de um arquivo.  <br /></td></tr>
 <tr class="separator:a681d145d2dd1aff047b89c6c215a58d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c332d86a06a95e92f9ca05f88077198" id="r_a2c332d86a06a95e92f9ca05f88077198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Player_8hpp.html#a2c332d86a06a95e92f9ca05f88077198">write_register_file</a> (std::list&lt; <a class="el" href="classPlayer.html">Player</a> &gt; &amp;player_list, std::ofstream &amp;file_out)</td></tr>
 <tr class="memdesc:a2c332d86a06a95e92f9ca05f88077198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escreve os dados de registro de jogadores em um arquivo.  <br /></td></tr>
@@ -115,7 +114,7 @@ Funções</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Gerencia informações e ações relacionadas a jogadores. </p>
-<p>Define a estrutura de dados e métodos para representar jogadores, incluindo estatísticas, registros e funcionalidades associadas. </p>
+<p>Define a estrutura de dados e métodos para representar jogadores, incluindo estatísticas de vitórias e derrotas, e funcionalidades para manipular listas de jogadores. </p>
 
 <p class="definition">Definição no arquivo <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Funções</h2>
@@ -145,7 +144,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lê os dados de registro de jogadores a partir de um arquivo. </p>
+<p>Lê os dados de registro de jogadores de um arquivo. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">player_list</td><td>Lista de jogadores a ser preenchida. </td></tr>
@@ -154,7 +153,7 @@ Funções</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="Player_8cpp_source.html#l00091">91</a> do arquivo <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="Player_8cpp_source.html#l00116">116</a> do arquivo <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -188,12 +187,12 @@ Funções</h2></td></tr>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">player_list</td><td>Lista de jogadores a ser registrada. </td></tr>
-    <tr><td class="paramname">file_out</td><td>Arquivo de saída para armazenar os registros. </td></tr>
+    <tr><td class="paramname">file_out</td><td>Arquivo de saída onde os registros serão armazenados. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="Player_8cpp_source.html#l00115">115</a> do arquivo <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="Player_8cpp_source.html#l00138">138</a> do arquivo <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
