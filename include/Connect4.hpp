@@ -4,10 +4,6 @@
 #include "Game.hpp"
 #include <iostream>
 
-<<<<<<< HEAD
-class Connect4 : public Game 
-{
-=======
 /**
  * @file Connect4.hpp
  * @brief Implementa o jogo Connect4 (Lig4), baseado na classe genérica Game.
@@ -24,7 +20,6 @@ class Connect4 : public Game
  * checar condições de vitória.
  */
 class Connect4 : public Game {
->>>>>>> b27d12e511f1165fc823d2028f6edf6a8ddfebe8
     private:
         char current_player; /**< Representa o jogador atual ('X' ou 'O'). */
 
