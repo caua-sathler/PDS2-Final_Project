@@ -39,9 +39,9 @@ void Board::print_game_board() const
 
 bool Board::is_move_inside_board(int x, int y) const
 {
-    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1))
+    if ((x < 0 || x > this->num_rows - 1) || (y < 0 || y > this->num_columns - 1)) 
         return false;
-            
+    
     return true;
 }
 
@@ -51,4 +51,12 @@ bool Board::is_space_free(int x, int y) const
         return true;
 
     return false;
+}
+
+void Board::set_game_board(char **board){
+    for (int i=0;i<this->num_rows;i++){
+        for (int j=0;j<this->num_rows;j++){
+            this->game_board[i][j]= board[i][j];
+    }
+    }
 }
