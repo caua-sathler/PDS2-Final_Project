@@ -33,7 +33,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/mnt/c/Users/55319/Desktop/Visual Studio Code/PDSII-Trabalho/PDS2-Final_Project/PDS2-Final_Project/teste.txt");
+    file_in.open("/home/leonardo/PDS2-Final_Project/teste");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
@@ -219,12 +219,19 @@ int main()
                             {
                                 std::cin.clear();
                                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                throw std::invalid_argument("Entrada inválida. Por favor, insira um número inteiro.");
+                                throw std::invalid_argument("Entrada inválida, insira um número inteiro.");
                             }
 
                             if (!connect4_game.is_valid_move(column)) 
                             {
-                                throw std::out_of_range("Movimento inválido!");
+                                throw std::out_of_range("Entrada inválida, insira um número entre 1 e 7");
+                            }
+
+                            if (std::cin.peek() != '\n')
+                            {
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                throw std::invalid_argument("Entrada inválida, inspira apenas um número que é referente a coluna");
                             }
                             
                             connect4_game.make_move(column);
