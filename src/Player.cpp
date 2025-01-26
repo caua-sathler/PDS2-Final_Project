@@ -105,6 +105,13 @@ Player* Player::find_player_in_list(std::list<Player>& player_list, const std::s
     return nullptr;
 }
 
+bool Player::operator == (Player &player){
+    if (this->username == player.get_username() && this->name == player. get_name() && this->num_loss == player.get_num_loss() && this->num_win == player.get_num_win())
+        return true;
+    else
+        return false;
+}
+
 bool Player::compare_username(Player &player1, Player &player2){
     for (unsigned int i = 0; (i < player1.get_username().size()) && (i < player2.get_username().size()); i++){
         if (tolower(player1.get_username()[i]) < tolower(player2.get_username()[i]))

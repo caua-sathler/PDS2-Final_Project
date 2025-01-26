@@ -34,6 +34,7 @@ class Player {
         static void remove_player(std::string username_received, std::list<Player> &player_list);
         static Player* find_player_in_list(std::list<Player>& player_list, const std::string& user_name);
         
+        bool operator == (Player &player);
         static bool compare_username(Player &player1, Player &player2);
         static bool compare_name (Player &player1, Player &player2);
 };
