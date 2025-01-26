@@ -3,6 +3,7 @@
 #include "Board.hpp"
 #include <array>
 
+
 /**
  * @file Game.hpp
  * @brief Classe base abstrata para jogos genéricos com tabuleiro.

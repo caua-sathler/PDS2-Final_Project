@@ -4,7 +4,18 @@
 O desafio consistia no desenvolvimento de um sistema capaz de rodar três jogos clássicos: **`Reversi`**, **`Jogo da Velha`** e **`Connect4 (Lig4)`**. O objetivo era criar um programa funcional e bem estruturado, permitindo que os jogadores interajam por meio de comandos, registrando estatísticas e proporcionando uma experiência fluida durante as partidas.
 
 ---
+## **Executando o projeto**
+- O programa foi desenvolvido utilizando **WSL**, **g++**, **C++11** e **Valgrind**. Por isso, atente-se a essas características ao executar o código. 
+- O sistema conta com um *Makefile* que automatiza sua compilação e execução através do comando `make`.
+- Após a chamada do comando `make`, serão gerados em `/bin/`:
+    - O arquivo responsável pela execução programa (`main`);
+    - Os arquivos individuais de teste de cada classe;
+    É necessário **escolher manualmente** qual arquivo deseja executar.
+- O comando `valgrind make` faz uma checagem quanto ao gerenciamento de memória do programa.
+- O comando `make clean` deleta todos os arquivos binários gerados.
+- O *Makefile* também automatiza a criação dos diretórios `/bin/` e `/obj/` caso eles não existam.
 
+---
 ## **Visão Geral da Solução**
 Para atender aos requisitos do problema, o sistema foi projetado com uma arquitetura baseada em **seis classes principais**:
 
@@ -12,11 +23,11 @@ Para atender aos requisitos do problema, o sistema foi projetado com uma arquite
 2. **Classe `Board`**: Responsável por gerenciar o tabuleiro dos jogos, incluindo o armazenamento das posições e a manipulação do estado do tabuleiro.
 3. **Classes específicas dos jogos**:
    - **`Reversi`**: Implementa as regras, jogadas e validações do jogo Reversi.
-   - **`Tic Tac Toe`**: Representa o jogo da velha, com métodos específicos para este jogo.
+   - **`Tic Tac Toe`**: Representa o Jogo da Velha, com métodos específicos para este jogo.
    - **`Connect4`**: Gerencia o funcionamento e jogabilidade do jogo Lig4.
 4. **Classe `Player`**: Controla as informações dos jogadores, como nome, username, estatísticas de vitórias e derrotas, além de manipular as interações entre eles.
 
-Cada classe foi desenvolvida em uma branch própria para assegurar integridade do código. Utilizamos *pull requests* para integrar as branches das clases com a branch principal(`main`).
+Cada classe foi desenvolvida em uma branch própria para assegurar integridade do código. Utilizamos *pull requests* para integrar as branches das classes com a branch principal(`main`).
 
 ### **Relacionamentos**
 - A relação entre as classes `Board` e `Game` é de **composição**, onde cada jogo possui seu próprio tabuleiro.
@@ -46,9 +57,3 @@ Como uma melhoria adicional, implementamos uma funcionalidade no jogo **Reversi*
 
 --- 
 
-## **Executando o projeto**
-- O sistema conta com um *Makefile* que automatiza sua compilação e execução através do comando `make`.
-- O programa foi desenvolvido utilizando **WSL**, **g++**, **C++11** e **Valgrind**. Por isso, atente-se a essas características ao executar o código. 
-- O comando `valgrind make` faz uma checagem quanto ao gerenciamento de memória do programa.
-- O comando `make clean` deleta todos os arquivos binários gerados.
-- O *Makefile* também automatiza a criação dos diretórios `/bin/` e `/obj/` caso eles não existam.

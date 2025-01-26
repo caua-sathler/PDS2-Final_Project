@@ -24,6 +24,7 @@ class Board {
         std::unique_ptr<std::unique_ptr<char[]>[]> game_board = nullptr; /**< Estrutura que armazena o estado do tabuleiro. */
 
     public:
+        
         /**
          * @brief Constrói o tabuleiro com o número de linhas e colunas especificado.
          * @param num_rows_received Número de linhas.
@@ -72,6 +73,27 @@ class Board {
          * @return `true` se a posição está vazia, `false` caso contrário.
          */
         bool is_space_free(int x, int y) const;
+
+
+        /**
+         * @brief Retorna o tabuleiro completo
+         * 
+         * Essa função foi criada somente para possibilitar os testes do programa. 
+         * Assim, sua utilização se restringe aos arquivos do diretório /tests/.
+         */
+        const std::unique_ptr<std::unique_ptr<char[]>[]>& get_game_board() const;
+
+
+        /**
+         * @brief Recebe um tabuleiro pronto e o copia para o tabuleiro vazio interno criado
+         * pelo construtor da classe Board.
+         * @param board Tabuleiro a ser copiado
+         * 
+         * Essa função foi criada somente para possibilitar os testes do programa. 
+         * Assim, sua utilização se restringe aos arquivos do diretório /tests/.
+         */
+        void set_game_board(char **board);
+
 };
 
 #endif
