@@ -10,7 +10,7 @@ TEST_DIR = tests
 $(shell mkdir -p $(BUILD_DIR) $(BIN_DIR))
 
 # Alvo principal
-all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test
+all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test ${BIN_DIR}/BoardClass_test
 
 # Compilação de Board
 ${BUILD_DIR}/Board.o: ${INCLUDE_DIR}/Board.hpp ${SRC_DIR}/Board.cpp
@@ -68,7 +68,7 @@ ${BUILD_DIR}/BoardClass_test.o: ${TEST_DIR}/BoardClass_test.cpp ${INCLUDE_DIR}/B
 	$(CC) $(CFLAGS) -c ${TEST_DIR}/BoardClass_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/BoardClass_test.o
 
 # Linkagem do executável BoardClass_test
-${BIN_DIR}/BoardClass_test: ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o
+${BIN_DIR}/BoardClass_test: ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/ReversiClass_test.o
 	@mkdir -p ${BIN_DIR}
 	$(CC) $(CFLAGS) ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o -o ${BIN_DIR}/BoardClass_test
 
