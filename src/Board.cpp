@@ -53,10 +53,17 @@ bool Board::is_space_free(int x, int y) const
     return false;
 }
 
-void Board::set_game_board(char **board){
-    for (int i=0;i<this->num_rows;i++){
-        for (int j=0;j<this->num_rows;j++){
-            this->game_board[i][j]= board[i][j];
-    }
+void Board::set_game_board(char **board)
+{
+    for (int i = 0; i < this->num_rows; i++) 
+    {
+        for (int j = 0; j < this->num_rows; j++) 
+            this->game_board[i][j] = board[i][j];
     }
 }
+
+const std::unique_ptr<std::unique_ptr<char[]>[]>& Board::get_game_board() const 
+{
+    return this->game_board;
+}
+

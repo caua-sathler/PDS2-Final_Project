@@ -10,7 +10,7 @@ TEST_DIR = tests
 $(shell mkdir -p $(BUILD_DIR) $(BIN_DIR))
 
 # Alvo principal
-all: ${BIN_DIR}/main ${BIN_DIR}/reversi_test
+all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test
 
 # Compilação de Board
 ${BUILD_DIR}/Board.o: ${INCLUDE_DIR}/Board.hpp ${SRC_DIR}/Board.cpp
@@ -52,15 +52,25 @@ ${BIN_DIR}/main: ${BUILD_DIR}/main.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o 
 	@mkdir -p ${BIN_DIR}
 	$(CC) $(CFLAGS) ${BUILD_DIR}/main.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Tic_tac_toe.o -o ${BIN_DIR}/main
 
-# Compilação de reversi_test
-${BUILD_DIR}/reversi_test.o: ${TEST_DIR}/reversi_test.cpp ${INCLUDE_DIR}/Reversi.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Player.hpp
+# Compilação de ReversiClass_test
+${BUILD_DIR}/ReversiClass_test.o: ${TEST_DIR}/ReversiClass_test.cpp ${INCLUDE_DIR}/Reversi.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Player.hpp
 	@mkdir -p ${BUILD_DIR}
-	$(CC) $(CFLAGS) -c ${TEST_DIR}/reversi_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/reversi_test.o
+	$(CC) $(CFLAGS) -c ${TEST_DIR}/ReversiClass_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/ReversiClass_test.o
 
-# Linkagem do executável reversi_test
-${BIN_DIR}/reversi_test: ${BUILD_DIR}/reversi_test.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
+# Linkagem do executável ReversiClass_test
+${BIN_DIR}/ReversiClass_test: ${BUILD_DIR}/ReversiClass_test.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
 	@mkdir -p ${BIN_DIR}
-	$(CC) $(CFLAGS) ${BUILD_DIR}/reversi_test.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o -o ${BIN_DIR}/reversi_test
+	$(CC) $(CFLAGS) ${BUILD_DIR}/ReversiClass_test.o ${BUILD_DIR}/Reversi.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o -o ${BIN_DIR}/ReversiClass_test
+
+# Compilação de BoardClass_test
+${BUILD_DIR}/BoardClass_test.o: ${TEST_DIR}/BoardClass_test.cpp ${INCLUDE_DIR}/Board.hpp
+	@mkdir -p ${BUILD_DIR}
+	$(CC) $(CFLAGS) -c ${TEST_DIR}/BoardClass_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/BoardClass_test.o
+
+# Linkagem do executável BoardClass_test
+${BIN_DIR}/BoardClass_test: ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o
+	@mkdir -p ${BIN_DIR}
+	$(CC) $(CFLAGS) ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o -o ${BIN_DIR}/BoardClass_test
 
 # Limpeza
 clean:
@@ -71,7 +81,7 @@ clean:
 valgrind: ${BIN_DIR}/main
 	valgrind --leak-check=full ${BIN_DIR}/main
 
-valgrind_reversi: ${BIN_DIR}/reversi_test
-	valgrind --leak-check=full ${BIN_DIR}/reversi_test
+valgrind_reversi: ${BIN_DIR}/ReversiClass_test
+	valgrind --leak-check=full ${BIN_DIR}/ReversiClass_test
 
 .PHONY: all clean valgrind

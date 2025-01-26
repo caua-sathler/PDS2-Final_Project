@@ -107,3 +107,29 @@ TEST_CASE("Function is_valid_move test"){
 
 }
 
+TEST_CASE("Function is_there_direction_that_captures_opponent") {
+    Reversi reversi_game;
+    char game_board_situation[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', 'X', ' ', '*'},
+        {' ', ' ', 'X', 'X', ' ', ' ', '*', 'O'},
+        {' ', 'O', 'X', 'O', ' ', ' ', ' ', ' '},
+        {'X', ' ', 'O', 'O', 'O', ' ', 'X', ' '},
+        {' ', ' ', ' ', ' ', ' ', 'O', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', 'X', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+    };
+    create_game_board_situation(game_board_situation, reversi_game);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({1,2}, 'O') == 1);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({5,3}, 'X') == 1);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({7,7}, 'O') == 1);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({6,4}, 'X') == 1);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({4,5}, 'X') == 0);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({7,3}, 'O') == 0);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({7,7}, 'X') == 0);
+    CHECK(reversi_game.is_there_direction_that_captures_opponent({1,6}, 'O') == 0);    
+}
+
+
+
+
