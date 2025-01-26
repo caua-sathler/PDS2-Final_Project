@@ -1,0 +1,477 @@
+\doxysection{Referência da Classe Player}
+\hypertarget{classPlayer}{}\label{classPlayer}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$Player.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão que inicializa o jogador com valores vazios e estatísticas zeradas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer_ae0f295bc9bafce97b8fb2dd37feeff09}{Player}} (std\+::string name\+\_\+received, std\+::string username\+\_\+received)
+\begin{DoxyCompactList}\small\item\em Construtor que inicializa o jogador com nome e username. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer_a216e1a128e3c8eb27981093c53a76634}{Player}} (std\+::string name\+\_\+received, std\+::string username\+\_\+received, std\+::map$<$ std\+::string, int $>$ num\+\_\+win\+\_\+received, std\+::map$<$ std\+::string, int $>$ num\+\_\+loss\+\_\+received)
+\begin{DoxyCompactList}\small\item\em Construtor que inicializa o jogador com nome, username e estatísticas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_aa55f2098aa6892ff2879558316985521}{set\+\_\+name}} (std\+::string name\+\_\+received)
+\begin{DoxyCompactList}\small\item\em Define o nome do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a45ad0b19fd0636c10158d4dc670118d3}{set\+\_\+username}} (std\+::string username\+\_\+received)
+\begin{DoxyCompactList}\small\item\em Define o nome de usuário do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\+\_\+num\+\_\+win}} (std\+::string key, int value)
+\begin{DoxyCompactList}\small\item\em Atualiza o número de vitórias de um jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\+\_\+num\+\_\+loss}} (std\+::string key, int value)
+\begin{DoxyCompactList}\small\item\em Atualiza o número de derrotas de um jogo. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPlayer_a64a6c94b00bc67363f8309957a2705ac}{get\+\_\+username}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome de usuário do jogador. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPlayer_a788340fc5f21143f47eed04f6fd79976}{get\+\_\+name}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do jogador. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\+\_\+num\+\_\+win}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o mapa de vitórias por jogo. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\+\_\+num\+\_\+loss}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o mapa de derrotas por jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f}{print\+\_\+player}} ()
+\begin{DoxyCompactList}\small\item\em Imprime as informações do jogador no console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\+\_\+win}} (std\+::string key)
+\begin{DoxyCompactList}\small\item\em Incrementa o número de vitórias em um jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\+\_\+loss}} (std\+::string key)
+\begin{DoxyCompactList}\small\item\em Incrementa o número de derrotas em um jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d}{register\+\_\+player}} (\mbox{\hyperlink{classPlayer}{Player}} player\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Registra um jogador em uma lista de jogadores. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5}{remove\+\_\+player}} (std\+::string username\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Remove um jogador da lista de jogadores. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234}{compare\+\_\+username}} (\mbox{\hyperlink{classPlayer}{Player}} \&player1, \mbox{\hyperlink{classPlayer}{Player}} \&player2)
+\begin{DoxyCompactList}\small\item\em Compara os usernames de dois jogadores. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPlayer_a175698cd20cfcec81c693426d56a7354}{compare\+\_\+name}} (\mbox{\hyperlink{classPlayer}{Player}} \&player1, \mbox{\hyperlink{classPlayer}{Player}} \&player2)
+\begin{DoxyCompactList}\small\item\em Compara os nomes de dois jogadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{name}}
+\item 
+std\+::string \mbox{\hyperlink{classPlayer_af6823e27c17ba6ed5d2b4713abbe4d5a}{username}}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPlayer_a29a87c8236f29d234310e87b77009193}{num\+\_\+win}}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPlayer_ade5357b25273c454d59d50894846bc4a}{num\+\_\+loss}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+
+
+Definição na linha \mbox{\hyperlink{Player_8hpp_source_l00017}{17}} do arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão que inicializa o jogador com valores vazios e estatísticas zeradas. 
+
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00006}{6}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_ae0f295bc9bafce97b8fb2dd37feeff09}\label{classPlayer_ae0f295bc9bafce97b8fb2dd37feeff09} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name\+\_\+received,  }\item[{std\+::string}]{username\+\_\+received }\end{DoxyParamCaption})}
+
+
+
+Construtor que inicializa o jogador com nome e username. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name\+\_\+received} & Nome do jogador. \\
+\hline
+{\em username\+\_\+received} & Nome de usuário. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00009}{9}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a216e1a128e3c8eb27981093c53a76634}\label{classPlayer_a216e1a128e3c8eb27981093c53a76634} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name\+\_\+received,  }\item[{std\+::string}]{username\+\_\+received,  }\item[{std\+::map$<$ std\+::string, int $>$}]{num\+\_\+win\+\_\+received,  }\item[{std\+::map$<$ std\+::string, int $>$}]{num\+\_\+loss\+\_\+received }\end{DoxyParamCaption})}
+
+
+
+Construtor que inicializa o jogador com nome, username e estatísticas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name\+\_\+received} & Nome do jogador. \\
+\hline
+{\em username\+\_\+received} & Nome de usuário. \\
+\hline
+{\em num\+\_\+win\+\_\+received} & Mapa de vitórias por jogo. \\
+\hline
+{\em num\+\_\+loss\+\_\+received} & Mapa de derrotas por jogo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00012}{12}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}\label{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965} 
+\index{Player@{Player}!add\_loss@{add\_loss}}
+\index{add\_loss@{add\_loss}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{add\_loss()}{add\_loss()}}
+{\footnotesize\ttfamily void Player\+::add\+\_\+loss (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+Incrementa o número de derrotas em um jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em key} & Nome do jogo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00061}{61}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_ab30603cbe748d9cff259a83841461b16}\label{classPlayer_ab30603cbe748d9cff259a83841461b16} 
+\index{Player@{Player}!add\_win@{add\_win}}
+\index{add\_win@{add\_win}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{add\_win()}{add\_win()}}
+{\footnotesize\ttfamily void Player\+::add\+\_\+win (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+Incrementa o número de vitórias em um jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em key} & Nome do jogo. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00055}{55}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a175698cd20cfcec81c693426d56a7354}\label{classPlayer_a175698cd20cfcec81c693426d56a7354} 
+\index{Player@{Player}!compare\_name@{compare\_name}}
+\index{compare\_name@{compare\_name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{compare\_name()}{compare\_name()}}
+{\footnotesize\ttfamily bool Player\+::compare\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compara os nomes de dois jogadores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player1} & Primeiro jogador. \\
+\hline
+{\em player2} & Segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se o nome do primeiro jogador for menor, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00106}{106}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234}\label{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234} 
+\index{Player@{Player}!compare\_username@{compare\_username}}
+\index{compare\_username@{compare\_username}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{compare\_username()}{compare\_username()}}
+{\footnotesize\ttfamily bool Player\+::compare\+\_\+username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compara os usernames de dois jogadores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player1} & Primeiro jogador. \\
+\hline
+{\em player2} & Segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se o username do primeiro jogador for menor, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00096}{96}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a788340fc5f21143f47eed04f6fd79976}\label{classPlayer_a788340fc5f21143f47eed04f6fd79976} 
+\index{Player@{Player}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string Player\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o nome do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Nome do jogador. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00043}{43}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_af260cc303d2428256e9bfcca9ea25059}\label{classPlayer_af260cc303d2428256e9bfcca9ea25059} 
+\index{Player@{Player}!get\_num\_loss@{get\_num\_loss}}
+\index{get\_num\_loss@{get\_num\_loss}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_num\_loss()}{get\_num\_loss()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Player\+::get\+\_\+num\+\_\+loss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o mapa de derrotas por jogo. 
+
+\begin{DoxyReturn}{Retorna}
+Mapa com o número de derrotas. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00051}{51}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}\label{classPlayer_a186fc07cf1c11b7a60336c67823adbbd} 
+\index{Player@{Player}!get\_num\_win@{get\_num\_win}}
+\index{get\_num\_win@{get\_num\_win}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_num\_win()}{get\_num\_win()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Player\+::get\+\_\+num\+\_\+win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o mapa de vitórias por jogo. 
+
+\begin{DoxyReturn}{Retorna}
+Mapa com o número de vitórias. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00047}{47}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a64a6c94b00bc67363f8309957a2705ac}\label{classPlayer_a64a6c94b00bc67363f8309957a2705ac} 
+\index{Player@{Player}!get\_username@{get\_username}}
+\index{get\_username@{get\_username}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{get\_username()}{get\_username()}}
+{\footnotesize\ttfamily std\+::string Player\+::get\+\_\+username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o nome de usuário do jogador. 
+
+\begin{DoxyReturn}{Retorna}
+Nome de usuário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00039}{39}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f}\label{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f} 
+\index{Player@{Player}!print\_player@{print\_player}}
+\index{print\_player@{print\_player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{print\_player()}{print\_player()}}
+{\footnotesize\ttfamily void Player\+::print\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime as informações do jogador no console. 
+
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00067}{67}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d}\label{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d} 
+\index{Player@{Player}!register\_player@{register\_player}}
+\index{register\_player@{register\_player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{register\_player()}{register\_player()}}
+{\footnotesize\ttfamily bool Player\+::register\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}}]{player\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registra um jogador em uma lista de jogadores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+\_\+received} & Jogador a ser registrado. \\
+\hline
+{\em player\+\_\+list} & Lista onde o jogador será adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se o registro for bem-\/sucedido, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00074}{74}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5}\label{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5} 
+\index{Player@{Player}!remove\_player@{remove\_player}}
+\index{remove\_player@{remove\_player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{remove\_player()}{remove\_player()}}
+{\footnotesize\ttfamily bool Player\+::remove\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string}]{username\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove um jogador da lista de jogadores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em username\+\_\+received} & Nome de usuário do jogador a ser removido. \\
+\hline
+{\em player\+\_\+list} & Lista de onde o jogador será removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se a remoção for bem-\/sucedida, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00085}{85}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_aa55f2098aa6892ff2879558316985521}\label{classPlayer_aa55f2098aa6892ff2879558316985521} 
+\index{Player@{Player}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Player\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name\+\_\+received }\end{DoxyParamCaption})}
+
+
+
+Define o nome do jogador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name\+\_\+received} & Nome do jogador. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00015}{15}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}\label{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a} 
+\index{Player@{Player}!set\_num\_loss@{set\_num\_loss}}
+\index{set\_num\_loss@{set\_num\_loss}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_num\_loss()}{set\_num\_loss()}}
+{\footnotesize\ttfamily void Player\+::set\+\_\+num\+\_\+loss (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Atualiza o número de derrotas de um jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em key} & Nome do jogo. \\
+\hline
+{\em value} & Número de derrotas. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00031}{31}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}\label{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4} 
+\index{Player@{Player}!set\_num\_win@{set\_num\_win}}
+\index{set\_num\_win@{set\_num\_win}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_num\_win()}{set\_num\_win()}}
+{\footnotesize\ttfamily void Player\+::set\+\_\+num\+\_\+win (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Atualiza o número de vitórias de um jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em key} & Nome do jogo. \\
+\hline
+{\em value} & Número de vitórias. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00023}{23}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a45ad0b19fd0636c10158d4dc670118d3}\label{classPlayer_a45ad0b19fd0636c10158d4dc670118d3} 
+\index{Player@{Player}!set\_username@{set\_username}}
+\index{set\_username@{set\_username}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_username()}{set\_username()}}
+{\footnotesize\ttfamily void Player\+::set\+\_\+username (\begin{DoxyParamCaption}\item[{std\+::string}]{username\+\_\+received }\end{DoxyParamCaption})}
+
+
+
+Define o nome de usuário do jogador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em username\+\_\+received} & Nome de usuário. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+
+\doxysubsection{Atributos}
+\Hypertarget{classPlayer_af9c920fabaafdeb7961a645315b521ff}\label{classPlayer_af9c920fabaafdeb7961a645315b521ff} 
+\index{Player@{Player}!name@{name}}
+\index{name@{name}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Player\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+Nome do jogador. 
+
+Definição na linha \mbox{\hyperlink{Player_8hpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+\Hypertarget{classPlayer_ade5357b25273c454d59d50894846bc4a}\label{classPlayer_ade5357b25273c454d59d50894846bc4a} 
+\index{Player@{Player}!num\_loss@{num\_loss}}
+\index{num\_loss@{num\_loss}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{num\_loss}{num\_loss}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Player\+::num\+\_\+loss\hspace{0.3cm}{\ttfamily [private]}}
+
+Número de derrotas por jogo. 
+
+Definição na linha \mbox{\hyperlink{Player_8hpp_source_l00022}{22}} do arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+\Hypertarget{classPlayer_a29a87c8236f29d234310e87b77009193}\label{classPlayer_a29a87c8236f29d234310e87b77009193} 
+\index{Player@{Player}!num\_win@{num\_win}}
+\index{num\_win@{num\_win}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{num\_win}{num\_win}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Player\+::num\+\_\+win\hspace{0.3cm}{\ttfamily [private]}}
+
+Número de vitórias por jogo. 
+
+Definição na linha \mbox{\hyperlink{Player_8hpp_source_l00021}{21}} do arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+\Hypertarget{classPlayer_af6823e27c17ba6ed5d2b4713abbe4d5a}\label{classPlayer_af6823e27c17ba6ed5d2b4713abbe4d5a} 
+\index{Player@{Player}!username@{username}}
+\index{username@{username}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily std\+::string Player\+::username\hspace{0.3cm}{\ttfamily [private]}}
+
+Nome de usuário do jogador. 
+
+Definição na linha \mbox{\hyperlink{Player_8hpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Player_8hpp}{Player.\+hpp}}\item 
+src/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}
