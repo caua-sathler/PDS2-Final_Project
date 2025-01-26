@@ -436,4 +436,86 @@ TEST_CASE("Function make_move test")
     CHECK(reversi_game.get_game_board().get_space(5,5) == 'O');
 }
 
+TEST_CASE("Function find_all_directions_that_make_move test"){
+    Reversi reversi_game;
+    
+    char game_board_situation1 [num_columns_and_rows_reversi][num_columns_and_rows_reversi]{
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', '*', '*', 'X', 'O', '*', ' '},
+        {' ', 'O', 'X', '*', 'X', 'X', 'O', ' '},
+        {' ', ' ', 'O', 'X', 'X', 'X', 'X', '*'},
+        {' ', '*', 'X', 'O', 'X', '*', ' ', ' '},
+        {' ', '*', 'O', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}
+    };
+    create_game_board_situation(game_board_situation1, reversi_game);
+
+    SUBCASE("Multiple directions"){
+        std::list<std::array<int, 2>> directions_to_capture_opponents_function;
+        std::array<int, 2> move = {2,3}, direction1 = {1,0}, direction2={0,1}, direction3={0,-1};
+        std::list<std::array<int, 2>> directions_to_capture_opponents_test ={direction1, direction2, direction3};
+        reversi_game.find_all_directions_to_make_move(move, 'O', directions_to_capture_opponents_function);
+
+        CHECK(directions_to_capture_opponents_function == directions_to_capture_opponents_test);
+
+        move = {4,5};
+        directions_to_capture_opponents_function.clear();
+        directions_to_capture_opponents_test.clear();
+        direction1 = {0,-1};
+        direction2 = {-1,0};
+        directions_to_capture_opponents_test = {direction1, direction2};
+        reversi_game.find_all_directions_to_make_move(move, 'O', directions_to_capture_opponents_function);
+        CHECK(directions_to_capture_opponents_function == directions_to_capture_opponents_test);
+
+    }
+       
+    SUBCASE("One direction"){
+        std::array<int, 2> move = {2,7}, direction = {0,-1};
+        std::list<std::array<int, 2>> directions_to_capture_opponents_test ={direction};
+        std::list<std::array<int, 2>> directions_to_capture_opponents_function;
+        reversi_game.find_all_directions_to_make_move(move, 'X', directions_to_capture_opponents_function);
+        CHECK(directions_to_capture_opponents_function == directions_to_capture_opponents_test);
+    }
+    SUBCASE("No direction"){
+        std::list<std::array<int, 2>> directions_to_capture_opponents_function;
+        std::array<int, 2> move = {0,4};
+        reversi_game.find_all_directions_to_make_move(move, 'X', directions_to_capture_opponents_function);
+        CHECK(directions_to_capture_opponents_function.empty()==1);
+    }
+}
+    
+TEST_CASE("Function process_move"){
+    Reversi reversi_game;
+    
+    char game_board_situation1 [num_columns_and_rows_reversi][num_columns_and_rows_reversi]{
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', '*', '*', 'X', 'O', '*', ' '},
+        {' ', 'O', 'X', '*', 'X', 'X', 'O', ' '},
+        {' ', ' ', 'O', 'X', 'X', 'X', 'X', '*'},
+        {' ', '*', 'X', 'O', 'X', '*', ' ', ' '},
+        {' ', '*', 'O', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}
+         
+    };
+    create_game_board_situation(game_board_situation1, reversi_game);
+    std::array<int, 2> move = {2,3};
+    SUBCASE("Valid moves"){
+        CHECK(reversi_game.process_move(move, 'O') == 1);
+        move = {6,4};
+        CHECK(reversi_game.process_move(move, 'X') == 1);
+    }
+    SUBCASE("Invalid moves"){
+        move = {8,8};
+        CHECK(reversi_game.process_move(move, 'X') == 0);
+        move = {2,2};
+        CHECK(reversi_game.process_move(move, 'O') == 0);
+    }
+}
+
+
+
+//EP R Joao123 Maria999
+
 //EP R Joao123 Maria999

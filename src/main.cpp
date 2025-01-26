@@ -33,7 +33,7 @@ Player *find_player_in_list(std::list<Player> &player_list, const std::string &u
 int main()
 {
     std::ifstream file_in;
-    file_in.open("/home/leonardo/PDS2-Final_Project/teste");
+    file_in.open("teste");
     if (!file_in.is_open())
     {
         std::cout << "Erro ao abrir o arquivo" << std::endl;
