@@ -21,6 +21,12 @@ int Reversi::get_num_pieces_player_O()
 {
     return this->num_pieces_player_O;
 }
+void Reversi::set_num_pieces_player_X(int x){
+    this->num_pieces_player_X = x;
+}
+void Reversi::set_num_pieces_player_O(int x){
+    this->num_pieces_player_O = x;
+}
 
 Board& Reversi::get_game_board(){
     return this->game_board;

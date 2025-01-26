@@ -133,3 +133,138 @@ TEST_CASE("Function is_there_direction_that_captures_opponent") {
 
 
 
+TEST_CASE("Function is_there_valid_move_for_player test"){
+    Reversi reversi_game;
+    char game_board_situation1[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', 'X', ' ', ' ', ' ', 'X', ' ', ' '},
+        {' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '},
+        {' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '},
+        {' ', 'X', ' ', ' ', ' ', 'X', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', 'X', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+           
+    };
+    create_game_board_situation(game_board_situation1, reversi_game);
+    CHECK(reversi_game.is_there_valid_move_for_player('O') == 0);
+    CHECK(reversi_game.is_there_valid_move_for_player('X') == 0);
+    char game_board_situation2[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {'X', ' ', 'X', 'X', 'X', 'X', 'X', ' '},
+        {'X', 'X', 'X', 'X', 'X', 'X', ' ', 'X'},
+        {'X', 'X', 'X', 'X', 'X', 'X', 'X', ' '},
+        {'X', 'X', 'X', 'X', 'X', 'X', ' ', 'X'},
+        {'X', 'X', 'X', 'X', 'X', 'X', 'X', ' '},
+        {' ', ' ', ' ', 'O', ' ', 'O', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', 'O', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'O'}
+    };
+    create_game_board_situation(game_board_situation2, reversi_game);
+    CHECK(reversi_game.is_there_valid_move_for_player('O') == 0);
+    CHECK(reversi_game.is_there_valid_move_for_player('X') == 1);
+    char game_board_situation3[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {'X', ' ', 'X', ' ', ' ', ' ', ' ', ' '},
+        {'X', 'X', 'X', ' ', ' ', ' ', ' ', ' '},
+        {'X', 'X', 'X', ' ', 'X', ' ', ' ', ' '},
+        {'X', 'X', 'X', 'X', 'O', 'O', '*', ' '},
+        {'X', 'O', 'O', 'O', 'O', 'O', '*', ' '},
+        {'*', '*', '*', 'O', '*', 'O', ' ', ' '},
+        {' ', ' ', ' ', '*', '*', ' ', 'O', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'O'}
+    };
+    create_game_board_situation(game_board_situation3, reversi_game);
+    CHECK(reversi_game.is_there_valid_move_for_player('O') == 1);
+    CHECK(reversi_game.is_there_valid_move_for_player('X') == 1);
+
+}  
+
+TEST_CASE("Function check_win test"){
+    Reversi reversi_game;
+    char game_board_situation1[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', 'O', ' ', ' ', ' ', 'O', ' ', ' '},
+        {' ', ' ', 'O', 'O', 'O', ' ', ' ', ' '},
+        {' ', ' ', 'O', 'O', 'O', ' ', ' ', ' '},
+        {' ', 'O', ' ', ' ', ' ', 'O', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', 'O', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+           
+    };
+    create_game_board_situation(game_board_situation1, reversi_game);
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('O'), 'X') == 1);
+    
+    char game_board_situation2[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', 'X', ' ', ' ', ' ', 'X', ' ', ' '},
+        {' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '},
+        {' ', ' ', 'X', 'X', 'X', ' ', ' ', ' '},
+        {' ', 'X', ' ', ' ', ' ', 'X', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', 'X', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+           
+    };
+    create_game_board_situation(game_board_situation2, reversi_game);
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('X'), 'O') == 1);
+    char game_board_situation3[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {'X', ' ', 'X', ' ', ' ', ' ', ' ', ' '},
+        {'X', 'X', 'X', ' ', ' ', ' ', ' ', ' '},
+        {'X', 'X', 'X', ' ', 'X', ' ', ' ', ' '},
+        {'X', 'X', 'X', 'X', 'O', 'O', '*', ' '},
+        {'X', 'O', 'O', 'O', 'O', 'O', '*', ' '},
+        {'*', '*', '*', 'O', '*', 'O', ' ', ' '},
+        {' ', ' ', ' ', '*', '*', ' ', 'O', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'O'}
+    };
+    create_game_board_situation(game_board_situation3, reversi_game);
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('O'), 'X') == 0);
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('X'), 'O') == 0);
+    char game_board_situation4[num_columns_and_rows_reversi][num_columns_and_rows_reversi]={
+        {'X', 'X', 'X', 'X', 'X', 'X', ' ', ' '},
+        {'X', 'X', 'X', 'X', 'X', 'X', ' ', ' '},
+        {'X', 'O', 'X', 'X', 'X', 'X', ' ', 'X'},
+        {' ', ' ', 'O', 'X', 'X', 'X', 'X', ' '},
+        {'X', 'X', 'X', 'O', 'X', 'X', 'X', 'X'},
+        {' ', ' ', 'X', ' ', 'O', 'X', 'X', 'X'},
+        {' ', ' ', 'X', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', 'X', ' ', ' ', ' ', ' ', ' '}
+    };
+    create_game_board_situation(game_board_situation4, reversi_game);
+    //X has valid moves, but O doesn't. Game is not over yet 
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('O'), 'X') == 0);
+    char game_board_situation5 [num_columns_and_rows_reversi][num_columns_and_rows_reversi]{
+        {'X', ' ', 'O', 'O', ' ', ' ', 'O', 'O'},
+        {'X', ' ', 'O', 'O', ' ', 'O', 'O', ' '},
+        {'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O'},
+        {'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O'},
+        {'X', ' ', 'X', 'X', 'O', 'O', 'O', 'O'},
+        {' ', ' ', ' ', ' ', ' ', 'O', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}
+    };
+    create_game_board_situation(game_board_situation5, reversi_game);
+    //O has valid moves, but X doesn't. Game is not over yet 
+    CHECK(reversi_game.check_win(reversi_game.is_there_valid_move_for_player('X'), 'O') == 0);
+}
+
+TEST_CASE("Function control_num_pieces_player test"){
+    Reversi reversi_game;
+    reversi_game.set_num_pieces_player_O(10);
+    reversi_game.set_num_pieces_player_X(2);
+
+    reversi_game.control_num_pieces_players(3, 'X');
+    CHECK(reversi_game.get_num_pieces_player_X() == 5);
+    CHECK(reversi_game.get_num_pieces_player_O() == 7);
+
+    reversi_game.control_num_pieces_players(5, 'O');
+    CHECK(reversi_game.get_num_pieces_player_X() == 0);
+    CHECK(reversi_game.get_num_pieces_player_O() == 12);
+    
+    reversi_game.control_num_pieces_players(0, 'O');
+    CHECK(reversi_game.get_num_pieces_player_X() == 0);
+    CHECK(reversi_game.get_num_pieces_player_O() == 12);
+}
+
+
+//EP R Joao123 Maria999
