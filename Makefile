@@ -12,7 +12,7 @@ $(shell mkdir -p $(BUILD_DIR) $(BIN_DIR))
 
 
 # Alvo principal
-all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test ${BIN_DIR}/BoardClass_test ${BIN_DIR}/Connect4Class_test
+all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test ${BIN_DIR}/BoardClass_test ${BIN_DIR}/Connect4Class_test ${BIN_DIR}/TicTacToeClass_test
 
 # Compilação de Board
 ${BUILD_DIR}/Board.o: ${INCLUDE_DIR}/Board.hpp ${SRC_DIR}/Board.cpp
@@ -85,6 +85,16 @@ ${BUILD_DIR}/Connect4Class_test.o: ${TEST_DIR}/Connect4Class_test.cpp ${INCLUDE_
 ${BIN_DIR}/Connect4Class_test: ${BUILD_DIR}/Connect4Class_test.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
 	@mkdir -p ${BIN_DIR}
 	$(CC) $(CFLAGS) ${BUILD_DIR}/Connect4Class_test.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o -o ${BIN_DIR}/Connect4Class_test
+
+# Compilação de TicTacToeClass_test
+${BUILD_DIR}/TicTacToeClass_test.o: ${TEST_DIR}/TicTacToeClass_test.cpp ${INCLUDE_DIR}/Tic_tac_toe.hpp ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Player.hpp
+	@mkdir -p ${BUILD_DIR}
+	$(CC) $(CFLAGS) -c ${TEST_DIR}/TicTacToeClass_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/TicTacToeClass_test.o
+
+# Linkagem do executável TicTacToeClass_test
+${BIN_DIR}/TicTacToeClass_test: ${BUILD_DIR}/TicTacToeClass_test.o ${BUILD_DIR}/Tic_tac_toe.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
+	@mkdir -p ${BIN_DIR}
+	$(CC) $(CFLAGS) ${BUILD_DIR}/TicTacToeClass_test.o ${BUILD_DIR}/Tic_tac_toe.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o -o ${BIN_DIR}/TicTacToeClass_test
 
 # Limpeza
 clean:
