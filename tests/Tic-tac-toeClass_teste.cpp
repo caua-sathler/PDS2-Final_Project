@@ -82,6 +82,39 @@ TEST_CASE("Function make_move test")
     }
 }
 
+TEST_CASE("Function check_tie test") 
+{
+    tic_tac_toe jogo;
+
+    SUBCASE("Game is a tie (board full, no winner)") 
+    {
+        char tie_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'O', 'X'},
+            {'X', 'X', 'O'},
+            {'O', 'X', 'O'}
+        };
+
+        create_game_board_situation(tie_board, jogo);
+        CHECK(jogo.check_tie() == true);
+    }
+
+    SUBCASE("Game is not a tie (there is a winner)") 
+    {
+        char winner_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'X', 'X'},
+            {'O', 'O', ' '},
+            {' ', ' ', ' '}
+        };
+
+        create_game_board_situation(winner_board, jogo);
+        CHECK(jogo.check_tie() == false);
+    }
+
+}
+
+
 
 
 
