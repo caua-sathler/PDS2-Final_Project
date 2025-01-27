@@ -120,4 +120,9 @@ void Connect4::set_current_player(char player)
     current_player = player;
 }
 
+char Connect4::get_space(int row, int column)
+{
+    return game_board.get_space(row, column);
+}
+
 Connect4::~Connect4() {}

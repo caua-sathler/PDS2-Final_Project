@@ -92,6 +92,15 @@ class Connect4 : public Game {
 
 
         /**
+         * @brief Retorna o valor de uma casa no tabuleiro
+         * @param row Linha desejada
+         * @param column Coluna desejada
+         * @return O caractere que ocupa a casa
+         */
+        char get_space(int row, int column);
+
+
+        /**
          * @brief Destrutor do jogo Connect4.
          */
         ~Connect4();

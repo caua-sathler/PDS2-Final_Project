@@ -10,7 +10,7 @@ TEST_DIR = tests
 $(shell mkdir -p $(BUILD_DIR) $(BIN_DIR))
 
 # Alvo principal
-all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test ${BIN_DIR}/BoardClass_test
+all: ${BIN_DIR}/main ${BIN_DIR}/ReversiClass_test ${BIN_DIR}/BoardClass_test ${BIN_DIR}/Connect4Class_test
 
 # Compilação de Board
 ${BUILD_DIR}/Board.o: ${INCLUDE_DIR}/Board.hpp ${SRC_DIR}/Board.cpp
@@ -71,6 +71,16 @@ ${BUILD_DIR}/BoardClass_test.o: ${TEST_DIR}/BoardClass_test.cpp ${INCLUDE_DIR}/B
 ${BIN_DIR}/BoardClass_test: ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/ReversiClass_test.o
 	@mkdir -p ${BIN_DIR}
 	$(CC) $(CFLAGS) ${BUILD_DIR}/BoardClass_test.o ${BUILD_DIR}/Board.o -o ${BIN_DIR}/BoardClass_test
+
+# Compilação de Connect4Class_test
+${BUILD_DIR}/Connect4Class_test.o: ${TEST_DIR}/Connect4Class_test.cpp ${INCLUDE_DIR}/Connect4.hpp ${INCLUDE_DIR}/Board.hpp ${INCLUDE_DIR}/Game.hpp ${INCLUDE_DIR}/Player.hpp
+	@mkdir -p ${BUILD_DIR}
+	$(CC) $(CFLAGS) -c ${TEST_DIR}/Connect4Class_test.cpp -I$(INCLUDE_DIR) -o ${BUILD_DIR}/Connect4Class_test.o
+
+# Linkagem do executável Connect4Class_test
+${BIN_DIR}/Connect4Class_test: ${BUILD_DIR}/Connect4Class_test.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o
+	@mkdir -p ${BIN_DIR}
+	$(CC) $(CFLAGS) ${BUILD_DIR}/Connect4Class_test.o ${BUILD_DIR}/Connect4.o ${BUILD_DIR}/Game.o ${BUILD_DIR}/Board.o ${BUILD_DIR}/Player.o -o ${BIN_DIR}/Connect4Class_test
 
 # Limpeza
 clean:
