@@ -76,6 +76,10 @@ bool tic_tac_toe::check_tie() const {
 return true;
 }
 
+Board& tic_tac_toe::get_game_board(){
+    return this->game_board;
+}
+
 char tic_tac_toe::get_current_player() const {
     return current_player;
 }
