@@ -102,6 +102,10 @@ char Tic_tac_toe::get_current_player() const
     return current_player;
 }
 
+Board& Tic_tac_toe::get_game_board(){
+    return this->game_board;
+}
+
 Tic_tac_toe::~Tic_tac_toe() {}
 
 

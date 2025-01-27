@@ -116,7 +116,7 @@ class Player {
          * @param player_list Lista onde o jogador será adicionado.
          * @return `true` se o registro for bem-sucedido, `false` caso contrário.
          */
-        static bool register_player(Player player_received, std::list<Player> &player_list);
+        static void register_player(Player player_received, std::list<Player> &player_list);
 
         /**
          * @brief Remove um jogador da lista de jogadores.
@@ -124,7 +124,23 @@ class Player {
          * @param player_list Lista de onde o jogador será removido.
          * @return `true` se a remoção for bem-sucedida, `false` caso contrário.
          */
-        static bool remove_player(std::string username_received, std::list<Player> &player_list);
+        static void remove_player(std::string username_received, std::list<Player> &player_list);
+
+        /**
+         * @brief Procura se um jogador específico existe na lista.
+         * @param player_list Lista que registra todos os jogadores.
+         * @param user_name Nome do jogador a ser procurado.
+         * @return O endereço de memória do jogador caso seja encontrado, 
+         * 'nullptr' caso contrário.
+         */
+        static Player* find_player_in_list(std::list<Player>& player_list, const std::string& user_name);
+
+        /**
+         * @brief sobrecarga do operador ==
+         * @param player objeto player a ser comparado
+         * @return `true` se os objetos comparados tem os mesmos atributos, `false` caso contrario
+         */
+        bool operator == (Player &player);
 
         /**
          * @brief Compara os usernames de dois jogadores.
