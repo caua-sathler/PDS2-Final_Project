@@ -111,8 +111,93 @@ TEST_CASE("Function check_tie test")
         create_game_board_situation(winner_board, jogo);
         CHECK(jogo.check_tie() == false);
     }
-
 }
+
+TEST_CASE("Function check_tic_tac_toe_win test") 
+{
+    tic_tac_toe jogo;
+
+    SUBCASE("Win by row") 
+    {
+        char row_win_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'X', 'X'},
+            {'O', 'O', ' '},
+            {' ', ' ', ' '}
+        };
+
+        create_game_board_situation(row_win_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'X');
+    }
+
+    SUBCASE("Win by column") 
+    {
+        char column_win_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'O', ' '},
+            {'X', 'O', ' '},
+            {'X', ' ', ' '}
+        };
+
+        create_game_board_situation(column_win_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'X');
+    }
+
+    SUBCASE("Win by main diagonal") 
+    {
+        char main_diag_win_board[num_rows_received][num_columns_received] = 
+        {
+            {'O', 'X', 'X'},
+            {'X', 'O', ' '},
+            {' ', ' ', 'O'}
+        };
+
+        create_game_board_situation(main_diag_win_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'O');
+    }
+
+    SUBCASE("Win by secondary diagonal") 
+    {
+        char sec_diag_win_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'O', 'O'},
+            {' ', 'O', ' '},
+            {'O', ' ', 'X'}
+        };
+
+        create_game_board_situation(sec_diag_win_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'O');
+    }
+
+    SUBCASE("No winner (game in progress)") 
+    {
+        char no_winner_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'O', ' '},
+            {'X', 'O', ' '},
+            {'O', ' ', ' '}
+        };
+
+        create_game_board_situation(no_winner_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'F');
+    }
+
+    SUBCASE("No winner (tie)") 
+    {
+        char tie_board[num_rows_received][num_columns_received] = 
+        {
+            {'X', 'O', 'X'},
+            {'X', 'X', 'O'},
+            {'O', 'X', 'O'}
+        };
+
+        create_game_board_situation(tie_board, jogo);
+        CHECK(jogo.check_tic_tac_toe_win() == 'F');
+    }
+}
+
+
+
 
 
 
