@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "Player.hpp"
-#include <iostream>
+#include <algorithm>
 
 TEST_CASE("Teste método register_player")
 {
@@ -20,9 +20,7 @@ TEST_CASE("Teste método register_player")
     Player::register_player(player2, player_list);
     CHECK(player2 == player_list.back());
 
-    std::map<std::string, int> win = {{"Reversi", 1}, {"Lig4", 2}, {"Velha", 3}}, 
-                               loss = {{"Reversi", 4}, {"Lig4", 5}, {"Velha", 6}};
-    Player player3("Nome sobrenome", "Apelido2", win, loss);
+    Player player3("Nome sobrenome", "Apelido2", {{"Reversi", 1}, {"Lig4", 2}, {"Velha", 3}}, {{"Reversi", 4}, {"Lig4", 5}, {"Velha", 6}});
     Player::register_player(player3, player_list);
     CHECK(player3 == player_list.back());
 
@@ -30,6 +28,37 @@ TEST_CASE("Teste método register_player")
     Player::register_player(*player4, player_list);
     CHECK(*player4 == player_list.back());
     delete player4;
+}
+
+TEST_CASE("Teste método remove_player")
+{
+    Player player1, player2("nome", "Apelido1"), player3("nome sobrenome", "Apelido2");
+    std::list<Player> player_list = {player1, player2, player3};
+    Player::remove_player("", player_list);
+    std::list<Player>::iterator it;
+    for (it = player_list.begin(); it != player_list.end(); it++)
+        if (*it == player1)
+            CHECK(false);
+
+    Player::remove_player("Apelido2", player_list);
+    for (it = player_list.begin(); it != player_list.end(); it++)
+        if (*it == player3)
+            CHECK(false);
+
+    Player player4("Nome sobrenome", "Apelido4", {{"Reversi", 1}, {"Lig4", 2}, {"Velha", 3}}, {{"Reversi", 4}, {"Lig4", 5}, {"Velha", 6}});
+    player_list.push_back(player4);
+    Player::remove_player("Apelido4", player_list);
+    for (it = player_list.begin(); it != player_list.end(); it++)
+        if (*it == player4)
+            CHECK(false);   
+
+    Player *player5 = new Player("nome", "Apelido3");
+    player_list.push_back(*player5);
+    Player::remove_player("Apelido3", player_list);
+    for (it = player_list.begin(); it != player_list.end(); it++)
+        if (*it == *player5)
+            CHECK(false);
+    delete player5;
 }
 
 TEST_CASE("Teste método add_win"){
