@@ -3,7 +3,7 @@
 #include "Player.hpp"
 #include <algorithm>
 
-TEST_CASE("Teste método register_player")
+TEST_CASE("method register_player test")
 {
     std::list<Player> player_list;
     Player player1;
@@ -30,7 +30,7 @@ TEST_CASE("Teste método register_player")
     delete player4;
 }
 
-TEST_CASE("Teste método remove_player")
+TEST_CASE("method remove_player test")
 {
     Player player1, player2("nome", "Apelido1"), player3("nome sobrenome", "Apelido2");
     std::list<Player> player_list = {player1, player2, player3};
@@ -61,7 +61,7 @@ TEST_CASE("Teste método remove_player")
     delete player5;
 }
 
-TEST_CASE("Teste método add_win"){
+TEST_CASE("method add_win test"){
     Player player;
     player.add_win("Reversi");
     player.add_win("Lig4");
@@ -88,7 +88,7 @@ TEST_CASE("Teste método add_win"){
     CHECK(player.get_num_win() == win_test);
 }
 
-TEST_CASE("Teste método add_loss"){
+TEST_CASE("method add_loss test"){
     Player player;
     player.add_loss("Reversi");
     player.add_loss("Lig4");
@@ -113,4 +113,24 @@ TEST_CASE("Teste método add_loss"){
 
     player.add_loss("Game");
     CHECK(player.get_num_loss() == loss_test);
+}
+
+TEST_CASE("method find_player_in_list test"){
+    Player player1("", "Apelido1");
+    std::list<Player> player_list;
+    player_list.push_back(player1);
+    CHECK(Player::find_player_in_list(player_list, "Apelido1") == &(*player_list.begin()));
+
+    Player player2("nome", "Apelido2"), player3("nome sobrenome", "Apelido3");
+    player_list.push_back(player2); 
+    player_list.push_back(player3);
+    std::list<Player>::iterator it;
+    it = std::next(player_list.begin(), 1);
+    CHECK(Player::find_player_in_list(player_list, "Apelido2") == &(*it));
+    CHECK(Player::find_player_in_list(player_list, "Apelido3") == &(*player_list.rbegin()));
+
+    Player *player4 = new Player("", "Apelido4");
+    player_list.push_back(*player4);
+    CHECK(Player::find_player_in_list(player_list, "Apelido4") == &(*player_list.rbegin()));
+    delete player4;
 }
