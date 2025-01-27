@@ -49,7 +49,8 @@ TEST_CASE("Connect4 Class Tests")
         CHECK(game.get_space(4, 0) == 'O');
     }
 
-    SUBCASE("Win Condition Test - Horizontal") {
+    SUBCASE("Win Condition Test - Horizontal") 
+    {
         // Teste 1: Vitória horizontal
         Connect4 game_horizontal1;
         game_horizontal1.make_move(1); // X
@@ -98,7 +99,8 @@ TEST_CASE("Connect4 Class Tests")
         CHECK(game_horizontal3.check_win() == true); // X deve vencer
     }
     
-    SUBCASE("Win Condition Test - Vertical") {
+    SUBCASE("Win Condition Test - Vertical") 
+    {
         // Teste 1: Vitória vertical na coluna 1
         Connect4 game_vertical1;
         game_vertical1.make_move(1); // X
@@ -133,7 +135,8 @@ TEST_CASE("Connect4 Class Tests")
         CHECK(game_vertical3.check_win() == true); // X deve vencer
     }
 
-    SUBCASE("Win Condition Test - Diagonal Direita") {
+    SUBCASE("Win Condition Test - Diagonal Direita") 
+    {
         // Teste 1: Vitória diagonal direita
         Connect4 game_diagonal_right1;
         game_diagonal_right1.make_move(1); // X
@@ -180,7 +183,8 @@ TEST_CASE("Connect4 Class Tests")
         CHECK(game_diagonal_right3.check_win() == true); // X deve vencer
     }
 
-    SUBCASE("Win Condition Test - Diagonal Esquerda") {
+    SUBCASE("Win Condition Test - Diagonal Esquerda") 
+    {
         // Teste 1: Vitória diagonal esquerda
         Connect4 game_diagonal_left1;
         game_diagonal_left1.make_move(4); // X
@@ -227,7 +231,8 @@ TEST_CASE("Connect4 Class Tests")
         CHECK(game_diagonal_left3.check_win() == true); // X deve vencer
     }
 
-    SUBCASE("Board Full Test") {
+    SUBCASE("Board Full Test") 
+    {
         Connect4 game_full;
         
         // Verificação antes de completar
@@ -243,8 +248,4 @@ TEST_CASE("Connect4 Class Tests")
         // Tabuleiro deve estar cheio
         CHECK(game_full.is_board_full() == true); 
     }
-
-    
-
-
 }
