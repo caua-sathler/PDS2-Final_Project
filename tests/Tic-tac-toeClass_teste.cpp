@@ -85,4 +85,24 @@ TEST_CASE("Testes da classe Tic_tac_toe")
         create_tic_tac_toe_board(jogo, setup);
         CHECK(jogo.check_tie() == true);
     }
+
+    SUBCASE("Verificar alternância entre jogadores") 
+    {
+        jogo.make_move(1, 1); 
+        CHECK(jogo.get_current_player() == 'O'); 
+        jogo.make_move(1, 2); 
+        CHECK(jogo.get_current_player() == 'X');
+
+    } 
+
+    SUBCASE("Detectar tabuleiro vazio ao iniciar") 
+    {
+        for (int i = 0; i < 3; ++i) 
+        {
+            for (int j = 0; j < 3; ++j) 
+            {
+                CHECK(jogo.game_board.get_space(i, j) == ' ');
+            }
+        }   
+    }   
 }
