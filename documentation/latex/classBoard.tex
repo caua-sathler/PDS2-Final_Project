@@ -1,0 +1,221 @@
+\doxysection{Referência da Classe Board}
+\hypertarget{classBoard}{}\label{classBoard}\index{Board@{Board}}
+
+
+Gerencia o tabuleiro do jogo.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard_ab529c9a57e3f3256085810e2d852b9b3}{Board}} (int \mbox{\hyperlink{Tic__tac__toe_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\+\_\+rows\+\_\+received}}, int \mbox{\hyperlink{Tic__tac__toe_8cpp_affc09760547c96857e4684381e1f6224}{num\+\_\+columns\+\_\+received}})
+\begin{DoxyCompactList}\small\item\em Constrói o tabuleiro com o número de linhas e colunas especificado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\+\_\+space}} (int row, int column, char value)
+\begin{DoxyCompactList}\small\item\em Define um valor em uma posição específica do tabuleiro. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\+\_\+space}} (int row, int column) const
+\begin{DoxyCompactList}\small\item\em Retorna o valor de uma posição específica do tabuleiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\+\_\+game\+\_\+board}} () const
+\begin{DoxyCompactList}\small\item\em Imprime o estado atual do tabuleiro. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\+\_\+move\+\_\+inside\+\_\+board}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição está dentro dos limites do tabuleiro. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\+\_\+space\+\_\+free}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição no tabuleiro está vazia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBoard_adda5ad3381a789f8368073d081304f23}{num\+\_\+rows}}
+\item 
+int \mbox{\hyperlink{classBoard_a667425d93a951ac95aa0301e9fc3104f}{num\+\_\+columns}}
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::unique\+\_\+ptr$<$ char\mbox{[}$\,$\mbox{]}$>$\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}{game\+\_\+board}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Gerencia o tabuleiro do jogo. 
+
+Oferece métodos para configurar e acessar espaços no tabuleiro, além de verificar a validade de movimentos. 
+
+Definição na linha \mbox{\hyperlink{Board_8hpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{Board_8hpp_source}{Board.\+hpp}}.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classBoard_ab529c9a57e3f3256085810e2d852b9b3}\label{classBoard_ab529c9a57e3f3256085810e2d852b9b3} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+rows\+\_\+received,  }\item[{int}]{num\+\_\+columns\+\_\+received }\end{DoxyParamCaption})}
+
+
+
+Constrói o tabuleiro com o número de linhas e colunas especificado. 
+
+Construtor que inicializa o tabuleiro com as dimensões recebidas e espaços vazios.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em num\+\_\+rows\+\_\+received} & Número de linhas. \\
+\hline
+{\em num\+\_\+columns\+\_\+received} & Número de colunas. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00018}{18}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classBoard_a80389d7228ad747ca8f4700787341628}\label{classBoard_a80389d7228ad747ca8f4700787341628} 
+\index{Board@{Board}!get\_space@{get\_space}}
+\index{get\_space@{get\_space}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{get\_space()}{get\_space()}}
+{\footnotesize\ttfamily char Board\+::get\+\_\+space (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o valor de uma posição específica do tabuleiro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em row} & Linha do tabuleiro. \\
+\hline
+{\em column} & Coluna do tabuleiro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O valor presente na posição. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00010}{10}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+\Hypertarget{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}\label{classBoard_a0ff3e0e0042eea4ff717336eee295cd0} 
+\index{Board@{Board}!is\_move\_inside\_board@{is\_move\_inside\_board}}
+\index{is\_move\_inside\_board@{is\_move\_inside\_board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{is\_move\_inside\_board()}{is\_move\_inside\_board()}}
+{\footnotesize\ttfamily bool Board\+::is\+\_\+move\+\_\+inside\+\_\+board (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se uma posição está dentro dos limites do tabuleiro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Coordenada da linha. \\
+\hline
+{\em y} & Coordenada da coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se a posição está dentro dos limites, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00044}{44}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+\Hypertarget{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}\label{classBoard_ab7fc7a0f537da31eb4308a0903d14f76} 
+\index{Board@{Board}!is\_space\_free@{is\_space\_free}}
+\index{is\_space\_free@{is\_space\_free}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{is\_space\_free()}{is\_space\_free()}}
+{\footnotesize\ttfamily bool Board\+::is\+\_\+space\+\_\+free (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se uma posição no tabuleiro está vazia. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Coordenada da linha. \\
+\hline
+{\em y} & Coordenada da coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se a posição está vazia, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00053}{53}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+\Hypertarget{classBoard_a0b08559bde6bdd14edf6e75f7601498b}\label{classBoard_a0b08559bde6bdd14edf6e75f7601498b} 
+\index{Board@{Board}!print\_game\_board@{print\_game\_board}}
+\index{print\_game\_board@{print\_game\_board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{print\_game\_board()}{print\_game\_board()}}
+{\footnotesize\ttfamily void Board\+::print\+\_\+game\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime o estado atual do tabuleiro. 
+
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00032}{32}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+\Hypertarget{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}\label{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61} 
+\index{Board@{Board}!set\_space@{set\_space}}
+\index{set\_space@{set\_space}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{set\_space()}{set\_space()}}
+{\footnotesize\ttfamily void Board\+::set\+\_\+space (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{char}]{value }\end{DoxyParamCaption})}
+
+
+
+Define um valor em uma posição específica do tabuleiro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em row} & Linha do tabuleiro. \\
+\hline
+{\em column} & Coluna do tabuleiro. \\
+\hline
+{\em value} & Valor a ser colocado na posição. \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00004}{4}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+
+
+\doxysubsection{Atributos}
+\Hypertarget{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}\label{classBoard_a92ea1ae961b5a5e327eba036e3c7a520} 
+\index{Board@{Board}!game\_board@{game\_board}}
+\index{game\_board@{game\_board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{game\_board}{game\_board}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$std\+::unique\+\_\+ptr$<$char\mbox{[}$\,$\mbox{]}$>$\mbox{[}$\,$\mbox{]}$>$ Board\+::game\+\_\+board = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+Estrutura que armazena o estado do tabuleiro. 
+
+Definição na linha \mbox{\hyperlink{Board_8hpp_source_l00024}{24}} do arquivo \mbox{\hyperlink{Board_8hpp_source}{Board.\+hpp}}.
+
+\Hypertarget{classBoard_a667425d93a951ac95aa0301e9fc3104f}\label{classBoard_a667425d93a951ac95aa0301e9fc3104f} 
+\index{Board@{Board}!num\_columns@{num\_columns}}
+\index{num\_columns@{num\_columns}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{num\_columns}{num\_columns}}
+{\footnotesize\ttfamily int Board\+::num\+\_\+columns\hspace{0.3cm}{\ttfamily [private]}}
+
+Número de colunas do tabuleiro. 
+
+Definição na linha \mbox{\hyperlink{Board_8hpp_source_l00023}{23}} do arquivo \mbox{\hyperlink{Board_8hpp_source}{Board.\+hpp}}.
+
+\Hypertarget{classBoard_adda5ad3381a789f8368073d081304f23}\label{classBoard_adda5ad3381a789f8368073d081304f23} 
+\index{Board@{Board}!num\_rows@{num\_rows}}
+\index{num\_rows@{num\_rows}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{num\_rows}{num\_rows}}
+{\footnotesize\ttfamily int Board\+::num\+\_\+rows\hspace{0.3cm}{\ttfamily [private]}}
+
+Número de linhas do tabuleiro. 
+
+Definição na linha \mbox{\hyperlink{Board_8hpp_source_l00022}{22}} do arquivo \mbox{\hyperlink{Board_8hpp_source}{Board.\+hpp}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Board_8hpp}{Board.\+hpp}}\item 
+src/\mbox{\hyperlink{Board_8cpp}{Board.\+cpp}}\end{DoxyCompactItemize}
