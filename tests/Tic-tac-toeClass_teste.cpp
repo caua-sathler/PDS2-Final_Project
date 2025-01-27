@@ -37,4 +37,52 @@ TEST_CASE("Testes da classe Tic_tac_toe")
         jogo.make_move(x, y);
         CHECK(jogo.get_current_player() == 'O'); 
     }
+
+    SUBCASE("Detectar vitória horizontal") 
+    {
+        std::vector<std::vector<char>> setup = 
+        {
+            {'X', 'X', 'X'},
+            {' ', 'O', 'O'},
+            {' ', ' ', ' '}
+        };
+        create_tic_tac_toe_board(jogo, setup);
+        CHECK(jogo.check_tic_tac_toe_win() == 'X');
+    }
+
+    SUBCASE("Detectar vitória vertical") 
+    {
+        std::vector<std::vector<char>> setup = 
+        {
+            {'X', 'O', ' '},
+            {'X', 'O', ' '},
+            {'X', ' ', ' '}
+        };
+        create_tic_tac_toe_board(jogo, setup);
+        CHECK(jogo.check_tic_tac_toe_win() == 'X');
+    }
+
+    SUBCASE("Detectar vitória diagonal") 
+    {
+        std::vector<std::vector<char>> setup = 
+        {
+            {'X', 'O', ' '},
+            {'O', 'X', ' '},
+            {' ', ' ', 'X'}
+        };
+        create_tic_tac_toe_board(jogo, setup);
+        CHECK(jogo.check_tic_tac_toe_win() == 'X');
+    }
+
+    SUBCASE("Detectar empate") 
+    {
+        std::vector<std::vector<char>> setup = 
+        {
+            {'X', 'O', 'X'},
+            {'O', 'X', 'O'},
+            {'O', 'X', 'O'}
+        };
+        create_tic_tac_toe_board(jogo, setup);
+        CHECK(jogo.check_tie() == true);
+    }
 }
