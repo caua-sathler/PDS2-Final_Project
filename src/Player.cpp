@@ -71,26 +71,45 @@ void Player::print_player(){
     std::cout << "VELHA" << "\t" << "- V: " << this->num_win.find("Velha")->second << " D: " << this->num_loss.find("Velha")->second << std::endl;
 }
 
-bool Player::register_player(Player player_received, std::list<Player> &player_list){
+void Player::register_player(Player player_received, std::list<Player> &player_list){
     std::list<Player>::iterator it;
     for (it = player_list.begin(); it != player_list.end(); it++){
         if (it->get_username() == player_received.get_username()){
-            return false;
+            throw std::invalid_argument("ERRO: Jogador repetido");
+            return;
         }
     }
     player_list.push_back(player_received);
-    return true;
+    return;
 }
 
-bool Player::remove_player(std::string username_received, std::list<Player> &player_list){
+void Player::remove_player(std::string username_received, std::list<Player> &player_list){
     std::list<Player>::iterator it;
     for (it = player_list.begin(); it != player_list.end(); it++){
         if (it->get_username() == username_received){
             it = player_list.erase(it);
-            return true;
+            return;
         }
     }
-    return false;
+    throw std::invalid_argument("ERRO: Jogador inexistente");
+    return;
+}
+
+Player* Player::find_player_in_list(std::list<Player>& player_list, const std::string& username) {
+    for (auto& player : player_list) {
+        if (player.get_username() == username) {
+            return &player;
+        }
+    }
+    throw std::invalid_argument("ERRO: Jogador inexistente");
+    return nullptr;
+}
+
+bool Player::operator == (Player &player){
+    if (this->username == player.get_username() && this->name == player. get_name() && this->num_loss == player.get_num_loss() && this->num_win == player.get_num_win())
+        return true;
+    else
+        return false;
 }
 
 bool Player::compare_username(Player &player1, Player &player2){
