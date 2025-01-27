@@ -6,7 +6,7 @@
 const int num_rows_received = 3;
 const int num_columns_received = 3;
 
-void create_game_board_situation(char game_board_situation[num_rows_received][num_columns_received], tic_tac_toe &tic_tac_toe_game){
+void create_game_board_situation(char game_board_situation[num_rows_received][num_columns_received], Tic_tac_toe &tic_tac_toe_game){
     char *board[num_columns_received];
     for (int i = 0; i < num_columns_received; i++){
         board[i] = game_board_situation[i];
@@ -17,7 +17,7 @@ void create_game_board_situation(char game_board_situation[num_rows_received][nu
 
 TEST_CASE("Function is_valid_move test") 
 {
-    tic_tac_toe jogo;
+    Tic_tac_toe jogo;
 
     char game_board_situation[num_rows_received][num_columns_received] = {
         {'X', ' ', ' '},
@@ -52,7 +52,7 @@ TEST_CASE("Function is_valid_move test")
 
 TEST_CASE("Function make_move test") 
 {
-    tic_tac_toe jogo;
+    Tic_tac_toe jogo;
 
     char game_board_situation[num_rows_received][num_columns_received] = {
         {'X', ' ', ' '},
@@ -84,7 +84,7 @@ TEST_CASE("Function make_move test")
 
 TEST_CASE("Function check_tie test") 
 {
-    tic_tac_toe jogo;
+    Tic_tac_toe jogo;
 
     SUBCASE("Game is a tie (board full, no winner)") 
     {
@@ -115,7 +115,7 @@ TEST_CASE("Function check_tie test")
 
 TEST_CASE("Function check_tic_tac_toe_win test") 
 {
-    tic_tac_toe jogo;
+    Tic_tac_toe jogo;
 
     SUBCASE("Win by row") 
     {

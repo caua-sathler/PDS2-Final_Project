@@ -35,6 +35,7 @@ class Tic_tac_toe : public Game {
          */
         void make_move() override;
 
+        Board& get_game_board();
 
         /**
          * @brief Realiza uma jogada em uma posição específica.
