@@ -15,7 +15,8 @@ void create_game_board_situation(char game_board_situation[num_rows_received][nu
     tic_tac_toe_game.get_game_board().set_game_board(board);
 }
 
-TEST_CASE("Function is_valid_move test") {
+TEST_CASE("Function is_valid_move test") 
+{
     tic_tac_toe jogo;
 
     char game_board_situation[num_rows_received][num_columns_received] = {
@@ -48,3 +49,39 @@ TEST_CASE("Function is_valid_move test") {
         CHECK(jogo.is_valid_move(x, y) == false);
     }
 }
+
+TEST_CASE("Function make_move test") 
+{
+    tic_tac_toe jogo;
+
+    char game_board_situation[num_rows_received][num_columns_received] = {
+        {'X', ' ', ' '},
+        {' ', 'O', ' '},
+        {' ', ' ', ' '}
+    };
+
+    create_game_board_situation(game_board_situation, jogo);
+
+    SUBCASE("Valid move switches the player and update the board") 
+    {
+        int x = 2, y = 2;
+        jogo.make_move(x, y);
+        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'X');
+        CHECK(jogo.get_current_player() == 'O');
+        int x = 3, y = 3;
+        CHECK(jogo.get_game_board().get_space(x, y) == 'O');
+        CHECK(jogo.get_current_player() == 'X');
+    }
+
+    SUBCASE("Invalid move switch the player and does not update the board") 
+    {
+        int x = 2, y = 2; 
+        jogo.make_move(x, y);
+        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'O');
+        CHECK(jogo.get_current_player() == 'O');
+    }
+}
+
+
+
+
