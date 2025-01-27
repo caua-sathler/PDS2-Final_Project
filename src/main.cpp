@@ -6,7 +6,12 @@
 #include <fstream>
 #include <algorithm>
 #include <bits/stdc++.h>
- 
+
+/**
+ * @brief Função principal que gerencia os comandos do sistema de jogadores e execução de jogos.
+ * 
+ * Realiza operações como listar, cadastrar e remover jogadores, além de permitir a execução dos jogos Reversi, Lig4 (Connect4) e Velha (Tic Tac Toe).
+ */
 int main() 
 {
     std::ifstream file_in;
@@ -29,6 +34,7 @@ int main()
 
     std::string command;
 
+    // Loop principal que processa os comandos do usuário
     while(true)
     {
         try 
@@ -36,6 +42,7 @@ int main()
             std::cin >> command;
             if (command == "LJ")
             {
+                // Listar jogadores ordenados por nome ou username
                 char sort_command;
                 try
                 {
@@ -63,6 +70,7 @@ int main()
             } 
             else if (command == "CJ")
             {
+                // Cadastrar um novo jogador
                 std::string line_in, username_in, name_in;
                 try 
                 {
@@ -95,6 +103,7 @@ int main()
             } 
             else if (command == "RJ")
             {
+                // Remover um jogador existente
                 std::string name_in, username_in;
                 try 
                 {
@@ -119,6 +128,7 @@ int main()
             }
             else if(command == "EP")
             {
+                // Iniciar um jogo entre dois jogadores
                 char game;
                 std::string username_player1, username_player2, line_in;
                 
@@ -143,7 +153,7 @@ int main()
                     else if (player2 == nullptr)
                         throw std::invalid_argument("ERRO: jogador " + username_player2 + " inexistente");
                     
-
+                    // Inicialização do jogo com base no tipo selecionado
                     if (game == 'R')
                     {
                         Reversi reversi_game;
@@ -155,47 +165,58 @@ int main()
                             int x, y;
                             bool is_there_movement_for_player = reversi_game.is_there_valid_move_for_player(player_piece);
                             bool someone_won = reversi_game.check_win(is_there_movement_for_player, player_piece);
-                            reversi_game.print_reversi_board();
-                            std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: " 
-                            << reversi_game.get_num_pieces_player_O() << std::endl;
+                            reversi_game.get_game_board().print_game_board();
+                            std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: "
+                                    << reversi_game.get_num_pieces_player_O() << std::endl;
 
                             if (someone_won)
                             {
-                                reversi_game.register_win_and_loss(player1, player2);
-
                                 if (reversi_game.get_num_pieces_player_X() > reversi_game.get_num_pieces_player_O())
-                                    std::cout << username_player1 << " ganhou!" << std::endl;
-                                
+                                std::cout << username_player1 << " ganhou!" << std::endl;
+
                                 else if (reversi_game.get_num_pieces_player_X() < reversi_game.get_num_pieces_player_O())
-                                    std::cout << username_player2 << " ganhou!" << std::endl;
-                                
+                                std::cout << username_player2 << " ganhou!" << std::endl;
+
                                 else
-                                    std::cout << "Houve empate!" << std::endl;
-                                
+                                std::cout << "Houve empate!" << std::endl;
+
                                 break;
                             }
                             else if (is_there_movement_for_player && !someone_won)
                             {
+
                                 if (player_piece == 'X')
                                     std::cout << username_player1 << " " << "[X]" << ": " << std::ends;
-                                
                                 else
                                     std::cout << username_player2 << " " << "[O]" << ": " << std::ends;
-                                
 
-                                if (!(std::cin >> x >> y))
-                                {
-                                    std::cin.clear();
-                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                    throw std::invalid_argument("Coordenadas inválidas");
-                                }
-                                if (!reversi_game.process_move({x, y}, player_piece))
-                                {
-                                    std::cout << "ERRO: jogada inválida, vez passada para o oponente" << std::endl;
+                                try {
+                                
+                                    if (!(std::cin >> x )) {
+                                        std::cin.clear();
+                                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                        throw std::invalid_argument("Entrada inválida. Por favor forneça dois números inteiros.");
+                                    }
+
+                                    if(!(std::cin >> y)){
+                                        std::cin.clear();
+                                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                        throw std::invalid_argument("Entrada inválida, vez passada para o oponente");
+                                    }
+                                    
+                                    if (!reversi_game.process_move({x, y}, player_piece)) {
+                                        throw std::invalid_argument("Jogada inválida, vez passada para o oponente.");
+                                    }
+
+                                } 
+                                catch (const std::invalid_argument &e) {
+                                
+                                    std::cout << "Error: " << e.what() << std::endl;
                                 }
 
                                 player_piece = reversi_game.switch_players(player_piece);
                                 opponent_piece = reversi_game.switch_players(opponent_piece);
+
                             }
                             else if (!is_there_movement_for_player && !someone_won)
                             {
@@ -205,89 +226,125 @@ int main()
                             }
                         }
                     }
-                    else if (game == 'L')
+                    else if (game == 'L')  
                     {
                         Connect4 connect4_game;
                         bool game_over = false;
 
-                    Player* player1 = Player::find_player_in_list(player_list, username_player1);
-                    Player* player2 = Player::find_player_in_list(player_list, username_player2);
-
-                    if (player1 == nullptr || player2 == nullptr) { 
-                        std::cout << "Erro: jogador não encontrado na lista." << std::endl; return 1;
-                        }
-
-                    char current_player = 'X';
-
-                    while (!game_over) {
-                        int column;
-                        connect4_game.print_game_board();
-
-                        std::cout << "Turno de jogador <" << connect4_game.get_current_player() << ">:" << std::endl;
-                        std::cin >> column;
-
-                        if (connect4_game.is_valid_move(column))
+                        while (!game_over)
                         {
-                            connect4_game.make_move(column);
-                            if (connect4_game.check_win())
-                            {
-                                connect4_game.print_game_board();
-                                if (connect4_game.get_current_player() == 'X')
+                            int column;
+                            connect4_game.print_game_board();
+                            char current_player = connect4_game.get_current_player();
+
+                            std::cout << "Turno de jogador <" << current_player << ">:" << std::endl;
+            
+                            try {
+                                if (!(std::cin >> column)) 
                                 {
-                                    player1->add_win("Lig4");
-                                    player2->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player1 << "! Você venceu!" << std::endl;
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                    throw std::invalid_argument("Entrada inválida, insira um número inteiro.");
                                 }
-                                else
+
+                                if (!connect4_game.is_valid_move(column)) 
                                 {
-                                    player2->add_win("Lig4");
-                                    player1->add_loss("Lig4");
-                                    std::cout << "Parabéns, " << username_player2 << "! Você venceu!" << std::endl;
+                                    throw std::out_of_range("Entrada inválida, insira um número entre 1 e 7");
                                 }
-                                game_over = true;
-                            }
-                            else if (connect4_game.is_board_full())
+
+                                if (std::cin.peek() != '\n')
+                                {
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                    throw std::invalid_argument("Entrada inválida, inspira apenas um número que é referente a coluna");
+                                }
+                                
+                                connect4_game.make_move(column);
+                                    
+                                if (connect4_game.check_win()) 
+                                {
+                                    connect4_game.print_game_board();
+                                    if (current_player == 'X') 
+                                    {
+                                        player1->add_win("Lig4");
+                                        player2->add_loss("Lig4");
+                                        std::cout << username_player1 << " ganhou!" << std::endl;
+                                    } 
+                                    else 
+                                    {
+                                        player2->add_win("Lig4");
+                                        player1->add_loss("Lig4");
+                                        std::cout << username_player2 << " ganhou!" << std::endl;
+                                    }
+                                    game_over = true; 
+                                } 
+                                else if (connect4_game.is_board_full()) 
+                                {
+                                    std::cout << "Houve empate!" << std::endl;
+                                    game_over = true;
+                                }
+                            } 
+                            catch (const std::out_of_range& e) 
                             {
-                                std::cout << "O jogo terminou em empate!" << std::endl;
-                                game_over = true;
+                                std::cout << "Erro: " << e.what() << std::endl;
+                            } 
+                            catch (const std::runtime_error& e) 
+                            {
+                                std::cout << "Erro: " << e.what() << std::endl;
+                            } 
+                            catch (const std::invalid_argument& e) 
+                            {
+                                std::cout << "Erro: " << e.what() << std::endl;
                             }
-                            current_player = connect4_game.switch_players(current_player);
-                            connect4_game.set_current_player(current_player);
+                            connect4_game.set_current_player((current_player == 'X') ? 'O' : 'X');
                         }
-                        else
-                            std::cout << "Movimento inválido. Tente novamente." << std::endl;                        
-                    }
                     }
                     else if (game == 'V')
                     {
                         Tic_tac_toe tic_tac_toe_game;
                         int x, y;
 
-                        std::cout << username_player1 << " is X and " << username_player2 << " is O" << std::endl;
+                        std::cout << username_player1 << " eh X e " << username_player2 << " eh O" << std::endl;
 
                         while (true)
                         {
                             if (tic_tac_toe_game.check_tic_tac_toe_win() != 'F')
                             {
+                                if (tic_tac_toe_game.get_current_player() == 'X')
+                                {
                                 tic_tac_toe_game.print_tic_tac_toe_board();
-                                std::cout << username_player1 << " won!" << std::endl;
+                                std::cout << username_player1 << " ganhou!" << std::endl;
                                 player1->add_win("Velha");
                                 player2->add_loss("Velha");
                                 break;
+                                }
+
+                                tic_tac_toe_game.print_tic_tac_toe_board();
+                                std::cout << username_player2 << " ganhou!" << std::endl;
+                                player2->add_win("Velha");
+                                player1->add_loss("Velha");
+                                break;
+
                             }
 
                             if (tic_tac_toe_game.check_tie())
                             {
-                                std::cout << "Draw! The board is full" << std::endl;
+                                std::cout << "Houve empate!" << std::endl;
                                 break;
                             }
 
-                            std::cout << "Player " << tic_tac_toe_game.get_current_player() << " turn:" << std::endl;
+                            std::cout << "Turno de jogador " << tic_tac_toe_game.get_current_player() << std::endl;
                             tic_tac_toe_game.print_tic_tac_toe_board();
 
-                            if (!(std::cin >> x >> y))
+                            try
                             {
-                                std::cout << "Invalid input. Please enter two integers for your move" << std::endl;
+                                if (!(std::cin >> x >> y))
+                                    throw std::invalid_argument("Entrada inválida. Por favor forneça dois números inteiros.");
+                            }
+
+                            catch (const std::invalid_argument &e)
+                            {
+                                std::cerr << "Erro: " << e.what() << std::endl;
                                 std::cin.clear();
                                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                                 continue;
@@ -296,6 +353,7 @@ int main()
                             tic_tac_toe_game.make_move(x, y);
                         }
                     }
+                            
                 }
                 catch (std::invalid_argument &e)
                 {
@@ -313,7 +371,8 @@ int main()
             std::cout << e.what() << std::endl;
         }
     }
-
+    
+    // Escrita do arquivo de registro atualizado
     std::ofstream file_out;
     try {
     file_out.open("teste");

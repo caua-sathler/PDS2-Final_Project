@@ -1,0 +1,35 @@
+\doxysection{Board.\+hpp}
+\hypertarget{Board_8hpp_source}{}\label{Board_8hpp_source}\index{include/Board.hpp@{include/Board.hpp}}
+\mbox{\hyperlink{Board_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BOARD\_H}}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BOARD\_H}}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00020}\mbox{\hyperlink{classBoard}{00020}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBoard}{Board}}\ \{}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00022}\mbox{\hyperlink{classBoard_adda5ad3381a789f8368073d081304f23}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_adda5ad3381a789f8368073d081304f23}{num\_rows}};\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00023}\mbox{\hyperlink{classBoard_a667425d93a951ac95aa0301e9fc3104f}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_a667425d93a951ac95aa0301e9fc3104f}{num\_columns}};\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00024}\mbox{\hyperlink{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}{00024}}\ \ \ \ \ \ \ \ \ std::unique\_ptr<std::unique\_ptr<char[]>[]>\ \mbox{\hyperlink{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}{game\_board}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{Tic__tac__toe_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\_rows\_received}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Tic__tac__toe_8cpp_affc09760547c96857e4684381e1f6224}{num\_columns\_received}});}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column,\ \textcolor{keywordtype}{char}\ value);\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\_game\_board}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Board_8hpp_source_l00077}00077\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{Player.\+hpp}
+\hypertarget{Player_8hpp_source}{}\label{Player_8hpp_source}\index{include/Player.hpp@{include/Player.hpp}}
+\mbox{\hyperlink{Player_8hpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_H}}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PLAYER\_H}}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00017}\mbox{\hyperlink{classPlayer}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlayer}{Player}}\ \{}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00019}\mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{00019}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{name}};\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00020}\mbox{\hyperlink{classPlayer_af6823e27c17ba6ed5d2b4713abbe4d5a}{00020}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_af6823e27c17ba6ed5d2b4713abbe4d5a}{username}};\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00021}\mbox{\hyperlink{classPlayer_a29a87c8236f29d234310e87b77009193}{00021}}\ \ \ \ \ \ \ \ \ std::map<std::string,\ int>\ \mbox{\hyperlink{classPlayer_a29a87c8236f29d234310e87b77009193}{num\_win}};\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00022}\mbox{\hyperlink{classPlayer_ade5357b25273c454d59d50894846bc4a}{00022}}\ \ \ \ \ \ \ \ \ std::map<std::string,\ int>\ \mbox{\hyperlink{classPlayer_ade5357b25273c454d59d50894846bc4a}{num\_loss}};\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}(std::string\ name\_received,\ std::string\ username\_received);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}(std::string\ name\_received,\ std::string\ username\_received,\ std::map<std::string,\ int>\ num\_win\_received,\ std::map<std::string,\ int>\ num\_loss\_received);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_aa55f2098aa6892ff2879558316985521}{set\_name}}(std::string\ name\_received);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_a45ad0b19fd0636c10158d4dc670118d3}{set\_username}}(std::string\ username\_received);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(std::string\ key,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(std::string\ key,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_a64a6c94b00bc67363f8309957a2705ac}{get\_username}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_a788340fc5f21143f47eed04f6fd79976}{get\_name}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ std::map<std::string,\ int>\ \mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::map<std::string,\ int>\ \mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f}{print\_player}}();}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(std::string\ key);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(std::string\ key);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d}{register\_player}}(\mbox{\hyperlink{classPlayer}{Player}}\ player\_received,\ std::list<Player>\ \&player\_list);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5}{remove\_player}}(std::string\ username\_received,\ std::list<Player>\ \&player\_list);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234}{compare\_username}}(\mbox{\hyperlink{classPlayer}{Player}}\ \&player1,\ \mbox{\hyperlink{classPlayer}{Player}}\ \&player2);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_a175698cd20cfcec81c693426d56a7354}{compare\_name}}(\mbox{\hyperlink{classPlayer}{Player}}\ \&player1,\ \mbox{\hyperlink{classPlayer}{Player}}\ \&player2);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00144}00144\ \};}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00151}00151\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Player_8hpp_a681d145d2dd1aff047b89c6c215a58d6}{read\_register\_file}}(std::list<Player>\ \&player\_list,\ std::ifstream\ \&file\_in);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00158}00158\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Player_8hpp_a2c332d86a06a95e92f9ca05f88077198}{write\_register\_file}}(std::list<Player>\ \&player\_list,\ std::ofstream\ \&file\_out);}
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{Player_8hpp_source_l00160}00160\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

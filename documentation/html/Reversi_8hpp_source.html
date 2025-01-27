@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PDS II Final Project: Código-Fonte de include/Reversi.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">PDS II Final Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Reversi.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Reversi_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef REVERSI_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define REVERSI_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Game_8hpp.html">Game.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Player_8hpp.html">Player.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classReversi.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classReversi.html">Reversi</a> : <span class="keyword">public</span> <a class="code hl_class" href="classGame.html">Game</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classReversi.html#aa93504480ca3905f753994838710e89f">   25</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classReversi.html#aa93504480ca3905f753994838710e89f">num_pieces_player_X</a>; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classReversi.html#a6b01ed06db05f451b6fb9d1637863ee7">   26</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classReversi.html#a6b01ed06db05f451b6fb9d1637863ee7">num_pieces_player_O</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_function" href="classReversi.html#a73e3ca5c21b634f9c490b404d62f0e01">Reversi</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">get_num_pieces_player_X</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">get_num_pieces_player_O</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#a40b8be4327172dc9af60d93325af7bb5">start_reversi_board</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#af30ad7ad93e9db13382280f064f538a5">print_reversi_board</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#ad2680149f9c6e7175ac9683fc737f716">is_there_player_piece_at_the_direction</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> player_piece, <span class="keyword">const</span> std::array&lt;int, 2&gt;&amp; direction, </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>             std::array&lt;int, 2&gt; adjacent_square) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a0f06a948b1980191d9f0b442171bd55e">is_space_free_reversi</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a17a6bf432ee126989ff993e8565ecb88">is_there_direction_that_captures_opponent</a>(<span class="keyword">const</span> std::array&lt;int, 2&gt; &amp;move_coordinates, <span class="keywordtype">char</span> player_piece_type);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a01ba3dbf7dc3e6d204334917924a626c">is_valid_move</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a01ba3dbf7dc3e6d204334917924a626c">is_valid_move</a>(std::array&lt;int, 2&gt;&amp; move_coordinates, <span class="keywordtype">char</span> player_piece_type);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classReversi.html#aa98fa3073fdc3293c7e607552c23f872">  109</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#aa98fa3073fdc3293c7e607552c23f872">indicate_all_direction_to_make_move</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#a26adbbc4cb45af0b9ce2b20323c4d91a">find_all_directions_to_make_move</a>(std::array&lt;int, 2&gt;&amp; move_coordinates, <span class="keywordtype">char</span> player_piece, </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                              std::list&lt;std::array&lt;int, 2&gt;&gt;&amp; directions_to_capture_opponents);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#a92788664d879ed935b46928f40f5152e">flip_pieces</a>(std::array&lt;int, 2&gt; directions, std::array&lt;int, 2&gt; move_coordinates, <span class="keywordtype">char</span> player_piece);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#aba9258082f32fdec0963f66469f4eadc">control_num_pieces_players</a>(<span class="keywordtype">int</span> num_pieces_flipped, <span class="keywordtype">char</span> player_piece);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#a2aa49f67832e11d2b0a66b020b51d59b">make_move</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#a2aa49f67832e11d2b0a66b020b51d59b">make_move</a>(std::array&lt;int, 2&gt; move_coordinates, <span class="keywordtype">char</span> player_piece, </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                       std::list&lt;std::array&lt;int, 2&gt;&gt;&amp; directions_to_capture_opponents);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a49be6ec4f973ea46f84594cf15033cdc">is_there_valid_move_for_player</a>(<span class="keywordtype">char</span> player_piece);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#a1e85bfa378f2f97e4dead2da81aa7584">process_move</a>(std::array&lt;int, 2&gt; move_coordinates, <span class="keywordtype">char</span> player_piece_type);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#aa5e2fd3bb4579d881057646d17e296a8">check_win</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classReversi.html#aa5e2fd3bb4579d881057646d17e296a8">check_win</a>(<span class="keywordtype">bool</span> is_there_move_for_player, <span class="keywordtype">char</span> opponent_piece);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classReversi.html#ab4ea15cb7f793737d4e1458721c767ec">register_win_and_loss</a>(<a class="code hl_class" href="classPlayer.html">Player</a> *player1, <a class="code hl_class" href="classPlayer.html">Player</a> *player2);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_function" href="classReversi.html#afd006e4fdacdedc4a3bb34fe6f1d1940">~Reversi</a>();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>};</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aGame_8hpp_html"><div class="ttname"><a href="Game_8hpp.html">Game.hpp</a></div><div class="ttdoc">Classe base abstrata para jogos genéricos com tabuleiro.</div></div>
+<div class="ttc" id="aPlayer_8hpp_html"><div class="ttname"><a href="Player_8hpp.html">Player.hpp</a></div><div class="ttdoc">Gerencia informações e ações relacionadas a jogadores.</div></div>
+<div class="ttc" id="aclassGame_html"><div class="ttname"><a href="classGame.html">Game</a></div><div class="ttdoc">Classe base para jogos com tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Game_8hpp_source.html#l00020">Game.hpp:20</a></div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definição</b> <a href="Player_8hpp_source.html#l00017">Player.hpp:17</a></div></div>
+<div class="ttc" id="aclassReversi_html"><div class="ttname"><a href="classReversi.html">Reversi</a></div><div class="ttdoc">Gerencia as regras e funcionalidades do jogo Reversi.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8hpp_source.html#l00023">Reversi.hpp:23</a></div></div>
+<div class="ttc" id="aclassReversi_html_a01ba3dbf7dc3e6d204334917924a626c"><div class="ttname"><a href="classReversi.html#a01ba3dbf7dc3e6d204334917924a626c">Reversi::is_valid_move</a></div><div class="ttdeci">bool is_valid_move() const override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00277">Reversi.cpp:277</a></div></div>
+<div class="ttc" id="aclassReversi_html_a0f06a948b1980191d9f0b442171bd55e"><div class="ttname"><a href="classReversi.html#a0f06a948b1980191d9f0b442171bd55e">Reversi::is_space_free_reversi</a></div><div class="ttdeci">bool is_space_free_reversi(int x, int y) const</div><div class="ttdoc">Verifica se uma posição no tabuleiro está livre.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00043">Reversi.cpp:43</a></div></div>
+<div class="ttc" id="aclassReversi_html_a17a6bf432ee126989ff993e8565ecb88"><div class="ttname"><a href="classReversi.html#a17a6bf432ee126989ff993e8565ecb88">Reversi::is_there_direction_that_captures_opponent</a></div><div class="ttdeci">bool is_there_direction_that_captures_opponent(const std::array&lt; int, 2 &gt; &amp;move_coordinates, char player_piece_type)</div><div class="ttdoc">Verifica se há alguma direção que captura peças do oponente.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00072">Reversi.cpp:72</a></div></div>
+<div class="ttc" id="aclassReversi_html_a1e85bfa378f2f97e4dead2da81aa7584"><div class="ttname"><a href="classReversi.html#a1e85bfa378f2f97e4dead2da81aa7584">Reversi::process_move</a></div><div class="ttdeci">bool process_move(std::array&lt; int, 2 &gt; move_coordinates, char player_piece_type)</div><div class="ttdoc">Processa uma jogada e verifica sua validade.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00208">Reversi.cpp:208</a></div></div>
+<div class="ttc" id="aclassReversi_html_a26adbbc4cb45af0b9ce2b20323c4d91a"><div class="ttname"><a href="classReversi.html#a26adbbc4cb45af0b9ce2b20323c4d91a">Reversi::find_all_directions_to_make_move</a></div><div class="ttdeci">void find_all_directions_to_make_move(std::array&lt; int, 2 &gt; &amp;move_coordinates, char player_piece, std::list&lt; std::array&lt; int, 2 &gt; &gt; &amp;directions_to_capture_opponents)</div><div class="ttdoc">Encontra todas as direções válidas para capturar peças do oponente.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00123">Reversi.cpp:123</a></div></div>
+<div class="ttc" id="aclassReversi_html_a2aa49f67832e11d2b0a66b020b51d59b"><div class="ttname"><a href="classReversi.html#a2aa49f67832e11d2b0a66b020b51d59b">Reversi::make_move</a></div><div class="ttdeci">void make_move() override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00279">Reversi.cpp:279</a></div></div>
+<div class="ttc" id="aclassReversi_html_a40b8be4327172dc9af60d93325af7bb5"><div class="ttname"><a href="classReversi.html#a40b8be4327172dc9af60d93325af7bb5">Reversi::start_reversi_board</a></div><div class="ttdeci">void start_reversi_board()</div><div class="ttdoc">Inicializa o tabuleiro com as peças centrais do Reversi.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00008">Reversi.cpp:8</a></div></div>
+<div class="ttc" id="aclassReversi_html_a49be6ec4f973ea46f84594cf15033cdc"><div class="ttname"><a href="classReversi.html#a49be6ec4f973ea46f84594cf15033cdc">Reversi::is_there_valid_move_for_player</a></div><div class="ttdeci">bool is_there_valid_move_for_player(char player_piece)</div><div class="ttdoc">Verifica se há uma jogada válida para o jogador.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00224">Reversi.cpp:224</a></div></div>
+<div class="ttc" id="aclassReversi_html_a6b01ed06db05f451b6fb9d1637863ee7"><div class="ttname"><a href="classReversi.html#a6b01ed06db05f451b6fb9d1637863ee7">Reversi::num_pieces_player_O</a></div><div class="ttdeci">int num_pieces_player_O</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8hpp_source.html#l00026">Reversi.hpp:26</a></div></div>
+<div class="ttc" id="aclassReversi_html_a73e3ca5c21b634f9c490b404d62f0e01"><div class="ttname"><a href="classReversi.html#a73e3ca5c21b634f9c490b404d62f0e01">Reversi::Reversi</a></div><div class="ttdeci">Reversi()</div><div class="ttdoc">Construtor padrão do jogo Reversi. Inicializa o tabuleiro padrão do Reversi, além de iniciar cada jog...</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00035">Reversi.cpp:35</a></div></div>
+<div class="ttc" id="aclassReversi_html_a92788664d879ed935b46928f40f5152e"><div class="ttname"><a href="classReversi.html#a92788664d879ed935b46928f40f5152e">Reversi::flip_pieces</a></div><div class="ttdeci">void flip_pieces(std::array&lt; int, 2 &gt; directions, std::array&lt; int, 2 &gt; move_coordinates, char player_piece)</div><div class="ttdoc">Captura peças do oponente em uma direção específica.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00154">Reversi.cpp:154</a></div></div>
+<div class="ttc" id="aclassReversi_html_a98215aaaace6102df09ad9862f2ef4ab"><div class="ttname"><a href="classReversi.html#a98215aaaace6102df09ad9862f2ef4ab">Reversi::get_num_pieces_player_X</a></div><div class="ttdeci">int get_num_pieces_player_X()</div><div class="ttdoc">Retorna o número de peças do jogador X.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00017">Reversi.cpp:17</a></div></div>
+<div class="ttc" id="aclassReversi_html_aa5e2fd3bb4579d881057646d17e296a8"><div class="ttname"><a href="classReversi.html#aa5e2fd3bb4579d881057646d17e296a8">Reversi::check_win</a></div><div class="ttdeci">bool check_win() override</div><div class="ttdoc">Função declarada somente para fins de sobregarga.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00281">Reversi.cpp:281</a></div></div>
+<div class="ttc" id="aclassReversi_html_aa93504480ca3905f753994838710e89f"><div class="ttname"><a href="classReversi.html#aa93504480ca3905f753994838710e89f">Reversi::num_pieces_player_X</a></div><div class="ttdeci">int num_pieces_player_X</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8hpp_source.html#l00025">Reversi.hpp:25</a></div></div>
+<div class="ttc" id="aclassReversi_html_aa98fa3073fdc3293c7e607552c23f872"><div class="ttname"><a href="classReversi.html#aa98fa3073fdc3293c7e607552c23f872">Reversi::indicate_all_direction_to_make_move</a></div><div class="ttdeci">void indicate_all_direction_to_make_move()</div><div class="ttdoc">Indica todas as direções possíveis para realizar um movimento.</div></div>
+<div class="ttc" id="aclassReversi_html_ab4ea15cb7f793737d4e1458721c767ec"><div class="ttname"><a href="classReversi.html#ab4ea15cb7f793737d4e1458721c767ec">Reversi::register_win_and_loss</a></div><div class="ttdeci">void register_win_and_loss(Player *player1, Player *player2)</div><div class="ttdoc">Registra vitória e derrota dos jogadores.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00260">Reversi.cpp:260</a></div></div>
+<div class="ttc" id="aclassReversi_html_aba9258082f32fdec0963f66469f4eadc"><div class="ttname"><a href="classReversi.html#aba9258082f32fdec0963f66469f4eadc">Reversi::control_num_pieces_players</a></div><div class="ttdeci">void control_num_pieces_players(int num_pieces_flipped, char player_piece)</div><div class="ttdoc">Controla o número de peças dos jogadores após uma jogada.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00173">Reversi.cpp:173</a></div></div>
+<div class="ttc" id="aclassReversi_html_ad2680149f9c6e7175ac9683fc737f716"><div class="ttname"><a href="classReversi.html#ad2680149f9c6e7175ac9683fc737f716">Reversi::is_there_player_piece_at_the_direction</a></div><div class="ttdeci">bool is_there_player_piece_at_the_direction(const char player_piece, const std::array&lt; int, 2 &gt; &amp;direction, std::array&lt; int, 2 &gt; adjacent_square) const</div><div class="ttdoc">Verifica se há peças do jogador na direção especificada.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00051">Reversi.cpp:51</a></div></div>
+<div class="ttc" id="aclassReversi_html_af30ad7ad93e9db13382280f064f538a5"><div class="ttname"><a href="classReversi.html#af30ad7ad93e9db13382280f064f538a5">Reversi::print_reversi_board</a></div><div class="ttdeci">void print_reversi_board() const</div><div class="ttdoc">Imprime o estado atual do tabuleiro.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00029">Reversi.cpp:29</a></div></div>
+<div class="ttc" id="aclassReversi_html_afd006e4fdacdedc4a3bb34fe6f1d1940"><div class="ttname"><a href="classReversi.html#afd006e4fdacdedc4a3bb34fe6f1d1940">Reversi::~Reversi</a></div><div class="ttdeci">~Reversi()</div><div class="ttdoc">Destrutor do jogo Reversi.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00273">Reversi.cpp:273</a></div></div>
+<div class="ttc" id="aclassReversi_html_affed5bf4df7eebde380115b2a0128b28"><div class="ttname"><a href="classReversi.html#affed5bf4df7eebde380115b2a0128b28">Reversi::get_num_pieces_player_O</a></div><div class="ttdeci">int get_num_pieces_player_O()</div><div class="ttdoc">Retorna o número de peças do jogador O.</div><div class="ttdef"><b>Definição</b> <a href="Reversi_8cpp_source.html#l00023">Reversi.cpp:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

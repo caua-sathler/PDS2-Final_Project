@@ -1,0 +1,288 @@
+\doxysection{Reversi.\+cpp}
+\hypertarget{Reversi_8cpp_source}{}\label{Reversi_8cpp_source}\index{src/Reversi.cpp@{src/Reversi.cpp}}
+\mbox{\hyperlink{Reversi_8cpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Reversi_8hpp}{Reversi.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}list"{}}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}array"{}}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8hpp}{Player.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00006}\mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{00006}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00008}\mbox{\hyperlink{classReversi_a40b8be4327172dc9af60d93325af7bb5}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_a40b8be4327172dc9af60d93325af7bb5}{Reversi::start\_reversi\_board}}()}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00010}00010\ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(3,\ 3,\ \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00011}00011\ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(4,\ 4,\ \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00012}00012\ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(3,\ 4,\ \textcolor{charliteral}{'O'});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00013}00013\ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(4,\ 3,\ \textcolor{charliteral}{'O'});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00017}\mbox{\hyperlink{classReversi_a98215aaaace6102df09ad9862f2ef4ab}{00017}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classReversi_a98215aaaace6102df09ad9862f2ef4ab}{Reversi::get\_num\_pieces\_player\_X}}()}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00023}\mbox{\hyperlink{classReversi_affed5bf4df7eebde380115b2a0128b28}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classReversi_affed5bf4df7eebde380115b2a0128b28}{Reversi::get\_num\_pieces\_player\_O}}()}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00029}\mbox{\hyperlink{classReversi_af30ad7ad93e9db13382280f064f538a5}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_af30ad7ad93e9db13382280f064f538a5}{Reversi::print\_reversi\_board}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00030}00030\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00035}\mbox{\hyperlink{classReversi_a73e3ca5c21b634f9c490b404d62f0e01}{00035}}\ \mbox{\hyperlink{classReversi_a73e3ca5c21b634f9c490b404d62f0e01}{Reversi::Reversi}}()\ :\ \mbox{\hyperlink{classGame}{Game}}(\mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}},\ \mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00037}00037\ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a40b8be4327172dc9af60d93325af7bb5}{start\_reversi\_board}}();}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00038}00038\ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00039}00039\ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00040}00040\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00043}\mbox{\hyperlink{classReversi_a0f06a948b1980191d9f0b442171bd55e}{00043}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a0f06a948b1980191d9f0b442171bd55e}{Reversi::is\_space\_free\_reversi}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00044}00044\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(x,\ y)\ ||\ this-\/>game\_board.get\_space(x,\ y)\ ==\ \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00051}\mbox{\hyperlink{classReversi_ad2680149f9c6e7175ac9683fc737f716}{00051}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_ad2680149f9c6e7175ac9683fc737f716}{Reversi::is\_there\_player\_piece\_at\_the\_direction}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ player\_piece,}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{const}\ std::array<int,\ 2>\&\ direction,\ std::array<int,\ 2>\ adjacent\_square)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00053}00053\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00054}00054\ \ \ \ \ std::array<int,\ 2>\ current\_square\ =\ \{\ adjacent\_square[0]\ +\ direction[0],}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00055}00055\ \ \ \ \ adjacent\_square[1]\ +\ direction[1]\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(current\_square[0],\ current\_square[1]))}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(current\_square[0],\ current\_square[1])\ ==\ player\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(current\_square[0],\ current\_square[1])\ ==\ \textcolor{charliteral}{'\ '}\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ ||\ this-\/>game\_board.get\_space(current\_square[0],\ current\_square[1])\ ==\ \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ current\_square[0]\ +=\ direction[0];}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ current\_square[1]\ +=\ direction[1];}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00072}\mbox{\hyperlink{classReversi_a17a6bf432ee126989ff993e8565ecb88}{00072}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a17a6bf432ee126989ff993e8565ecb88}{Reversi::is\_there\_direction\_that\_captures\_opponent}}(\textcolor{keyword}{const}\ std::array<int,\ 2>}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00073}00073\ \ \ \ \ \&\ move\_coordinates,\ \textcolor{keywordtype}{char}\ player\_piece\_type)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{char}\ opponent\_player\ =\ \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\_players}}(player\_piece\_type);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00077}00077\ \ \ \ \ std::array<int,\ 2>\ adjacent\_square\ =\ \{\ 0,\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ >\ -\/2;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ >\ -\/2;\ j-\/-\/)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ 0\ ||\ i\ !=\ 0)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\_square[0]\ =\ move\_coordinates[0]\ +\ i;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\_square[1]\ =\ move\_coordinates[1]\ +\ j;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(adjacent\_square[0],\ adjacent\_square[1])\ \&\&}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>game\_board.get\_space(adjacent\_square[0],\ adjacent\_square[1])\ ==\ opponent\_player)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<int,\ 2>\ direction\ =\ \{\ i\ ,\ j\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classReversi_ad2680149f9c6e7175ac9683fc737f716}{is\_there\_player\_piece\_at\_the\_direction}}(player\_piece\_type,\ direction,\ adjacent\_square))\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00106}\mbox{\hyperlink{classReversi_a80a4baf7512081f2d69178aaaa20c2e9}{00106}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{Reversi::is\_valid\_move}}(std::array<int,\ 2>\&\ move\_coordinates,\ \textcolor{keywordtype}{char}\ player\_piece\_type)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00107}00107\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(move\_coordinates[0],\ move\_coordinates[1]))}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{classReversi_a0f06a948b1980191d9f0b442171bd55e}{is\_space\_free\_reversi}}(move\_coordinates[0],\ move\_coordinates[1]))}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{classReversi_a17a6bf432ee126989ff993e8565ecb88}{is\_there\_direction\_that\_captures\_opponent}}(move\_coordinates,\ player\_piece\_type))\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00123}\mbox{\hyperlink{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}{00123}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}{Reversi::find\_all\_directions\_to\_make\_move}}(std::array<int,\ 2>\&\ move\_coordinates,}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{char}\ player\_piece,\ std::list<std::array<int,\ 2>>\&\ directions\_to\_capture\_opponents)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00125}00125\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{char}\ opponent\_player\_piece\ =\ \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\_players}}(player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00128}00128\ \ \ \ \ std::array<int,\ 2>\ adjacent\_square\ =\ \{\ 0,\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ >\ -\/2;\ i-\/-\/)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ >\ -\/2;\ j-\/-\/)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ 0\ ||\ i\ !=\ 0)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\_square[0]\ =\ move\_coordinates[0]\ +\ i;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent\_square[1]\ =\ move\_coordinates[1]\ +\ j;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(adjacent\_square[0],\ adjacent\_square[1])\ \&\&}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>game\_board.get\_space(adjacent\_square[0],\ adjacent\_square[1])\ ==\ opponent\_player\_piece)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<int,\ 2>\ direction\ =\ \{\ i\ ,\ j\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classReversi_ad2680149f9c6e7175ac9683fc737f716}{is\_there\_player\_piece\_at\_the\_direction}}(player\_piece,\ direction,\ adjacent\_square))\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ directions\_to\_capture\_opponents.push\_back(direction);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00151}00151\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00154}\mbox{\hyperlink{classReversi_a92788664d879ed935b46928f40f5152e}{00154}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_a92788664d879ed935b46928f40f5152e}{Reversi::flip\_pieces}}(std::array<int,\ 2>\ directions,\ std::array<int,\ 2>\ move\_coordinates,\ \textcolor{keywordtype}{char}\ player\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00155}00155\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{char}\ opponent\_piece\ =\ \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\_players}}(player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_pieces\_flipped\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00159}00159\ \ \ \ \ std::array<int,\ 2>\ current\_square\ =\ \{\ directions[0]\ +\ move\_coordinates[0],}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00160}00160\ \ \ \ \ directions[1]\ +\ move\_coordinates[1]\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{while}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(current\_square[0],\ current\_square[1])\ ==\ opponent\_piece)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00163}00163\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(current\_square[0],\ current\_square[1],\ player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ current\_square[0]\ +=\ directions[0];}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ current\_square[1]\ +=\ directions[1];}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ num\_pieces\_flipped++;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00169}00169\ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_aba9258082f32fdec0963f66469f4eadc}{control\_num\_pieces\_players}}(num\_pieces\_flipped,\ player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00173}\mbox{\hyperlink{classReversi_aba9258082f32fdec0963f66469f4eadc}{00173}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_aba9258082f32fdec0963f66469f4eadc}{Reversi::control\_num\_pieces\_players}}(\textcolor{keywordtype}{int}\ num\_pieces\_flipped,\ \textcolor{keywordtype}{char}\ player\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00174}00174\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{if}\ (player\_piece\ ==\ \textcolor{charliteral}{'X'})\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00176}00176\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}}\ +=\ num\_pieces\_flipped;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}}\ -\/=\ num\_pieces\_flipped;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00181}00181\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}}\ -\/=\ num\_pieces\_flipped;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}}\ +=\ num\_pieces\_flipped;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00185}00185\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00191}\mbox{\hyperlink{classReversi_a5f8ceb717249ae28224f722689e8a266}{00191}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{Reversi::make\_move}}(std::array<int,\ 2>\ move\_coordinates,\ \textcolor{keywordtype}{char}\ player\_piece,\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00192}00192\ std::list<std::array<int,\ 2>>\&\ directions\_to\_capture\_opponents)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00193}00193\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00195}00195\ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(move\_coordinates[0],\ move\_coordinates[1],\ player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{if}\ (player\_piece\ ==\ \textcolor{charliteral}{'X'})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}}++;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}}++;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ direction\ :\ directions\_to\_capture\_opponents)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a92788664d879ed935b46928f40f5152e}{flip\_pieces}}(direction,\ move\_coordinates,\ player\_piece);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00208}\mbox{\hyperlink{classReversi_a1e85bfa378f2f97e4dead2da81aa7584}{00208}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a1e85bfa378f2f97e4dead2da81aa7584}{Reversi::process\_move}}(std::array<int,\ 2>\ move\_coordinates,\ \textcolor{keywordtype}{char}\ player\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00209}00209\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00210}00210\ \ \ \ \ move\_coordinates[0]\ =\ move\_coordinates[0]\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00211}00211\ \ \ \ \ move\_coordinates[1]\ =\ move\_coordinates[1]\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00212}00212\ \ \ \ \ std::list<std::array<int,\ 2>>\ directions\_to\_capture\_opponents;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{is\_valid\_move}}(move\_coordinates,\ player\_piece))\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00215}00215\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}{find\_all\_directions\_to\_make\_move}}(move\_coordinates,\ player\_piece,\ directions\_to\_capture\_opponents);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{make\_move}}(move\_coordinates,\ player\_piece,\ directions\_to\_capture\_opponents);}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00224}\mbox{\hyperlink{classReversi_a49be6ec4f973ea46f84594cf15033cdc}{00224}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a49be6ec4f973ea46f84594cf15033cdc}{Reversi::is\_there\_valid\_move\_for\_player}}(\textcolor{keywordtype}{char}\ player\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00225}00225\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\_valid\_move\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ i++)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00228}00228\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ j++)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ j)\ ==\ \textcolor{charliteral}{'\ '}\ ||\ this-\/>game\_board.get\_space(i,\ j)\ ==\ \textcolor{charliteral}{'*'})\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<int,\ 2>\ coordinates\ =\ \{\ i,\ j\ \};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{is\_valid\_move}}(coordinates,\ player\_piece))\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(i,\ j,\textcolor{charliteral}{'*'});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\_valid\_move\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ j)\ ==\ \textcolor{charliteral}{'*'})\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(i,\ j,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{return}\ found\_valid\_move;}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00249}00249\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00252}\mbox{\hyperlink{classReversi_ada1860cda1cf2d3debab9cc24885e3fd}{00252}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_aa5e2fd3bb4579d881057646d17e296a8}{Reversi::check\_win}}(\textcolor{keywordtype}{bool}\ is\_there\_move\_for\_player,\ \textcolor{keywordtype}{char}\ opponent\_piece)}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00253}00253\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_there\_move\_for\_player\ \&\&\ !this-\/>\mbox{\hyperlink{classReversi_a49be6ec4f973ea46f84594cf15033cdc}{is\_there\_valid\_move\_for\_player}}(opponent\_piece))}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00257}00257\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00260}\mbox{\hyperlink{classReversi_ab4ea15cb7f793737d4e1458721c767ec}{00260}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_ab4ea15cb7f793737d4e1458721c767ec}{Reversi::register\_win\_and\_loss}}(\mbox{\hyperlink{classPlayer}{Player}}\ *player1,\ \mbox{\hyperlink{classPlayer}{Player}}\ *player2)\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00261}00261\ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X}}\ >\ this-\/>\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00263}00263\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ player1-\/>\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ player2-\/>\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00266}00266\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\_pieces\_player\_X\ <\ this-\/>}}\mbox{\hyperlink{classReversi_a6b01ed06db05f451b6fb9d1637863ee7}{num\_pieces\_player\_O}})}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00268}00268\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ player2-\/>\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player1}}-\/>add\_loss(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00271}00271\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00272}00272\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00273}\mbox{\hyperlink{classReversi_afd006e4fdacdedc4a3bb34fe6f1d1940}{00273}}\ \mbox{\hyperlink{classReversi_afd006e4fdacdedc4a3bb34fe6f1d1940}{Reversi::\string~Reversi}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00276}00276\ \textcolor{comment}{//\ Funções\ declaradas\ somente\ para\ fins\ de\ sobregarga}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00277}\mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{00277}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{Reversi::is\_valid\_move}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00279}\mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{00279}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{Reversi::make\_move}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00281}\mbox{\hyperlink{classReversi_aa5e2fd3bb4579d881057646d17e296a8}{00281}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classReversi_aa5e2fd3bb4579d881057646d17e296a8}{Reversi::check\_win}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Reversi_8cpp_source_l00282}00282\ }
+
+\end{DoxyCode}
