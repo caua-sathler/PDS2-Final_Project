@@ -6,6 +6,12 @@
 const int num_rows_received = 3;
 const int num_columns_received = 3;
 
+/**
+ * @brief Aloca um tabuleiro com situações de teste no Tic Tac Toe sem a necessidade de uma
+ * partida real.
+ * @param game_board_situation Tabuleiro que simula situações de jogo
+ * @param reversi_game Instância da classe Tic_tac_toe
+ */
 void create_game_board_situation(char game_board_situation[num_rows_received][num_columns_received], Tic_tac_toe &tic_tac_toe_game){
     char *board[num_columns_received];
     for (int i = 0; i < num_columns_received; i++){

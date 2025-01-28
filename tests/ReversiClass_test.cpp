@@ -536,7 +536,3 @@ TEST_CASE("Function process_move"){
         CHECK(reversi_game.process_move(move, 'O') == 0);
     }
 }
-
-// EP R Joao123 Maria9
-
-// EP R Joao123 Maria999
