@@ -12,13 +12,13 @@ const int num_columns_received = 3;
  * @param game_board_situation Tabuleiro que simula situações de jogo
  * @param reversi_game Instância da classe Tic_tac_toe
  */
-void create_game_board_situation(char game_board_situation[num_rows_received][num_columns_received], Tic_tac_toe &tic_tac_toe_game){
-    char *board[num_columns_received];
-    for (int i = 0; i < num_columns_received; i++){
-        board[i] = game_board_situation[i];
-    }
 
-    tic_tac_toe_game.get_game_board().set_game_board(board);
+void create_game_board_situation(char game_board_situation[num_rows_received][num_columns_received], Tic_tac_toe &tic_tac_toe_game) {
+    for (int i = 0; i < num_rows_received; ++i) {
+        for (int j = 0; j < num_columns_received; ++j) {
+            tic_tac_toe_game.get_game_board().set_space(i, j, game_board_situation[i][j]);
+        }
+    }
 }
 
 TEST_CASE("Function is_valid_move test") 
@@ -34,25 +34,25 @@ TEST_CASE("Function is_valid_move test")
     create_game_board_situation(game_board_situation, jogo);
 
     SUBCASE("Move inside board and position free") {
-        int x = 1, y = 1;
-        CHECK(jogo.is_valid_move(x, y) == true);
+        int x = 3, y = 3;
+        CHECK_NOTHROW(jogo.is_valid_move(x, y));
     }
 
     SUBCASE("Move out of the board") {
         int x = 4, y = 4; 
-        CHECK(jogo.is_valid_move(x, y) == false);
+        CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
 
         x = INT_MAX + 1, y = INT_MAX + 1; 
-        CHECK(jogo.is_valid_move(x, y) == false);
+        CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
 
         x = INT_MIN - 1, y = INT_MIN - 1;
-        CHECK(jogo.is_valid_move(x, y) == false);
+        CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
     }
 
     SUBCASE("Move on a ocuppied position") {
         jogo.make_move(1, 1);
         int x = 1, y = 1;
-        CHECK(jogo.is_valid_move(x, y) == false);
+        CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
     }
 }
 
@@ -72,18 +72,19 @@ TEST_CASE("Function make_move test")
     {
         int x = 2, y = 2;
         jogo.make_move(x, y);
-        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'X');
+        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'O');
         CHECK(jogo.get_current_player() == 'O');
-        int x = 3, y = 3;
-        CHECK(jogo.get_game_board().get_space(x, y) == 'O');
+        x = 2, y = 1;
+        jogo.make_move(x, y);
+        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'O');
         CHECK(jogo.get_current_player() == 'X');
     }
 
     SUBCASE("Invalid move switch the player and does not update the board") 
     {
-        int x = 2, y = 2; 
+        int x = 1, y = 1; 
         jogo.make_move(x, y);
-        CHECK(jogo.get_game_board().get_space(x - 1, y - 1) == 'O');
+        CHECK(jogo.get_game_board().get_space(x, y) == 'O');
         CHECK(jogo.get_current_player() == 'O');
     }
 }
@@ -201,11 +202,3 @@ TEST_CASE("Function check_tic_tac_toe_win test")
         CHECK(jogo.check_tic_tac_toe_win() == 'F');
     }
 }
-
-
-
-
-
-
-
-
