@@ -42,10 +42,10 @@ TEST_CASE("Function is_valid_move test")
         int x = 4, y = 4; 
         CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
 
-        x = INT_MAX + 1, y = INT_MAX + 1; 
+        x = INT_MAX, y = INT_MAX; 
         CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
 
-        x = INT_MIN - 1, y = INT_MIN - 1;
+        x = INT_MIN, y = INT_MIN;
         CHECK_THROWS_AS(jogo.is_valid_move(x, y), std::runtime_error);
     }
 
