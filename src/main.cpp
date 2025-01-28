@@ -166,8 +166,7 @@ int main()
                             bool is_there_movement_for_player = reversi_game.is_there_valid_move_for_player(player_piece);
                             bool someone_won = reversi_game.check_win(is_there_movement_for_player, player_piece);
                             reversi_game.get_game_board().print_game_board();
-                            std::cout << "X: " << reversi_game.get_num_pieces_player_X() << " " << "O: "
-                                    << reversi_game.get_num_pieces_player_O() << std::endl;
+                            
 
                             if (someone_won)
                             {
@@ -184,11 +183,11 @@ int main()
                             }
                             else if (is_there_movement_for_player && !someone_won)
                             {
-
-                                if (player_piece == 'X')
-                                    std::cout << username_player1 << " " << "[X]" << ": " << std::ends;
-                                else
-                                    std::cout << username_player2 << " " << "[O]" << ": " << std::ends;
+                                std::cout << "Jogador X: " << username_player1 << " | Jogador O: " << username_player2 << std::endl;
+                               
+                               
+                                    std::cout << "Turno de jogador <"<<player_piece << ">:"  << std::endl;
+                                
 
                                 try {
                                 
