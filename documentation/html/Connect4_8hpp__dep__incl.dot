@@ -9,4 +9,6 @@ digraph "include/Connect4.hpp"
   Node2 [id="Node000002",label="src/Connect4.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Connect4_8cpp.html",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="src/main.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="tests/Connect4Class\l_test.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Connect4Class__test_8cpp.html",tooltip=" "];
 }

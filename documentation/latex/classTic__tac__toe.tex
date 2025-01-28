@@ -24,6 +24,8 @@ Diagrama de colaboração para Tic\+\_\+tac\+\_\+toe\+:
 \begin{DoxyCompactList}\small\item\em Construtor padrão do jogo da velha. Inicializa o tabuleiro como 3x3, define o jogador atual como \textquotesingle{}X\textquotesingle{} e o vencedor como \textquotesingle{}F\textquotesingle{} (nenhum). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7}{make\+\_\+move}} () override
 \begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard}{Board}} \& \mbox{\hyperlink{classTic__tac__toe_ab5946f26c1af8d08bf181d25eb662ae8}{get\+\_\+game\+\_\+board}} ()
+\item 
 void \mbox{\hyperlink{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79}{make\+\_\+move}} (int x, int y)
 \begin{DoxyCompactList}\small\item\em Realiza uma jogada em uma posição específica. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{is\+\_\+valid\+\_\+move}} () const override
@@ -122,7 +124,7 @@ Caractere do jogador vencedor (\textquotesingle{}X\textquotesingle{} ou \textquo
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00056}{56}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00052}{52}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
 
 \Hypertarget{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}\label{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee} 
 \index{Tic\_tac\_toe@{Tic\_tac\_toe}!check\_tie@{check\_tie}}
@@ -139,7 +141,7 @@ Confere se todas as posições do tabuleiro estão ocupadas sem haver vitória. 
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00089}{89}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00085}{85}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
 
 \Hypertarget{classTic__tac__toe_a2199b9937c8591e22ce2906e12ef8953}\label{classTic__tac__toe_a2199b9937c8591e22ce2906e12ef8953} 
 \index{Tic\_tac\_toe@{Tic\_tac\_toe}!check\_win@{check\_win}}
@@ -174,7 +176,17 @@ Caractere representando o jogador atual (\textquotesingle{}X\textquotesingle{} o
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00104}{104}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00100}{100}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+
+\Hypertarget{classTic__tac__toe_ab5946f26c1af8d08bf181d25eb662ae8}\label{classTic__tac__toe_ab5946f26c1af8d08bf181d25eb662ae8} 
+\index{Tic\_tac\_toe@{Tic\_tac\_toe}!get\_game\_board@{get\_game\_board}}
+\index{get\_game\_board@{get\_game\_board}!Tic\_tac\_toe@{Tic\_tac\_toe}}
+\doxysubsubsection{\texorpdfstring{get\_game\_board()}{get\_game\_board()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBoard}{Board}} \& Tic\+\_\+tac\+\_\+toe\+::get\+\_\+game\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00105}{105}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
 
 \Hypertarget{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}\label{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c} 
 \index{Tic\_tac\_toe@{Tic\_tac\_toe}!is\_valid\_move@{is\_valid\_move}}
@@ -255,7 +267,7 @@ Verifica se a jogada é válida, atualiza o tabuleiro e alterna o jogador atrav�
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00025}{25}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00026}{26}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
 
 \Hypertarget{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}\label{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2} 
 \index{Tic\_tac\_toe@{Tic\_tac\_toe}!print\_tic\_tac\_toe\_board@{print\_tic\_tac\_toe\_board}}
@@ -269,7 +281,7 @@ Imprime o estado atual do tabuleiro.
 
 
 
-Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00019}{19}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Tic__tac__toe_8cpp_source_l00020}{20}} do arquivo \mbox{\hyperlink{Tic__tac__toe_8cpp_source}{Tic\+\_\+tac\+\_\+toe.\+cpp}}.
 
 
 

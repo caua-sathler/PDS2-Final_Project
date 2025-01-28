@@ -1,0 +1,218 @@
+\doxysection{Board\+Class\+\_\+test.\+cpp}
+\hypertarget{BoardClass__test_8cpp_source}{}\label{BoardClass__test_8cpp_source}\index{tests/BoardClass\_test.cpp@{tests/BoardClass\_test.cpp}}
+\mbox{\hyperlink{BoardClass__test_8cpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00001}\mbox{\hyperlink{BoardClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}{00001}}\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}doctest.h"{}}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Board_8hpp}{Board.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00005}\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{00005}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00006}\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{00006}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00007}\mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{00007}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}}\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00008}\mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{00008}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00010}\mbox{\hyperlink{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}{00010}}\ \mbox{\hyperlink{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Function\ set\_game\_board\ test"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00012}00012\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Reversi\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cria\ o\ tabuleiro\ como\ ponteiro\ duplo\ de\ char}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}**\ board\_sample\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}*[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializa\ os\ valores\ do\ tabuleiro}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ board\_initial\_values[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}][\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}]\ =\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iguala\ o\ tabuleiro\ de\ **char\ com\ os\ valores\ inciais}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++j)}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i][j]\ =\ board\_initial\_values[i][j];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utiliza\ a\ função\ para\ igualar\ o\ tabuleiro\ criado\ pelo\ construtor\ da\ classe}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ com\ o\ tabuleiro\ **char}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ board.\mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{set\_game\_board}}(board\_sample);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ class\_board\ =\ board.\mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{get\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++j)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Confere\ se\ cada\ elemento\ foi\ copiado\ adequadamente}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(class\_board[i][j]\ ==\ board\_initial\_values[i][j]);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00055}00055\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Lig4\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}**\ board\_sample\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}*[\mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ board\_initial\_values[\mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}}][\mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}}]\ =\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}};\ ++j)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i][j]\ =\ board\_initial\_values[i][j];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ board.\mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{set\_game\_board}}(board\_sample);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ class\_board\ =\ board.\mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{get\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}};\ ++j)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(class\_board[i][j]\ ==\ board\_initial\_values[i][j]);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00088}00088\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Tic\ tac\ toe\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}**\ board\_sample\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}*[\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ board\_initial\_values[\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}}][\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}}]\ =\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'O'}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'X'}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}};\ ++j)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i][j]\ =\ board\_initial\_values[i][j];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ board.\mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{set\_game\_board}}(board\_sample);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ class\_board\ =\ board.\mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{get\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}};\ ++j)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(class\_board[i][j]\ ==\ board\_initial\_values[i][j]);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00123}\mbox{\hyperlink{BoardClass__test_8cpp_aea8d53481940810acb74a457fe5510c7}{00123}}\ \mbox{\hyperlink{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Function\ is\_move\_inside\_board\ test"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00124}00124\ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00125}00125\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Reversi\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//\ Constrói\ um\ tabuleiro\ vazio\ na\ dimensão\ do\ Reversi}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00129}00129\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00130}00130\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00131}00131\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,7)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00132}00132\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(7,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00133}00133\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(7,7)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00134}00134\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(3,5)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00135}00135\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,-\/1)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00136}00136\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(5,12)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00137}00137\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(9,3)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00138}00138\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(-\/15,12)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00140}00140\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00141}00141\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Lig4\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00142}00142\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Constroi\ um\ tabuleiro\ vazio\ na\ dimensão\ do\ Lig4}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\_rows\_lig4}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\_columns\_lig4}});\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00146}00146\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00147}00147\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,6)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00148}00148\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(5,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00149}00149\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(5,6)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00150}00150\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(3,5)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00151}00151\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,-\/1)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00152}00152\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(5,12)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00153}00153\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(6,7)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00154}00154\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(-\/1,12)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00157}00157\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Tic\ tac\ toe\ board"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{comment}{//\ Constroi\ um\ tabuleiro\ vazio\ na\ dimensão\ do\ Jogo\ da\ Velha}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00160}00160\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\_columns\_and\_rows\_tic\_tac\_toe}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00162}00162\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00163}00163\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,2)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00164}00164\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(2,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00165}00165\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(2,2)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00166}00166\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,1)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00167}00167\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(0,-\/1)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00168}00168\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(3,3)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00169}00169\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(4,3)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00170}00170\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(-\/1,1)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00172}00172\ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00176}\mbox{\hyperlink{BoardClass__test_8cpp_afe748c864d6b3c9ff15483b93e2cad47}{00176}}\ \mbox{\hyperlink{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Function\ is\_space\_free\ test"{}})\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00177}00177\ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//Passos\ iniciais\ seguem\ a\ mesma\ lógica\ do\ teste\ da\ função\ set\_game\_board\ }}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{char}**\ board\_sample\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}*[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ board\_sample[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00182}00182\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{char}\ board\_initial\_values[\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}][\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}}]\ =\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00184}00184\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'O'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'X'},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\},}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00193}00193\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++i)\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00196}00196\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}};\ ++j)}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ board\_sample[i][j]\ =\ board\_initial\_values[i][j];}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00200}00200\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{comment}{//\ Utiliza\ set\_game\_board\ (já\ testada)\ para\ igualar\ o\ tabuleiro\ criado\ pelo\ construtor\ }}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{comment}{//da\ classe\ com\ o\ tabuleiro\ **char}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00203}00203\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board}}\ board(\mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}},\ \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\_columns\_and\_rows\_reversi}});}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00204}00204\ \ \ \ \ board.\mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{set\_game\_board}}(board\_sample);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00206}00206\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(6,1)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00207}00207\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(3,4)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00208}00208\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(3,2)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00209}00209\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(0,0)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00210}00210\ \ \ \ \ CHECK(board.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(5,5)\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{BoardClass__test_8cpp_source_l00212}00212\ }
+
+\end{DoxyCode}

@@ -1,0 +1,132 @@
+\doxysection{Referência do Arquivo tests/\+Tic\+Tac\+Toe\+Class\+\_\+test.cpp}
+\hypertarget{TicTacToeClass__test_8cpp}{}\label{TicTacToeClass__test_8cpp}\index{tests/TicTacToeClass\_test.cpp@{tests/TicTacToeClass\_test.cpp}}
+{\ttfamily \#include "{}doctest.\+h"{}}\newline
+{\ttfamily \#include "{}Player.\+hpp"{}}\newline
+{\ttfamily \#include "{}Tic\+\_\+tac\+\_\+toe.\+hpp"{}}\newline
+Gráfico de dependência de inclusões para Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TicTacToeClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}{DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TicTacToeClass__test_8cpp_a5e80e551c15a1e4b4198df7e58d726a7}{create\+\_\+game\+\_\+board\+\_\+situation}} (char game\+\_\+board\+\_\+situation\mbox{[}\mbox{\hyperlink{Tic__tac__toe_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\+\_\+rows\+\_\+received}}\mbox{]}\mbox{[}\mbox{\hyperlink{Tic__tac__toe_8cpp_affc09760547c96857e4684381e1f6224}{num\+\_\+columns\+\_\+received}}\mbox{]}, \mbox{\hyperlink{classTic__tac__toe}{Tic\+\_\+tac\+\_\+toe}} \&tic\+\_\+tac\+\_\+toe\+\_\+game)
+\begin{DoxyCompactList}\small\item\em Aloca um tabuleiro com situações de teste no Tic Tac Toe sem a necessidade de uma partida real. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TicTacToeClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+valid\+\_\+move test"{})
+\item 
+\mbox{\hyperlink{TicTacToeClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a}{TEST\+\_\+\+CASE}} ("{}Function make\+\_\+move test"{})
+\item 
+\mbox{\hyperlink{TicTacToeClass__test_8cpp_a3d8474d5f4c42acb81e68d5a591f785b}{TEST\+\_\+\+CASE}} ("{}Function check\+\_\+tie test"{})
+\item 
+\mbox{\hyperlink{TicTacToeClass__test_8cpp_a9eea686502e609de3c3054579521e070}{TEST\+\_\+\+CASE}} ("{}Function check\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+win test"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{TicTacToeClass__test_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\+\_\+rows\+\_\+received}} = 3
+\item 
+const int \mbox{\hyperlink{TicTacToeClass__test_8cpp_affc09760547c96857e4684381e1f6224}{num\+\_\+columns\+\_\+received}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Definições e macros}
+\Hypertarget{TicTacToeClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}\label{TicTacToeClass__test_8cpp_a623b8690a262536536a43eab2d7df03d} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\index{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+{\footnotesize\ttfamily \#define DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00001}{1}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Funções}
+\Hypertarget{TicTacToeClass__test_8cpp_a5e80e551c15a1e4b4198df7e58d726a7}\label{TicTacToeClass__test_8cpp_a5e80e551c15a1e4b4198df7e58d726a7} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!create\_game\_board\_situation@{create\_game\_board\_situation}}
+\index{create\_game\_board\_situation@{create\_game\_board\_situation}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_game\_board\_situation()}{create\_game\_board\_situation()}}
+{\footnotesize\ttfamily void create\+\_\+game\+\_\+board\+\_\+situation (\begin{DoxyParamCaption}\item[{char}]{game\+\_\+board\+\_\+situation\mbox{[}num\+\_\+rows\+\_\+received\mbox{]}\mbox{[}num\+\_\+columns\+\_\+received\mbox{]},  }\item[{\mbox{\hyperlink{classTic__tac__toe}{Tic\+\_\+tac\+\_\+toe}} \&}]{tic\+\_\+tac\+\_\+toe\+\_\+game }\end{DoxyParamCaption})}
+
+
+
+Aloca um tabuleiro com situações de teste no Tic Tac Toe sem a necessidade de uma partida real. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+\_\+board\+\_\+situation} & Tabuleiro que simula situações de jogo \\
+\hline
+{\em reversi\+\_\+game} & Instância da classe \doxylink{classTic__tac__toe}{Tic\+\_\+tac\+\_\+toe} \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00015}{15}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{TicTacToeClass__test_8cpp_a9eea686502e609de3c3054579521e070}\label{TicTacToeClass__test_8cpp_a9eea686502e609de3c3054579521e070} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function check\+\_\+tic\+\_\+tac\+\_\+toe\+\_\+win test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00122}{122}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{TicTacToeClass__test_8cpp_a3d8474d5f4c42acb81e68d5a591f785b}\label{TicTacToeClass__test_8cpp_a3d8474d5f4c42acb81e68d5a591f785b} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function check\+\_\+tie test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00091}{91}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{TicTacToeClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883}\label{TicTacToeClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+valid\+\_\+move test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00024}{24}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{TicTacToeClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a}\label{TicTacToeClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function make\+\_\+move test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00059}{59}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Variáveis}
+\Hypertarget{TicTacToeClass__test_8cpp_affc09760547c96857e4684381e1f6224}\label{TicTacToeClass__test_8cpp_affc09760547c96857e4684381e1f6224} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!num\_columns\_received@{num\_columns\_received}}
+\index{num\_columns\_received@{num\_columns\_received}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_columns\_received}{num\_columns\_received}}
+{\footnotesize\ttfamily const int num\+\_\+columns\+\_\+received = 3}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00007}{7}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{TicTacToeClass__test_8cpp_acfdb99af3afce9e6da945c95be765ebb}\label{TicTacToeClass__test_8cpp_acfdb99af3afce9e6da945c95be765ebb} 
+\index{TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}!num\_rows\_received@{num\_rows\_received}}
+\index{num\_rows\_received@{num\_rows\_received}!TicTacToeClass\_test.cpp@{TicTacToeClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_rows\_received}{num\_rows\_received}}
+{\footnotesize\ttfamily const int num\+\_\+rows\+\_\+received = 3}
+
+
+
+Definição na linha \mbox{\hyperlink{TicTacToeClass__test_8cpp_source_l00006}{6}} do arquivo \mbox{\hyperlink{TicTacToeClass__test_8cpp_source}{Tic\+Tac\+Toe\+Class\+\_\+test.\+cpp}}.
+

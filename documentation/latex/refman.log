@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.21)  24 JAN 2025 10:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.21)  28 JAN 2025 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,7 +907,28 @@ Cap\'{\i }tulo 2.
 
 ]
 Cap\'{\i }tulo 3.
-(./files.tex) [5] [6
+(./files.tex
+
+LaTeX Warning: Reference `BoardClass__test_8cpp' on page 5 undefined on input l
+ine 16.
+
+
+LaTeX Warning: Reference `Connect4Class__test_8cpp' on page 5 undefined on inpu
+t line 17.
+
+
+LaTeX Warning: Reference `PlayerClass__test_8cpp' on page 5 undefined on input 
+line 18.
+
+
+LaTeX Warning: Reference `ReversiClass__test_8cpp' on page 5 undefined on input
+ line 19.
+
+
+LaTeX Warning: Reference `TicTacToeClass__test_8cpp' on page 5 undefined on inp
+ut line 20.
+
+) [5] [6
 
 ]
 Cap\'{\i }tulo 4.
@@ -926,50 +947,56 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 38.
+(Font)              scaled to size 10.79993pt on input line 42.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 52.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 56.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 52.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 56.
 
-[7]
-Underfull \hbox (badness 10000) detected at line 91
-[][][]
- []
-
-[8]
-Underfull \hbox (badness 10000) detected at line 115
+[7] [8]
+Underfull \hbox (badness 10000) detected at line 109
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 139
+Underfull \hbox (badness 10000) detected at line 133
 [][][]
  []
 
-[9]) (./classConnect4.tex
+
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+[9] [10]) (./classConnect4.tex
 LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
 (Font)              Font shape `TS1/phv/m/sl' tried instead on input line 24.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 24.
- [10] [11]
-Underfull \hbox (badness 10000) detected at line 136
+ [11] [12]
+Underfull \hbox (badness 10000) detected at line 138
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 153
+Underfull \hbox (badness 10000) detected at line 162
 [][][]
  []
 
+
+Underfull \hbox (badness 10000) detected at line 179
+[][][]
+ []
+
+[13]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 163.
-[12]
-Underfull \hbox (badness 10000) detected at line 193
+(Font)              scaled to size 7.19995pt on input line 189.
+
+Underfull \hbox (badness 10000) detected at line 219
 [][][]
  []
 
-[13]) (./classGame.tex [14] [15]
+[14]) (./classGame.tex [15] [16]
 Underfull \hbox (badness 10000) detected at line 102
 [][][]
  []
@@ -979,163 +1006,192 @@ Underfull \hbox (badness 10000) detected at line 119
 [][][]
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) detected at line 155
 [][][]
  []
 
-) (./classPlayer.tex [17] [18] [19]
-Underfull \hbox (badness 10000) detected at line 188
+) (./classPlayer.tex [18] [19] [20] [21]
+Underfull \hbox (badness 10000) detected at line 192
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 212
+Underfull \hbox (badness 10000) detected at line 216
 [][][]
  []
 
-[20]
-Underfull \hbox (badness 10000) detected at line 229
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 246
+[22]
+Underfull \hbox (badness 10000) detected at line 240
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 263
+Underfull \hbox (badness 10000) detected at line 257
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 280
-[][][]
- []
-
-[21]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 4.17 on input line 317.
-
-
-Underfull \hbox (badness 10000) detected at line 318
+Underfull \hbox (badness 10000) detected at line 274
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 342
+Underfull \hbox (badness 10000) detected at line 291
 [][][]
  []
 
-[22] [23]) (./classReversi.tex
-Underfull \hbox (badness 931) in paragraph at lines 37--38
+
+Underfull \hbox (badness 10000) detected at line 308
+[][][]
+ []
+
+[23]
+Underfull \hbox (badness 10000) detected at line 330
+[][][]
+ []
+
+
+Overfull \vbox (11.24377pt too high) has occurred while \output is active []
+
+
+[24]
+Underfull \hbox (badness 10000) detected at line 368
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 392
+[][][]
+ []
+
+
+Overfull \vbox (21.0706pt too high) has occurred while \output is active []
+
+
+[25] [26]) (./classReversi.tex
+Underfull \hbox (badness 931) in paragraph at lines 39--40
 [][] [] \T1/phv/m/n/10 ([] std[]::array$\OML/cmm/m/it/10 <$ []\T1/phv/m/n/10 , 
 2 $\OML/cmm/m/it/10 >$ \T1/phv/m/n/10 &[], []
  []
 
-[24] [25] [26]
-Underfull \hbox (badness 10000) detected at line 167
-[][][]
- []
-
-[27]
-Underfull \hbox (badness 10000) detected at line 251
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 268
-[][][]
- []
-
-[28]
-Underfull \hbox (badness 10000) detected at line 302
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 326
-[][][]
- []
-
-[29]
-Underfull \hbox (badness 10000) detected at line 352
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 374
+[27] [28] [29]
+Underfull \hbox (badness 10000) detected at line 169
 [][][]
  []
 
 [30]
-Underfull \hbox (badness 10000) detected at line 416
+Underfull \hbox (badness 10000) detected at line 267
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 284
 [][][]
  []
 
 [31]
-Underfull \hbox (badness 10000) detected at line 495
-[][][]
- []
-
-[32]) (./classTic__tac__toe.tex [33]
-Underfull \hbox (badness 10000) detected at line 120
-[][][]
- []
-
-[34]
-Underfull \hbox (badness 10000) detected at line 137
+Underfull \hbox (badness 10000) detected at line 308
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 172
+Underfull \hbox (badness 10000) detected at line 332
 [][][]
  []
 
-[35]
-Underfull \hbox (badness 10000) detected at line 214
+[32]
+Underfull \hbox (badness 10000) detected at line 358
 [][][]
  []
 
-[36]) [37] [38
 
-]
+Underfull \hbox (badness 10000) detected at line 380
+[][][]
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 422
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 487
+[][][]
+ []
+
+[34] [35]) (./classTic__tac__toe.tex [36]
+Underfull \hbox (badness 10000) detected at line 122
+[][][]
+ []
+
+[37]
+Underfull \hbox (badness 10000) detected at line 139
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 174
+[][][]
+ []
+
+[38]
+Underfull \hbox (badness 10000) detected at line 226
+[][][]
+ []
+
+[39]) [40]
 Cap\'{\i }tulo 5.
-(./Board_8hpp.tex) (./Board_8hpp_source.tex [39]) (./Connect4_8hpp.tex)
-(./Connect4_8hpp_source.tex [40]) (./Game_8hpp.tex) (./Game_8hpp_source.tex
-[41]) (./Player_8hpp.tex [42]
+(./Board_8hpp.tex) (./Board_8hpp_source.tex [41
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 5.2 on input line 76.
+]) (./Connect4_8hpp.tex)
+(./Connect4_8hpp_source.tex [42]) (./Game_8hpp.tex) (./Game_8hpp_source.tex
+[43]) (./Player_8hpp.tex [44]) (./Player_8hpp_source.tex [45])
+(./Reversi_8hpp.tex [46]) (./Reversi_8hpp_source.tex [47])
+(./Tic__tac__toe_8hpp.tex) (./Tic__tac__toe_8hpp_source.tex [48])
+(./Board_8cpp.tex) (./Board_8cpp_source.tex [49]) (./Connect4_8cpp.tex)
+(./Connect4_8cpp_source.tex [50] [51]) (./Game_8cpp.tex)
+(./Game_8cpp_source.tex) (./main_8cpp.tex) (./main_8cpp_source.tex [52]
+[53] [54] [55] [56] [57]) (./Player_8cpp.tex
+Overfull \vbox (0.67888pt too high) has occurred while \output is active []
 
-) (./Player_8hpp_source.tex [43]) (./Reversi_8hpp.tex)
-(./Reversi_8hpp_source.tex [44]) (./Tic__tac__toe_8hpp.tex [45])
-(./Tic__tac__toe_8hpp_source.tex) (./Board_8cpp.tex) (./Board_8cpp_source.tex
-[46]) (./Connect4_8cpp.tex) (./Connect4_8cpp_source.tex [47] [48])
-(./Game_8cpp.tex) (./Game_8cpp_source.tex) (./main_8cpp.tex [49]
-Underfull \hbox (badness 10000) detected at line 40
-[][][]
+
+[58]) (./Player_8cpp_source.tex [59] [60]) (./Reversi_8cpp.tex)
+(./Reversi_8cpp_source.tex [61] [62] [63]) (./Tic__tac__toe_8cpp.tex [64])
+(./Tic__tac__toe_8cpp_source.tex [65]) (./BoardClass__test_8cpp.tex [66])
+(./BoardClass__test_8cpp_source.tex [67] [68]) (./Connect4Class__test_8cpp.tex
+[69]) (./Connect4Class__test_8cpp_source.tex [70] [71] [72])
+(./PlayerClass__test_8cpp.tex [73]) (./PlayerClass__test_8cpp_source.tex
+[74] [75]) (./ReversiClass__test_8cpp.tex
+Overfull \hbox (95.5087pt too wide) in paragraph at lines 17--18
+[]\T1/phv/m/n/10 void [] (char game[]_[]board[]_[]situation[][][][][][],
  []
 
-) (./main_8cpp_source.tex [50] [51] [52] [53]) (./Player_8cpp.tex [54]
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+|  \T1/pcr/m/n/8 char \T1/pcr/m/sl/8 game[]_[]board[]_[]situation[]num[]_[]colu
+mns[]_[]and[]_[]rows[]_[]reversi[][]num[]_[]columns[]_[]and[]_[]rows[]_[]
+ []
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 5.5 on input line 55.
+(longtable)                in table 5.5 on input line 78.
 
-) (./Player_8cpp_source.tex [55] [56]) (./Reversi_8cpp.tex [57])
-(./Reversi_8cpp_source.tex [58] [59] [60]) (./Tic__tac__toe_8cpp.tex [61])
-(./Tic__tac__toe_8cpp_source.tex [62]) [63] [64
+[77] [78]) (./ReversiClass__test_8cpp_source.tex [79] [80] [81] [82] [83]
+[84] [85]) (./TicTacToeClass__test_8cpp.tex [86]
 
-] (./refman.ind
+Package longtable Warning: Column widths have changed
+(longtable)                in table 5.6 on input line 65.
+
+) (./TicTacToeClass__test_8cpp_source.tex [87] [88] [89]) [90] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
- [65
+
+[91
 
 
-] [66])
+
+] [92])
 
 Package longtable Warning: Table widths have changed. Rerun LaTeX.
 
@@ -1146,35 +1202,76 @@ L3 programming layer <2024-01-22>
  ***********
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 9C5168D3B3D429ABE577F90CB4B8BA6C;35149.
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: 8819297BAA546E5D04475A9F7847FF43;36696
+(rerunfilecheck)             After:  5C14C003C68AC04667B81303F61653FC;48278.
  ) 
 Here is how much of TeX's memory you used:
- 21136 strings out of 474222
- 357942 string characters out of 5748733
- 1960975 words of memory out of 5000000
- 41184 multiletter control sequences out of 15000+600000
+ 22848 strings out of 474222
+ 419029 string characters out of 5748733
+ 1958975 words of memory out of 5000000
+ 41292 multiletter control sequences out of 15000+600000
  615018 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,16n,117p,995b,760s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
-ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (74 pages, 348685 bytes).
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_afe748c864d6b3c9ff15483b93e2c
+ad47} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_aea8d53481940810acb74a457fe55
+10c7} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387
+172e} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d9
+94f8} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99
+dea6} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96
+a70e} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ec
+daaa} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BoardClass__test_8cpp_a623b8690a262536536a43eab2d7d
+f03d} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (100 pages, 465282 bytes).
 PDF statistics:
- 4604 PDF objects out of 5155 (max. 8388607)
- 4457 compressed objects within 45 object streams
- 1801 named destinations out of 2073 (max. 500000)
- 1377 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7518 PDF objects out of 8907 (max. 8388607)
+ 7312 compressed objects within 74 object streams
+ 3383 named destinations out of 3580 (max. 500000)
+ 1441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

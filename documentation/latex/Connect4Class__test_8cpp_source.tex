@@ -1,0 +1,257 @@
+\doxysection{Connect4\+Class\+\_\+test.\+cpp}
+\hypertarget{Connect4Class__test_8cpp_source}{}\label{Connect4Class__test_8cpp_source}\index{tests/Connect4Class\_test.cpp@{tests/Connect4Class\_test.cpp}}
+\mbox{\hyperlink{Connect4Class__test_8cpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00001}\mbox{\hyperlink{Connect4Class__test_8cpp_a623b8690a262536536a43eab2d7df03d}{00001}}\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}doctest.h"{}}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Connect4_8hpp}{Connect4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00006}\mbox{\hyperlink{Connect4Class__test_8cpp_a37c815dab4fa7afe194508dc82458007}{00006}}\ \mbox{\hyperlink{Connect4Class__test_8cpp_a37c815dab4fa7afe194508dc82458007}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Connect4\ Class\ Tests"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00010}00010\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Initialization\ Test"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{get\_current\_player}}()\ ==\ \textcolor{charliteral}{'X'});\ \textcolor{comment}{//\ Jogador\ inicial\ deve\ ser\ 'X',\ que\ é\ referente\ ao\ player\ 1}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{is\_board\_full}}()\ ==\ \textcolor{keyword}{false});\ \ \ \ \textcolor{comment}{//\ Tabuleiro\ não\ deve\ estar\ cheio\ no\ início}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00016}00016\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Is\ valid\ Move\ Test"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ movimentos\ válidos\ e\ inválidos}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\_valid\_move}}(1)\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\_valid\_move}}(7)\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\_valid\_move}}(0)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\_valid\_move}}(8)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a887c8048d47327cb3455015e15c39f62}{is\_valid\_move}}(99)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00026}00026\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Make\ Move\ Test"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ o\ jogadore\ inicial}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{get\_current\_player}}()\ ==\ \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ local\ foi\ ocupado\ da\ maneira\ certa}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\_space}}(5,\ 0)\ ==\ \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Jogador\ deve\ alternar\ para\ 'O'}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classConnect4_a7900bc45a9822ec810af13a1ab649414}{set\_current\_player}}(\textcolor{charliteral}{'O'});\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ jogador\ atual\ foi\ alterado\ corretamente}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_af6a1ee6390778f03c47f5e96295318af}{get\_current\_player}}()\ ==\ \textcolor{charliteral}{'O'});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ outras\ casas\ do\ tabuleiro}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\_space}}(5,\ 1)\ ==\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\_space}}(4,\ 0)\ ==\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ após\ mais\ uma\ jogada}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\_space}}(5,\ 1)\ ==\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ CHECK(game.\mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\_space}}(4,\ 0)\ ==\ \textcolor{charliteral}{'O'});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00052}00052\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Win\ Condition\ Test\ -\/\ Horizontal"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 1:\ Vitória\ horizontal}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_horizontal1;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ game\_horizontal1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ CHECK(game\_horizontal1.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 2:\ Vitória\ horizontal\ }}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_horizontal2;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ game\_horizontal2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ CHECK(game\_horizontal2.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 3:\ Vitória\ horizontal\ na\ linha\ 3}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_horizontal3;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ game\_horizontal3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ CHECK(game\_horizontal3.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00101}00101\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00102}00102\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Win\ Condition\ Test\ -\/\ Vertical"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 1:\ Vitória\ vertical\ na\ coluna\ 1}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_vertical1;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ game\_vertical1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ CHECK(game\_vertical1.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 2:\ Vitória\ vertical\ na\ coluna\ 4}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_vertical2;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ game\_vertical2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ CHECK(game\_vertical2.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 3:\ Vitória\ vertical\ na\ coluna\ 7}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_vertical3;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ game\_vertical3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ CHECK(game\_vertical3.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00138}00138\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Win\ Condition\ Test\ -\/\ Diagonal\ Direita"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 1:\ Vitória\ diagonal\ direita}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_right1;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_right1.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 2:\ Vitória\ diagonal\ direita}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_right2;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_right2.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 3:\ Vitória\ diagonal\ direita}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_right3;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_right3.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00186}00186\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Win\ Condition\ Test\ -\/\ Diagonal\ Esquerda"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00187}00187\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 1:\ Vitória\ diagonal\ esquerda}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_left1;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(1);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_left1.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 2:\ Vitória\ diagonal\ esquerda}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_left2;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(2);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_left2.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Teste\ 3:\ Vitória\ diagonal\ esquerda}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_diagonal\_left3;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(6);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(5);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(4);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(7);\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(3);\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ CHECK(game\_diagonal\_left3.\mbox{\hyperlink{classConnect4_adcf36224a7f7ffd24fcbffe430a6a2fe}{check\_win}}()\ ==\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ X\ deve\ vencer}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00234}00234\ \ \ \ \ SUBCASE(\textcolor{stringliteral}{"{}Board\ Full\ Test"{}})\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00235}00235\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classConnect4}{Connect4}}\ game\_full;}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificação\ antes\ de\ completar}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ CHECK(game\_full.\mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{is\_board\_full}}()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preenche\ o\ tabuleiro\ completamente}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 1;\ col\ <=\ 7;\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 6;\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game\_full.\mbox{\hyperlink{classConnect4_a273fd400836fffb0c7f5ac6b48471db3}{make\_move}}(col);}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tabuleiro\ deve\ estar\ cheio}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ CHECK(game\_full.\mbox{\hyperlink{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}{is\_board\_full}}()\ ==\ \textcolor{keyword}{true});\ }
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Connect4Class__test_8cpp_source_l00251}00251\ \}}
+
+\end{DoxyCode}

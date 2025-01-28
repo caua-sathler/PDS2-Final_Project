@@ -34,14 +34,18 @@ void \mbox{\hyperlink{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f}{print\+\_\+
 void \mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\+\_\+win}} (std\+::string key)
 \begin{DoxyCompactList}\small\item\em Incrementa o número de vitórias em um jogo. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\+\_\+loss}} (std\+::string key)
-\begin{DoxyCompactList}\small\item\em Incrementa o número de derrotas em um jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Incrementa o número de derrotas em um jogo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlayer_accbc53d675bcd1ec5b89f403ca4d2a14}{operator==}} (\mbox{\hyperlink{classPlayer}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em sobrecarga do operador == \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Membros públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d}{register\+\_\+player}} (\mbox{\hyperlink{classPlayer}{Player}} player\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
+static void \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{register\+\_\+player}} (\mbox{\hyperlink{classPlayer}{Player}} player\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
 \begin{DoxyCompactList}\small\item\em Registra um jogador em uma lista de jogadores. \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5}{remove\+\_\+player}} (std\+::string username\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
+static void \mbox{\hyperlink{classPlayer_a730ec36911b6789978608b2ca0f46059}{remove\+\_\+player}} (std\+::string username\+\_\+received, std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list)
 \begin{DoxyCompactList}\small\item\em Remove um jogador da lista de jogadores. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classPlayer}{Player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlayer_a8d0f807a188cff92c14175f85da52471}{find\+\_\+player\+\_\+in\+\_\+list}} (std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&player\+\_\+list, const std\+::string \&user\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Procura se um jogador específico existe na lista. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234}{compare\+\_\+username}} (\mbox{\hyperlink{classPlayer}{Player}} \&player1, \mbox{\hyperlink{classPlayer}{Player}} \&player2)
 \begin{DoxyCompactList}\small\item\em Compara os usernames de dois jogadores. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classPlayer_a175698cd20cfcec81c693426d56a7354}{compare\+\_\+name}} (\mbox{\hyperlink{classPlayer}{Player}} \&player1, \mbox{\hyperlink{classPlayer}{Player}} \&player2)
@@ -190,7 +194,7 @@ Compara os nomes de dois jogadores.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00106}{106}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00125}{125}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
 \Hypertarget{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234}\label{classPlayer_ae206ea71cfcbd9e65a76a390ef50f234} 
 \index{Player@{Player}!compare\_username@{compare\_username}}
@@ -214,7 +218,31 @@ Compara os usernames de dois jogadores.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00096}{96}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00115}{115}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+\Hypertarget{classPlayer_a8d0f807a188cff92c14175f85da52471}\label{classPlayer_a8d0f807a188cff92c14175f85da52471} 
+\index{Player@{Player}!find\_player\_in\_list@{find\_player\_in\_list}}
+\index{find\_player\_in\_list@{find\_player\_in\_list}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{find\_player\_in\_list()}{find\_player\_in\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} \texorpdfstring{$\ast$}{*} Player\+::find\+\_\+player\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list,  }\item[{const std\+::string \&}]{user\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Procura se um jogador específico existe na lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+\_\+list} & Lista que registra todos os jogadores. \\
+\hline
+{\em user\+\_\+name} & Nome do jogador a ser procurado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O endereço de memória do jogador caso seja encontrado, \textquotesingle{}nullptr\textquotesingle{} caso contrário. 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00098}{98}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
 \Hypertarget{classPlayer_a788340fc5f21143f47eed04f6fd79976}\label{classPlayer_a788340fc5f21143f47eed04f6fd79976} 
 \index{Player@{Player}!get\_name@{get\_name}}
@@ -284,6 +312,28 @@ Nome de usuário.
 
 Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00039}{39}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
+\Hypertarget{classPlayer_accbc53d675bcd1ec5b89f403ca4d2a14}\label{classPlayer_accbc53d675bcd1ec5b89f403ca4d2a14} 
+\index{Player@{Player}!operator==@{operator==}}
+\index{operator==@{operator==}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Player\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})}
+
+
+
+sobrecarga do operador == 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player} & objeto player a ser comparado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se os objetos comparados tem os mesmos atributos, {\ttfamily false} caso contrario 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00108}{108}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
 \Hypertarget{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f}\label{classPlayer_a2830ec3780a553ca175e46bd5e0ad25f} 
 \index{Player@{Player}!print\_player@{print\_player}}
 \index{print\_player@{print\_player}!Player@{Player}}
@@ -298,11 +348,11 @@ Imprime as informações do jogador no console.
 
 Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00067}{67}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
-\Hypertarget{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d}\label{classPlayer_ac386ebe9f18601c9596f6b810d62ae3d} 
+\Hypertarget{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}\label{classPlayer_ad6d2436d7469a0be74c50cda572b63f4} 
 \index{Player@{Player}!register\_player@{register\_player}}
 \index{register\_player@{register\_player}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{register\_player()}{register\_player()}}
-{\footnotesize\ttfamily bool Player\+::register\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}}]{player\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void Player\+::register\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}}]{player\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -322,11 +372,11 @@ Registra um jogador em uma lista de jogadores.
 
 Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00074}{74}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
-\Hypertarget{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5}\label{classPlayer_a83b4fdf5bb2a5dece50f487385ebf4b5} 
+\Hypertarget{classPlayer_a730ec36911b6789978608b2ca0f46059}\label{classPlayer_a730ec36911b6789978608b2ca0f46059} 
 \index{Player@{Player}!remove\_player@{remove\_player}}
 \index{remove\_player@{remove\_player}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{remove\_player()}{remove\_player()}}
-{\footnotesize\ttfamily bool Player\+::remove\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string}]{username\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void Player\+::remove\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string}]{username\+\_\+received,  }\item[{std\+::list$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{player\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -344,7 +394,7 @@ Remove um jogador da lista de jogadores.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00085}{85}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Player_8cpp_source_l00086}{86}} do arquivo \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
 
 \Hypertarget{classPlayer_aa55f2098aa6892ff2879558316985521}\label{classPlayer_aa55f2098aa6892ff2879558316985521} 
 \index{Player@{Player}!set\_name@{set\_name}}

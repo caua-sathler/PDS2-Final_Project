@@ -1,0 +1,205 @@
+\doxysection{Referência do Arquivo tests/\+Reversi\+Class\+\_\+test.cpp}
+\hypertarget{ReversiClass__test_8cpp}{}\label{ReversiClass__test_8cpp}\index{tests/ReversiClass\_test.cpp@{tests/ReversiClass\_test.cpp}}
+{\ttfamily \#include "{}doctest.\+h"{}}\newline
+{\ttfamily \#include "{}Reversi.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Gráfico de dependência de inclusões para Reversi\+Class\+\_\+test.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ReversiClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}{DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ReversiClass__test_8cpp_a2219db5ff9c8844c2570d0340504244c}{create\+\_\+game\+\_\+board\+\_\+situation}} (char game\+\_\+board\+\_\+situation\mbox{[}\mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi}}\mbox{]}\mbox{[}\mbox{\hyperlink{Reversi_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi}}\mbox{]}, \mbox{\hyperlink{classReversi}{Reversi}} \&reversi\+\_\+game)
+\begin{DoxyCompactList}\small\item\em Aloca um tabuleiro com situações de teste no \doxylink{classReversi}{Reversi} sem a necessidade de uma partida real. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_aa2a316e7821b6d8c65bf433c1877189e}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+there\+\_\+player\+\_\+piece\+\_\+at\+\_\+the\+\_\+direction test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a69bd9b91752f162629ec0566287de1c4}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+space\+\_\+free\+\_\+reversi test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+valid\+\_\+move test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_afe55503d6ac745dbf05e8da09cb91f25}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+there\+\_\+direction\+\_\+that\+\_\+captures\+\_\+opponent"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a2f26beb5297b99a77eb1d2088b0ddd64}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+there\+\_\+valid\+\_\+move\+\_\+for\+\_\+player test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_aa1e7b361b613409b82350f15f5040f16}{TEST\+\_\+\+CASE}} ("{}Function check\+\_\+win test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a759c20b4a07439cd0513d61162c30477}{TEST\+\_\+\+CASE}} ("{}Function control\+\_\+num\+\_\+pieces\+\_\+player test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a8fb67e7f76d6250a23031a725b5b4938}{TEST\+\_\+\+CASE}} ("{}Function flip\+\_\+pieces test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a}{TEST\+\_\+\+CASE}} ("{}Function make\+\_\+move test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_aa0038da4ec22cb095091c0a409414605}{TEST\+\_\+\+CASE}} ("{}Function find\+\_\+all\+\_\+directions\+\_\+that\+\_\+make\+\_\+move test"{})
+\item 
+\mbox{\hyperlink{ReversiClass__test_8cpp_a288a812bb0f7ddf28b86decb3f904aa3}{TEST\+\_\+\+CASE}} ("{}Function process\+\_\+move"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{ReversiClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi}} = 8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Definições e macros}
+\Hypertarget{ReversiClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}\label{ReversiClass__test_8cpp_a623b8690a262536536a43eab2d7df03d} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\index{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+{\footnotesize\ttfamily \#define DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00001}{1}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Funções}
+\Hypertarget{ReversiClass__test_8cpp_a2219db5ff9c8844c2570d0340504244c}\label{ReversiClass__test_8cpp_a2219db5ff9c8844c2570d0340504244c} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!create\_game\_board\_situation@{create\_game\_board\_situation}}
+\index{create\_game\_board\_situation@{create\_game\_board\_situation}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_game\_board\_situation()}{create\_game\_board\_situation()}}
+{\footnotesize\ttfamily void create\+\_\+game\+\_\+board\+\_\+situation (\begin{DoxyParamCaption}\item[{char}]{game\+\_\+board\+\_\+situation\mbox{[}num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi\mbox{]}\mbox{[}num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi\mbox{]},  }\item[{\mbox{\hyperlink{classReversi}{Reversi}} \&}]{reversi\+\_\+game }\end{DoxyParamCaption})}
+
+
+
+Aloca um tabuleiro com situações de teste no \doxylink{classReversi}{Reversi} sem a necessidade de uma partida real. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+\_\+board\+\_\+situation} & Tabuleiro que simula situações de jogo \\
+\hline
+{\em reversi\+\_\+game} & Instância da classe \doxylink{classReversi}{Reversi} \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00016}{16}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_aa1e7b361b613409b82350f15f5040f16}\label{ReversiClass__test_8cpp_aa1e7b361b613409b82350f15f5040f16} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function check\+\_\+win test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00217}{217}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a759c20b4a07439cd0513d61162c30477}\label{ReversiClass__test_8cpp_a759c20b4a07439cd0513d61162c30477} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function control\+\_\+num\+\_\+pieces\+\_\+player test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00294}{294}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_aa0038da4ec22cb095091c0a409414605}\label{ReversiClass__test_8cpp_aa0038da4ec22cb095091c0a409414605} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function find\+\_\+all\+\_\+directions\+\_\+that\+\_\+make\+\_\+move test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00464}{464}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a8fb67e7f76d6250a23031a725b5b4938}\label{ReversiClass__test_8cpp_a8fb67e7f76d6250a23031a725b5b4938} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function flip\+\_\+pieces test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00312}{312}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a69bd9b91752f162629ec0566287de1c4}\label{ReversiClass__test_8cpp_a69bd9b91752f162629ec0566287de1c4} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+space\+\_\+free\+\_\+reversi test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00056}{56}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_afe55503d6ac745dbf05e8da09cb91f25}\label{ReversiClass__test_8cpp_afe55503d6ac745dbf05e8da09cb91f25} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+there\+\_\+direction\+\_\+that\+\_\+captures\+\_\+opponent"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00146}{146}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_aa2a316e7821b6d8c65bf433c1877189e}\label{ReversiClass__test_8cpp_aa2a316e7821b6d8c65bf433c1877189e} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+there\+\_\+player\+\_\+piece\+\_\+at\+\_\+the\+\_\+direction test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00025}{25}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a2f26beb5297b99a77eb1d2088b0ddd64}\label{ReversiClass__test_8cpp_a2f26beb5297b99a77eb1d2088b0ddd64} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+there\+\_\+valid\+\_\+move\+\_\+for\+\_\+player test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00169}{169}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883}\label{ReversiClass__test_8cpp_a7c6b26003cd27cba65321b13dd8fa883} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+valid\+\_\+move test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00082}{82}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a}\label{ReversiClass__test_8cpp_a0d24c04059493dd23c7c94148c90300a} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function make\+\_\+move test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00406}{406}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{ReversiClass__test_8cpp_a288a812bb0f7ddf28b86decb3f904aa3}\label{ReversiClass__test_8cpp_a288a812bb0f7ddf28b86decb3f904aa3} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function process\+\_\+move"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00511}{511}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Variáveis}
+\Hypertarget{ReversiClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}\label{ReversiClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa} 
+\index{ReversiClass\_test.cpp@{ReversiClass\_test.cpp}!num\_columns\_and\_rows\_reversi@{num\_columns\_and\_rows\_reversi}}
+\index{num\_columns\_and\_rows\_reversi@{num\_columns\_and\_rows\_reversi}!ReversiClass\_test.cpp@{ReversiClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_columns\_and\_rows\_reversi}{num\_columns\_and\_rows\_reversi}}
+{\footnotesize\ttfamily const int num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi = 8}
+
+
+
+Definição na linha \mbox{\hyperlink{ReversiClass__test_8cpp_source_l00008}{8}} do arquivo \mbox{\hyperlink{ReversiClass__test_8cpp_source}{Reversi\+Class\+\_\+test.\+cpp}}.
+

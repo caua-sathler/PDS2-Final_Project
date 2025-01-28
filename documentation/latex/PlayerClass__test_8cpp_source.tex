@@ -1,0 +1,142 @@
+\doxysection{Player\+Class\+\_\+test.\+cpp}
+\hypertarget{PlayerClass__test_8cpp_source}{}\label{PlayerClass__test_8cpp_source}\index{tests/PlayerClass\_test.cpp@{tests/PlayerClass\_test.cpp}}
+\mbox{\hyperlink{PlayerClass__test_8cpp}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00001}\mbox{\hyperlink{PlayerClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}{00001}}\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}doctest.h"{}}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8hpp}{Player.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00006}\mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{00006}}\ \mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{TEST\_CASE}}(\textcolor{stringliteral}{"{}method\ register\_player\ test"{}})}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00008}00008\ \ \ \ \ std::list<Player>\ player\_list;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player1;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{Player::register\_player}}(player1,\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00011}00011\ \ \ \ \ CHECK(player1\ ==\ player\_list.back());}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00013}00013\ \ \ \ \ player1.\mbox{\hyperlink{classPlayer_a45ad0b19fd0636c10158d4dc670118d3}{set\_username}}(\textcolor{stringliteral}{"{}Apelido"{}});\ player1.\mbox{\hyperlink{classPlayer_aa55f2098aa6892ff2879558316985521}{set\_name}}(\textcolor{stringliteral}{"{}Nome"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00014}00014\ \ \ \ \ player1.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Reversi"{}},\ -\/1);\ player1.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Lig4"{}},\ 2);\ player1.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Velha"{}},\ -\/3);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00015}00015\ \ \ \ \ player1.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Reversi"{}},\ 6);\ player1.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Lig4"{}},\ -\/5);\ player1.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Velha"{}},\ 4);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{Player::register\_player}}(player1,\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00017}00017\ \ \ \ \ CHECK(player1\ ==\ player\_list.back());}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player2(\textcolor{stringliteral}{"{}Nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido1"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{Player::register\_player}}(player2,\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00021}00021\ \ \ \ \ CHECK(player2\ ==\ player\_list.back());}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player3(\textcolor{stringliteral}{"{}Nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido2"{}},\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 3\}\},\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 4\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 5\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 6\}\});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{Player::register\_player}}(player3,\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00025}00025\ \ \ \ \ CHECK(player3\ ==\ player\_list.back());}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ *player4\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPlayer}{Player}}(\textcolor{stringliteral}{"{}Nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido3"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classPlayer_ad6d2436d7469a0be74c50cda572b63f4}{Player::register\_player}}(*player4,\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00029}00029\ \ \ \ \ CHECK(*player4\ ==\ player\_list.back());}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{delete}\ player4;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00033}\mbox{\hyperlink{PlayerClass__test_8cpp_ab2fc5acdf43bfedf8e453da2759e47b2}{00033}}\ \mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{TEST\_CASE}}(\textcolor{stringliteral}{"{}method\ remove\_player\ test"{}})}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player1,\ player2(\textcolor{stringliteral}{"{}nome"{}},\ \textcolor{stringliteral}{"{}Apelido1"{}}),\ player3(\textcolor{stringliteral}{"{}nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido2"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00036}00036\ \ \ \ \ std::list<Player>\ player\_list\ =\ \{player1,\ player2,\ player3\};}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classPlayer_a730ec36911b6789978608b2ca0f46059}{Player::remove\_player}}(\textcolor{stringliteral}{"{}"{}},\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00038}00038\ \ \ \ \ std::list<Player>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ player\_list.begin();\ it\ !=\ player\_list.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\ ==\ player1)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classPlayer_a730ec36911b6789978608b2ca0f46059}{Player::remove\_player}}(\textcolor{stringliteral}{"{}Apelido2"{}},\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ player\_list.begin();\ it\ !=\ player\_list.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\ ==\ player3)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player4(\textcolor{stringliteral}{"{}Nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido4"{}},\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 3\}\},\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 4\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 5\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 6\}\});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00049}00049\ \ \ \ \ player\_list.push\_back(player4);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classPlayer_a730ec36911b6789978608b2ca0f46059}{Player::remove\_player}}(\textcolor{stringliteral}{"{}Apelido4"{}},\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ player\_list.begin();\ it\ !=\ player\_list.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\ ==\ player4)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(\textcolor{keyword}{false});\ \ \ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ *player5\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPlayer}{Player}}(\textcolor{stringliteral}{"{}nome"{}},\ \textcolor{stringliteral}{"{}Apelido3"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00056}00056\ \ \ \ \ player\_list.push\_back(*player5);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classPlayer_a730ec36911b6789978608b2ca0f46059}{Player::remove\_player}}(\textcolor{stringliteral}{"{}Apelido3"{}},\ player\_list);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ player\_list.begin();\ it\ !=\ player\_list.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\ ==\ *player5)}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ CHECK(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{delete}\ player5;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00064}\mbox{\hyperlink{PlayerClass__test_8cpp_a6fd246ecc073b7a3836158472708fd21}{00064}}\ \mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{TEST\_CASE}}(\textcolor{stringliteral}{"{}method\ add\_win\ test"{}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00066}00066\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00067}00067\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Lig4"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00068}00068\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Velha"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00069}00069\ \ \ \ \ std::map<std::string,\ int>\ win\_test\ =\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 1\}\};}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00070}00070\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}()\ ==\ win\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00072}00072\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Velha"{}},\ -\/13);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00073}00073\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Velha"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00074}00074\ \ \ \ \ win\_test[\textcolor{stringliteral}{"{}Velha"{}}]\ =\ -\/12;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00075}00075\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}()\ ==\ win\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00077}00077\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Reversi"{}},\ 2147483647);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00078}00078\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00079}00079\ \ \ \ \ win\_test[\textcolor{stringliteral}{"{}Reversi"{}}]\ =\ 2147483648;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00080}00080\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}()\ ==\ win\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00082}00082\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_a6b4a54a2780cf7701dac19607d5ba6e4}{set\_num\_win}}(\textcolor{stringliteral}{"{}Lig4"{}},\ -\/2147483648);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00083}00083\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Lig4"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00084}00084\ \ \ \ \ win\_test[\textcolor{stringliteral}{"{}Lig4"{}}]\ =\ -\/2147483647;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00085}00085\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}()\ ==\ win\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00087}00087\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ab30603cbe748d9cff259a83841461b16}{add\_win}}(\textcolor{stringliteral}{"{}Game"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00088}00088\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_a186fc07cf1c11b7a60336c67823adbbd}{get\_num\_win}}()\ ==\ win\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00091}\mbox{\hyperlink{PlayerClass__test_8cpp_ab2aa99a2d0baf31a3dbd6de5a5805fac}{00091}}\ \mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{TEST\_CASE}}(\textcolor{stringliteral}{"{}method\ add\_loss\ test"{}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00093}00093\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00094}00094\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Lig4"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00095}00095\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Velha"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00096}00096\ \ \ \ \ std::map<std::string,\ int>\ loss\_test\ =\ \{\{\textcolor{stringliteral}{"{}Reversi"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Lig4"{}},\ 1\},\ \{\textcolor{stringliteral}{"{}Velha"{}},\ 1\}\};}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00097}00097\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}()\ ==\ loss\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00099}00099\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Velha"{}},\ -\/13);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00100}00100\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Velha"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00101}00101\ \ \ \ \ loss\_test[\textcolor{stringliteral}{"{}Velha"{}}]\ =\ -\/12;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00102}00102\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}()\ ==\ loss\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00104}00104\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Reversi"{}},\ 2147483647);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00105}00105\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Reversi"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00106}00106\ \ \ \ \ loss\_test[\textcolor{stringliteral}{"{}Reversi"{}}]\ =\ 2147483648;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00107}00107\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}()\ ==\ loss\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00109}00109\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_abfd5eb28380e2e36e37fe54be87dd04a}{set\_num\_loss}}(\textcolor{stringliteral}{"{}Lig4"{}},\ -\/2147483648);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00110}00110\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Lig4"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00111}00111\ \ \ \ \ loss\_test[\textcolor{stringliteral}{"{}Lig4"{}}]\ =\ -\/2147483647;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00112}00112\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}()\ ==\ loss\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00114}00114\ \ \ \ \ player.\mbox{\hyperlink{classPlayer_ad94f66bc9ff376f44d30b78b5c1e3965}{add\_loss}}(\textcolor{stringliteral}{"{}Game"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00115}00115\ \ \ \ \ CHECK(player.\mbox{\hyperlink{classPlayer_af260cc303d2428256e9bfcca9ea25059}{get\_num\_loss}}()\ ==\ loss\_test);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00118}\mbox{\hyperlink{PlayerClass__test_8cpp_a49ae07b2d5726fbeb0856e69c86260f7}{00118}}\ \mbox{\hyperlink{PlayerClass__test_8cpp_a20b2728635e4a20227560b2e4ddcc04f}{TEST\_CASE}}(\textcolor{stringliteral}{"{}method\ find\_player\_in\_list\ test"{}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player1(\textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Apelido1"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00120}00120\ \ \ \ \ std::list<Player>\ player\_list;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00121}00121\ \ \ \ \ player\_list.push\_back(player1);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00122}00122\ \ \ \ \ CHECK(\mbox{\hyperlink{classPlayer_a8d0f807a188cff92c14175f85da52471}{Player::find\_player\_in\_list}}(player\_list,\ \textcolor{stringliteral}{"{}Apelido1"{}})\ ==\ \&(*player\_list.begin()));}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ player2(\textcolor{stringliteral}{"{}nome"{}},\ \textcolor{stringliteral}{"{}Apelido2"{}}),\ player3(\textcolor{stringliteral}{"{}nome\ sobrenome"{}},\ \textcolor{stringliteral}{"{}Apelido3"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00125}00125\ \ \ \ \ player\_list.push\_back(player2);\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00126}00126\ \ \ \ \ player\_list.push\_back(player3);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00127}00127\ \ \ \ \ std::list<Player>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00128}00128\ \ \ \ \ it\ =\ std::next(player\_list.begin(),\ 1);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00129}00129\ \ \ \ \ CHECK(\mbox{\hyperlink{classPlayer_a8d0f807a188cff92c14175f85da52471}{Player::find\_player\_in\_list}}(player\_list,\ \textcolor{stringliteral}{"{}Apelido2"{}})\ ==\ \&(*it));}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00130}00130\ \ \ \ \ CHECK(\mbox{\hyperlink{classPlayer_a8d0f807a188cff92c14175f85da52471}{Player::find\_player\_in\_list}}(player\_list,\ \textcolor{stringliteral}{"{}Apelido3"{}})\ ==\ \&(*player\_list.rbegin()));}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ *player4\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPlayer}{Player}}(\textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Apelido4"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00133}00133\ \ \ \ \ player\_list.push\_back(*player4);}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00134}00134\ \ \ \ \ CHECK(\mbox{\hyperlink{classPlayer_a8d0f807a188cff92c14175f85da52471}{Player::find\_player\_in\_list}}(player\_list,\ \textcolor{stringliteral}{"{}Apelido4"{}})\ ==\ \&(*player\_list.rbegin()));}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keyword}{delete}\ player4;}
+\DoxyCodeLine{\Hypertarget{PlayerClass__test_8cpp_source_l00136}00136\ \}}
+
+\end{DoxyCode}

@@ -12,28 +12,28 @@
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00008}\mbox{\hyperlink{classTic__tac__toe_a6e9f6759b5abffaaf059de910d141dc3}{00008}}\ \mbox{\hyperlink{classTic__tac__toe_a6e9f6759b5abffaaf059de910d141dc3}{Tic\_tac\_toe::Tic\_tac\_toe}}()\ :\ \mbox{\hyperlink{classGame}{Game}}(\mbox{\hyperlink{Tic__tac__toe_8cpp_acfdb99af3afce9e6da945c95be765ebb}{num\_rows\_received}},\ \mbox{\hyperlink{Tic__tac__toe_8cpp_affc09760547c96857e4684381e1f6224}{num\_columns\_received}}),\ current\_player(\textcolor{stringliteral}{'X'}),\ winner(\textcolor{stringliteral}{'F'})\ \{\}}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00011}\mbox{\hyperlink{classTic__tac__toe_a18884393e630baa8c59414c966c4690e}{00011}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{Tic\_tac\_toe::is\_valid\_move}}(\textcolor{keywordtype}{int}\&\ x,\ \textcolor{keywordtype}{int}\&\ y)\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00012}00012\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(x,\ y);\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(x,\ y);\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00016}00016\ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00017}00017\ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00019}\mbox{\hyperlink{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}{00019}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}{Tic\_tac\_toe::print\_tic\_tac\_toe\_board}}()\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00020}00020\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\_game\_board}}();}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00022}00022\ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00011}\mbox{\hyperlink{classTic__tac__toe_a18884393e630baa8c59414c966c4690e}{00011}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{Tic\_tac\_toe::is\_valid\_move}}(\textcolor{keywordtype}{int}\&\ x,\ \textcolor{keywordtype}{int}\&\ y)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\_move\_inside\_board}}(x,\ y)\ ||\ !\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\_space\_free}}(x,\ y))\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Coordenada\ invalida,\ vez\ passada\ para\ o\ oponente"{}});}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00015}00015\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00018}00018\ \ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00020}\mbox{\hyperlink{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTic__tac__toe_aed1c8977b5cf8f35a464fab86c6d44b2}{Tic\_tac\_toe::print\_tic\_tac\_toe\_board}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00021}00021\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\_game\_board}}();}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00023}00023\ \}}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00025}\mbox{\hyperlink{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7}{Tic\_tac\_toe::make\_move}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00026}00026\ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00027}00027\ \ \ \ \ x\ -\/=\ 1;}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00028}00028\ \ \ \ \ y\ -\/=\ 1;}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{try}\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00031}00031\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{is\_valid\_move}}(x,\ y))\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00026}\mbox{\hyperlink{classTic__tac__toe_a84431b07f2390c16f85fa4a01a6cdc79}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTic__tac__toe_a031548e8d6fa56b4e51b028078775ac7}{Tic\_tac\_toe::make\_move}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00028}00028\ \ \ \ \ x\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00029}00029\ \ \ \ \ y\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00032}00032\ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTic__tac__toe_adee4ca1dc09fa9fb231e9d23b308126c}{is\_valid\_move}}(x,\ y))\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}{set\_space}}(x,\ y,\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}});}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00035}00035\ \ \ \ \ }
@@ -43,71 +43,71 @@
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ =\ \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\_players}}(\mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}});}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00042}00042\ \ \ \ \ \}\ \ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00043}00043\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::out\_of\_range\&\ e)\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::runtime\_error\&\ e)\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00045}00045\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ std::runtime\_error\&\ e)}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00050}00050\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00052}00052\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00054}00054\ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00056}\mbox{\hyperlink{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}{00056}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}{Tic\_tac\_toe::check\_tic\_tac\_toe\_win}}()\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00057}00057\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ há\ vitória\ nas\ linhas\ ou\ colunas}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00071}00071\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ há\ vitória\ nas\ diagonais}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00078}00078\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00084}00084\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'F'};\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00086}00086\ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00089}\mbox{\hyperlink{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}{00089}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}{Tic\_tac\_toe::check\_tie}}()\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00090}00090\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00092}00092\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ j)\ ==\ \textcolor{charliteral}{'\ '})\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Erro:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ =\ \mbox{\hyperlink{classGame_a00fe5a25022c7ee8cccb86ffae287054}{switch\_players}}(\mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}});}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00052}\mbox{\hyperlink{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}{00052}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classTic__tac__toe_a4b3655eea3b4c80c59d975814738647e}{Tic\_tac\_toe::check\_tic\_tac\_toe\_win}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00053}00053\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ há\ vitória\ nas\ linhas\ ou\ colunas}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ i)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ há\ vitória\ nas\ diagonais}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00074}00074\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(0,\ 2)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(1,\ 1)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}}\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(2,\ 0)\ ==\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}})\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00080}00080\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'F'};\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00085}\mbox{\hyperlink{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}{00085}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTic__tac__toe_a868dac0f7827c9171fd7f83656f813ee}{Tic\_tac\_toe::check\_tie}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00086}00086\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}}.\mbox{\hyperlink{classBoard_a80389d7228ad747ca8f4700787341628}{get\_space}}(i,\ j)\ ==\ \textcolor{charliteral}{'\ '})\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00096}00096\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00098}00098\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00100}00100\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00101}00101\ \}}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00104}\mbox{\hyperlink{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}{00104}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}{Tic\_tac\_toe::get\_current\_player}}()\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00105}00105\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00100}\mbox{\hyperlink{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}{00100}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classTic__tac__toe_a4a7e94369fe17c8307feb0f56d16ba23}{Tic\_tac\_toe::get\_current\_player}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00101}00101\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTic__tac__toe_a1c29d698681e0f397d9e9cb03fafd9cd}{current\_player}};}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00105}\mbox{\hyperlink{classTic__tac__toe_ab5946f26c1af8d08bf181d25eb662ae8}{00105}}\ \mbox{\hyperlink{classBoard}{Board}}\&\ \mbox{\hyperlink{classTic__tac__toe_ab5946f26c1af8d08bf181d25eb662ae8}{Tic\_tac\_toe::get\_game\_board}}()\{}
+\DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classGame_adff7857a63e229e965d59ad55bcad92e}{game\_board}};}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00107}00107\ \}}
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00108}00108\ }
 \DoxyCodeLine{\Hypertarget{Tic__tac__toe_8cpp_source_l00109}\mbox{\hyperlink{classTic__tac__toe_a4991caf1bd116a60d83177ea9002d9c3}{00109}}\ \mbox{\hyperlink{classTic__tac__toe_a4991caf1bd116a60d83177ea9002d9c3}{Tic\_tac\_toe::\string~Tic\_tac\_toe}}()\ \{\}}

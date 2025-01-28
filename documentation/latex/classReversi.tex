@@ -26,44 +26,46 @@ Diagrama de colaboração para Reversi\+:
 \begin{DoxyCompactList}\small\item\em Retorna o número de peças do jogador X. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_affed5bf4df7eebde380115b2a0128b28}{get\+\_\+num\+\_\+pieces\+\_\+player\+\_\+O}} ()
 \begin{DoxyCompactList}\small\item\em Retorna o número de peças do jogador O. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a073280d005dd67143287386a32075e28}{set\+\_\+num\+\_\+pieces\+\_\+player\+\_\+X}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{x}})
+\begin{DoxyCompactList}\small\item\em Define manualmente o número de peças do jogador X. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a6f5c3659e138d576ac0432d3dcc8ffeb}{set\+\_\+num\+\_\+pieces\+\_\+player\+\_\+O}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{x}})
+\begin{DoxyCompactList}\small\item\em Define manualmente o número de peças do jogador O. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard}{Board}} \& \mbox{\hyperlink{classReversi_a64396e43a1c3c2543ecd88178ca7ed19}{get\+\_\+game\+\_\+board}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tabuleiro de \doxylink{classReversi}{Reversi} completo. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a40b8be4327172dc9af60d93325af7bb5}{start\+\_\+reversi\+\_\+board}} ()
 \begin{DoxyCompactList}\small\item\em Inicializa o tabuleiro com as peças centrais do \doxylink{classReversi}{Reversi}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_af30ad7ad93e9db13382280f064f538a5}{print\+\_\+reversi\+\_\+board}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}}
-\begin{DoxyCompactList}\small\item\em Imprime o estado atual do tabuleiro. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_ad2680149f9c6e7175ac9683fc737f716}{is\+\_\+there\+\_\+player\+\_\+piece\+\_\+at\+\_\+the\+\_\+direction}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}} std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{direction}}, std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{adjacent\+\_\+square}}) \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}}
 \begin{DoxyCompactList}\small\item\em Verifica se há peças do jogador na direção especificada. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a0f06a948b1980191d9f0b442171bd55e}{is\+\_\+space\+\_\+free\+\_\+reversi}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{x}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{y}}) \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}}
-\begin{DoxyCompactList}\small\item\em Verifica se uma posição no tabuleiro está livre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a17a6bf432ee126989ff993e8565ecb88}{is\+\_\+there\+\_\+direction\+\_\+that\+\_\+captures\+\_\+opponent}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}} std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece\+\_\+type}})
 \begin{DoxyCompactList}\small\item\em Verifica se há alguma direção que captura peças do oponente. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{is\+\_\+valid\+\_\+move}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
-\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a0f06a948b1980191d9f0b442171bd55e}{is\+\_\+space\+\_\+free\+\_\+reversi}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{x}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{y}}) \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}}
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição no tabuleiro está livre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a80a4baf7512081f2d69178aaaa20c2e9}{is\+\_\+valid\+\_\+move}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece\+\_\+type}})
 \begin{DoxyCompactList}\small\item\em Verifica se uma jogada específica é válida. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_aa98fa3073fdc3293c7e607552c23f872}{indicate\+\_\+all\+\_\+direction\+\_\+to\+\_\+make\+\_\+move}} ()
-\begin{DoxyCompactList}\small\item\em Indica todas as direções possíveis para realizar um movimento. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}{find\+\_\+all\+\_\+directions\+\_\+to\+\_\+make\+\_\+move}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}}, std\+::list$<$ std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{directions\+\_\+to\+\_\+capture\+\_\+opponents}})
-\begin{DoxyCompactList}\small\item\em Encontra todas as direções válidas para capturar peças do oponente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a49be6ec4f973ea46f84594cf15033cdc}{is\+\_\+there\+\_\+valid\+\_\+move\+\_\+for\+\_\+player}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}})
+\begin{DoxyCompactList}\small\item\em Verifica se há uma jogada válida para o jogador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_ada1860cda1cf2d3debab9cc24885e3fd}{check\+\_\+win}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{is\+\_\+there\+\_\+move\+\_\+for\+\_\+player}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{opponent\+\_\+piece}})
+\begin{DoxyCompactList}\small\item\em Verifica se o jogo tem vencedor considerando as jogadas restantes. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a92788664d879ed935b46928f40f5152e}{flip\+\_\+pieces}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{directions}}, std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}})
 \begin{DoxyCompactList}\small\item\em Captura peças do oponente em uma direção específica. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_aba9258082f32fdec0963f66469f4eadc}{control\+\_\+num\+\_\+pieces\+\_\+players}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{num\+\_\+pieces\+\_\+flipped}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}})
 \begin{DoxyCompactList}\small\item\em Controla o número de peças dos jogadores após uma jogada. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{make\+\_\+move}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
-\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a5f8ceb717249ae28224f722689e8a266}{make\+\_\+move}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}}, std\+::list$<$ std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{directions\+\_\+to\+\_\+capture\+\_\+opponents}})
 \begin{DoxyCompactList}\small\item\em Realiza a jogada do jogador atual. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a49be6ec4f973ea46f84594cf15033cdc}{is\+\_\+there\+\_\+valid\+\_\+move\+\_\+for\+\_\+player}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}})
-\begin{DoxyCompactList}\small\item\em Verifica se há uma jogada válida para o jogador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}{find\+\_\+all\+\_\+directions\+\_\+to\+\_\+make\+\_\+move}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece}}, std\+::list$<$ std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ $>$ \&\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{directions\+\_\+to\+\_\+capture\+\_\+opponents}})
+\begin{DoxyCompactList}\small\item\em Encontra todas as direções válidas para capturar peças do oponente. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a1e85bfa378f2f97e4dead2da81aa7584}{process\+\_\+move}} (std\+::array$<$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}, 2 $>$ \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{move\+\_\+coordinates}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player\+\_\+piece\+\_\+type}})
 \begin{DoxyCompactList}\small\item\em Processa uma jogada e verifica sua validade. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_aa5e2fd3bb4579d881057646d17e296a8}{check\+\_\+win}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
-\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_ada1860cda1cf2d3debab9cc24885e3fd}{check\+\_\+win}} (\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{is\+\_\+there\+\_\+move\+\_\+for\+\_\+player}}, \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{char}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{opponent\+\_\+piece}})
-\begin{DoxyCompactList}\small\item\em Verifica se o jogo tem vencedor considerando as jogadas restantes. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_ab4ea15cb7f793737d4e1458721c767ec}{register\+\_\+win\+\_\+and\+\_\+loss}} (\mbox{\hyperlink{classPlayer}{Player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player1}}, \mbox{\hyperlink{classPlayer}{Player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{player2}})
 \begin{DoxyCompactList}\small\item\em Registra vitória e derrota dos jogadores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classReversi_afd006e4fdacdedc4a3bb34fe6f1d1940}{\texorpdfstring{$\sim$}{\string~}\+Reversi}} ()
-\begin{DoxyCompactList}\small\item\em Destrutor do jogo \doxylink{classReversi}{Reversi}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destrutor do jogo \doxylink{classReversi}{Reversi}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_a01ba3dbf7dc3e6d204334917924a626c}{is\+\_\+valid\+\_\+move}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{const}} \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{bool}} \mbox{\hyperlink{classReversi_aa5e2fd3bb4579d881057646d17e296a8}{check\+\_\+win}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} \mbox{\hyperlink{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}{make\+\_\+move}} () \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{override}}
+\begin{DoxyCompactList}\small\item\em Função declarada somente para fins de sobregarga. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membros Públicos herdados de \mbox{\hyperlink{classGame}{Game}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -110,7 +112,7 @@ Construtor padrão do jogo \doxylink{classReversi}{Reversi}. Inicializa o tabule
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00035}{35}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00009}{9}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_afd006e4fdacdedc4a3bb34fe6f1d1940}\label{classReversi_afd006e4fdacdedc4a3bb34fe6f1d1940} 
 \index{Reversi@{Reversi}!````~Reversi@{\texorpdfstring{$\sim$}{\string~}Reversi}}
@@ -124,7 +126,7 @@ Destrutor do jogo \doxylink{classReversi}{Reversi}.
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00273}{273}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00261}{261}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 
 
@@ -145,7 +147,7 @@ Implementa \mbox{\hyperlink{classGame_a4632d0ae33d289bd6c4af2bc339ace18}{Game}}.
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00281}{281}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00270}{270}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_ada1860cda1cf2d3debab9cc24885e3fd}\label{classReversi_ada1860cda1cf2d3debab9cc24885e3fd} 
 \index{Reversi@{Reversi}!check\_win@{check\_win}}
@@ -169,7 +171,7 @@ Verifica se o jogo tem vencedor considerando as jogadas restantes.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00252}{252}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00145}{145}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_aba9258082f32fdec0963f66469f4eadc}\label{classReversi_aba9258082f32fdec0963f66469f4eadc} 
 \index{Reversi@{Reversi}!control\_num\_pieces\_players@{control\_num\_pieces\_players}}
@@ -190,7 +192,7 @@ Controla o número de peças dos jogadores após uma jogada.
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00173}{173}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00171}{171}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a}\label{classReversi_a26adbbc4cb45af0b9ce2b20323c4d91a} 
 \index{Reversi@{Reversi}!find\_all\_directions\_to\_make\_move@{find\_all\_directions\_to\_make\_move}}
@@ -213,7 +215,7 @@ Encontra todas as direções válidas para capturar peças do oponente.
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00123}{123}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00201}{201}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a92788664d879ed935b46928f40f5152e}\label{classReversi_a92788664d879ed935b46928f40f5152e} 
 \index{Reversi@{Reversi}!flip\_pieces@{flip\_pieces}}
@@ -236,7 +238,21 @@ Captura peças do oponente em uma direção específica.
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00154}{154}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00152}{152}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+
+\Hypertarget{classReversi_a64396e43a1c3c2543ecd88178ca7ed19}\label{classReversi_a64396e43a1c3c2543ecd88178ca7ed19} 
+\index{Reversi@{Reversi}!get\_game\_board@{get\_game\_board}}
+\index{get\_game\_board@{get\_game\_board}!Reversi@{Reversi}}
+\doxysubsubsection{\texorpdfstring{get\_game\_board()}{get\_game\_board()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBoard}{Board}} \& Reversi\+::get\+\_\+game\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o tabuleiro de \doxylink{classReversi}{Reversi} completo. 
+
+Essa função foi declarada na classe \doxylink{classReversi}{Reversi} unicamente para possibilitar os testes de outras funções da classe. Por isso, sua utilização se restringe ao diretório /tests/. 
+
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00032}{32}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_affed5bf4df7eebde380115b2a0128b28}\label{classReversi_affed5bf4df7eebde380115b2a0128b28} 
 \index{Reversi@{Reversi}!get\_num\_pieces\_player\_O@{get\_num\_pieces\_player\_O}}
@@ -253,7 +269,7 @@ Número de peças do jogador O.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00023}{23}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00021}{21}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a98215aaaace6102df09ad9862f2ef4ab}\label{classReversi_a98215aaaace6102df09ad9862f2ef4ab} 
 \index{Reversi@{Reversi}!get\_num\_pieces\_player\_X@{get\_num\_pieces\_player\_X}}
@@ -270,17 +286,7 @@ Número de peças do jogador X.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00017}{17}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
-
-\Hypertarget{classReversi_aa98fa3073fdc3293c7e607552c23f872}\label{classReversi_aa98fa3073fdc3293c7e607552c23f872} 
-\index{Reversi@{Reversi}!indicate\_all\_direction\_to\_make\_move@{indicate\_all\_direction\_to\_make\_move}}
-\index{indicate\_all\_direction\_to\_make\_move@{indicate\_all\_direction\_to\_make\_move}!Reversi@{Reversi}}
-\doxysubsubsection{\texorpdfstring{indicate\_all\_direction\_to\_make\_move()}{indicate\_all\_direction\_to\_make\_move()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} Reversi\+::indicate\+\_\+all\+\_\+direction\+\_\+to\+\_\+make\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Indica todas as direções possíveis para realizar um movimento. 
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00016}{16}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a0f06a948b1980191d9f0b442171bd55e}\label{classReversi_a0f06a948b1980191d9f0b442171bd55e} 
 \index{Reversi@{Reversi}!is\_space\_free\_reversi@{is\_space\_free\_reversi}}
@@ -304,7 +310,7 @@ Verifica se uma posição no tabuleiro está livre.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00043}{43}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00094}{94}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a17a6bf432ee126989ff993e8565ecb88}\label{classReversi_a17a6bf432ee126989ff993e8565ecb88} 
 \index{Reversi@{Reversi}!is\_there\_direction\_that\_captures\_opponent@{is\_there\_direction\_that\_captures\_opponent}}
@@ -328,7 +334,7 @@ Verifica se há alguma direção que captura peças do oponente.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00072}{72}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00064}{64}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_ad2680149f9c6e7175ac9683fc737f716}\label{classReversi_ad2680149f9c6e7175ac9683fc737f716} 
 \index{Reversi@{Reversi}!is\_there\_player\_piece\_at\_the\_direction@{is\_there\_player\_piece\_at\_the\_direction}}
@@ -354,7 +360,7 @@ Verifica se há peças do jogador na direção especificada.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00051}{51}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00044}{44}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a49be6ec4f973ea46f84594cf15033cdc}\label{classReversi_a49be6ec4f973ea46f84594cf15033cdc} 
 \index{Reversi@{Reversi}!is\_there\_valid\_move\_for\_player@{is\_there\_valid\_move\_for\_player}}
@@ -376,7 +382,7 @@ Verifica se há uma jogada válida para o jogador.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00224}{224}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00118}{118}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a01ba3dbf7dc3e6d204334917924a626c}\label{classReversi_a01ba3dbf7dc3e6d204334917924a626c} 
 \index{Reversi@{Reversi}!is\_valid\_move@{is\_valid\_move}}
@@ -394,7 +400,7 @@ Implementa \mbox{\hyperlink{classGame_ad3d75d8a335496c94eb0b8a4bb6d9d3a}{Game}}.
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00277}{277}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00266}{266}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a80a4baf7512081f2d69178aaaa20c2e9}\label{classReversi_a80a4baf7512081f2d69178aaaa20c2e9} 
 \index{Reversi@{Reversi}!is\_valid\_move@{is\_valid\_move}}
@@ -418,7 +424,7 @@ Verifica se uma jogada específica é válida.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00106}{106}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00101}{101}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a2aa49f67832e11d2b0a66b020b51d59b}\label{classReversi_a2aa49f67832e11d2b0a66b020b51d59b} 
 \index{Reversi@{Reversi}!make\_move@{make\_move}}
@@ -436,7 +442,7 @@ Implementa \mbox{\hyperlink{classGame_a7c8ebe7e6bb5d55430e66f47da751d23}{Game}}.
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00279}{279}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00263}{263}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a5f8ceb717249ae28224f722689e8a266}\label{classReversi_a5f8ceb717249ae28224f722689e8a266} 
 \index{Reversi@{Reversi}!make\_move@{make\_move}}
@@ -459,21 +465,7 @@ Realiza a jogada do jogador atual.
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00191}{191}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
-
-\Hypertarget{classReversi_af30ad7ad93e9db13382280f064f538a5}\label{classReversi_af30ad7ad93e9db13382280f064f538a5} 
-\index{Reversi@{Reversi}!print\_reversi\_board@{print\_reversi\_board}}
-\index{print\_reversi\_board@{print\_reversi\_board}!Reversi@{Reversi}}
-\doxysubsubsection{\texorpdfstring{print\_reversi\_board()}{print\_reversi\_board()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} Reversi\+::print\+\_\+reversi\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Imprime o estado atual do tabuleiro. 
-
-
-
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00029}{29}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00185}{185}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a1e85bfa378f2f97e4dead2da81aa7584}\label{classReversi_a1e85bfa378f2f97e4dead2da81aa7584} 
 \index{Reversi@{Reversi}!process\_move@{process\_move}}
@@ -497,7 +489,7 @@ Processa uma jogada e verifica sua validade.
 \end{DoxyReturn}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00208}{208}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00231}{231}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_ab4ea15cb7f793737d4e1458721c767ec}\label{classReversi_ab4ea15cb7f793737d4e1458721c767ec} 
 \index{Reversi@{Reversi}!register\_win\_and\_loss@{register\_win\_and\_loss}}
@@ -518,7 +510,35 @@ Registra vitória e derrota dos jogadores.
 \end{DoxyParams}
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00260}{260}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00247}{247}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+
+\Hypertarget{classReversi_a6f5c3659e138d576ac0432d3dcc8ffeb}\label{classReversi_a6f5c3659e138d576ac0432d3dcc8ffeb} 
+\index{Reversi@{Reversi}!set\_num\_pieces\_player\_O@{set\_num\_pieces\_player\_O}}
+\index{set\_num\_pieces\_player\_O@{set\_num\_pieces\_player\_O}!Reversi@{Reversi}}
+\doxysubsubsection{\texorpdfstring{set\_num\_pieces\_player\_O()}{set\_num\_pieces\_player\_O()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} Reversi\+::set\+\_\+num\+\_\+pieces\+\_\+player\+\_\+O (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}}]{x }\end{DoxyParamCaption})}
+
+
+
+Define manualmente o número de peças do jogador O. 
+
+Essa função foi criada unicamente para possibilitar os testes de outras funções da classe \doxylink{classReversi}{Reversi}. Por isso, sua utilização se restringe ao diretório /tests/. 
+
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00028}{28}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+
+\Hypertarget{classReversi_a073280d005dd67143287386a32075e28}\label{classReversi_a073280d005dd67143287386a32075e28} 
+\index{Reversi@{Reversi}!set\_num\_pieces\_player\_X@{set\_num\_pieces\_player\_X}}
+\index{set\_num\_pieces\_player\_X@{set\_num\_pieces\_player\_X}!Reversi@{Reversi}}
+\doxysubsubsection{\texorpdfstring{set\_num\_pieces\_player\_X()}{set\_num\_pieces\_player\_X()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{void}} Reversi\+::set\+\_\+num\+\_\+pieces\+\_\+player\+\_\+X (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classReversi_aa93504480ca3905f753994838710e89f}{int}}}]{x }\end{DoxyParamCaption})}
+
+
+
+Define manualmente o número de peças do jogador X. 
+
+Essa função foi criada unicamente para possibilitar os testes de outras funções da classe \doxylink{classReversi}{Reversi}. Por isso, sua utilização se restringe ao diretório /tests/. 
+
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00025}{25}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 \Hypertarget{classReversi_a40b8be4327172dc9af60d93325af7bb5}\label{classReversi_a40b8be4327172dc9af60d93325af7bb5} 
 \index{Reversi@{Reversi}!start\_reversi\_board@{start\_reversi\_board}}
@@ -532,7 +552,7 @@ Inicializa o tabuleiro com as peças centrais do \doxylink{classReversi}{Reversi
 
 
 
-Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00008}{8}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Reversi_8cpp_source_l00036}{36}} do arquivo \mbox{\hyperlink{Reversi_8cpp_source}{Reversi.\+cpp}}.
 
 
 

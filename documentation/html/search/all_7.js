@@ -1,13 +1,6 @@
 var searchData=
 [
-  ['name_0',['name',['../classPlayer.html#af9c920fabaafdeb7961a645315b521ff',1,'Player']]],
-  ['num_5fcolumns_1',['num_columns',['../classBoard.html#a667425d93a951ac95aa0301e9fc3104f',1,'Board']]],
-  ['num_5fcolumns_5fand_5frows_5freversi_2',['num_columns_and_rows_reversi',['../Reversi_8cpp.html#a8c5e81bb163eceb85cf56a0c40ecdaaa',1,'Reversi.cpp']]],
-  ['num_5fcolumns_5freceived_3',['num_columns_received',['../Tic__tac__toe_8cpp.html#affc09760547c96857e4684381e1f6224',1,'Tic_tac_toe.cpp']]],
-  ['num_5floss_4',['num_loss',['../classPlayer.html#ade5357b25273c454d59d50894846bc4a',1,'Player']]],
-  ['num_5fpieces_5fplayer_5fo_5',['num_pieces_player_O',['../classReversi.html#a6b01ed06db05f451b6fb9d1637863ee7',1,'Reversi']]],
-  ['num_5fpieces_5fplayer_5fx_6',['num_pieces_player_X',['../classReversi.html#aa93504480ca3905f753994838710e89f',1,'Reversi']]],
-  ['num_5frows_7',['num_rows',['../classBoard.html#adda5ad3381a789f8368073d081304f23',1,'Board']]],
-  ['num_5frows_5freceived_8',['num_rows_received',['../Tic__tac__toe_8cpp.html#acfdb99af3afce9e6da945c95be765ebb',1,'Tic_tac_toe.cpp']]],
-  ['num_5fwin_9',['num_win',['../classPlayer.html#a29a87c8236f29d234310e87b77009193',1,'Player']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['make_5fmove_2',['make_move',['../classConnect4.html#a273fd400836fffb0c7f5ac6b48471db3',1,'Connect4::make_move() override'],['../classConnect4.html#aa2f1e0cb5f1a8632f90ace073f00df9d',1,'Connect4::make_move(int column)'],['../classGame.html#a7c8ebe7e6bb5d55430e66f47da751d23',1,'Game::make_move()'],['../classReversi.html#a5f8ceb717249ae28224f722689e8a266',1,'Reversi::make_move(std::array&lt; int, 2 &gt; move_coordinates, char player_piece, std::list&lt; std::array&lt; int, 2 &gt; &gt; &amp;directions_to_capture_opponents)'],['../classReversi.html#a2aa49f67832e11d2b0a66b020b51d59b',1,'Reversi::make_move() override'],['../classTic__tac__toe.html#a031548e8d6fa56b4e51b028078775ac7',1,'Tic_tac_toe::make_move() override'],['../classTic__tac__toe.html#a84431b07f2390c16f85fa4a01a6cdc79',1,'Tic_tac_toe::make_move(int x, int y)']]]
 ];

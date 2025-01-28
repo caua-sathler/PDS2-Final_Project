@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['indicate_5fall_5fdirection_5fto_5fmake_5fmove_0',['indicate_all_direction_to_make_move',['../classReversi.html#aa98fa3073fdc3293c7e607552c23f872',1,'Reversi']]],
-  ['is_5fboard_5ffull_1',['is_board_full',['../classConnect4.html#aebe9a9afdf21fcedf9c1e430ef9eceed',1,'Connect4']]],
-  ['is_5fmove_5finside_5fboard_2',['is_move_inside_board',['../classBoard.html#a0ff3e0e0042eea4ff717336eee295cd0',1,'Board']]],
-  ['is_5fspace_5ffree_3',['is_space_free',['../classBoard.html#ab7fc7a0f537da31eb4308a0903d14f76',1,'Board']]],
-  ['is_5fspace_5ffree_5freversi_4',['is_space_free_reversi',['../classReversi.html#a0f06a948b1980191d9f0b442171bd55e',1,'Reversi']]],
-  ['is_5fthere_5fdirection_5fthat_5fcaptures_5fopponent_5',['is_there_direction_that_captures_opponent',['../classReversi.html#a17a6bf432ee126989ff993e8565ecb88',1,'Reversi']]],
-  ['is_5fthere_5fplayer_5fpiece_5fat_5fthe_5fdirection_6',['is_there_player_piece_at_the_direction',['../classReversi.html#ad2680149f9c6e7175ac9683fc737f716',1,'Reversi']]],
-  ['is_5fthere_5fvalid_5fmove_5ffor_5fplayer_7',['is_there_valid_move_for_player',['../classReversi.html#a49be6ec4f973ea46f84594cf15033cdc',1,'Reversi']]],
-  ['is_5fvalid_5fmove_8',['is_valid_move',['../classConnect4.html#a887c8048d47327cb3455015e15c39f62',1,'Connect4::is_valid_move() const override'],['../classConnect4.html#adbf8b0bea155f8d9e75c32d1f900ec4d',1,'Connect4::is_valid_move(int column)'],['../classGame.html#ad3d75d8a335496c94eb0b8a4bb6d9d3a',1,'Game::is_valid_move()'],['../classReversi.html#a01ba3dbf7dc3e6d204334917924a626c',1,'Reversi::is_valid_move() const override'],['../classReversi.html#a80a4baf7512081f2d69178aaaa20c2e9',1,'Reversi::is_valid_move(std::array&lt; int, 2 &gt; &amp;move_coordinates, char player_piece_type)'],['../classTic__tac__toe.html#adee4ca1dc09fa9fb231e9d23b308126c',1,'Tic_tac_toe::is_valid_move() const override'],['../classTic__tac__toe.html#a18884393e630baa8c59414c966c4690e',1,'Tic_tac_toe::is_valid_move(int &amp;x, int &amp;y) const']]]
+  ['game_0',['game',['../classGame.html#a0f99f20ddc850ba3a6db29228c81837a',1,'Game::Game()'],['../classGame.html',1,'Game']]],
+  ['game_2ecpp_1',['Game.cpp',['../Game_8cpp.html',1,'']]],
+  ['game_2ehpp_2',['Game.hpp',['../Game_8hpp.html',1,'']]],
+  ['game_5fboard_3',['game_board',['../classBoard.html#a92ea1ae961b5a5e327eba036e3c7a520',1,'Board::game_board'],['../classGame.html#adff7857a63e229e965d59ad55bcad92e',1,'Game::game_board']]],
+  ['get_5fcurrent_5fplayer_4',['get_current_player',['../classConnect4.html#af6a1ee6390778f03c47f5e96295318af',1,'Connect4::get_current_player()'],['../classTic__tac__toe.html#a4a7e94369fe17c8307feb0f56d16ba23',1,'Tic_tac_toe::get_current_player()']]],
+  ['get_5fgame_5fboard_5',['get_game_board',['../classReversi.html#a64396e43a1c3c2543ecd88178ca7ed19',1,'Reversi::get_game_board()'],['../classTic__tac__toe.html#ab5946f26c1af8d08bf181d25eb662ae8',1,'Tic_tac_toe::get_game_board()'],['../classBoard.html#a1419886ff82e0c14fcf7483cff5a4571',1,'Board::get_game_board()']]],
+  ['get_5fname_6',['get_name',['../classPlayer.html#a788340fc5f21143f47eed04f6fd79976',1,'Player']]],
+  ['get_5fnum_5floss_7',['get_num_loss',['../classPlayer.html#af260cc303d2428256e9bfcca9ea25059',1,'Player']]],
+  ['get_5fnum_5fpieces_5fplayer_5fo_8',['get_num_pieces_player_O',['../classReversi.html#affed5bf4df7eebde380115b2a0128b28',1,'Reversi']]],
+  ['get_5fnum_5fpieces_5fplayer_5fx_9',['get_num_pieces_player_X',['../classReversi.html#a98215aaaace6102df09ad9862f2ef4ab',1,'Reversi']]],
+  ['get_5fnum_5fwin_10',['get_num_win',['../classPlayer.html#a186fc07cf1c11b7a60336c67823adbbd',1,'Player']]],
+  ['get_5fspace_11',['get_space',['../classBoard.html#a80389d7228ad747ca8f4700787341628',1,'Board::get_space()'],['../classConnect4.html#a70d2a0505a8fa99d9a6afeeb9d3aeff2',1,'Connect4::get_space()']]],
+  ['get_5fusername_12',['get_username',['../classPlayer.html#a64a6c94b00bc67363f8309957a2705ac',1,'Player']]]
 ];

@@ -1,0 +1,121 @@
+\doxysection{Referência do Arquivo tests/\+Board\+Class\+\_\+test.cpp}
+\hypertarget{BoardClass__test_8cpp}{}\label{BoardClass__test_8cpp}\index{tests/BoardClass\_test.cpp@{tests/BoardClass\_test.cpp}}
+{\ttfamily \#include "{}doctest.\+h"{}}\newline
+{\ttfamily \#include "{}Board.\+hpp"{}}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Gráfico de dependência de inclusões para Board\+Class\+\_\+test.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{BoardClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}{DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}{TEST\+\_\+\+CASE}} ("{}Function set\+\_\+game\+\_\+board test"{})
+\item 
+\mbox{\hyperlink{BoardClass__test_8cpp_aea8d53481940810acb74a457fe5510c7}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+move\+\_\+inside\+\_\+board test"{})
+\item 
+\mbox{\hyperlink{BoardClass__test_8cpp_afe748c864d6b3c9ff15483b93e2cad47}{TEST\+\_\+\+CASE}} ("{}Function is\+\_\+space\+\_\+free test"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}{num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi}} = 8
+\item 
+const int \mbox{\hyperlink{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}{num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+tic\+\_\+tac\+\_\+toe}} = 3
+\item 
+const int \mbox{\hyperlink{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}{num\+\_\+columns\+\_\+lig4}} = 7
+\item 
+const int \mbox{\hyperlink{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}{num\+\_\+rows\+\_\+lig4}} = 6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Definições e macros}
+\Hypertarget{BoardClass__test_8cpp_a623b8690a262536536a43eab2d7df03d}\label{BoardClass__test_8cpp_a623b8690a262536536a43eab2d7df03d} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\index{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+{\footnotesize\ttfamily \#define DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00001}{1}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Funções}
+\Hypertarget{BoardClass__test_8cpp_aea8d53481940810acb74a457fe5510c7}\label{BoardClass__test_8cpp_aea8d53481940810acb74a457fe5510c7} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+move\+\_\+inside\+\_\+board test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00123}{123}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{BoardClass__test_8cpp_afe748c864d6b3c9ff15483b93e2cad47}\label{BoardClass__test_8cpp_afe748c864d6b3c9ff15483b93e2cad47} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function is\+\_\+space\+\_\+free test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00176}{176}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e}\label{BoardClass__test_8cpp_a6ddb943fb6846318f9674c5bb387172e} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Function set\+\_\+game\+\_\+board test"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00010}{10}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+
+
+\doxysubsection{Variáveis}
+\Hypertarget{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa}\label{BoardClass__test_8cpp_a8c5e81bb163eceb85cf56a0c40ecdaaa} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!num\_columns\_and\_rows\_reversi@{num\_columns\_and\_rows\_reversi}}
+\index{num\_columns\_and\_rows\_reversi@{num\_columns\_and\_rows\_reversi}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_columns\_and\_rows\_reversi}{num\_columns\_and\_rows\_reversi}}
+{\footnotesize\ttfamily const int num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+reversi = 8}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00005}{5}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e}\label{BoardClass__test_8cpp_a859b6c4609c865b085ede263af96a70e} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!num\_columns\_and\_rows\_tic\_tac\_toe@{num\_columns\_and\_rows\_tic\_tac\_toe}}
+\index{num\_columns\_and\_rows\_tic\_tac\_toe@{num\_columns\_and\_rows\_tic\_tac\_toe}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_columns\_and\_rows\_tic\_tac\_toe}{num\_columns\_and\_rows\_tic\_tac\_toe}}
+{\footnotesize\ttfamily const int num\+\_\+columns\+\_\+and\+\_\+rows\+\_\+tic\+\_\+tac\+\_\+toe = 3}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00006}{6}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6}\label{BoardClass__test_8cpp_a55e39a4ce457f838f61e3b4bcd99dea6} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!num\_columns\_lig4@{num\_columns\_lig4}}
+\index{num\_columns\_lig4@{num\_columns\_lig4}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_columns\_lig4}{num\_columns\_lig4}}
+{\footnotesize\ttfamily const int num\+\_\+columns\+\_\+lig4 = 7}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00007}{7}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+
+\Hypertarget{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8}\label{BoardClass__test_8cpp_afb5c119f488121ddfafbd88524d994f8} 
+\index{BoardClass\_test.cpp@{BoardClass\_test.cpp}!num\_rows\_lig4@{num\_rows\_lig4}}
+\index{num\_rows\_lig4@{num\_rows\_lig4}!BoardClass\_test.cpp@{BoardClass\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_rows\_lig4}{num\_rows\_lig4}}
+{\footnotesize\ttfamily const int num\+\_\+rows\+\_\+lig4 = 6}
+
+
+
+Definição na linha \mbox{\hyperlink{BoardClass__test_8cpp_source_l00008}{8}} do arquivo \mbox{\hyperlink{BoardClass__test_8cpp_source}{Board\+Class\+\_\+test.\+cpp}}.
+

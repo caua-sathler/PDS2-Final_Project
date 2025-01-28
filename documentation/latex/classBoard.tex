@@ -23,7 +23,11 @@ void \mbox{\hyperlink{classBoard_a0b08559bde6bdd14edf6e75f7601498b}{print\+\_\+g
 bool \mbox{\hyperlink{classBoard_a0ff3e0e0042eea4ff717336eee295cd0}{is\+\_\+move\+\_\+inside\+\_\+board}} (int x, int y) const
 \begin{DoxyCompactList}\small\item\em Verifica se uma posição está dentro dos limites do tabuleiro. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classBoard_ab7fc7a0f537da31eb4308a0903d14f76}{is\+\_\+space\+\_\+free}} (int x, int y) const
-\begin{DoxyCompactList}\small\item\em Verifica se uma posição no tabuleiro está vazia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição no tabuleiro está vazia. \end{DoxyCompactList}\item 
+const std\+::unique\+\_\+ptr$<$ std\+::unique\+\_\+ptr$<$ char\mbox{[}$\,$\mbox{]}$>$\mbox{[}$\,$\mbox{]}$>$ \& \mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{get\+\_\+game\+\_\+board}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o tabuleiro completo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{set\+\_\+game\+\_\+board}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Recebe um tabuleiro pronto e o copia para o tabuleiro vazio interno criado pelo construtor da classe \doxylink{classBoard}{Board}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,6 +75,20 @@ Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00018}{18}} do arquivo 
 
 
 \doxysubsection{Documentação das funções}
+\Hypertarget{classBoard_a1419886ff82e0c14fcf7483cff5a4571}\label{classBoard_a1419886ff82e0c14fcf7483cff5a4571} 
+\index{Board@{Board}!get\_game\_board@{get\_game\_board}}
+\index{get\_game\_board@{get\_game\_board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{get\_game\_board()}{get\_game\_board()}}
+{\footnotesize\ttfamily const std\+::unique\+\_\+ptr$<$ std\+::unique\+\_\+ptr$<$ char\mbox{[}$\,$\mbox{]}$>$\mbox{[}$\,$\mbox{]}$>$ \& Board\+::get\+\_\+game\+\_\+board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o tabuleiro completo. 
+
+Essa função foi criada somente para possibilitar os testes do programa. Assim, sua utilização se restringe aos arquivos do diretório /tests/. 
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00070}{70}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
 \Hypertarget{classBoard_a80389d7228ad747ca8f4700787341628}\label{classBoard_a80389d7228ad747ca8f4700787341628} 
 \index{Board@{Board}!get\_space@{get\_space}}
 \index{get\_space@{get\_space}!Board@{Board}}
@@ -156,6 +174,25 @@ Imprime o estado atual do tabuleiro.
 
 
 Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00032}{32}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
+
+\Hypertarget{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}\label{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf} 
+\index{Board@{Board}!set\_game\_board@{set\_game\_board}}
+\index{set\_game\_board@{set\_game\_board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{set\_game\_board()}{set\_game\_board()}}
+{\footnotesize\ttfamily void Board\+::set\+\_\+game\+\_\+board (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{board }\end{DoxyParamCaption})}
+
+
+
+Recebe um tabuleiro pronto e o copia para o tabuleiro vazio interno criado pelo construtor da classe \doxylink{classBoard}{Board}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em board} & Tabuleiro a ser copiado\\
+\hline
+\end{DoxyParams}
+Essa função foi criada somente para possibilitar os testes do programa. Assim, sua utilização se restringe aos arquivos do diretório /tests/. 
+
+Definição na linha \mbox{\hyperlink{Board_8cpp_source_l00061}{61}} do arquivo \mbox{\hyperlink{Board_8cpp_source}{Board.\+cpp}}.
 
 \Hypertarget{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61}\label{classBoard_aa80045eb5ff5bf2a9aea29c985c20c61} 
 \index{Board@{Board}!set\_space@{set\_space}}

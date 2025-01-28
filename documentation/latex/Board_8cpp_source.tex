@@ -58,5 +58,20 @@
 \DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00057}00057\ }
 \DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00061}\mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBoard_ac70185915ea4c766f5db0a3cf7c51cbf}{Board::set\_game\_board}}(\textcolor{keywordtype}{char}\ **board)}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{classBoard_adda5ad3381a789f8368073d081304f23}{num\_rows}};\ i++)\ }
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ this-\/>\mbox{\hyperlink{classBoard_adda5ad3381a789f8368073d081304f23}{num\_rows}};\ j++)\ }
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}{game\_board}}[i][j]\ =\ board[i][j];}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00070}\mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{00070}}\ \textcolor{keyword}{const}\ std::unique\_ptr<std::unique\_ptr<char[]>[]>\&\ \mbox{\hyperlink{classBoard_a1419886ff82e0c14fcf7483cff5a4571}{Board::get\_game\_board}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00071}00071\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classBoard_a92ea1ae961b5a5e327eba036e3c7a520}{game\_board}};}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{Board_8cpp_source_l00074}00074\ }
 
 \end{DoxyCode}

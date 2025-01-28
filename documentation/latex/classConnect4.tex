@@ -40,6 +40,8 @@ void \mbox{\hyperlink{classConnect4_a9abdbbbd70f28127eba647a090cf8763}{print\+\_
 \begin{DoxyCompactList}\small\item\em Imprime o estado atual do tabuleiro. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classConnect4_a7900bc45a9822ec810af13a1ab649414}{set\+\_\+current\+\_\+player}} (char player)
 \begin{DoxyCompactList}\small\item\em Define o jogador atual. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}{get\+\_\+space}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em Retorna o valor de uma casa no tabuleiro. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classConnect4_a547b9e4f1c2279abaf4bf9b1f19dcfd9}{\texorpdfstring{$\sim$}{\string~}\+Connect4}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor do jogo \doxylink{classConnect4}{Connect4}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membros Públicos herdados de \mbox{\hyperlink{classGame}{Game}}}
@@ -100,7 +102,7 @@ Destrutor do jogo \doxylink{classConnect4}{Connect4}.
 
 
 
-Definição na linha \mbox{\hyperlink{Connect4_8cpp_source_l00123}{123}} do arquivo \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+Definição na linha \mbox{\hyperlink{Connect4_8cpp_source_l00128}{128}} do arquivo \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
 
 
 
@@ -139,6 +141,30 @@ Caractere representando o jogador atual (\textquotesingle{}X\textquotesingle{} o
 
 
 Definição na linha \mbox{\hyperlink{Connect4_8cpp_source_l00096}{96}} do arquivo \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
+
+\Hypertarget{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2}\label{classConnect4_a70d2a0505a8fa99d9a6afeeb9d3aeff2} 
+\index{Connect4@{Connect4}!get\_space@{get\_space}}
+\index{get\_space@{get\_space}!Connect4@{Connect4}}
+\doxysubsubsection{\texorpdfstring{get\_space()}{get\_space()}}
+{\footnotesize\ttfamily char Connect4\+::get\+\_\+space (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor de uma casa no tabuleiro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em row} & Linha desejada \\
+\hline
+{\em column} & Coluna desejada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O caractere que ocupa a casa 
+\end{DoxyReturn}
+
+
+Definição na linha \mbox{\hyperlink{Connect4_8cpp_source_l00123}{123}} do arquivo \mbox{\hyperlink{Connect4_8cpp_source}{Connect4.\+cpp}}.
 
 \Hypertarget{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed}\label{classConnect4_aebe9a9afdf21fcedf9c1e430ef9eceed} 
 \index{Connect4@{Connect4}!is\_board\_full@{is\_board\_full}}
