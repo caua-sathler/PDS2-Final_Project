@@ -333,8 +333,8 @@ int main()
                                 break;
                             }
 
-                            std::cout << "Turno de jogador " << tic_tac_toe_game.get_current_player() << std::endl;
                             tic_tac_toe_game.print_tic_tac_toe_board();
+                            std::cout << "Turno de jogador <" << tic_tac_toe_game.get_current_player() <<">:"<< std::endl;
 
                             try
                             {
