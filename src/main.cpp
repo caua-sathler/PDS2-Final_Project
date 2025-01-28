@@ -17,7 +17,7 @@ int main()
     std::ifstream file_in;
     try 
     {
-    file_in.open("teste");
+    file_in.open("registered_players");
     if (!file_in.is_open())
         throw std::runtime_error("Erro ao abrir o arquivo");
     
@@ -376,7 +376,7 @@ int main()
     // Escrita do arquivo de registro atualizado
     std::ofstream file_out;
     try {
-    file_out.open("teste");
+    file_out.open("registered_players");
     if (!file_out.is_open())
         throw std::runtime_error("Erro ao abrir o arquivo");
     
