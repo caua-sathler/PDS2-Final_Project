@@ -236,7 +236,8 @@ int main()
                             int column;
                             connect4_game.print_game_board();
                             char current_player = connect4_game.get_current_player();
-
+                            
+                            std::cout << "Jogador X: " << username_player1 << " | Jogador O: " << username_player2 << std::endl;
                             std::cout << "Turno de jogador <" << current_player << ">:" << std::endl;
             
                             try {
@@ -304,7 +305,7 @@ int main()
                         Tic_tac_toe tic_tac_toe_game;
                         int x, y;
 
-                        std::cout << username_player1 << " eh X e " << username_player2 << " eh O" << std::endl;
+                        std::cout << "Jogador X: " << username_player1 << " | Jogador O: " << username_player2 << std::endl;
 
                         while (true)
                         {
